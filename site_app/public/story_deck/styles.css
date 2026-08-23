@@ -419,7 +419,8 @@ p {
 }
 
 .history-slide .history-grid img {
-  aspect-ratio: 16 / 8.2;
+  height: clamp(130px, 21svh, 185px);
+  aspect-ratio: auto;
 }
 
 .history-slide .history-grid figure:nth-child(1) img {
@@ -3604,6 +3605,47 @@ dialog::backdrop {
     bottom: 14px;
     width: calc(100vw - 28px);
     max-height: 62vh;
+  }
+
+  /* Keep slide 2 in a widescreen slide composition even in a narrow panel. */
+  .history-slide .slide-content {
+    width: calc(100% - 24px);
+    padding: 18px 0 22px;
+  }
+
+  .history-slide h2 {
+    font-size: clamp(2.15rem, 8.4vw, 3.3rem);
+    line-height: 0.98;
+  }
+
+  .history-slide .history-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+    margin-top: 14px;
+  }
+
+  .history-slide .history-grid img {
+    height: clamp(76px, 14svh, 112px);
+    aspect-ratio: auto;
+  }
+
+  .history-slide .history-grid figcaption {
+    padding: 7px 6px 8px;
+    text-align: center;
+  }
+
+  .history-slide .history-grid strong {
+    font-size: 1rem;
+  }
+
+  .history-slide .history-grid span {
+    display: none;
+  }
+
+  .history-slide .bridge {
+    margin-top: 10px;
+    padding: 7px 10px;
+    font-size: 0.82rem;
   }
 }
 
