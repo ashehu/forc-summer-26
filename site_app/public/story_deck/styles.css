@@ -346,7 +346,11 @@ p {
 
 .hero-content {
   align-self: end;
-  padding-bottom: 78px;
+  padding-bottom: 44px;
+}
+
+.hero-content h1 {
+  font-size: clamp(3.45rem, 6.5vw, 6.75rem);
 }
 
 .story-thread,
@@ -377,6 +381,52 @@ p {
 .world-loop i {
   color: var(--coral);
   font-style: normal;
+}
+
+.instructor-context {
+  display: grid;
+  grid-template-columns: minmax(205px, 0.72fr) minmax(330px, 1.28fr) auto;
+  gap: 24px;
+  align-items: center;
+  max-width: 1000px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.23);
+}
+
+.instructor-context strong,
+.instructor-context span {
+  display: block;
+}
+
+.instructor-context strong {
+  font-family: var(--serif);
+  font-size: 1.16rem;
+  font-weight: 600;
+}
+
+.instructor-context span {
+  margin-top: 3px;
+  color: var(--teal);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.instructor-context p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.73);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.instructor-context a {
+  color: white;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-underline-offset: 4px;
+  white-space: nowrap;
 }
 
 .history-grid {
@@ -3376,6 +3426,15 @@ dialog::backdrop {
 
   .slide {
     overflow: visible;
+  }
+
+  .instructor-context {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .instructor-context a {
+    width: max-content;
   }
 
   .lab-roadmap-layout,
