@@ -772,11 +772,44 @@ p {
 }
 
 .example-grid article {
-  min-height: 128px;
-  padding: 20px;
+  display: grid;
+  grid-template-rows: 96px auto;
+  min-height: 168px;
+  padding: 0;
+  overflow: hidden;
   border: 1px solid rgba(16, 42, 51, 0.22);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.5);
+}
+
+.example-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.78) contrast(1.04);
+}
+
+.example-grid .leaf-example img {
+  object-position: center 52%;
+}
+
+.example-grid .paper-example img {
+  object-position: center 62%;
+}
+
+.example-grid .lab-example img {
+  object-position: center 46%;
+}
+
+.example-grid .robot-example img {
+  object-position: center 24%;
+}
+
+.example-grid article > div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-content: center;
+  padding: 11px 14px 13px;
 }
 
 .example-grid .agent-example {
@@ -795,13 +828,16 @@ p {
 
 .example-grid i {
   display: block;
-  margin: 6px 0;
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
   color: var(--coral);
   font-style: normal;
   font-weight: 900;
 }
 
 .example-grid strong {
+  grid-column: 1 / -1;
   font-family: var(--serif);
   font-size: 1.25rem;
   line-height: 1.15;
@@ -3526,8 +3562,9 @@ dialog::backdrop {
   }
 
   .example-grid article {
-    min-height: 112px;
-    padding: 14px;
+    grid-template-rows: 78px auto;
+    min-height: 148px;
+    padding: 0;
   }
 
   .milestones {
@@ -3774,7 +3811,8 @@ dialog::backdrop {
   }
 
   .example-grid article {
-    min-height: 105px;
+    grid-template-rows: 92px auto;
+    min-height: 160px;
   }
 
   .llm-flow {
