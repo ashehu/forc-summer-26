@@ -387,18 +387,18 @@ p {
 }
 
 .history-slide .slide-content {
-  padding-top: 34px;
-  padding-bottom: 34px;
+  padding-top: 26px;
+  padding-bottom: 26px;
 }
 
 .history-slide h2 {
   max-width: 1050px;
-  font-size: clamp(2.7rem, 4.7vw, 5rem);
+  font-size: clamp(2.7rem, 4.3vw, 4.6rem);
 }
 
 .history-slide .history-grid {
   gap: 15px;
-  margin-top: 24px;
+  margin-top: 18px;
 }
 
 .history-grid figure {
@@ -419,7 +419,7 @@ p {
 }
 
 .history-slide .history-grid img {
-  height: clamp(130px, 21svh, 185px);
+  height: clamp(155px, 25svh, 220px);
   aspect-ratio: auto;
 }
 
@@ -3610,22 +3610,22 @@ dialog::backdrop {
   /* Keep slide 2 in a widescreen slide composition even in a narrow panel. */
   .history-slide .slide-content {
     width: calc(100% - 24px);
-    padding: 18px 0 22px;
+    padding: 10px 0 14px;
   }
 
   .history-slide h2 {
-    font-size: clamp(2.15rem, 8.4vw, 3.3rem);
+    font-size: clamp(2rem, 7.7vw, 3rem);
     line-height: 0.98;
   }
 
   .history-slide .history-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 7px;
-    margin-top: 14px;
+    margin-top: 10px;
   }
 
   .history-slide .history-grid img {
-    height: clamp(76px, 14svh, 112px);
+    height: clamp(96px, 18svh, 145px);
     aspect-ratio: auto;
   }
 
