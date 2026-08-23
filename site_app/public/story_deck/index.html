@@ -14,7 +14,7 @@
   <header class="chrome" aria-label="Presentation controls">
     <a class="brand" href="#slide-1"><span aria-hidden="true"></span>AI · A simpler story</a>
     <div class="position" aria-live="polite">
-      <b id="currentSlide">01</b><i>/</i><b id="totalSlides">23</b>
+      <b id="currentSlide">01</b><i>/</i><b id="totalSlides">45</b>
       <span id="currentTitle">The story in one sentence</span>
     </div>
     <div class="controls">
@@ -80,7 +80,7 @@
       </aside>
     </section>
 
-    <section class="slide coral" id="slide-3" data-title="The key change" data-time="02:30–04:00" aria-labelledby="title-3">
+    <section class="slide coral" id="slide-3" data-title="The key change" data-time="02:30–03:30" aria-labelledby="title-3">
       <div class="slide-content split-heading">
         <div>
           <p class="eyebrow">The key change</p>
@@ -105,7 +105,50 @@
       </aside>
     </section>
 
-    <section class="slide lime" id="slide-4" data-title="What is AI?" data-time="04:00–05:30" aria-labelledby="title-4">
+    <section class="slide paper training-slide" id="slide-3-training" data-title="How learning changes weights" data-time="03:30–05:30" aria-labelledby="title-3-training">
+      <div class="slide-content training-layout">
+        <div class="training-heading">
+          <p class="eyebrow">One tiny training set</p>
+          <h2 id="title-3-training">Learning means finding weights that reduce error.</h2>
+        </div>
+        <div class="toy-data">
+          <table>
+            <caption>Historical examples</caption>
+            <thead><tr><th>Inside</th><th>Outside</th><th>Soon?</th><th>Recent heat</th><th>Needed</th></tr></thead>
+            <tbody>
+              <tr><td>21°C</td><td>10°C</td><td>Yes</td><td>20%</td><td>0%</td></tr>
+              <tr><td>18°C</td><td>5°C</td><td>Yes</td><td>0%</td><td>50%</td></tr>
+              <tr><td>18°C</td><td>−5°C</td><td>Yes</td><td>0%</td><td>75%</td></tr>
+              <tr><td>17°C</td><td>−5°C</td><td>No</td><td>0%</td><td>40%</td></tr>
+            </tbody>
+          </table>
+          <p><span>Inputs</span> describe the situation. <b>The target</b> records how much heating was actually needed.</p>
+        </div>
+        <div class="learning-example">
+          <p class="case-label">A new situation</p>
+          <code class="input-vector">[18, −2, 1, 10]</code>
+          <small>inside · outside · occupied soon · recent heat</small>
+          <div class="weight-equation" aria-label="Inputs multiplied by learned weights plus a bias produce a prediction of 65 percent">
+            <span>inputs</span><i>×</i><span>weights</span><i>+</i><span>bias</span><i>→</i><strong>65%</strong>
+          </div>
+          <div class="error-update"><p>Actual: <b>70%</b> · Error: <b>5 points</b></p><strong>Adjust the weights. Try again.</strong></div>
+        </div>
+        <p class="deep-learning-bridge"><b>One learned unit:</b> weighted inputs → output. <b>Deep learning:</b> learned weighted operations stacked across many layers.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 4">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Show what “learning from examples” means before introducing linear algebra or neural-network vocabulary.</dd></div>
+          <div><dt>Say</dt><dd>“Each row is a past situation. The first four columns are inputs; the last is the target. The model starts with imperfect weights, makes a prediction, measures the error, and adjusts the weights.”</dd></div>
+          <div><dt>Walk through</dt><dd>Encode occupied soon as 1. For the new case, the current weights predict 65% heating. The observed requirement is 70%, so the error is five percentage points.</dd></div>
+          <div><dt>Connect to deep learning</dt><dd>One unit combines weighted inputs. A neural network connects many units and adds nonlinear transformations. “Deep” means that representations pass through many learned layers.</dd></div>
+          <div><dt>Important nuance</dt><dd>Four rows cannot train a useful building system. These are course-authored teaching data; a real model would need many observations, careful validation, and monitoring when conditions change.</dd></div>
+          <div><dt>Transition</dt><dd>This is one kind of AI inference. Zoom back out and define the broader category before returning to the math.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide lime" id="slide-4" data-title="What is AI?" data-time="05:30–06:30" aria-labelledby="title-4">
       <div class="slide-content definition-layout">
         <div>
           <p class="eyebrow">A practical definition</p>
@@ -121,7 +164,7 @@
         <p class="boundary"><b>The label “AI” does not tell us</b> whether a system is conscious, reliable, fair, or autonomous.</p>
         <a class="source" href="https://www.oecd.org/en/publications/explanatory-memorandum-on-the-updated-oecd-definition-of-an-ai-system_623da898-en.html" target="_blank" rel="noreferrer">Adapted from the OECD AI-system definition ↗</a>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 4">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 5">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Replace a philosophical definition with a functional one students can reuse.</dd></div>
@@ -132,7 +175,7 @@
       </aside>
     </section>
 
-    <section class="slide paper timeline-slide" id="slide-5" data-title="How we arrived here" data-time="05:30–07:30" aria-labelledby="title-5">
+    <section class="slide paper timeline-slide" id="slide-5" data-title="How we arrived here" data-time="06:30–08:00" aria-labelledby="title-5">
       <img class="timeline-photo" src="../assets/images/early-computing-lab.jpg" alt="Researchers working around an early room-sized computer" width="1672" height="941" loading="lazy">
       <div class="timeline-shade" aria-hidden="true"></div>
       <div class="slide-content timeline-content">
@@ -147,7 +190,7 @@
         </ol>
         <p class="bridge light-bridge"><b>Next:</b> the mathematics is simpler than the scale suggests.</p>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 5">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 6">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Give historical orientation without creating a disconnected chronology.</dd></div>
@@ -158,12 +201,12 @@
       </aside>
     </section>
 
-    <section class="slide paper" id="slide-6" data-title="The math in one example" data-time="07:30–10:00" aria-labelledby="title-6">
+    <section class="slide paper" id="slide-6" data-title="The math in one example" data-time="08:00–10:00" aria-labelledby="title-6">
       <div class="slide-content math-layout">
         <div>
           <p class="eyebrow">Linear algebra, made small</p>
           <h2 id="title-6">A dot product is a weighted score.</h2>
-          <p class="lead-small">Our toy model scores three clues for the next word.</p>
+          <p class="lead-small">The heating model used weights. Now use the same idea to score three clues for the next word.</p>
         </div>
         <div class="toy-board">
           <p class="sentence">The cat sat on the <b>_____</b></p>
@@ -177,10 +220,10 @@
         </div>
         <p class="caveat">This is a teaching model. Real networks learn their own distributed features and repeat operations like this across many layers.</p>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 6">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 7">
         <p class="notes-label">Presenter notes</p>
         <dl>
-          <div><dt>Purpose</dt><dd>Remove the mystery from “linear algebra” without pretending the real system is this small.</dd></div>
+          <div><dt>Purpose</dt><dd>Connect the heating example to a dot product, then reuse the operation in a simple language example.</dd></div>
           <div><dt>Say</dt><dd>“A vector is simply a list of numbers. A dot product multiplies corresponding numbers and adds them. The result is a score.”</dd></div>
           <div><dt>Do</dt><dd>Click each candidate. Ask students why “floor” is close and “policy” is not. Emphasize that the weights determine what matters.</dd></div>
           <div><dt>Transition</dt><dd>An LLM performs far richer versions of scoring, selects a token, and repeats.</dd></div>
@@ -204,7 +247,7 @@
         <p class="bridge light-bridge"><b>The surprise:</b> repeating local predictions at huge scale produces useful language behavior.</p>
         <a class="source light-source" href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noreferrer">The Transformer paper · 2017 ↗</a>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 7">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 8">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Connect the toy score directly to language models and introduce attention only when it solves a visible problem.</dd></div>
@@ -230,7 +273,7 @@
         <p class="bridge dark-bridge"><b>Then the next shift:</b> connect the model to search, files, code, browsers, and other tools.</p>
         <a class="source" href="https://openai.com/index/chatgpt/" target="_blank" rel="noreferrer">Introducing ChatGPT · 2022 ↗</a>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 8">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 9">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Explain why 2022 felt sudden even though it was built on years of research.</dd></div>
@@ -257,7 +300,7 @@
         <p class="bridge light-bridge"><b>Same model, new consequence:</b> its output changes the environment it sees next.</p>
         <a class="source light-source" href="https://www.anthropic.com/research/trustworthy-agents" target="_blank" rel="noreferrer">Agent anatomy and human control · 2026 ↗</a>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 9">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 10">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Make “agentic AI” concrete through work graduate students already understand.</dd></div>
@@ -272,7 +315,7 @@
       <h2 class="visually-hidden" id="title-10">A real humanoid robot working in regular warehouse operations</h2>
       <img src="../assets/images/digit-gxo-real-deployment.jpeg" alt="Agility Robotics' Digit humanoid handling a tote at a GXO warehouse" width="1500" height="844" loading="lazy">
       <a class="visual-credit" href="https://www.agilityrobotics.com/content/digit-deployed-at-gxo-in-historic-humanoid-raas-agreement" target="_blank" rel="noreferrer">Real deployment · Digit at GXO · Agility Robotics, 2024 ↗</a>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 10">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 11">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Create a visual break—and replace imagined futures with documented physical AI.</dd></div>
@@ -307,7 +350,7 @@
           <a href="https://www.figure.ai/news/production-at-bmw" target="_blank" rel="noreferrer">US · Figure at BMW ↗</a>
         </div>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 11">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 12">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Show real footage while teaching students how to evaluate robotics claims.</dd></div>
@@ -329,7 +372,7 @@
         <p class="promise">The promise: more yield and resilience with less chemical, water, and repetitive labor.</p>
         <a class="source light-source" href="https://www.deere.com/en-us/products-solutions/sprayers-and-applicators/see-spray" target="_blank" rel="noreferrer">Signal today: machine vision already targets individual weeds ↗</a>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 12">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 13">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Show that the abstract agent loop maps onto a tangible, socially important system.</dd></div>
@@ -350,7 +393,7 @@
         <p class="promise">The promise: safer worksites, less waste, and faster adaptation when reality differs from the plan.</p>
         <a class="source light-source" href="https://www.cat.com/en_US/articles/ci-technology/cat_semi_autonomous_construction_equipment.html" target="_blank" rel="noreferrer">Signal today: semi-autonomous construction equipment · 2026 ↗</a>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 13">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 14">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Repeat the loop in a second domain so students see the general pattern.</dd></div>
@@ -371,7 +414,7 @@
         <p class="promise">The promise: more experiments per question—and more time for scientists to interpret surprises.</p>
         <a class="source light-source" href="https://deepmind.google/blog/co-scientist-a-multi-agent-ai-partner-to-accelerate-research/" target="_blank" rel="noreferrer">Signal today: multi-agent hypothesis generation and lab validation · 2026 ↗</a>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 14">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 15">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Show the most intellectually exciting version of the repeated loop.</dd></div>
@@ -396,7 +439,7 @@
         </div>
         <blockquote>The exciting possibility is not fewer people. It is greater human capacity to understand, build, discover, and repair.</blockquote>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 15">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 16">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Return to one coherent story and give students four sentences they can retain.</dd></div>
@@ -418,7 +461,7 @@
         </div>
         <p class="practice-question">What is one task in your work where a plausible but incorrect answer would be dangerous?</p>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 16">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 17">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Reset the room after the future section and signal an immediate move into practice.</dd></div>
@@ -447,7 +490,7 @@
         </div>
         <p class="case-instruction"><b>Pair prompt · 45 seconds:</b> Choose one option from each row. Notice how much the question changes.</p>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 17">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 18">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Show that underspecification begins before prompting and cannot be repaired by eloquent prose.</dd></div>
@@ -473,7 +516,7 @@
         </div>
         <p class="bridge dark-bridge"><b>The model can help negotiate the brief.</b> It should not silently invent the brief.</p>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 18">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 19">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Give students evaluation criteria before showing them an answer.</dd></div>
@@ -500,7 +543,7 @@
         </blockquote>
         <p class="challenge"><b>Do not fact-check yet.</b> Which words make you uneasy?</p>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 19">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 20">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Make students inspect language before seeing source material.</dd></div>
@@ -526,7 +569,7 @@
         </div>
         <div class="audit-result" id="auditResult" aria-live="polite"><strong id="auditProgress">0 of 4 claims reviewed</strong><p id="auditExplanation">Choose a claim to reveal its evidence judgment.</p></div>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 20">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 21">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Practice sentence-level evaluation rather than accepting or rejecting an answer as a whole.</dd></div>
@@ -557,7 +600,7 @@
         </div>
         <p class="human-gate"><b>Human gate:</b> approve the question → approve the evidence set → approve the final claim.</p>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 21">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 22">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Give students a reusable alternative to one-shot prompting.</dd></div>
@@ -596,7 +639,7 @@
         </div>
         <p class="evidence-synthesis"><b>Better synthesis:</b> triangulate breadth, measurement, and control—then preserve each study’s limits.</p>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 22">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 23">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Demonstrate why evidence extraction should precede prose synthesis.</dd></div>
@@ -618,7 +661,7 @@
         <div class="five-habits" aria-label="Five habits for trustworthy AI-assisted work"><span>define</span><i>→</i><span>plan</span><i>→</i><span>source</span><i>→</i><span>verify</span><i>→</i><span>decide</span></div>
         <p class="practice-question">What is one step in your own workflow that you could make more visible and verifiable?</p>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 23">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 24">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>End the practical block with a clear division of labor and a memorable method.</dd></div>
@@ -644,7 +687,7 @@
         </ol>
         <a class="lab-slide-link" href="../labs/index.html" target="_blank">Open the student lab kit ↗</a>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 24">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 25">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Reset the class from demonstration mode into a coherent sequence of student-built systems.</dd></div>
@@ -665,7 +708,7 @@
         </div>
         <p class="case-question"><b>Question:</b> Can the system preserve missingness and uncertainty—not merely produce valid JSON?</p>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 25">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 26">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Frame extraction as a research-design problem, not a formatting trick.</dd></div>
@@ -689,7 +732,7 @@
         </div>
         <div class="schema-rules"><span>Do not infer.</span><span>Use null when absent.</span><span>Quote the source.</span></div>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 26">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 27">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Show that a schema encodes epistemic choices: required fields, allowed absence, and traceability.</dd></div>
@@ -714,7 +757,7 @@ Exact field accuracy: 6/20 (30%)</pre></div>
         <ol class="activity-steps"><li><span>1</span>Open one failed source record.</li><li><span>2</span>Locate the rule that missed it.</li><li><span>3</span>Decide whether the gold answer is explicitly supported.</li><li><span>4</span>If using an API, rerun with <code>--api</code>.</li></ol>
         <a class="lab-slide-link light-link" href="../labs/01_structured_extraction/README.md" target="_blank">Open Lab 01 instructions ↗</a>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 27">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 28">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Make students establish a baseline and an evaluation target before calling the model.</dd></div>
@@ -736,7 +779,7 @@ Exact field accuracy: 6/20 (30%)</pre></div>
         </div>
         <p class="takeaway-line">Structured output constrains the <em>interface</em>. It does not prove the <em>world inside it</em>.</p>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 28">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 29">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Separate structural reliability from factual and interpretive reliability.</dd></div>
@@ -749,7 +792,7 @@ Exact field accuracy: 6/20 (30%)</pre></div>
 
     <section class="slide dark lab-break-slide" id="slide-29" data-title="Break · What was inferred?" data-time="90:00–100:00" aria-labelledby="title-29">
       <div class="slide-content lab-break-layout"><p class="eyebrow">10-minute break</p><h2 id="title-29">What did the system infer<br>that the source never said?</h2><p>Keep one example. We will reuse the question.</p><div class="break-mark" aria-hidden="true">?</div></div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 29"><p class="notes-label">Presenter notes</p><dl><div><dt>Purpose</dt><dd>Give students a real break while preserving one diagnostic question.</dd></div><div><dt>Do</dt><dd>Restart on time. Invite exactly two examples, then continue.</dd></div><div><dt>Transition</dt><dd>The next system tries to reduce unsupported inference by retrieving local evidence before answering.</dd></div></dl></aside>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 30"><p class="notes-label">Presenter notes</p><dl><div><dt>Purpose</dt><dd>Give students a real break while preserving one diagnostic question.</dd></div><div><dt>Do</dt><dd>Restart on time. Invite exactly two examples, then continue.</dd></div><div><dt>Transition</dt><dd>The next system tries to reduce unsupported inference by retrieving local evidence before answering.</dd></div></dl></aside>
     </section>
 
     <section class="slide teal case-opener-slide" id="slide-30" data-title="Case 2 · Documents to answers" data-time="100:00–105:00" aria-labelledby="title-30">
@@ -760,7 +803,7 @@ Exact field accuracy: 6/20 (30%)</pre></div>
         </div>
         <p class="case-question"><b>The corpus says:</b> the evaluation lasted one term and did not measure degree completion.</p>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 30">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 31">
         <p class="notes-label">Presenter notes</p><dl>
           <div><dt>Purpose</dt><dd>Create a sharp need for retrieval and a legitimate “not found” outcome.</dd></div>
           <div><dt>Say</dt><dd>“The model's prior knowledge is a feature in many settings. In document-grounded work, that same prior can fill a gap we needed it to preserve.”</dd></div>
@@ -777,7 +820,7 @@ Exact field accuracy: 6/20 (30%)</pre></div>
         </ol>
         <div class="rag-boundary"><b>Retrieval error</b><span>The right evidence never enters context.</span><i>≠</i><b>Generation error</b><span>The evidence enters, but the answer misuses it.</span></div>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 31">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 32">
         <p class="notes-label">Presenter notes</p><dl>
           <div><dt>Purpose</dt><dd>Give students a mental model that lets them diagnose RAG systems layer by layer.</dd></div>
           <div><dt>Say</dt><dd>“RAG does not upload truth into the model. It constructs a temporary evidence packet. We must inspect both the packet and the answer.”</dd></div>
@@ -798,7 +841,7 @@ Exact field accuracy: 6/20 (30%)</pre></div>
         <p class="pair-roles"><b>In pairs:</b> one person inspects retrieval; the other audits citations and quotes. Switch after question two.</p>
         <a class="lab-slide-link" href="../labs/02_grounded_qa/README.md" target="_blank">Open Lab 02 instructions ↗</a>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 32">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 33">
         <p class="notes-label">Presenter notes</p><dl>
           <div><dt>Purpose</dt><dd>Move evaluation from a memorable anecdote to three targeted behavioral tests.</dd></div>
           <div><dt>Do</dt><dd>At minute eight, ask each pair to label any failure as retrieval or generation. At minute fourteen, ask them to invent one adversarial fourth question.</dd></div>
@@ -817,7 +860,7 @@ Exact field accuracy: 6/20 (30%)</pre></div>
         </div>
         <p class="takeaway-line">Citation format is not citation correctness. Open the file.</p>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 33">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 34">
         <p class="notes-label">Presenter notes</p><dl>
           <div><dt>Purpose</dt><dd>Give students a practical diagnostic before they change prompts or models.</dd></div>
           <div><dt>Ask</dt><dd>Where did your adversarial fourth question land? What single change would test your diagnosis?</dd></div>
@@ -828,7 +871,7 @@ Exact field accuracy: 6/20 (30%)</pre></div>
 
     <section class="slide coral lab-break-slide" id="slide-34" data-title="Break · From answers to actions" data-time="140:00–150:00" aria-labelledby="title-34">
       <div class="slide-content lab-break-layout"><p class="eyebrow">10-minute break</p><h2 id="title-34">What changes when the model can do something?</h2><p>Return ready to name one action that should require approval.</p><div class="break-mark" aria-hidden="true">→</div></div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 34"><p class="notes-label">Presenter notes</p><dl><div><dt>Purpose</dt><dd>Prepare the conceptual shift from content generation to tool-mediated action.</dd></div><div><dt>Do</dt><dd>On return, take three answers: one low-risk tool, one consequential tool, and one action students would prohibit.</dd></div><div><dt>Transition</dt><dd>Introduce the bounded data analyst as an agent whose available actions are explicit.</dd></div></dl></aside>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 35"><p class="notes-label">Presenter notes</p><dl><div><dt>Purpose</dt><dd>Prepare the conceptual shift from content generation to tool-mediated action.</dd></div><div><dt>Do</dt><dd>On return, take three answers: one low-risk tool, one consequential tool, and one action students would prohibit.</dd></div><div><dt>Transition</dt><dd>Introduce the bounded data analyst as an agent whose available actions are explicit.</dd></div></dl></aside>
     </section>
 
     <section class="slide dark data-case-slide" id="slide-35" data-title="Case 3 · A data analyst agent" data-time="150:00–156:00" aria-labelledby="title-35">
@@ -837,7 +880,7 @@ Exact field accuracy: 6/20 (30%)</pre></div>
         <div class="aggregate-stat"><span>Mean score gain</span><div><article><b>AI users</b><strong>+8.17</strong></article><article><b>Non-users</b><strong>+10.50</strong></article></div><p>Surface difference <em>−2.33 points</em></p></div>
         <p class="case-question light-question"><b>Your task:</b> make the agent investigate before it explains.</p>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 35">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 36">
         <p class="notes-label">Presenter notes</p><dl>
           <div><dt>Purpose</dt><dd>Give students a tempting but misleading answer before showing the data structure.</dd></div>
           <div><dt>Ask</dt><dd>What would you inspect before interpreting the −2.33 point difference?</dd></div>
@@ -854,7 +897,7 @@ Exact field accuracy: 6/20 (30%)</pre></div>
         </div>
         <div class="tool-permission-box"><div><b>Allowed</b><code>describe_dataset</code><code>inspect_missing_data</code><code>compare_outcomes</code><code>fit_adjusted_model</code><code>make_plot</code></div><div class="denied-tools"><b>Not allowed</b><code>run arbitrary code</code><code>send email</code><code>change the dataset</code></div></div>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 36">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 37">
         <p class="notes-label">Presenter notes</p><dl>
           <div><dt>Purpose</dt><dd>Define an agent concretely as a model–tool–feedback loop with permissions.</dd></div>
           <div><dt>Say</dt><dd>“The model proposes a typed function call. Our application—not the model—decides whether that function exists and executes it.”</dd></div>
@@ -874,7 +917,7 @@ Exact field accuracy: 6/20 (30%)</pre></div>
         <p class="pair-roles"><b>Failure injection:</b> remove “check for a misleading aggregate” from the question. Does the agent still stratify?</p>
         <a class="lab-slide-link" href="../labs/03_data_agent/README.md" target="_blank">Open Lab 03 instructions ↗</a>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 37">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 38">
         <p class="notes-label">Presenter notes</p><dl>
           <div><dt>Purpose</dt><dd>Teach students to evaluate action selection and intermediate evidence, not only final fluency.</dd></div>
           <div><dt>Do</dt><dd>No-code students reproduce the aggregate and stratified means in a spreadsheet tool. API students annotate each printed function call: necessary, unnecessary, or missing.</dd></div>
@@ -890,7 +933,7 @@ Exact field accuracy: 6/20 (30%)</pre></div>
         <div class="simpson-numbers"><article><span>Advanced</span><strong>+3.5</strong><p>AI-user difference within track</p></article><article><span>Foundation</span><strong>+4.5</strong><p>AI-user difference within track</p></article><p>AI use is concentrated in the Advanced track, where gains are smaller for everyone.</p></div>
         <p class="takeaway-line">The agent found structure. It did not discover causality.</p>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 38">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 39">
         <p class="notes-label">Presenter notes</p><dl>
           <div><dt>Purpose</dt><dd>Make confounding and group composition unforgettable through a concrete reversal.</dd></div>
           <div><dt>Say</dt><dd>“Within both tracks, AI users gained more. But most AI users began in the Advanced track, where gains were smaller overall. Adjustment changes the association; it does not turn self-selection into random assignment.”</dd></div>
@@ -901,7 +944,7 @@ Exact field accuracy: 6/20 (30%)</pre></div>
 
     <section class="slide dark lab-break-slide" id="slide-39" data-title="Break · Permission is design" data-time="195:00–205:00" aria-labelledby="title-39">
       <div class="slide-content lab-break-layout"><p class="eyebrow">10-minute break</p><h2 id="title-39">A capable agent is not automatically an authorized agent.</h2><p>Name one tool it may call, one it must preview, and one it must never receive.</p><div class="break-mark" aria-hidden="true">⛉</div></div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 39"><p class="notes-label">Presenter notes</p><dl><div><dt>Purpose</dt><dd>Separate technical capability from institutional or ethical authority.</dd></div><div><dt>Do</dt><dd>On return, collect examples under three headings: automatic, approval required, prohibited.</dd></div><div><dt>Transition</dt><dd>Voice creates a powerful interface while adding consent, transcription, and identity risks.</dd></div></dl></aside>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 40"><p class="notes-label">Presenter notes</p><dl><div><dt>Purpose</dt><dd>Separate technical capability from institutional or ethical authority.</dd></div><div><dt>Do</dt><dd>On return, collect examples under three headings: automatic, approval required, prohibited.</dd></div><div><dt>Transition</dt><dd>Voice creates a powerful interface while adding consent, transcription, and identity risks.</dd></div></dl></aside>
     </section>
 
     <section class="slide coral voice-case-slide" id="slide-40" data-title="Case 4 · Voice to research memo" data-time="205:00–210:00" aria-labelledby="title-40">
@@ -910,7 +953,7 @@ Exact field accuracy: 6/20 (30%)</pre></div>
         <div class="waveform" aria-label="Decorative audio waveform"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
         <p class="case-question"><b>Question:</b> Can a spoken interview become a useful memo without losing the transcript, uncertainty, or participant's words?</p>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 40">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 41">
         <p class="notes-label">Presenter notes</p><dl>
           <div><dt>Purpose</dt><dd>Introduce voice as a practical pipeline rather than a magical conversational surface.</dd></div>
           <div><dt>Say</dt><dd>“Voice changes latency, accessibility, and social presence. It also creates another model output—the transcript—that can quietly alter everything downstream.”</dd></div>
@@ -925,7 +968,7 @@ Exact field accuracy: 6/20 (30%)</pre></div>
         <ol class="voice-pipeline"><li><span>1</span><strong>Consent</strong><p>Purpose, storage, access.</p></li><li><span>2</span><strong>Audio</strong><p>Accents, noise, speakers.</p></li><li><span>3</span><strong>Transcript</strong><p>Names, numbers, negation.</p></li><li><span>4</span><strong>Memo</strong><p>Themes, actions, tensions.</p></li><li><span>5</span><strong>Review</strong><p>Correct before use.</p></li></ol>
         <div class="voice-boundaries"><article><b>Recorded file</b><p>Upload once, transcribe, then analyze. This lab.</p></article><article><b>Realtime voice</b><p>Stream audio and partial transcripts with lower latency. Extension.</p></article><article class="privacy-boundary"><b>Privacy boundary</b><p>Collect only what you are authorized to process.</p></article></div>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 41">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 42">
         <p class="notes-label">Presenter notes</p><dl>
           <div><dt>Purpose</dt><dd>Distinguish recorded transcription from realtime systems and integrate privacy into the architecture.</dd></div>
           <div><dt>Say</dt><dd>“The demo transcript is fictional. If you use a real recording, consent and institutional policy come before API convenience.”</dd></div>
@@ -942,7 +985,7 @@ Exact field accuracy: 6/20 (30%)</pre></div>
         <ol class="memo-checks"><li><span>01</span>Correct one transcript detail.</li><li><span>02</span>Separate observation from synthesis.</li><li><span>03</span>Search every quoted line.</li><li><span>04</span>Delete one overconfident inference.</li></ol>
         <a class="lab-slide-link" href="../labs/04_voice_copilot/README.md" target="_blank">Open Lab 04 instructions ↗</a>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 42">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 43">
         <p class="notes-label">Presenter notes</p><dl>
           <div><dt>Purpose</dt><dd>Make auditability—not summary fluency—the output of the voice exercise.</dd></div>
           <div><dt>Do</dt><dd>Use the fictional transcript by default. Only invite personal recordings if participants have meaningful consent and no sensitive content.</dd></div>
@@ -960,7 +1003,7 @@ Exact field accuracy: 6/20 (30%)</pre></div>
         <div class="recovery-gates"><span>listen again</span><i>→</i><span>correct transcript</span><i>→</i><span>verify quote</span><i>→</i><span>human approval</span></div>
         <p class="takeaway-line">Later fluency cannot repair an earlier corrupted record.</p>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 43">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 44">
         <p class="notes-label">Presenter notes</p><dl>
           <div><dt>Purpose</dt><dd>Show why intermediate artifacts and review gates matter in multi-model pipelines.</dd></div>
           <div><dt>Say</dt><dd>“If the transcript loses the word ‘not,’ the summary model may faithfully amplify the wrong input. We need the ability to return to the recording.”</dd></div>
@@ -978,7 +1021,7 @@ Exact field accuracy: 6/20 (30%)</pre></div>
         <p class="practice-question">Write one input, one output, one failure test, and one human approval for a workflow in your field.</p>
         <a class="lab-slide-link light-link" href="../labs/index.html" target="_blank">Return to the complete lab kit ↗</a>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 44">
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 45">
         <p class="notes-label">Presenter notes</p><dl>
           <div><dt>Purpose</dt><dd>Convert the four cases into a reusable project-design template.</dd></div>
           <div><dt>Do</dt><dd>Give students two silent minutes to write their four-part workflow. Then ask them to exchange it with someone from another discipline and identify one hidden assumption.</dd></div>

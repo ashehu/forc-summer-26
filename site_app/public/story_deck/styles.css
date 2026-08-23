@@ -598,6 +598,166 @@ p {
   opacity: 0.72;
 }
 
+.training-layout {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 28px 48px;
+  align-items: center;
+}
+
+.training-heading,
+.deep-learning-bridge {
+  grid-column: 1 / -1;
+}
+
+.training-heading h2 {
+  max-width: 1060px;
+  font-size: clamp(3.1rem, 5.2vw, 5.2rem);
+}
+
+.toy-data table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.toy-data caption {
+  padding-bottom: 10px;
+  color: var(--coral);
+  font-size: 0.73rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.toy-data th,
+.toy-data td {
+  padding: 11px 9px;
+  border-bottom: 1px solid rgba(16, 42, 51, 0.18);
+  text-align: left;
+}
+
+.toy-data th {
+  color: rgba(16, 42, 51, 0.62);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.toy-data td {
+  font-size: 0.88rem;
+  font-weight: 750;
+}
+
+.toy-data th:last-child,
+.toy-data td:last-child {
+  color: var(--coral);
+  font-weight: 900;
+}
+
+.toy-data > p {
+  margin: 14px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.82rem;
+}
+
+.toy-data > p span,
+.toy-data > p b {
+  font-weight: 900;
+}
+
+.learning-example {
+  padding-left: 30px;
+  border-left: 1px solid rgba(16, 42, 51, 0.2);
+}
+
+.case-label {
+  margin: 0 0 9px;
+  color: var(--coral);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.input-vector {
+  display: block;
+  font-size: clamp(1.45rem, 2.5vw, 2.3rem);
+  font-weight: 800;
+}
+
+.learning-example > small {
+  display: block;
+  margin-top: 5px;
+  color: rgba(16, 42, 51, 0.62);
+  font-size: 0.72rem;
+}
+
+.weight-equation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  font-weight: 850;
+}
+
+.weight-equation span {
+  padding-bottom: 3px;
+  border-bottom: 2px solid var(--teal);
+}
+
+.weight-equation i {
+  color: var(--coral);
+  font-style: normal;
+}
+
+.weight-equation strong {
+  margin-left: 3px;
+  color: var(--coral);
+  font-family: var(--serif);
+  font-size: 2rem;
+}
+
+.error-update {
+  margin-top: 20px;
+  padding: 15px 18px;
+  color: white;
+  background: var(--ink);
+  border-radius: 7px;
+}
+
+.error-update p,
+.error-update > strong {
+  margin: 0;
+}
+
+.error-update p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.84rem;
+}
+
+.error-update > strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--teal);
+  font-family: var(--serif);
+  font-size: 1.17rem;
+}
+
+.deep-learning-bridge {
+  margin: 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(16, 42, 51, 0.22);
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2vw, 1.72rem);
+}
+
+.deep-learning-bridge b:last-of-type {
+  color: var(--coral);
+}
+
 .definition-layout {
   display: grid;
   grid-template-columns: 1.02fr 0.98fr;
@@ -3435,6 +3595,22 @@ dialog::backdrop {
 
   .instructor-context a {
     width: max-content;
+  }
+
+  .training-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .training-heading,
+  .deep-learning-bridge {
+    grid-column: auto;
+  }
+
+  .learning-example {
+    padding-top: 22px;
+    padding-left: 0;
+    border-top: 1px solid rgba(16, 42, 51, 0.2);
+    border-left: 0;
   }
 
   .lab-roadmap-layout,
