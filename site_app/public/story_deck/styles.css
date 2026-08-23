@@ -398,10 +398,11 @@ p {
 
 .history-slide .history-grid {
   gap: 15px;
-  margin-top: 18px;
+  margin-top: 12px;
 }
 
 .history-grid figure {
+  position: relative;
   margin: 0;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -419,7 +420,7 @@ p {
 }
 
 .history-slide .history-grid img {
-  height: clamp(155px, 25svh, 220px);
+  height: clamp(190px, 31svh, 265px);
   aspect-ratio: auto;
 }
 
@@ -443,7 +444,11 @@ p {
 }
 
 .history-slide .history-grid figcaption {
-  padding: 10px 13px 12px;
+  position: absolute;
+  inset: auto 0 0;
+  padding: 36px 13px 12px;
+  color: white;
+  background: linear-gradient(0deg, rgba(7, 29, 35, 0.94), rgba(7, 29, 35, 0.74) 62%, transparent);
 }
 
 .history-grid strong {
@@ -461,6 +466,7 @@ p {
 }
 
 .history-slide .history-grid span {
+  color: rgba(255, 255, 255, 0.78);
   font-size: 0.8rem;
 }
 
@@ -3621,16 +3627,16 @@ dialog::backdrop {
   .history-slide .history-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 7px;
-    margin-top: 10px;
+    margin-top: 8px;
   }
 
   .history-slide .history-grid img {
-    height: clamp(96px, 18svh, 145px);
+    height: clamp(145px, 26svh, 205px);
     aspect-ratio: auto;
   }
 
   .history-slide .history-grid figcaption {
-    padding: 7px 6px 8px;
+    padding: 28px 6px 8px;
     text-align: center;
   }
 
