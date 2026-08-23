@@ -89,7 +89,7 @@
         </div>
         <div class="rule-compare">
           <article><span>Traditional software</span><code>if temperature &lt; 18° → turn heat on</code><p>A person writes the rule.</p></article>
-          <article class="learned"><span>Machine learning</span><code>examples + error → learned parameters</code><p>The system learns a mapping that works on new cases.</p></article>
+          <article class="learned"><span>Machine learning</span><code>temperature + weather + occupancy + history → predicted heating needed</code><p>The system learns from past comfort and energy outcomes.</p></article>
         </div>
         <p class="bridge dark-bridge"><b>That learned mapping is the core of modern AI.</b> Next, make the definition concrete.</p>
       </div>
@@ -97,8 +97,9 @@
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Establish the one distinction students need before hearing technical terms.</dd></div>
-          <div><dt>Say</dt><dd>“Old software is not bad; explicit rules are often preferable. Machine learning is useful when the rule is difficult to write but examples are available.”</dd></div>
-          <div><dt>Example</dt><dd>It is hard to write every visual rule for recognizing a cat. It is easier to provide many labeled images and optimize performance.</dd></div>
+          <div><dt>Say</dt><dd>“Both systems control heat. On the left, a person chooses one threshold. On the right, a model learns how much heating is needed from temperature, weather, occupancy, and the building’s recent behavior.”</dd></div>
+          <div><dt>Example</dt><dd>When it is 17°C indoors, −5°C outside, and the room will be occupied soon, the model predicts how much heating can reach comfort without wasting energy. It learns from historical inputs and measured outcomes.</dd></div>
+          <div><dt>Important nuance</dt><dd>Learned does not automatically mean better. If weather, occupancy, or the building changes, the learned relationship may fail.</dd></div>
           <div><dt>Transition</dt><dd>If AI is a learned mapping, what kinds of inputs and outputs can it connect?</dd></div>
         </dl>
       </aside>
