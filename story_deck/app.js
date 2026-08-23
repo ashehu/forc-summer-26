@@ -93,7 +93,20 @@
   });
 
   totalSlides.textContent = twoDigits(slides.length);
-  setActiveSlide(0);
+  const requestedSlideIndex = slides.findIndex((slide) => `#${slide.id}` === window.location.hash);
+  const initialSlideIndex = requestedSlideIndex >= 0 ? requestedSlideIndex : 0;
+  setActiveSlide(initialSlideIndex);
+  if (requestedSlideIndex >= 0) {
+    const positionRequestedSlide = () => window.setTimeout(() => {
+      slides[initialSlideIndex].scrollIntoView({ block: "start" });
+      setActiveSlide(initialSlideIndex);
+    }, 0);
+    if (document.readyState === "complete") {
+      positionRequestedSlide();
+    } else {
+      window.addEventListener("load", positionRequestedSlide, { once: true });
+    }
+  }
 
   previousButton.addEventListener("click", () => goToSlide(activeIndex - 1));
   nextButton.addEventListener("click", () => goToSlide(activeIndex + 1));
