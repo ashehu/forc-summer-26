@@ -1110,32 +1110,48 @@ p {
   color: rgba(16, 42, 51, 0.74);
 }
 
-.attention-example {
+.attention-contrast {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 4px 9px;
-  width: max-content;
-  max-width: 100%;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.attention-example {
   padding: 14px 17px;
   border-left: 4px solid var(--coral);
   background: rgba(255, 255, 255, 0.07);
 }
 
-.attention-example span,
 .attention-example p {
   margin: 0;
   font-family: var(--serif);
-  font-size: 1.22rem;
+  font-size: clamp(1rem, 1.55vw, 1.22rem);
 }
 
-.attention-example span,
-.attention-example b {
+.attention-example mark {
   color: var(--teal);
+  background: transparent;
+  font-weight: 700;
+}
+
+.attention-example p b {
+  color: var(--coral);
+}
+
+.attention-example em {
+  color: white;
+  font-style: normal;
+  border-bottom: 2px solid var(--teal);
 }
 
 .attention-example small {
-  grid-column: 1 / -1;
+  display: block;
+  margin-top: 7px;
   color: rgba(255, 255, 255, 0.64);
+}
+
+.attention-example small b {
+  color: rgba(255, 255, 255, 0.84);
 }
 
 .equation-layout {
@@ -3813,6 +3829,10 @@ dialog::backdrop {
   .example-grid article {
     grid-template-rows: 92px auto;
     min-height: 160px;
+  }
+
+  .attention-contrast {
+    grid-template-columns: 1fr;
   }
 
   .llm-flow {

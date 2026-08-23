@@ -244,7 +244,10 @@
           <article><span>03</span><strong>Attend</strong><p>Mix relevant context.</p></article><i>→</i>
           <article class="accent"><span>04</span><strong>Score</strong><p>Choose a likely next token.</p></article><i>↻</i>
         </div>
-        <div class="attention-example"><span>The animal</span><p>didn’t cross the street because <b>it</b> was tired.</p><small>Attention helps “it” draw more information from “the animal” than “the street.”</small></div>
+        <div class="attention-contrast" aria-label="Two sentences where context changes what the pronoun it refers to">
+          <div class="attention-example"><p>The <mark>animal</mark> didn’t cross the street because <b>it</b> was <em>tired</em>.</p><small>“Tired” makes <b>it</b> point toward the animal.</small></div>
+          <div class="attention-example wide-example"><p>The animal didn’t cross <mark>the street</mark> because <b>it</b> was <em>wide</em>.</p><small>“Wide” makes <b>it</b> point toward the street.</small></div>
+        </div>
         <p class="bridge light-bridge"><b>The surprise:</b> repeating local predictions at huge scale produces useful language behavior.</p>
         <a class="source light-source" href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noreferrer">The Transformer paper · 2017 ↗</a>
       </div>
@@ -252,8 +255,9 @@
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Connect the toy score directly to language models and introduce attention only when it solves a visible problem.</dd></div>
-          <div><dt>Say</dt><dd>“The model does not look up a sentence. It builds contextual representations, scores possibilities, selects a token, and runs again.”</dd></div>
-          <div><dt>Clarify</dt><dd>Next-token prediction is the training objective, not a full explanation of every capability that emerges after scale and post-training.</dd></div>
+          <div><dt>Say</dt><dd>“The model does not look up a sentence. It builds contextual representations, scores possibilities, selects a token, and runs again. Notice that changing only ‘tired’ to ‘wide’ changes what ‘it’ most plausibly refers to.”</dd></div>
+          <div><dt>Ask</dt><dd>In the first sentence, what does “it” refer to? In the second? What single word caused your interpretation to change?</dd></div>
+          <div><dt>Clarify</dt><dd>Attention helps information move between contextual representations; it is not a guaranteed or fully transparent coreference explanation. Next-token prediction is the training objective, not a complete explanation of every capability after scale and post-training.</dd></div>
           <div><dt>Transition</dt><dd>The technology existed before most people felt its significance. The interface changed that.</dd></div>
         </dl>
       </aside>
