@@ -6,3 +6,9 @@ one_page_course_concept.html
 assets/images/ai-frontier.jpg
 assets/images/future-near-term-v2.jpg
 assets/images/future-robotics-v2.jpg
+
+# Local course-lab environments, secrets, caches, and generated artifacts.
+.env
+labs/.venv/
+labs/**/__pycache__/
+labs/**/output/

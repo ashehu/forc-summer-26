@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="430" viewBox="0 0 700 430" role="img" aria-labelledby="chartTitle chartDescription">
+  <title id="chartTitle">Mean score gain within starting track</title>
+  <desc id="chartDescription">AI users have higher average gains than non-users within both Advanced and Foundation tracks.</desc>
+  <style>text{font-family:Arial,sans-serif;fill:#102a33}.title{font-size:22px;font-weight:700}.label{font-size:14px}.value{font-size:16px;font-weight:700}.group{font-size:17px;font-weight:700}</style>
+  <rect width="700" height="430" fill="#f3eee3"/>
+  <text x="40" y="42" class="title">Mean score gain within starting track</text>
+  <line x1="70" y1="330" x2="630" y2="330" stroke="#102a33" stroke-width="2"/>
+  <rect x="120" y="276" width="78" height="54" rx="6" fill="#75c9bd"/>
+  <text x="159" y="266" text-anchor="middle" class="value">3.0</text>
+  <text x="159" y="356" text-anchor="middle" class="label">AI no</text>
+  <rect x="230" y="213" width="78" height="117" rx="6" fill="#ed6a46"/>
+  <text x="269" y="203" text-anchor="middle" class="value">6.5</text>
+  <text x="269" y="356" text-anchor="middle" class="label">AI yes</text>
+  <rect x="420" y="114" width="78" height="216" rx="6" fill="#75c9bd"/>
+  <text x="459" y="104" text-anchor="middle" class="value">12.0</text>
+  <text x="459" y="356" text-anchor="middle" class="label">AI no</text>
+  <rect x="530" y="33" width="78" height="297" rx="6" fill="#ed6a46"/>
+  <text x="569" y="23" text-anchor="middle" class="value">16.5</text>
+  <text x="569" y="356" text-anchor="middle" class="label">AI yes</text>
+  <text x="214" y="397" text-anchor="middle" class="group">Advanced</text>
+  <text x="514" y="397" text-anchor="middle" class="group">Foundation</text>
+</svg>

@@ -1,0 +1,8 @@
+Document A17 — Commuter writing study
+
+Population: 84 first-year master's students who commuted at least three days per week.
+Design: randomized two-group field experiment.
+n = 84.
+Finding: Students offered a quiet campus writing room submitted 18 percent more weekly drafts than students offered the usual shared space.
+Limitation: The study ran for six weeks at one urban university and did not measure writing quality.
+

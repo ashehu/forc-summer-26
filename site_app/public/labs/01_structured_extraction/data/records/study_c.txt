@@ -1,0 +1,4 @@
+Study note C22: peer-methods clinic
+
+Thirty-two doctoral candidates attended a weekly peer-methods clinic; another thirty candidates joined a wait-list comparison group. This was a non-randomized matched cohort study (total N: 62). At the end of eight weeks, clinic participants were more likely to submit a preregistration, but the groups did not differ in self-rated research confidence. Students chose whether to attend, so unmeasured motivation could explain part of the difference.
+

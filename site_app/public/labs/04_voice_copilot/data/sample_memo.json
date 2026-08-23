@@ -1,0 +1,30 @@
+{
+  "summary": "The participant found the clinic most useful when they arrived with one narrow research decision. Scheduling conflicts limited attendance, and the participant still wanted specialist review for a consequential modeling assumption.",
+  "themes": [
+    "Narrow questions produced more useful peer discussion",
+    "Evening scheduling conflicted with required studio work",
+    "Peer support complemented but did not replace specialist judgment"
+  ],
+  "decisions": [
+    "Retain the small-group format",
+    "Explore a remote session",
+    "Publish facilitator topics in advance"
+  ],
+  "action_items": [
+    {
+      "owner": "program team",
+      "task": "test an earlier or remote clinic session",
+      "due_date": "not stated"
+    }
+  ],
+  "tensions": [
+    "Remote access may improve attendance, but the interview does not show whether it preserves small-group quality",
+    "The clinic supported decision preparation but could not validate every technical assumption"
+  ],
+  "evidence_quotes": [
+    "When I brought one model choice, we actually resolved it.",
+    "Tuesday evenings conflicted with our studio review, so I missed three sessions.",
+    "I still wanted a specialist for the final model, because the peer group could not tell whether one assumption was defensible."
+  ]
+}
+

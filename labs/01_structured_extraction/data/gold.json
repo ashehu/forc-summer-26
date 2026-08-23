@@ -1,0 +1,39 @@
+[
+  {
+    "document_id": "A17",
+    "population": "84 first-year master's students who commuted at least three days per week",
+    "method": "randomized two-group field experiment",
+    "sample_size": 84,
+    "main_finding": "Students offered a quiet campus writing room submitted 18 percent more weekly drafts than students offered the usual shared space",
+    "limitation": "The study ran for six weeks at one urban university and did not measure writing quality",
+    "evidence_quote": "Students offered a quiet campus writing room submitted 18 percent more weekly drafts than students offered the usual shared space."
+  },
+  {
+    "document_id": "B04",
+    "population": "twelve laboratory technicians from three university departments",
+    "method": "semi-structured interviews and thematic coding",
+    "sample_size": 12,
+    "main_finding": "Participants most often described uncertainty about who owned a repair request",
+    "limitation": "Because supervisors recruited the participants, technicians with negative experiences may have declined to take part",
+    "evidence_quote": "Participants most often described uncertainty about who owned a repair request."
+  },
+  {
+    "document_id": "C22",
+    "population": "doctoral candidates in a weekly peer-methods clinic and a wait-list comparison group",
+    "method": "non-randomized matched cohort study",
+    "sample_size": 62,
+    "main_finding": "Clinic participants were more likely to submit a preregistration, but the groups did not differ in self-rated research confidence",
+    "limitation": "Students chose whether to attend, so unmeasured motivation could explain part of the difference",
+    "evidence_quote": "At the end of eight weeks, clinic participants were more likely to submit a preregistration, but the groups did not differ in self-rated research confidence."
+  },
+  {
+    "document_id": "D09",
+    "population": "graduate students from the schools of design, public health, and engineering",
+    "method": "four-week alternating-condition office-hours pilot",
+    "sample_size": null,
+    "main_finding": "Booking logs suggested shorter median wait times during on-demand weeks",
+    "limitation": "The short alternating schedule may have introduced carryover between conditions",
+    "evidence_quote": "Booking logs suggested shorter median wait times during on-demand weeks."
+  }
+]
+

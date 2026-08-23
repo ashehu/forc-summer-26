@@ -1,0 +1,990 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A student-facing introduction and practical AI lab sequence: from rules and learned patterns to language models, grounded systems, agents, voice, evidence, and trustworthy AI-assisted work.">
+  <meta name="theme-color" content="#102a33">
+  <title>AI: From Rules to Real-World Agents</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#slide-1">Skip to slides</a>
+
+  <header class="chrome" aria-label="Presentation controls">
+    <a class="brand" href="#slide-1"><span aria-hidden="true"></span>AI · A simpler story</a>
+    <div class="position" aria-live="polite">
+      <b id="currentSlide">01</b><i>/</i><b id="totalSlides">23</b>
+      <span id="currentTitle">The story in one sentence</span>
+    </div>
+    <div class="controls">
+      <button id="toggleNotes" type="button" aria-pressed="false">Notes</button>
+      <button id="openOverview" type="button">Overview</button>
+      <button id="previousSlide" type="button" aria-label="Previous slide">←</button>
+      <button id="nextSlide" type="button" aria-label="Next slide">→</button>
+    </div>
+    <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+  </header>
+
+  <nav class="dots" id="slideDots" aria-label="Slide navigation"></nav>
+
+  <main class="deck">
+    <section class="slide hero dark" id="slide-1" data-title="The story in one sentence" data-time="00:00–01:00" aria-labelledby="title-1">
+      <img class="full-image" src="../assets/images/automation-machine-hall.jpg" alt="" width="1672" height="941" fetchpriority="high">
+      <div class="image-shade" aria-hidden="true"></div>
+      <div class="slide-content hero-content">
+        <p class="eyebrow">The whole story</p>
+        <h1 id="title-1">Machines followed rules.<br>AI learned patterns.<br><em>Agents can now act.</em></h1>
+        <p class="lead">One idea changes throughout the deck: what happens when predictions are connected to tools and feedback?</p>
+        <div class="story-thread" aria-label="Story progression"><span>rules</span><i>→</i><span>patterns</span><i>→</i><span>predictions</span><i>→</i><span>actions</span></div>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 1">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Give students the entire narrative before introducing details.</dd></div>
+          <div><dt>Say</dt><dd>“There are many definitions and technologies in AI. Today I want to tell one simple story: rules became learned predictions, and predictions are now being connected to actions.”</dd></div>
+          <div><dt>Ask</dt><dd>What is one decision or action you would—and would not—delegate to a machine?</dd></div>
+          <div><dt>Transition</dt><dd>To understand what changed, begin with what machines were already doing long before AI.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide paper history-slide" id="slide-2" data-title="Before AI" data-time="01:00–02:30" aria-labelledby="title-2">
+      <div class="slide-content">
+        <p class="eyebrow">Before AI</p>
+        <h2 id="title-2">We learned to automate power, motion, and instructions.</h2>
+        <div class="history-grid">
+          <figure><img src="../assets/images/watermill.jpg" alt="A wooden waterwheel powering a mill" width="1536" height="1024" loading="lazy"><figcaption><strong>Power</strong><span>Water replaces muscle.</span></figcaption></figure>
+          <figure><img src="../assets/images/automation-machine-hall.jpg" alt="A large steam engine in a machine hall" width="1672" height="941" loading="lazy"><figcaption><strong>Motion</strong><span>Machines repeat work.</span></figcaption></figure>
+          <figure><img src="../assets/images/jacquard-loom.jpg" alt="A Jacquard loom controlled by punched cards" width="1536" height="1024" loading="lazy"><figcaption><strong>Instructions</strong><span>Cards control action.</span></figcaption></figure>
+        </div>
+        <p class="bridge"><b>But:</b> people still had to specify the mechanism or procedure.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 2">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Place AI inside the longer history of automation without giving a long history lecture.</dd></div>
+          <div><dt>Say</dt><dd>“The waterwheel automated power. Steam made motion portable. The loom is especially important: instructions began controlling a machine.”</dd></div>
+          <div><dt>Why it matters</dt><dd>Students see that AI is not the first automation wave. The new part is how instructions are produced.</dd></div>
+          <div><dt>Transition</dt><dd>Traditional machines and software follow procedures. Machine learning changes where the procedure comes from.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide coral" id="slide-3" data-title="The key change" data-time="02:30–04:00" aria-labelledby="title-3">
+      <div class="slide-content split-heading">
+        <div>
+          <p class="eyebrow">The key change</p>
+          <h2 id="title-3">We stopped writing every rule.</h2>
+          <p class="lead dark-lead">Instead, we gave the system examples and a way to measure error.</p>
+        </div>
+        <div class="rule-compare">
+          <article><span>Traditional software</span><code>if temperature &lt; 18° → turn heat on</code><p>A person writes the rule.</p></article>
+          <article class="learned"><span>Machine learning</span><code>examples + error → learned parameters</code><p>The system learns a mapping that works on new cases.</p></article>
+        </div>
+        <p class="bridge dark-bridge"><b>That learned mapping is the core of modern AI.</b> Next, make the definition concrete.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 3">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Establish the one distinction students need before hearing technical terms.</dd></div>
+          <div><dt>Say</dt><dd>“Old software is not bad; explicit rules are often preferable. Machine learning is useful when the rule is difficult to write but examples are available.”</dd></div>
+          <div><dt>Example</dt><dd>It is hard to write every visual rule for recognizing a cat. It is easier to provide many labeled images and optimize performance.</dd></div>
+          <div><dt>Transition</dt><dd>If AI is a learned mapping, what kinds of inputs and outputs can it connect?</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide lime" id="slide-4" data-title="What is AI?" data-time="04:00–05:30" aria-labelledby="title-4">
+      <div class="slide-content definition-layout">
+        <div>
+          <p class="eyebrow">A practical definition</p>
+          <h2 id="title-4">AI infers an output from an input.</h2>
+          <p class="definition">It might predict, generate, recommend, decide—or choose an action.</p>
+        </div>
+        <div class="example-grid">
+          <article><span>leaf photo</span><i>→</i><strong>disease label</strong></article>
+          <article><span>long paper</span><i>→</i><strong>summary</strong></article>
+          <article><span>experiment history</span><i>→</i><strong>next candidate</strong></article>
+          <article class="agent-example"><span>goal + tools</span><i>→</i><strong>sequence of actions</strong></article>
+        </div>
+        <p class="boundary"><b>The label “AI” does not tell us</b> whether a system is conscious, reliable, fair, or autonomous.</p>
+        <a class="source" href="https://www.oecd.org/en/publications/explanatory-memorandum-on-the-updated-oecd-definition-of-an-ai-system_623da898-en.html" target="_blank" rel="noreferrer">Adapted from the OECD AI-system definition ↗</a>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 4">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Replace a philosophical definition with a functional one students can reuse.</dd></div>
+          <div><dt>Say</dt><dd>“Ask four questions: what enters, what is inferred, what comes out, and what can that output affect?”</dd></div>
+          <div><dt>Why it matters</dt><dd>The same definition covers classifiers, generative AI, recommendations, and agents without pretending they are identical.</dd></div>
+          <div><dt>Transition</dt><dd>Modern generative AI became possible through a small number of important milestones.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide paper timeline-slide" id="slide-5" data-title="How we arrived here" data-time="05:30–07:30" aria-labelledby="title-5">
+      <img class="timeline-photo" src="../assets/images/early-computing-lab.jpg" alt="Researchers working around an early room-sized computer" width="1672" height="941" loading="lazy">
+      <div class="timeline-shade" aria-hidden="true"></div>
+      <div class="slide-content timeline-content">
+        <p class="eyebrow">How we arrived here</p>
+        <h2 id="title-5">Five moments are enough for today.</h2>
+        <ol class="milestones">
+          <li><time>1950s</time><strong>The ambition</strong><span>Can machines appear intelligent?</span></li>
+          <li><time>2012</time><strong>Deep learning</strong><span>Data + GPUs + large networks.</span></li>
+          <li><time>2017</time><strong>Transformer</strong><span>Attention makes sequence learning scale.</span></li>
+          <li><time>2022</time><strong>ChatGPT</strong><span>Capability becomes conversational.</span></li>
+          <li><time>Now</time><strong>Agents</strong><span>Models gain tools and feedback.</span></li>
+        </ol>
+        <p class="bridge light-bridge"><b>Next:</b> the mathematics is simpler than the scale suggests.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 5">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Give historical orientation without creating a disconnected chronology.</dd></div>
+          <div><dt>Say</dt><dd>“The ambition is old. Deep learning supplied representations, the Transformer supplied a scalable language architecture, ChatGPT supplied an interface, and agents supply action.”</dd></div>
+          <div><dt>Do not dwell on</dt><dd>Names, benchmark scores, or every AI winter. Offer those only if students ask.</dd></div>
+          <div><dt>Transition</dt><dd>Before language models, show the smallest possible learned scoring operation.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide paper" id="slide-6" data-title="The math in one example" data-time="07:30–10:00" aria-labelledby="title-6">
+      <div class="slide-content math-layout">
+        <div>
+          <p class="eyebrow">Linear algebra, made small</p>
+          <h2 id="title-6">A dot product is a weighted score.</h2>
+          <p class="lead-small">Our toy model scores three clues for the next word.</p>
+        </div>
+        <div class="toy-board">
+          <p class="sentence">The cat sat on the <b>_____</b></p>
+          <div class="weights"><span><b>2</b> grammar</span><span><b>1</b> familiar phrase</span><span><b>3</b> meaning</span></div>
+          <div class="candidates" role="group" aria-label="Choose a candidate word">
+            <button type="button" data-score data-word="mat" data-vector="[1, 1, 1]" data-score-value="6" data-explanation="It fits the grammar, familiar phrase, and situation." aria-pressed="true"><strong>mat</strong><code>[1, 1, 1]</code><span>6</span></button>
+            <button type="button" data-score data-word="floor" data-vector="[1, 0, 1]" data-score-value="5" data-explanation="It is grammatical and sensible, but the phrase is less expected." aria-pressed="false"><strong>floor</strong><code>[1, 0, 1]</code><span>5</span></button>
+            <button type="button" data-score data-word="policy" data-vector="[1, 0, 0]" data-score-value="2" data-explanation="It can follow “the,” but does not fit the phrase or situation." aria-pressed="false"><strong>policy</strong><code>[1, 0, 0]</code><span>2</span></button>
+          </div>
+          <div class="calculation"><code id="scoreFormula">[1, 1, 1] · [2, 1, 3] = 6</code><p id="scoreExplanation">It fits the grammar, familiar phrase, and situation.</p></div>
+        </div>
+        <p class="caveat">This is a teaching model. Real networks learn their own distributed features and repeat operations like this across many layers.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 6">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Remove the mystery from “linear algebra” without pretending the real system is this small.</dd></div>
+          <div><dt>Say</dt><dd>“A vector is simply a list of numbers. A dot product multiplies corresponding numbers and adds them. The result is a score.”</dd></div>
+          <div><dt>Do</dt><dd>Click each candidate. Ask students why “floor” is close and “policy” is not. Emphasize that the weights determine what matters.</dd></div>
+          <div><dt>Transition</dt><dd>An LLM performs far richer versions of scoring, selects a token, and repeats.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide dark" id="slide-7" data-title="How an LLM uses the idea" data-time="10:00–12:00" aria-labelledby="title-7">
+      <div class="slide-content llm-layout">
+        <div>
+          <p class="eyebrow">Scale the idea</p>
+          <h2 id="title-7">An LLM scores what comes next—using context.</h2>
+        </div>
+        <div class="llm-flow" aria-label="Language model loop">
+          <article><span>01</span><strong>Tokenize</strong><p>Break text into chunks.</p></article><i>→</i>
+          <article><span>02</span><strong>Represent</strong><p>Turn chunks into vectors.</p></article><i>→</i>
+          <article><span>03</span><strong>Attend</strong><p>Mix relevant context.</p></article><i>→</i>
+          <article class="accent"><span>04</span><strong>Score</strong><p>Choose a likely next token.</p></article><i>↻</i>
+        </div>
+        <div class="attention-example"><span>The animal</span><p>didn’t cross the street because <b>it</b> was tired.</p><small>Attention helps “it” draw more information from “the animal” than “the street.”</small></div>
+        <p class="bridge light-bridge"><b>The surprise:</b> repeating local predictions at huge scale produces useful language behavior.</p>
+        <a class="source light-source" href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noreferrer">The Transformer paper · 2017 ↗</a>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 7">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Connect the toy score directly to language models and introduce attention only when it solves a visible problem.</dd></div>
+          <div><dt>Say</dt><dd>“The model does not look up a sentence. It builds contextual representations, scores possibilities, selects a token, and runs again.”</dd></div>
+          <div><dt>Clarify</dt><dd>Next-token prediction is the training objective, not a full explanation of every capability that emerges after scale and post-training.</dd></div>
+          <div><dt>Transition</dt><dd>The technology existed before most people felt its significance. The interface changed that.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide coral" id="slide-8" data-title="Why ChatGPT changed perception" data-time="12:00–13:30" aria-labelledby="title-8">
+      <div class="slide-content equation-layout">
+        <div>
+          <p class="eyebrow">The ChatGPT moment</p>
+          <h2 id="title-8">The felt breakthrough was a combination.</h2>
+        </div>
+        <div class="equation">
+          <article><span>Pretraining</span><strong>broad patterns</strong></article><i>+</i>
+          <article><span>Post-training</span><strong>follow intent</strong></article><i>+</i>
+          <article><span>Chat</span><strong>zero learning curve</strong></article><i>=</i>
+          <article class="result"><span>Experience</span><strong>general capability through language</strong></article>
+        </div>
+        <p class="bridge dark-bridge"><b>Then the next shift:</b> connect the model to search, files, code, browsers, and other tools.</p>
+        <a class="source" href="https://openai.com/index/chatgpt/" target="_blank" rel="noreferrer">Introducing ChatGPT · 2022 ↗</a>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 8">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Explain why 2022 felt sudden even though it was built on years of research.</dd></div>
+          <div><dt>Say</dt><dd>“Pretraining created broad capability. Post-training made interaction more useful. Chat removed the manual. Together they changed public perception.”</dd></div>
+          <div><dt>Why it matters</dt><dd>Students learn that product design and interfaces can be as historically consequential as an architecture.</dd></div>
+          <div><dt>Transition</dt><dd>A chatbot returns an answer. An agent can take another step and inspect what happened.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide agent-slide" id="slide-9" data-title="What an agent adds" data-time="13:30–16:00" aria-labelledby="title-9">
+      <img class="full-image" src="../assets/images/agentic-ai-now-v2.jpg" alt="A researcher reviewing work across a laptop and external monitor" width="1672" height="941" loading="lazy">
+      <div class="image-shade" aria-hidden="true"></div>
+      <div class="slide-content agent-content">
+        <div>
+          <p class="eyebrow">From answers to work</p>
+          <h2 id="title-9">An agent is a model inside a tool-using feedback loop.</h2>
+        </div>
+        <div class="research-task">
+          <p class="task"><span>Example goal</span>“Map the evidence on how heat affects sleep.”</p>
+          <ol><li>Plan questions</li><li>Search sources</li><li>Read and compare</li><li>Draft with citations</li><li>Ask for judgment</li></ol>
+          <div class="ownership"><p><b>Agent:</b> execution and iteration</p><p><b>Researcher:</b> question, standards, final judgment</p></div>
+        </div>
+        <p class="bridge light-bridge"><b>Same model, new consequence:</b> its output changes the environment it sees next.</p>
+        <a class="source light-source" href="https://www.anthropic.com/research/trustworthy-agents" target="_blank" rel="noreferrer">Agent anatomy and human control · 2026 ↗</a>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 9">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Make “agentic AI” concrete through work graduate students already understand.</dd></div>
+          <div><dt>Say</dt><dd>“The agent plans, uses tools, observes results, and adapts. The key is not autonomy for its own sake; it is a loop that can make progress.”</dd></div>
+          <div><dt>Emphasize</dt><dd>The researcher still owns the question, inclusion criteria, evidentiary standard, interpretation, and final claim.</dd></div>
+          <div><dt>Transition</dt><dd>So far the environment is digital. Now pause, then move the same loop into the physical world.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide visual-break" id="slide-10" data-title="A real humanoid at work" data-time="16:00–16:20" aria-labelledby="title-10">
+      <h2 class="visually-hidden" id="title-10">A real humanoid robot working in regular warehouse operations</h2>
+      <img src="../assets/images/digit-gxo-real-deployment.jpeg" alt="Agility Robotics' Digit humanoid handling a tote at a GXO warehouse" width="1500" height="844" loading="lazy">
+      <a class="visual-credit" href="https://www.agilityrobotics.com/content/digit-deployed-at-gxo-in-historic-humanoid-raas-agreement" target="_blank" rel="noreferrer">Real deployment · Digit at GXO · Agility Robotics, 2024 ↗</a>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 10">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Create a visual break—and replace imagined futures with documented physical AI.</dd></div>
+          <div><dt>Do</dt><dd>Stop speaking for three to five seconds. Let the image establish the new scale.</dd></div>
+          <div><dt>Then say</dt><dd>“This is not a generated image. Digit is handling totes as part of regular operations at a GXO warehouse near Atlanta.”</dd></div>
+          <div><dt>Transition</dt><dd>Watch the robot work, then distinguish a demonstration from a deployment.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide paper evidence-slide" id="slide-11" data-title="What exists now" data-time="16:20–17:30" aria-labelledby="title-11">
+      <div class="slide-content evidence-layout">
+        <div class="evidence-heading">
+          <p class="eyebrow">Reality check</p>
+          <h2 id="title-11">A real robot is impressive. The evidence level matters.</h2>
+        </div>
+        <div class="video-frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/AJpTpUqjgrY?rel=0&amp;modestbranding=1" title="Digit's first day of work at GXO, official Agility Robotics video" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="evidence-card">
+          <ol class="evidence-levels">
+            <li><span>01</span><div><strong>Demo</strong><p>Capability shown in controlled conditions.</p></div></li>
+            <li><span>02</span><div><strong>Pilot</strong><p>A task tested at a real job site.</p></div></li>
+            <li class="current"><span>03</span><div><strong>Deployment</strong><p>Regular operations, repeated work, measurable output.</p></div></li>
+          </ol>
+          <p class="evidence-fact"><b>This case:</b> Digit unloads totes from mobile robots and places them on a conveyor at a GXO facility.</p>
+        </div>
+        <div class="more-footage" aria-label="More official robotics footage">
+          <span>Official footage:</span>
+          <a href="https://www.agilityrobotics.com/videos/digits-first-day-of-work-at-gxo" target="_blank" rel="noreferrer">Open Digit video ↗</a>
+          <a href="https://www.ubtrobot.com/en/humanoid/application-scenarios" target="_blank" rel="noreferrer">China · UBTECH Walker in factories ↗</a>
+          <a href="https://www.figure.ai/news/production-at-bmw" target="_blank" rel="noreferrer">US · Figure at BMW ↗</a>
+        </div>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 11">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Show real footage while teaching students how to evaluate robotics claims.</dd></div>
+          <div><dt>Do</dt><dd>Play 30–45 seconds. Ask students what the robot senses, decides, and physically changes.</dd></div>
+          <div><dt>Say</dt><dd>“This is a bounded material-handling workflow in regular operations. That is more meaningful than a one-off demo—but it is not general human intelligence.”</dd></div>
+          <div><dt>Keep honest</dt><dd>The footage and deployment claims come from the manufacturer. Ask about intervention rates, throughput, downtime, safety, and comparison with simpler machines.</dd></div>
+          <div><dt>Transition</dt><dd>Use this real but narrow system as the baseline, then explore where similar loops could plausibly spread.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide world-slide farming" id="slide-12" data-title="Agents in farming" data-time="17:30–19:00" aria-labelledby="title-12">
+      <img class="full-image" src="../assets/images/future-farming-v3.jpg" alt="A farmer and crop scientist beside a plant-level agricultural robot" width="1672" height="941" loading="lazy">
+      <div class="image-shade" aria-hidden="true"></div>
+      <div class="slide-content world-content">
+        <p class="eyebrow">The same loop · farming</p>
+        <h2 id="title-12">Sense each plant. Decide. Act precisely. Learn.</h2>
+        <div class="world-loop"><span>see</span><i>→</i><span>decide</span><i>→</i><span>weed / water / treat</span><i>→</i><span>measure</span></div>
+        <p class="promise">The promise: more yield and resilience with less chemical, water, and repetitive labor.</p>
+        <a class="source light-source" href="https://www.deere.com/en-us/products-solutions/sprayers-and-applicators/see-spray" target="_blank" rel="noreferrer">Signal today: machine vision already targets individual weeds ↗</a>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 12">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Show that the abstract agent loop maps onto a tangible, socially important system.</dd></div>
+          <div><dt>Say</dt><dd>“The model sees plants, decides what needs attention, acts through equipment, and measures the result. The value comes from precision and continuous feedback.”</dd></div>
+          <div><dt>Keep honest</dt><dd>The image is a scenario visualization. Current systems already use machine vision for targeted spraying, but broad farm autonomy remains uneven.</dd></div>
+          <div><dt>Transition</dt><dd>Construction uses the same loop, but the environment changes constantly and mistakes carry greater physical risk.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide world-slide construction" id="slide-13" data-title="Agents in construction" data-time="19:00–20:30" aria-labelledby="title-13">
+      <img class="full-image" src="../assets/images/future-construction-v3.jpg" alt="A construction superintendent supervising equipment and a layout rover" width="1672" height="941" loading="lazy">
+      <div class="image-shade" aria-hidden="true"></div>
+      <div class="slide-content world-content">
+        <p class="eyebrow">The same loop · construction</p>
+        <h2 id="title-13">Read the plan. See the site. Coordinate work. Check progress.</h2>
+        <div class="world-loop"><span>plan</span><i>→</i><span>observe</span><i>→</i><span>coordinate</span><i>→</i><span>verify</span></div>
+        <p class="promise">The promise: safer worksites, less waste, and faster adaptation when reality differs from the plan.</p>
+        <a class="source light-source" href="https://www.cat.com/en_US/articles/ci-technology/cat_semi_autonomous_construction_equipment.html" target="_blank" rel="noreferrer">Signal today: semi-autonomous construction equipment · 2026 ↗</a>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 13">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Repeat the loop in a second domain so students see the general pattern.</dd></div>
+          <div><dt>Say</dt><dd>“A plan is not the site. An agentic system could continuously compare design, weather, equipment, and progress, then coordinate bounded actions.”</dd></div>
+          <div><dt>Emphasize</dt><dd>People set priorities, resolve exceptions, define safe operating limits, and remain responsible for consequential decisions.</dd></div>
+          <div><dt>Transition</dt><dd>Science uses the same feedback structure, but action takes the form of experiments.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide world-slide science" id="slide-14" data-title="Agents in science" data-time="20:30–22:30" aria-labelledby="title-14">
+      <img class="full-image" src="../assets/images/future-science-v3.jpg" alt="Two materials scientists examining a sample beside an enclosed robotic laboratory" width="1672" height="941" loading="lazy">
+      <div class="image-shade" aria-hidden="true"></div>
+      <div class="slide-content world-content">
+        <p class="eyebrow">The same loop · science</p>
+        <h2 id="title-14">Propose. Test. Measure. Revise.</h2>
+        <div class="world-loop"><span>hypothesis</span><i>→</i><span>experiment</span><i>→</i><span>measurement</span><i>→</i><span>revision</span></div>
+        <p class="promise">The promise: more experiments per question—and more time for scientists to interpret surprises.</p>
+        <a class="source light-source" href="https://deepmind.google/blog/co-scientist-a-multi-agent-ai-partner-to-accelerate-research/" target="_blank" rel="noreferrer">Signal today: multi-agent hypothesis generation and lab validation · 2026 ↗</a>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 14">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Show the most intellectually exciting version of the repeated loop.</dd></div>
+          <div><dt>Say</dt><dd>“Science already works through feedback. AI can help search a larger hypothesis space, coordinate tools, and tighten the cycle between idea and evidence.”</dd></div>
+          <div><dt>Keep honest</dt><dd>Generating a hypothesis is not discovering a fact. Physical experiments, peer review, replication, and scientific judgment remain essential.</dd></div>
+          <div><dt>Transition</dt><dd>Close by naming the single pattern connecting the entire presentation.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide closing" id="slide-15" data-title="The story to remember" data-time="22:30–25:00" aria-labelledby="title-15">
+      <img class="full-image" src="../assets/images/future-infrastructure-v2.jpg" alt="Engineers overlooking coastal water and energy infrastructure" width="1672" height="941" loading="lazy">
+      <div class="image-shade" aria-hidden="true"></div>
+      <div class="slide-content closing-content">
+        <p class="eyebrow">The story to remember</p>
+        <h2 id="title-15">AI becomes more consequential as the loop reaches further into the world.</h2>
+        <div class="takeaways">
+          <article><span>01</span><strong>AI</strong><p>learns a mapping from inputs to outputs.</p></article>
+          <article><span>02</span><strong>LLM</strong><p>predicts the next token using context and scale.</p></article>
+          <article><span>03</span><strong>Agent</strong><p>connects a model to tools, action, and feedback.</p></article>
+          <article><span>04</span><strong>Future</strong><p>depends on goals, permissions, evidence, and who benefits.</p></article>
+        </div>
+        <blockquote>The exciting possibility is not fewer people. It is greater human capacity to understand, build, discover, and repair.</blockquote>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 15">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Return to one coherent story and give students four sentences they can retain.</dd></div>
+          <div><dt>Say</dt><dd>Read the four cards slowly. Then: “Capability is only part of the system. Goals, permissions, feedback, institutions, and distribution determine what it becomes.”</dd></div>
+          <div><dt>Ask</dt><dd>Which domain would benefit most from a tighter sense–decide–act–learn loop? What evidence would convince you it is helping?</dd></div>
+          <div><dt>Close</dt><dd>“The future is not something AI delivers to us. It is a set of systems people choose to connect, constrain, evaluate, and govern.”</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide dark practice-bridge" id="slide-16" data-title="From answers to trustworthy work" data-time="25:00–27:00" aria-labelledby="title-16">
+      <div class="slide-content practice-bridge-content">
+        <p class="eyebrow">Part two · from capability to practice</p>
+        <h2 id="title-16">A fluent answer is not yet a good result.</h2>
+        <div class="trust-contrast">
+          <article><span>What the model can do</span><strong>Produce a plausible answer quickly.</strong></article>
+          <i>≠</i>
+          <article class="trustworthy"><span>What the work requires</span><strong>Evidence, relevance, uncertainty, and judgment.</strong></article>
+        </div>
+        <p class="practice-question">What is one task in your work where a plausible but incorrect answer would be dangerous?</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 16">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Reset the room after the future section and signal an immediate move into practice.</dd></div>
+          <div><dt>Say</dt><dd>“We have discussed what these systems are becoming. Now we will ask a more useful question: what work process turns model output into something we can responsibly use?”</dd></div>
+          <div><dt>Ask</dt><dd>Give students 30 seconds to think, then take two examples of tasks where confident errors would matter.</dd></div>
+          <div><dt>Transition</dt><dd>Introduce one research question that initially appears simple but contains several hidden choices.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide lime case-slide" id="slide-17" data-title="The case question" data-time="27:00–30:00" aria-labelledby="title-17">
+      <div class="slide-content case-layout">
+        <div>
+          <p class="eyebrow">A concrete case</p>
+          <h2 id="title-17">What does heat do to human sleep?</h2>
+          <p class="definition">The question sounds clear. It is not yet researchable.</p>
+        </div>
+        <div class="case-brief">
+          <p class="case-deliverable"><span>Desired result</span>A one-page evidence map for a research team—not medical advice.</p>
+          <dl>
+            <div><dt>Who?</dt><dd>All adults, older adults, workers, or one country?</dd></div>
+            <div><dt>Which heat?</dt><dd>Outdoor weather, bedroom temperature, daytime exposure, or heatwaves?</dd></div>
+            <div><dt>Which sleep?</dt><dd>Duration, onset, efficiency, stages, or self-reported quality?</dd></div>
+            <div><dt>For what?</dt><dd>Explanation, intervention, policy, or a new study?</dd></div>
+          </dl>
+        </div>
+        <p class="case-instruction"><b>Pair prompt · 45 seconds:</b> Choose one option from each row. Notice how much the question changes.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 17">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Show that underspecification begins before prompting and cannot be repaired by eloquent prose.</dd></div>
+          <div><dt>Do</dt><dd>Pairs choose a population, exposure, outcome, and intended use. Ask two pairs to read their resulting question aloud.</dd></div>
+          <div><dt>Say</dt><dd>“These are not merely prompt details. They determine which evidence is relevant and what conclusion is permissible.”</dd></div>
+          <div><dt>Transition</dt><dd>Before asking the model to work, define the characteristics of a good deliverable.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide coral quality-slide" id="slide-18" data-title="Define good first" data-time="30:00–34:00" aria-labelledby="title-18">
+      <div class="slide-content quality-layout">
+        <div>
+          <p class="eyebrow">Before the prompt</p>
+          <h2 id="title-18">Define “good” before requesting work.</h2>
+        </div>
+        <div class="quality-grid">
+          <article><span>01</span><strong>Scope</strong><p>The exact population, exposure, outcome, and use.</p></article>
+          <article><span>02</span><strong>Evidence</strong><p>Which designs and sources count—and why?</p></article>
+          <article><span>03</span><strong>Traceability</strong><p>Every important claim points to a real source.</p></article>
+          <article><span>04</span><strong>Uncertainty</strong><p>Limitations and disagreements remain visible.</p></article>
+          <article class="quality-human"><span>05</span><strong>Use</strong><p>A person can decide what the result does—and does not—justify.</p></article>
+        </div>
+        <p class="bridge dark-bridge"><b>The model can help negotiate the brief.</b> It should not silently invent the brief.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 18">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Give students evaluation criteria before showing them an answer.</dd></div>
+          <div><dt>Say</dt><dd>“Most prompt advice starts with phrasing. Start earlier: specify what success means. Without a target, neither the model nor the human evaluator knows what to optimize.”</dd></div>
+          <div><dt>Ask</dt><dd>Which criterion is easiest for an LLM to imitate without actually satisfying it? Traceability is a strong answer.</dd></div>
+          <div><dt>Transition</dt><dd>Now intentionally ignore this advice and see what a one-shot prompt produces.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide dark one-shot-slide" id="slide-19" data-title="The one-shot attempt" data-time="34:00–38:00" aria-labelledby="title-19">
+      <div class="slide-content one-shot-layout">
+        <div>
+          <p class="eyebrow">The tempting shortcut</p>
+          <h2 id="title-19">A weak brief can produce polished ambiguity.</h2>
+          <div class="prompt-line"><span>Prompt</span><code>Summarize the evidence on how heat affects sleep.</code></div>
+        </div>
+        <blockquote class="ai-answer" aria-label="Illustrative AI-generated answer">
+          <p><b>A</b> Research proves that warmer nights directly cause sleep loss worldwide.</p>
+          <p><b>B</b> Every 1°C increase reduces everyone’s sleep by about seven minutes.</p>
+          <p><b>C</b> Older adults and people in lower-income countries appear particularly affected.</p>
+          <p><b>D</b> Therefore, keeping every bedroom below 20°C will reliably solve the problem.</p>
+          <footer>Illustrative answer created for this exercise—not a quotation from a model or paper.</footer>
+        </blockquote>
+        <p class="challenge"><b>Do not fact-check yet.</b> Which words make you uneasy?</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 19">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Make students inspect language before seeing source material.</dd></div>
+          <div><dt>Do</dt><dd>Read the four sentences. Ask students to call out suspicious words: “proves,” “directly,” “every,” “everyone,” “therefore,” and “reliably.”</dd></div>
+          <div><dt>Clarify</dt><dd>The answer is deliberately constructed for teaching. Do not imply that a specific model generated it.</dd></div>
+          <div><dt>Transition</dt><dd>Move from intuition to evidence. Students will classify each statement after seeing what the studies actually support.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide paper audit-slide" id="slide-20" data-title="Audit the claims" data-time="38:00–44:00" aria-labelledby="title-20">
+      <div class="slide-content audit-layout">
+        <div>
+          <p class="eyebrow">Interactive claim audit</p>
+          <h2 id="title-20">Classify each claim before revealing the answer.</h2>
+          <p class="lead-small">Supported, reasonable inference, unsupported—or impossible to determine?</p>
+        </div>
+        <div class="audit-list">
+          <button type="button" data-audit data-verdict="Overclaim" data-tone="warning" data-explanation="Large observational studies support an association. Their design does not, by itself, prove a direct causal effect worldwide." aria-expanded="false"><span>A</span><p>Warmer nights directly cause sleep loss worldwide.</p><strong class="audit-verdict">Reveal</strong></button>
+          <button type="button" data-audit data-verdict="Unsupported" data-tone="danger" data-explanation="Effect estimates vary by study, temperature range, person, place, and outcome. The cited evidence does not support one universal seven-minute rule." aria-expanded="false"><span>B</span><p>Every 1°C rise costs everyone seven minutes of sleep.</p><strong class="audit-verdict">Reveal</strong></button>
+          <button type="button" data-audit data-verdict="Supported—with caution" data-tone="good" data-explanation="The global wearable study reported larger estimated effects among older adults and residents of lower-income countries. It remains an observational estimate." aria-expanded="false"><span>C</span><p>Some vulnerable groups appear more affected.</p><strong class="audit-verdict">Reveal</strong></button>
+          <button type="button" data-audit data-verdict="Unsupported prescription" data-tone="danger" data-explanation="The studies do not establish a universal bedroom threshold or show that one temperature will solve the problem for every population." aria-expanded="false"><span>D</span><p>Every bedroom should be kept below 20°C.</p><strong class="audit-verdict">Reveal</strong></button>
+        </div>
+        <div class="audit-result" id="auditResult" aria-live="polite"><strong id="auditProgress">0 of 4 claims reviewed</strong><p id="auditExplanation">Choose a claim to reveal its evidence judgment.</p></div>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 20">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Practice sentence-level evaluation rather than accepting or rejecting an answer as a whole.</dd></div>
+          <div><dt>Do</dt><dd>For each claim, ask for a show of hands before clicking. Invite one student to defend the strongest possible version of the claim.</dd></div>
+          <div><dt>Say</dt><dd>“Notice that sentence C is useful. The lesson is not that AI output is worthless. The lesson is that claims require different confidence and wording.”</dd></div>
+          <div><dt>Transition</dt><dd>Replace one-shot generation with a sequence that makes scope, sources, comparison, and verification visible.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide teal workflow-slide" id="slide-21" data-title="Build a supervised workflow" data-time="44:00–49:00" aria-labelledby="title-21">
+      <div class="slide-content workflow-layout">
+        <div>
+          <p class="eyebrow">From prompting to process</p>
+          <h2 id="title-21">Turn the answer into a supervised workflow.</h2>
+        </div>
+        <ol class="lab-workflow" aria-label="AI-assisted research workflow">
+          <li><span>01</span><strong>Brief</strong><p>Fix the question and deliverable.</p></li>
+          <li><span>02</span><strong>Plan</strong><p>Expose search and inclusion choices.</p></li>
+          <li><span>03</span><strong>Gather</strong><p>Collect real, accessible sources.</p></li>
+          <li><span>04</span><strong>Compare</strong><p>Separate design, sample, and measure.</p></li>
+          <li><span>05</span><strong>Draft</strong><p>Use calibrated claim language.</p></li>
+          <li><span>06</span><strong>Verify</strong><p>Open sources and check key claims.</p></li>
+        </ol>
+        <div class="better-prompt">
+          <div><span>Reusable starting prompt</span><button type="button" data-copy-prompt aria-label="Copy the reusable starting prompt">Copy</button></div>
+          <p id="researchPrompt">Before answering, propose a research plan. Define the population, exposure, outcomes, ambiguities, and inclusion criteria. Create an evidence table with source, design, sample, measure, finding, and limitation. Separate reported findings from your inference. Stop before the final conclusion for human review.</p>
+        </div>
+        <p class="human-gate"><b>Human gate:</b> approve the question → approve the evidence set → approve the final claim.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 21">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Give students a reusable alternative to one-shot prompting.</dd></div>
+          <div><dt>Say</dt><dd>“We are not making the prompt longer for its own sake. We are changing the unit of work from an answer to a sequence with observable checkpoints.”</dd></div>
+          <div><dt>Do</dt><dd>Copy the prompt and, if using a live model, ask only for the plan. Review its proposed definitions and criteria with the class before continuing.</dd></div>
+          <div><dt>Transition</dt><dd>Show what the comparison stage must preserve across three very different studies.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide paper evidence-table-slide" id="slide-22" data-title="Compare the evidence" data-time="49:00–53:00" aria-labelledby="title-22">
+      <div class="slide-content evidence-table-layout">
+        <div>
+          <p class="eyebrow">Evidence is not interchangeable</p>
+          <h2 id="title-22">Do not flatten different studies into one sentence.</h2>
+        </div>
+        <div class="study-grid">
+          <article>
+            <div class="study-head"><time>2017</time><strong>US survey</strong></div>
+            <p class="study-scale">765,000 respondents</p>
+            <dl><div><dt>Measures</dt><dd>Nighttime weather + self-reported insufficient sleep.</dd></div><div><dt>Supports</dt><dd>Warmer nighttime anomalies were associated with more insufficient sleep.</dd></div><div><dt>Cannot show alone</dt><dd>Bedroom exposure or definitive individual-level causality.</dd></div></dl>
+            <a href="https://doi.org/10.1126/sciadv.1601555" target="_blank" rel="noreferrer">Obradovich et al. ↗</a>
+          </article>
+          <article class="featured-study">
+            <div class="study-head"><time>2022</time><strong>Global wearables</strong></div>
+            <p class="study-scale">7M+ records · 47,628 people · 68 countries</p>
+            <dl><div><dt>Measures</dt><dd>Wearable-estimated sleep + local weather.</dd></div><div><dt>Supports</dt><dd>Higher nighttime temperatures were associated with shorter sleep and unequal effects.</dd></div><div><dt>Cannot show alone</dt><dd>A universal effect for every person or perfect sleep measurement.</dd></div></dl>
+            <a href="https://doi.org/10.1016/j.oneear.2022.04.008" target="_blank" rel="noreferrer">Minor et al. ↗</a>
+          </article>
+          <article>
+            <div class="study-head"><time>2026</time><strong>Controlled sleep lab</strong></div>
+            <p class="study-scale">18 men · 22°C versus 30°C</p>
+            <dl><div><dt>Measures</dt><dd>Polysomnography and autonomic activity.</dd></div><div><dt>Supports</dt><dd>A hot night reduced sleep time and efficiency under controlled conditions.</dd></div><div><dt>Cannot show alone</dt><dd>Population-wide effects across ages, sexes, climates, or repeated exposure.</dd></div></dl>
+            <a href="https://pubmed.ncbi.nlm.nih.gov/42508230/" target="_blank" rel="noreferrer">Ho et al. ↗</a>
+          </article>
+        </div>
+        <p class="evidence-synthesis"><b>Better synthesis:</b> triangulate breadth, measurement, and control—then preserve each study’s limits.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 22">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Demonstrate why evidence extraction should precede prose synthesis.</dd></div>
+          <div><dt>Say</dt><dd>“The survey offers breadth, the wearables offer repeated behavioral measurement across countries, and the lab offers environmental control. None dominates every dimension.”</dd></div>
+          <div><dt>Ask</dt><dd>Which study best answers causality? Which best addresses global inequality? Which most closely measures actual sleep architecture?</dd></div>
+          <div><dt>Transition</dt><dd>Close by assigning the model and the human different responsibilities.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide dark practice-close" id="slide-23" data-title="What remains human" data-time="53:00–55:00" aria-labelledby="title-23">
+      <div class="slide-content practice-close-layout">
+        <p class="eyebrow">The practical contract</p>
+        <h2 id="title-23">AI can draft the synthesis. You own the claim.</h2>
+        <div class="responsibility-split">
+          <article><span>AI can help</span><ul><li>Organize sources</li><li>Extract comparable fields</li><li>Surface disagreements</li><li>Draft conditional language</li></ul></article>
+          <article class="human-responsibility"><span>The researcher owns</span><ul><li>The question and standards</li><li>Source relevance and verification</li><li>Interpretation of uncertainty</li><li>The final consequential claim</li></ul></article>
+        </div>
+        <div class="five-habits" aria-label="Five habits for trustworthy AI-assisted work"><span>define</span><i>→</i><span>plan</span><i>→</i><span>source</span><i>→</i><span>verify</span><i>→</i><span>decide</span></div>
+        <p class="practice-question">What is one step in your own workflow that you could make more visible and verifiable?</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 23">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>End the practical block with a clear division of labor and a memorable method.</dd></div>
+          <div><dt>Say</dt><dd>“The goal is not maximal automation. It is a workflow where assistance is useful, evidence remains inspectable, and responsibility has a name.”</dd></div>
+          <div><dt>Ask</dt><dd>Students write one workflow step they will make more visible or verifiable. Invite two brief responses.</dd></div>
+          <div><dt>Close</dt><dd>Repeat the five verbs: define, plan, source, verify, decide.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide paper lab-roadmap-slide" id="slide-24" data-title="Four systems we will build" data-time="55:00–60:00" aria-labelledby="title-24">
+      <div class="slide-content lab-roadmap-layout">
+        <div>
+          <p class="eyebrow">From one case to four small systems</p>
+          <h2 id="title-24">Useful AI is a workflow you can inspect.</h2>
+          <p class="lead dark-lead">Each lab adds one capability—and one new place to be wrong.</p>
+        </div>
+        <ol class="four-lab-roadmap">
+          <li><span>01</span><div><strong>Text → structured data</strong><p>Can we compare messy records?</p></div><time>30 min</time></li>
+          <li><span>02</span><div><strong>Documents → grounded answer</strong><p>Can we keep claims attached to sources?</p></div><time>40 min</time></li>
+          <li><span>03</span><div><strong>Question → analysis tools</strong><p>Can an agent choose a safe next step?</p></div><time>45 min</time></li>
+          <li><span>04</span><div><strong>Voice → research memo</strong><p>Can we preserve what was actually said?</p></div><time>35 min</time></li>
+        </ol>
+        <a class="lab-slide-link" href="../labs/index.html" target="_blank">Open the student lab kit ↗</a>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 24">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Reset the class from demonstration mode into a coherent sequence of student-built systems.</dd></div>
+          <div><dt>Say</dt><dd>“These are not four random apps. We will keep adding one thing: a schema, a source set, tools, and then voice. At every stage, we also add a new verification obligation.”</dd></div>
+          <div><dt>Do</dt><dd>Ask students to open the lab kit now. Pair no-code students with API students when possible; both paths use the same data and checks.</dd></div>
+          <div><dt>Transition</dt><dd>Start with the least agentic—but often most valuable—use case: turning text into comparable data.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide coral case-opener-slide" id="slide-25" data-title="Case 1 · Text to data" data-time="60:00–65:00" aria-labelledby="title-25">
+      <div class="slide-content case-opener-layout">
+        <div><p class="eyebrow">Case 01 · Structured extraction</p><h2 id="title-25">A table is useful only when every row means the same thing.</h2></div>
+        <div class="messy-to-schema" aria-label="Unstructured notes becoming structured records">
+          <div class="messy-notes"><span>“twelve technicians…”</span><span>“total N: 62”</span><span>“number not reported”</span><span>“matched cohort…”</span></div>
+          <i>→</i>
+          <div class="schema-sheet"><b>Study record</b><code>population</code><code>method</code><code>sample_size</code><code>finding</code><code>limitation</code><code>evidence_quote</code></div>
+        </div>
+        <p class="case-question"><b>Question:</b> Can the system preserve missingness and uncertainty—not merely produce valid JSON?</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 25">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Frame extraction as a research-design problem, not a formatting trick.</dd></div>
+          <div><dt>Say</dt><dd>“Many practical AI projects do not need an all-knowing assistant. They need reliable conversion: notes to a table, forms to a database, or papers to an evidence matrix.”</dd></div>
+          <div><dt>Ask</dt><dd>Which field is hardest here: sample size, method, finding, limitation, or supporting quote? Why?</dd></div>
+          <div><dt>Transition</dt><dd>Before prompting, define exactly what one acceptable record looks like.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide lime schema-slide" id="slide-26" data-title="Define the output before the prompt" data-time="65:00–72:00" aria-labelledby="title-26">
+      <div class="slide-content schema-layout">
+        <div><p class="eyebrow">The interface is part of the reasoning</p><h2 id="title-26">Write the schema before you write the prompt.</h2></div>
+        <div class="schema-field-grid">
+          <article><span>string</span><strong>population</strong><p>Who or what was studied?</p></article>
+          <article><span>string</span><strong>method</strong><p>What design produced the claim?</p></article>
+          <article class="nullable-field"><span>integer · nullable</span><strong>sample_size</strong><p>Missing is a valid value.</p></article>
+          <article><span>string</span><strong>main_finding</strong><p>What did the record report?</p></article>
+          <article><span>string</span><strong>limitation</strong><p>What constrains interpretation?</p></article>
+          <article class="evidence-field"><span>verbatim string</span><strong>evidence_quote</strong><p>What exact text supports the finding?</p></article>
+        </div>
+        <div class="schema-rules"><span>Do not infer.</span><span>Use null when absent.</span><span>Quote the source.</span></div>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 26">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Show that a schema encodes epistemic choices: required fields, allowed absence, and traceability.</dd></div>
+          <div><dt>Say</dt><dd>“A system that inserts a plausible sample size is worse than one that returns null. Missingness carries information.”</dd></div>
+          <div><dt>Do</dt><dd>Give pairs two minutes to propose one additional field. Ask what new ambiguity that field creates.</dd></div>
+          <div><dt>Transition</dt><dd>Run the simplest possible baseline before reaching for a model.</dd></div>
+          <div><dt>[Sources]</dt><dd><a href="https://developers.openai.com/api/docs/guides/structured-outputs" target="_blank" rel="noreferrer">OpenAI · Structured model outputs</a></dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide dark terminal-slide" id="slide-27" data-title="Run, inspect, score" data-time="72:00–84:00" aria-labelledby="title-27">
+      <div class="slide-content terminal-layout">
+        <div><p class="eyebrow">Student activity · 12 minutes</p><h2 id="title-27">Run it. Find the brittle rule. Score the output.</h2></div>
+        <div class="terminal-card"><div><i></i><i></i><i></i><span>labs</span></div><code>python 01_structured_extraction/lab.py</code><pre>Mode: offline regex baseline
+A17: 5/5 fields · quote ✓
+B04: 0/5 fields · quote ✗
+C22: 0/5 fields · quote ✗
+D09: 1/5 fields · quote ✗
+
+Exact field accuracy: 6/20 (30%)</pre></div>
+        <ol class="activity-steps"><li><span>1</span>Open one failed source record.</li><li><span>2</span>Locate the rule that missed it.</li><li><span>3</span>Decide whether the gold answer is explicitly supported.</li><li><span>4</span>If using an API, rerun with <code>--api</code>.</li></ol>
+        <a class="lab-slide-link light-link" href="../labs/01_structured_extraction/README.md" target="_blank">Open Lab 01 instructions ↗</a>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 27">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Make students establish a baseline and an evaluation target before calling the model.</dd></div>
+          <div><dt>Do</dt><dd>At minute six, ask for one failure caused by wording and one failure that would require inference. No-code groups run the same comparison manually against gold.json.</dd></div>
+          <div><dt>Say</dt><dd>“Thirty percent is not embarrassing. It is a measured starting point. Now any improvement has a denominator.”</dd></div>
+          <div><dt>Transition</dt><dd>Compare kinds of failure, not just total accuracy.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide paper verification-slide" id="slide-28" data-title="Schema-valid is not source-valid" data-time="84:00–90:00" aria-labelledby="title-28">
+      <div class="slide-content verification-layout">
+        <div><p class="eyebrow">Debrief</p><h2 id="title-28">Valid JSON can still contain an invalid claim.</h2></div>
+        <div class="validity-stack">
+          <article><span>1</span><div><strong>Shape</strong><p>Are all fields present and correctly typed?</p></div><b>schema check</b></article>
+          <article><span>2</span><div><strong>Content</strong><p>Do values match the gold record?</p></div><b>field score</b></article>
+          <article class="critical-check"><span>3</span><div><strong>Evidence</strong><p>Does the quoted text occur in the source?</p></div><b>substring check</b></article>
+          <article><span>4</span><div><strong>Meaning</strong><p>Did the extraction preserve uncertainty and scope?</p></div><b>human review</b></article>
+        </div>
+        <p class="takeaway-line">Structured output constrains the <em>interface</em>. It does not prove the <em>world inside it</em>.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 28">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Separate structural reliability from factual and interpretive reliability.</dd></div>
+          <div><dt>Ask</dt><dd>Did the API version improve field accuracy? Did it ever produce a cleanly typed unsupported value?</dd></div>
+          <div><dt>Say</dt><dd>“We should automate the checks that can be automated and name the judgment that cannot.”</dd></div>
+          <div><dt>Transition</dt><dd>After a ten-minute break, expand from one record at a time to answering across a collection of documents.</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="slide dark lab-break-slide" id="slide-29" data-title="Break · What was inferred?" data-time="90:00–100:00" aria-labelledby="title-29">
+      <div class="slide-content lab-break-layout"><p class="eyebrow">10-minute break</p><h2 id="title-29">What did the system infer<br>that the source never said?</h2><p>Keep one example. We will reuse the question.</p><div class="break-mark" aria-hidden="true">?</div></div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 29"><p class="notes-label">Presenter notes</p><dl><div><dt>Purpose</dt><dd>Give students a real break while preserving one diagnostic question.</dd></div><div><dt>Do</dt><dd>Restart on time. Invite exactly two examples, then continue.</dd></div><div><dt>Transition</dt><dd>The next system tries to reduce unsupported inference by retrieving local evidence before answering.</dd></div></dl></aside>
+    </section>
+
+    <section class="slide teal case-opener-slide" id="slide-30" data-title="Case 2 · Documents to answers" data-time="100:00–105:00" aria-labelledby="title-30">
+      <div class="slide-content case-opener-layout">
+        <div><p class="eyebrow">Case 02 · Grounded Q&amp;A</p><h2 id="title-30">A language model can answer a question without knowing the answer.</h2></div>
+        <div class="qa-contrast">
+          <article><span>Question</span><strong>Did the clinic increase doctoral completion?</strong></article><i>→</i><article class="danger-answer"><span>Plausible completion</span><strong>“Yes—participants completed at a higher rate…”</strong></article>
+        </div>
+        <p class="case-question"><b>The corpus says:</b> the evaluation lasted one term and did not measure degree completion.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 30">
+        <p class="notes-label">Presenter notes</p><dl>
+          <div><dt>Purpose</dt><dd>Create a sharp need for retrieval and a legitimate “not found” outcome.</dd></div>
+          <div><dt>Say</dt><dd>“The model's prior knowledge is a feature in many settings. In document-grounded work, that same prior can fill a gap we needed it to preserve.”</dd></div>
+          <div><dt>Ask</dt><dd>What wording would make “not found” a successful answer rather than a failure?</dd></div>
+          <div><dt>Transition</dt><dd>Expose the complete retrieval-augmented generation pipeline.</dd></div>
+        </dl></aside>
+    </section>
+
+    <section class="slide paper rag-slide" id="slide-31" data-title="Search before generation" data-time="105:00–115:00" aria-labelledby="title-31">
+      <div class="slide-content rag-layout">
+        <div><p class="eyebrow">A transparent RAG pipeline</p><h2 id="title-31">Search first. Generate second. Verify last.</h2></div>
+        <ol class="rag-pipeline">
+          <li><span>01</span><strong>Question</strong><p>What exactly is being asked?</p></li><li><span>02</span><strong>Retrieve</strong><p>Which local files look relevant?</p></li><li><span>03</span><strong>Context</strong><p>What evidence reaches the model?</p></li><li><span>04</span><strong>Answer</strong><p>What can be said from that packet?</p></li><li><span>05</span><strong>Verify</strong><p>Do filenames and quotes resolve?</p></li>
+        </ol>
+        <div class="rag-boundary"><b>Retrieval error</b><span>The right evidence never enters context.</span><i>≠</i><b>Generation error</b><span>The evidence enters, but the answer misuses it.</span></div>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 31">
+        <p class="notes-label">Presenter notes</p><dl>
+          <div><dt>Purpose</dt><dd>Give students a mental model that lets them diagnose RAG systems layer by layer.</dd></div>
+          <div><dt>Say</dt><dd>“RAG does not upload truth into the model. It constructs a temporary evidence packet. We must inspect both the packet and the answer.”</dd></div>
+          <div><dt>Do</dt><dd>Point out that this lab uses simple local TF–IDF on purpose. The retrieval mechanism remains visible and modifiable.</dd></div>
+          <div><dt>Transition</dt><dd>Test the pipeline with one single-source question, one multi-source question, and one absent answer.</dd></div>
+        </dl></aside>
+    </section>
+
+    <section class="slide lime test-set-slide" id="slide-32" data-title="Three questions, three tests" data-time="115:00–132:00" aria-labelledby="title-32">
+      <div class="slide-content test-set-layout">
+        <div><p class="eyebrow">Student activity · 17 minutes</p><h2 id="title-32">A tiny test set beats one impressive demo.</h2></div>
+        <div class="question-test-grid">
+          <article><span>Single source</span><strong>Which outcome showed the largest observed difference?</strong><p>Expected: evaluation.txt</p></article>
+          <article><span>Multiple sources</span><strong>Who attended least—and what barrier did they report?</strong><p>Expected: attendance.txt + implementation.txt</p></article>
+          <article class="absent-test"><span>Absent answer</span><strong>Did doctoral completion increase?</strong><p>Expected: not found</p></article>
+        </div>
+        <div class="activity-command"><code>python 02_grounded_qa/lab.py</code><code>python 02_grounded_qa/lab.py --api --question "…"</code></div>
+        <p class="pair-roles"><b>In pairs:</b> one person inspects retrieval; the other audits citations and quotes. Switch after question two.</p>
+        <a class="lab-slide-link" href="../labs/02_grounded_qa/README.md" target="_blank">Open Lab 02 instructions ↗</a>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 32">
+        <p class="notes-label">Presenter notes</p><dl>
+          <div><dt>Purpose</dt><dd>Move evaluation from a memorable anecdote to three targeted behavioral tests.</dd></div>
+          <div><dt>Do</dt><dd>At minute eight, ask each pair to label any failure as retrieval or generation. At minute fourteen, ask them to invent one adversarial fourth question.</dd></div>
+          <div><dt>Say</dt><dd>“The absent-answer test may be the most important. It measures whether the system can preserve ignorance.”</dd></div>
+          <div><dt>Transition</dt><dd>Collect failures in a two-by-two that distinguishes evidence access from evidence use.</dd></div>
+        </dl></aside>
+    </section>
+
+    <section class="slide paper rag-debrief-slide" id="slide-33" data-title="Diagnose the layer" data-time="132:00–140:00" aria-labelledby="title-33">
+      <div class="slide-content rag-debrief-layout">
+        <div><p class="eyebrow">Debrief</p><h2 id="title-33">Do not tune the answer when search is broken.</h2></div>
+        <div class="diagnostic-matrix" role="table" aria-label="Retrieval and answer diagnostic matrix">
+          <div class="corner"></div><div class="matrix-head">Answer uses evidence</div><div class="matrix-head">Answer misuses evidence</div>
+          <div class="matrix-side">Right files retrieved</div><article class="matrix-good"><strong>Grounded success</strong><p>Verify claims and wording.</p></article><article><strong>Generation failure</strong><p>Tighten instructions or output checks.</p></article>
+          <div class="matrix-side">Right files missed</div><article><strong>Lucky or incomplete</strong><p>Do not trust the result.</p></article><article class="matrix-danger"><strong>Pipeline failure</strong><p>Fix chunking, search, or corpus first.</p></article>
+        </div>
+        <p class="takeaway-line">Citation format is not citation correctness. Open the file.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 33">
+        <p class="notes-label">Presenter notes</p><dl>
+          <div><dt>Purpose</dt><dd>Give students a practical diagnostic before they change prompts or models.</dd></div>
+          <div><dt>Ask</dt><dd>Where did your adversarial fourth question land? What single change would test your diagnosis?</dd></div>
+          <div><dt>Say</dt><dd>“A citation can be beautifully formatted and still fail to support the sentence beside it.”</dd></div>
+          <div><dt>Transition</dt><dd>Take ten minutes, then connect the model to real analysis functions.</dd></div>
+        </dl></aside>
+    </section>
+
+    <section class="slide coral lab-break-slide" id="slide-34" data-title="Break · From answers to actions" data-time="140:00–150:00" aria-labelledby="title-34">
+      <div class="slide-content lab-break-layout"><p class="eyebrow">10-minute break</p><h2 id="title-34">What changes when the model can do something?</h2><p>Return ready to name one action that should require approval.</p><div class="break-mark" aria-hidden="true">→</div></div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 34"><p class="notes-label">Presenter notes</p><dl><div><dt>Purpose</dt><dd>Prepare the conceptual shift from content generation to tool-mediated action.</dd></div><div><dt>Do</dt><dd>On return, take three answers: one low-risk tool, one consequential tool, and one action students would prohibit.</dd></div><div><dt>Transition</dt><dd>Introduce the bounded data analyst as an agent whose available actions are explicit.</dd></div></dl></aside>
+    </section>
+
+    <section class="slide dark data-case-slide" id="slide-35" data-title="Case 3 · A data analyst agent" data-time="150:00–156:00" aria-labelledby="title-35">
+      <div class="slide-content data-case-layout">
+        <div><p class="eyebrow">Case 03 · Tool-using data analyst</p><h2 id="title-35">Did AI users improve less?</h2><p class="lead">The first comparison looks decisive.</p></div>
+        <div class="aggregate-stat"><span>Mean score gain</span><div><article><b>AI users</b><strong>+8.17</strong></article><article><b>Non-users</b><strong>+10.50</strong></article></div><p>Surface difference <em>−2.33 points</em></p></div>
+        <p class="case-question light-question"><b>Your task:</b> make the agent investigate before it explains.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 35">
+        <p class="notes-label">Presenter notes</p><dl>
+          <div><dt>Purpose</dt><dd>Give students a tempting but misleading answer before showing the data structure.</dd></div>
+          <div><dt>Ask</dt><dd>What would you inspect before interpreting the −2.33 point difference?</dd></div>
+          <div><dt>Say</dt><dd>“The agent does not begin with a blank Python environment. It begins with a bounded set of functions we chose.”</dd></div>
+          <div><dt>Transition</dt><dd>Show the tool-calling loop and its permission boundary.</dd></div>
+        </dl></aside>
+    </section>
+
+    <section class="slide teal agent-loop-slide" id="slide-36" data-title="An agent is a loop plus permissions" data-time="156:00–166:00" aria-labelledby="title-36">
+      <div class="slide-content agent-loop-layout">
+        <div><p class="eyebrow">What makes this agentic?</p><h2 id="title-36">The model chooses. Code executes. Results return.</h2></div>
+        <div class="agent-cycle" aria-label="Tool-using agent loop">
+          <article><span>1</span><strong>Question</strong><p>“Did AI use improve outcomes?”</p></article><i>→</i><article><span>2</span><strong>Model chooses</strong><p><code>compare_outcomes</code></p></article><i>→</i><article><span>3</span><strong>Local tool runs</strong><p>Fixed code reads the CSV.</p></article><i>→</i><article><span>4</span><strong>Result returns</strong><p>The loop continues or answers.</p></article>
+        </div>
+        <div class="tool-permission-box"><div><b>Allowed</b><code>describe_dataset</code><code>inspect_missing_data</code><code>compare_outcomes</code><code>fit_adjusted_model</code><code>make_plot</code></div><div class="denied-tools"><b>Not allowed</b><code>run arbitrary code</code><code>send email</code><code>change the dataset</code></div></div>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 36">
+        <p class="notes-label">Presenter notes</p><dl>
+          <div><dt>Purpose</dt><dd>Define an agent concretely as a model–tool–feedback loop with permissions.</dd></div>
+          <div><dt>Say</dt><dd>“The model proposes a typed function call. Our application—not the model—decides whether that function exists and executes it.”</dd></div>
+          <div><dt>Why it matters</dt><dd>Students see that agency is designed: available actions, arguments, loop limits, logs, and approval gates are system choices.</dd></div>
+          <div><dt>Transition</dt><dd>Run the fixed trace first, then let the model choose and compare its behavior.</dd></div>
+          <div><dt>[Sources]</dt><dd><a href="https://developers.openai.com/api/docs/guides/function-calling" target="_blank" rel="noreferrer">OpenAI · Function calling</a></dd></div>
+        </dl></aside>
+    </section>
+
+    <section class="slide paper trace-slide" id="slide-37" data-title="Audit the trace, not the prose" data-time="166:00–186:00" aria-labelledby="title-37">
+      <div class="slide-content trace-layout">
+        <div><p class="eyebrow">Student activity · 20 minutes</p><h2 id="title-37">The answer is the last thing to inspect.</h2></div>
+        <div class="trace-command"><code>python 03_data_agent/lab.py</code><code>python 03_data_agent/lab.py --api</code></div>
+        <div class="trace-grid">
+          <article><span>01</span><strong>Dataset</strong><p>Did it inspect rows, groups, and design?</p></article><article><span>02</span><strong>Missingness</strong><p>Did it notice two absent attendance values?</p></article><article><span>03</span><strong>Aggregate</strong><p>Did it reproduce −2.33?</p></article><article class="key-trace"><span>04</span><strong>Stratify</strong><p>Did it compare within starting track?</p></article><article><span>05</span><strong>Adjust</strong><p>Did it use the predefined model cautiously?</p></article><article><span>06</span><strong>Conclude</strong><p>Did it avoid causal language?</p></article>
+        </div>
+        <p class="pair-roles"><b>Failure injection:</b> remove “check for a misleading aggregate” from the question. Does the agent still stratify?</p>
+        <a class="lab-slide-link" href="../labs/03_data_agent/README.md" target="_blank">Open Lab 03 instructions ↗</a>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 37">
+        <p class="notes-label">Presenter notes</p><dl>
+          <div><dt>Purpose</dt><dd>Teach students to evaluate action selection and intermediate evidence, not only final fluency.</dd></div>
+          <div><dt>Do</dt><dd>No-code students reproduce the aggregate and stratified means in a spreadsheet tool. API students annotate each printed function call: necessary, unnecessary, or missing.</dd></div>
+          <div><dt>At minute 12</dt><dd>Ask groups to run the failure-injection question. Record how often the agent finds the reversal without the hint.</dd></div>
+          <div><dt>Transition</dt><dd>Reveal the group composition that created the reversal.</dd></div>
+        </dl></aside>
+    </section>
+
+    <section class="slide lime simpson-slide" id="slide-38" data-title="The aggregate reverses" data-time="186:00–195:00" aria-labelledby="title-38">
+      <div class="slide-content simpson-layout">
+        <div><p class="eyebrow">Debrief · Simpson's paradox</p><h2 id="title-38">The aggregate says worse. Each track says better.</h2></div>
+        <img src="../labs/03_data_agent/data/gain_by_track.svg" alt="Bar chart showing AI users have higher mean score gains within both Advanced and Foundation tracks" width="700" height="430" loading="lazy">
+        <div class="simpson-numbers"><article><span>Advanced</span><strong>+3.5</strong><p>AI-user difference within track</p></article><article><span>Foundation</span><strong>+4.5</strong><p>AI-user difference within track</p></article><p>AI use is concentrated in the Advanced track, where gains are smaller for everyone.</p></div>
+        <p class="takeaway-line">The agent found structure. It did not discover causality.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 38">
+        <p class="notes-label">Presenter notes</p><dl>
+          <div><dt>Purpose</dt><dd>Make confounding and group composition unforgettable through a concrete reversal.</dd></div>
+          <div><dt>Say</dt><dd>“Within both tracks, AI users gained more. But most AI users began in the Advanced track, where gains were smaller overall. Adjustment changes the association; it does not turn self-selection into random assignment.”</dd></div>
+          <div><dt>Ask</dt><dd>What design would better estimate a causal effect: random assignment, a credible natural experiment, or richer observational adjustment? What would each require?</dd></div>
+          <div><dt>Transition</dt><dd>Take ten minutes. Return ready to decide which agent actions should require human approval.</dd></div>
+        </dl></aside>
+    </section>
+
+    <section class="slide dark lab-break-slide" id="slide-39" data-title="Break · Permission is design" data-time="195:00–205:00" aria-labelledby="title-39">
+      <div class="slide-content lab-break-layout"><p class="eyebrow">10-minute break</p><h2 id="title-39">A capable agent is not automatically an authorized agent.</h2><p>Name one tool it may call, one it must preview, and one it must never receive.</p><div class="break-mark" aria-hidden="true">⛉</div></div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 39"><p class="notes-label">Presenter notes</p><dl><div><dt>Purpose</dt><dd>Separate technical capability from institutional or ethical authority.</dd></div><div><dt>Do</dt><dd>On return, collect examples under three headings: automatic, approval required, prohibited.</dd></div><div><dt>Transition</dt><dd>Voice creates a powerful interface while adding consent, transcription, and identity risks.</dd></div></dl></aside>
+    </section>
+
+    <section class="slide coral voice-case-slide" id="slide-40" data-title="Case 4 · Voice to research memo" data-time="205:00–210:00" aria-labelledby="title-40">
+      <div class="slide-content voice-case-layout">
+        <div><p class="eyebrow">Case 04 · Voice research copilot</p><h2 id="title-40">Voice makes AI feel natural.<br>Research still needs a record.</h2></div>
+        <div class="waveform" aria-label="Decorative audio waveform"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p class="case-question"><b>Question:</b> Can a spoken interview become a useful memo without losing the transcript, uncertainty, or participant's words?</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 40">
+        <p class="notes-label">Presenter notes</p><dl>
+          <div><dt>Purpose</dt><dd>Introduce voice as a practical pipeline rather than a magical conversational surface.</dd></div>
+          <div><dt>Say</dt><dd>“Voice changes latency, accessibility, and social presence. It also creates another model output—the transcript—that can quietly alter everything downstream.”</dd></div>
+          <div><dt>Ask</dt><dd>Where would one wrong word matter most in your field?</dd></div>
+          <div><dt>Transition</dt><dd>Expose both the technical pipeline and the consent boundary.</dd></div>
+        </dl></aside>
+    </section>
+
+    <section class="slide paper voice-pipeline-slide" id="slide-41" data-title="Voice is a chain of models and judgments" data-time="210:00–220:00" aria-labelledby="title-41">
+      <div class="slide-content voice-pipeline-layout">
+        <div><p class="eyebrow">Recorded voice workflow</p><h2 id="title-41">Every arrow can change the meaning.</h2></div>
+        <ol class="voice-pipeline"><li><span>1</span><strong>Consent</strong><p>Purpose, storage, access.</p></li><li><span>2</span><strong>Audio</strong><p>Accents, noise, speakers.</p></li><li><span>3</span><strong>Transcript</strong><p>Names, numbers, negation.</p></li><li><span>4</span><strong>Memo</strong><p>Themes, actions, tensions.</p></li><li><span>5</span><strong>Review</strong><p>Correct before use.</p></li></ol>
+        <div class="voice-boundaries"><article><b>Recorded file</b><p>Upload once, transcribe, then analyze. This lab.</p></article><article><b>Realtime voice</b><p>Stream audio and partial transcripts with lower latency. Extension.</p></article><article class="privacy-boundary"><b>Privacy boundary</b><p>Collect only what you are authorized to process.</p></article></div>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 41">
+        <p class="notes-label">Presenter notes</p><dl>
+          <div><dt>Purpose</dt><dd>Distinguish recorded transcription from realtime systems and integrate privacy into the architecture.</dd></div>
+          <div><dt>Say</dt><dd>“The demo transcript is fictional. If you use a real recording, consent and institutional policy come before API convenience.”</dd></div>
+          <div><dt>Ask</dt><dd>Which errors can a quote check catch? Which require listening to the audio again?</dd></div>
+          <div><dt>Transition</dt><dd>Run the memo pipeline and audit its quotations.</dd></div>
+          <div><dt>[Sources]</dt><dd><a href="https://developers.openai.com/cookbook/examples/migrating_from_whisper_to_gpt_transcribe" target="_blank" rel="noreferrer">OpenAI · Recorded and realtime transcription paths</a></dd></div>
+        </dl></aside>
+    </section>
+
+    <section class="slide teal voice-activity-slide" id="slide-42" data-title="Build the auditable memo" data-time="220:00–234:00" aria-labelledby="title-42">
+      <div class="slide-content voice-activity-layout">
+        <div><p class="eyebrow">Student activity · 14 minutes</p><h2 id="title-42">Generate themes. Then go back to the words.</h2></div>
+        <div class="voice-command-grid"><article><span>Offline transcript</span><code>python 04_voice_copilot/lab.py</code></article><article><span>API analysis</span><code>python 04_voice_copilot/lab.py --api</code></article><article><span>Consented audio</span><code>python 04_voice_copilot/lab.py --api --audio /path/file.m4a</code></article></div>
+        <ol class="memo-checks"><li><span>01</span>Correct one transcript detail.</li><li><span>02</span>Separate observation from synthesis.</li><li><span>03</span>Search every quoted line.</li><li><span>04</span>Delete one overconfident inference.</li></ol>
+        <a class="lab-slide-link" href="../labs/04_voice_copilot/README.md" target="_blank">Open Lab 04 instructions ↗</a>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 42">
+        <p class="notes-label">Presenter notes</p><dl>
+          <div><dt>Purpose</dt><dd>Make auditability—not summary fluency—the output of the voice exercise.</dd></div>
+          <div><dt>Do</dt><dd>Use the fictional transcript by default. Only invite personal recordings if participants have meaningful consent and no sensitive content.</dd></div>
+          <div><dt>At minute 8</dt><dd>Ask students to compare one model-generated theme with the exact lines behind it. Is it a faithful synthesis or an inference?</dd></div>
+          <div><dt>Transition</dt><dd>Debrief how small errors compound across a pipeline.</dd></div>
+        </dl></aside>
+    </section>
+
+    <section class="slide paper compound-error-slide" id="slide-43" data-title="Errors compound downstream" data-time="234:00–240:00" aria-labelledby="title-43">
+      <div class="slide-content compound-error-layout">
+        <div><p class="eyebrow">Debrief</p><h2 id="title-43">One transcription error can become a confident recommendation.</h2></div>
+        <div class="error-chain">
+          <article><span>Audio</span><strong>“would not make it mandatory”</strong></article><i>→</i><article class="error-step"><span>Bad transcript</span><strong>“would make it mandatory”</strong></article><i>→</i><article class="error-step"><span>Bad theme</span><strong>support for a requirement</strong></article><i>→</i><article class="error-step"><span>Bad action</span><strong>mandate participation</strong></article>
+        </div>
+        <div class="recovery-gates"><span>listen again</span><i>→</i><span>correct transcript</span><i>→</i><span>verify quote</span><i>→</i><span>human approval</span></div>
+        <p class="takeaway-line">Later fluency cannot repair an earlier corrupted record.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 43">
+        <p class="notes-label">Presenter notes</p><dl>
+          <div><dt>Purpose</dt><dd>Show why intermediate artifacts and review gates matter in multi-model pipelines.</dd></div>
+          <div><dt>Say</dt><dd>“If the transcript loses the word ‘not,’ the summary model may faithfully amplify the wrong input. We need the ability to return to the recording.”</dd></div>
+          <div><dt>Ask</dt><dd>Where would you place an automated check, and where is human review indispensable?</dd></div>
+          <div><dt>Transition</dt><dd>Close the lab sequence by choosing one workflow students can build and evaluate in their own domain.</dd></div>
+        </dl></aside>
+    </section>
+
+    <section class="slide dark lab-final-slide" id="slide-44" data-title="Choose a workflow, not a demo" data-time="240:00–245:00" aria-labelledby="title-44">
+      <div class="slide-content lab-final-layout">
+        <p class="eyebrow">What you can take with you</p>
+        <h2 id="title-44">Start small enough to evaluate.</h2>
+        <div class="final-choice-grid"><article><span>01</span><strong>Extract</strong><p>One input type. One schema. A gold set.</p></article><article><span>02</span><strong>Ground</strong><p>One source collection. An absent-answer test.</p></article><article><span>03</span><strong>Act</strong><p>One tool allowlist. A visible trace.</p></article><article><span>04</span><strong>Listen</strong><p>One consented workflow. A transcript review.</p></article></div>
+        <div class="three-layer-close"><span><b>Interface</b>Is the shape correct?</span><i>→</i><span><b>Evidence</b>Can the claim be traced?</span><i>→</i><span><b>Decision</b>Who owns the action?</span></div>
+        <p class="practice-question">Write one input, one output, one failure test, and one human approval for a workflow in your field.</p>
+        <a class="lab-slide-link light-link" href="../labs/index.html" target="_blank">Return to the complete lab kit ↗</a>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 44">
+        <p class="notes-label">Presenter notes</p><dl>
+          <div><dt>Purpose</dt><dd>Convert the four cases into a reusable project-design template.</dd></div>
+          <div><dt>Do</dt><dd>Give students two silent minutes to write their four-part workflow. Then ask them to exchange it with someone from another discipline and identify one hidden assumption.</dd></div>
+          <div><dt>Say</dt><dd>“A small system with a meaningful test teaches more than a spectacular demo with no denominator.”</dd></div>
+          <div><dt>Close</dt><dd>Repeat the three evaluation layers: interface, evidence, decision.</dd></div>
+        </dl></aside>
+    </section>
+  </main>
+
+  <dialog id="overviewDialog" aria-labelledby="overviewTitle">
+    <div class="dialog-head"><div><p class="eyebrow">AI story + four practical labs</p><h2 id="overviewTitle">Slide overview</h2></div><button id="closeOverview" type="button" aria-label="Close overview">×</button></div>
+    <ol id="overviewList" class="overview-list"></ol>
+    <p class="dialog-hint">Arrow keys or space move through slides. Press N to show or hide presenter notes.</p>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

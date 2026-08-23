@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Four practical AI labs for graduate students: structured extraction, grounded Q&amp;A, a bounded data agent, and a voice research copilot.">
+  <meta name="theme-color" content="#102a33">
+  <title>Practical AI Lab Kit</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to labs</a>
+  <header class="site-header">
+    <a class="wordmark" href="#top"><span></span>Practical AI Lab Kit</a>
+    <nav aria-label="Lab navigation">
+      <a href="#setup">Setup</a>
+      <a href="#labs">Four labs</a>
+      <a href="#evaluation">Evaluate</a>
+      <a class="deck-link" href="../story_deck/index.html#slide-24">Open slides ↗</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div>
+        <p class="eyebrow">Student lab guide · 2½ hours of hands-on work</p>
+        <h1>Build four small AI systems.<br><em>Trust none of them by default.</em></h1>
+        <p class="lead">Each lab moves from a useful capability to a visible failure mode—and ends with a check you can run yourself.</p>
+        <div class="hero-actions"><a class="primary" href="#setup">Start setup</a><a href="README.md">Read the plain-text guide</a></div>
+      </div>
+      <ol class="sequence" aria-label="Lab sequence">
+        <li><span>01</span><div><b>Text → data</b><small>Is the schema correct?</small></div></li>
+        <li><span>02</span><div><b>Files → answer</b><small>Does the source support it?</small></div></li>
+        <li><span>03</span><div><b>Question → tools</b><small>Did the agent inspect the right thing?</small></div></li>
+        <li><span>04</span><div><b>Voice → memo</b><small>Did the transcript preserve meaning?</small></div></li>
+      </ol>
+    </section>
+
+    <section class="setup" id="setup">
+      <div class="section-head"><p class="eyebrow">Before class</p><h2>One folder. Two ways to participate.</h2></div>
+      <div class="path-grid">
+        <article>
+          <p class="path-number">Path A</p><h3>No code or key</h3>
+          <p>Use the supplied data and the no-code prompt in each README. You still run every evidence check manually.</p>
+          <a href="#labs">See the four tasks ↓</a>
+        </article>
+        <article class="featured">
+          <p class="path-number">Path B</p><h3>Python + optional API</h3>
+          <pre><code>cd labs
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt</code></pre>
+          <p class="small">Windows activation: <code>.venv\Scripts\activate</code></p>
+        </article>
+      </div>
+      <div class="key-note">
+        <b>Using the API?</b><code>export OPENAI_API_KEY="your-key-here"</code><p>Put keys in your terminal or secret manager—never in HTML, notebooks, screenshots, or Git.</p>
+      </div>
+    </section>
+
+    <section class="labs" id="labs">
+      <div class="section-head"><p class="eyebrow">The case-study sequence</p><h2>One capability, one failure mode, one verification habit.</h2></div>
+
+      <article class="lab-card" id="lab-1">
+        <div class="lab-number">01</div>
+        <div class="lab-copy">
+          <div class="lab-meta"><span>30 minutes</span><span>information extraction</span></div>
+          <h3>Make messy research records comparable.</h3>
+          <p>Turn four differently written study notes into a strict schema. First watch brittle rules fail; then test schema-constrained model output against a gold set.</p>
+          <div class="lesson"><b>Failure to find:</b> a plausible value that is not actually stated.<br><b>Check to keep:</b> field accuracy + exact evidence quote.</div>
+        </div>
+        <div class="lab-run">
+          <p>Offline</p><code>python 01_structured_extraction/lab.py</code>
+          <p>API</p><code>python 01_structured_extraction/lab.py --api</code>
+          <a href="01_structured_extraction/README.md">Open lab instructions ↗</a>
+        </div>
+      </article>
+
+      <article class="lab-card" id="lab-2">
+        <div class="lab-number">02</div>
+        <div class="lab-copy">
+          <div class="lab-meta"><span>40 minutes</span><span>grounded Q&amp;A</span></div>
+          <h3>Answer from local documents—or say the answer is absent.</h3>
+          <p>Build a transparent RAG pipeline: local retrieval selects an evidence packet, then a model answers only from that packet with filenames and quotes.</p>
+          <div class="lesson"><b>Failure to find:</b> fluent completion when the corpus is silent.<br><b>Check to keep:</b> citation exists + quote appears in source.</div>
+        </div>
+        <div class="lab-run">
+          <p>Offline</p><code>python 02_grounded_qa/lab.py</code>
+          <p>API</p><code>python 02_grounded_qa/lab.py --api --question "Which school attended least?"</code>
+          <a href="02_grounded_qa/README.md">Open lab instructions ↗</a>
+        </div>
+      </article>
+
+      <article class="lab-card" id="lab-3">
+        <div class="lab-number">03</div>
+        <div class="lab-copy">
+          <div class="lab-meta"><span>45 minutes</span><span>tool-using agent</span></div>
+          <h3>Give a model analysis tools, not a blank check.</h3>
+          <p>A model may choose among five local functions. The data hide a Simpson's-paradox reversal, so students must inspect the trace—not merely the prose answer.</p>
+          <div class="lesson"><b>Failure to find:</b> a misleading aggregate comparison.<br><b>Check to keep:</b> tool trace + stratified result + causal caution.</div>
+        </div>
+        <div class="lab-run">
+          <p>Offline</p><code>python 03_data_agent/lab.py</code>
+          <p>API</p><code>python 03_data_agent/lab.py --api</code>
+          <a href="03_data_agent/README.md">Open lab instructions ↗</a>
+        </div>
+      </article>
+
+      <article class="lab-card" id="lab-4">
+        <div class="lab-number">04</div>
+        <div class="lab-copy">
+          <div class="lab-meta"><span>35 minutes</span><span>voice workflow</span></div>
+          <h3>Turn an interview into an auditable memo.</h3>
+          <p>Start with a fictional transcript or use a consented recording. Produce themes and action items, then match every evidence quote back to the transcript.</p>
+          <div class="lesson"><b>Failure to find:</b> transcription error that changes interpretation.<br><b>Check to keep:</b> transcript review + verbatim quote verification.</div>
+        </div>
+        <div class="lab-run">
+          <p>Offline</p><code>python 04_voice_copilot/lab.py</code>
+          <p>API + audio</p><code>python 04_voice_copilot/lab.py --api --audio /path/file.m4a</code>
+          <a href="04_voice_copilot/README.md">Open lab instructions ↗</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="evaluation" id="evaluation">
+      <div class="section-head"><p class="eyebrow">The shared method</p><h2>Evaluate the system at three layers.</h2></div>
+      <div class="evaluation-grid">
+        <article><span>01</span><h3>Interface</h3><p>Did it return the required fields, citations, or tool call in a machine-checkable shape?</p></article>
+        <article><span>02</span><h3>Evidence</h3><p>Can each consequential claim be traced to an input passage, retrieved file, transcript, or tool result?</p></article>
+        <article><span>03</span><h3>Decision</h3><p>Is the conclusion calibrated to the design—and is a named human responsible for the next action?</p></article>
+      </div>
+      <p class="closing-question">The aim is not “AI everywhere.” It is <b>useful assistance with visible evidence and bounded authority.</b></p>
+    </section>
+
+    <section class="resources">
+      <div><p class="eyebrow">Current official references</p><h2>API patterns used in the starter code</h2></div>
+      <div class="resource-links">
+        <a href="https://developers.openai.com/api/docs/guides/structured-outputs" target="_blank" rel="noreferrer"><b>Structured Outputs</b><span>Pydantic schemas with the Responses API ↗</span></a>
+        <a href="https://developers.openai.com/api/docs/guides/function-calling" target="_blank" rel="noreferrer"><b>Function calling</b><span>The model–tool–result loop ↗</span></a>
+        <a href="https://developers.openai.com/cookbook/examples/migrating_from_whisper_to_gpt_transcribe" target="_blank" rel="noreferrer"><b>Transcription</b><span>Recorded and realtime voice paths ↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>Course-authored fictional data · designed for inspection, modification, and discussion</p><a href="#top">Back to top ↑</a></footer>
+</body>
+</html>
