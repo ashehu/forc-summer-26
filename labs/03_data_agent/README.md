@@ -1,4 +1,4 @@
-# Lab 03 · A tool-using data analyst
+# Lab 03 · Agentic data analysis
 
 ## The problem
 
