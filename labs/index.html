@@ -26,7 +26,7 @@
         <p class="eyebrow">FORC ’26 · New York University</p>
         <h1>Build four small AI systems.<br><em>Trust none of them by default.</em></h1>
         <p class="lead">Each lab moves from a useful capability to a visible failure mode—and ends with a check you can run yourself.</p>
-        <p class="instructor-line"><strong>Andi Shehu, PhD</strong><span>Applied AI systems at NYU · Student lab guide · 2½ hours</span></p>
+        <p class="instructor-line"><strong>Andi Shehu, PhD</strong><span>Applied AI systems at NYU · Student lab guide · ≈3 hours</span></p>
         <div class="hero-actions"><a class="primary" href="#setup">Start setup</a><a href="README.md">Read the plain-text guide</a></div>
       </div>
       <ol class="sequence" aria-label="Lab sequence">
@@ -65,9 +65,9 @@ python -m pip install -r requirements.txt</code></pre>
       <article class="lab-card" id="lab-1">
         <div class="lab-number">01</div>
         <div class="lab-copy">
-          <div class="lab-meta"><span>30 minutes</span><span>information extraction</span></div>
+          <div class="lab-meta"><span>35 minutes</span><span>information extraction</span></div>
           <h3>Make messy research records comparable.</h3>
-          <p>Turn four differently written study notes into a strict schema. First watch brittle rules fail; then test schema-constrained model output against a gold set.</p>
+          <p>Manually extract one record, then test four differently written study notes against a strict schema and gold set.</p>
           <div class="lesson"><b>Failure to find:</b> a plausible value that is not actually stated.<br><b>Check to keep:</b> field accuracy + exact evidence quote.</div>
         </div>
         <div class="lab-run">
@@ -80,9 +80,9 @@ python -m pip install -r requirements.txt</code></pre>
       <article class="lab-card" id="lab-2">
         <div class="lab-number">02</div>
         <div class="lab-copy">
-          <div class="lab-meta"><span>40 minutes</span><span>grounded Q&amp;A</span></div>
+          <div class="lab-meta"><span>45–50 minutes</span><span>grounded Q&amp;A</span></div>
           <h3>Answer from local documents—or say the answer is absent.</h3>
-          <p>Build a transparent RAG pipeline: local retrieval selects an evidence packet, then a model answers only from that packet with filenames and quotes.</p>
+          <p>Select an evidence packet by hand, then compare it with a transparent RAG pipeline using filenames, chunks, retrieval scores, and quotes.</p>
           <div class="lesson"><b>Failure to find:</b> fluent completion when the corpus is silent.<br><b>Check to keep:</b> citation exists + quote appears in source.</div>
         </div>
         <div class="lab-run">
@@ -95,13 +95,13 @@ python -m pip install -r requirements.txt</code></pre>
       <article class="lab-card" id="lab-3">
         <div class="lab-number">03</div>
         <div class="lab-copy">
-          <div class="lab-meta"><span>45 minutes</span><span>tool-using agent</span></div>
+          <div class="lab-meta"><span>50 minutes</span><span>tool-using agent</span></div>
           <h3>Give a model analysis tools, not a blank check.</h3>
-          <p>A model may choose among five local functions. The data hide a Simpson's-paradox reversal, so students must inspect the trace—not merely the prose answer.</p>
+          <p>Start with raw rows and choose each analysis step before a model may call five local functions. The data hide a Simpson's-paradox reversal.</p>
           <div class="lesson"><b>Failure to find:</b> a misleading aggregate comparison.<br><b>Check to keep:</b> tool trace + stratified result + causal caution.</div>
         </div>
         <div class="lab-run">
-          <p>Offline</p><code>python 03_data_agent/lab.py</code>
+          <p>Start investigation</p><code>python 03_data_agent/lab.py --stage describe</code>
           <p>API</p><code>python 03_data_agent/lab.py --api</code>
           <a href="03_data_agent/README.md">Open lab instructions ↗</a>
         </div>
@@ -110,14 +110,14 @@ python -m pip install -r requirements.txt</code></pre>
       <article class="lab-card" id="lab-4">
         <div class="lab-number">04</div>
         <div class="lab-copy">
-          <div class="lab-meta"><span>35 minutes</span><span>voice workflow</span></div>
+          <div class="lab-meta"><span>40 minutes</span><span>voice workflow</span></div>
           <h3>Turn an interview into an auditable memo.</h3>
-          <p>Start with a fictional transcript or use a consented recording. Produce themes and action items, then match every evidence quote back to the transcript.</p>
+          <p>Correct a deliberately imperfect transcript against a fictional synthetic recording, draft a memo, and trace consequential claims back to audio.</p>
           <div class="lesson"><b>Failure to find:</b> transcription error that changes interpretation.<br><b>Check to keep:</b> transcript review + verbatim quote verification.</div>
         </div>
         <div class="lab-run">
-          <p>Offline</p><code>python 04_voice_copilot/lab.py</code>
-          <p>API + audio</p><code>python 04_voice_copilot/lab.py --api --audio /path/file.m4a</code>
+          <p>Source audit</p><code>data/mock_interview.m4a + rough transcript</code>
+          <p>Failure trace</p><code>python 04_voice_copilot/lab.py --show-trace</code>
           <a href="04_voice_copilot/README.md">Open lab instructions ↗</a>
         </div>
       </article>

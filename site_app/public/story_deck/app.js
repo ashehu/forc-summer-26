@@ -3,8 +3,14 @@
 
   const presentationOrder = [
     "slide-1", "slide-2", "slide-3", "slide-3-training", "slide-4", "slide-5", "slide-6", "slide-7", "slide-8",
-    "slide-16", "slide-case-studies",
-    ...Array.from({ length: 28 }, (_, index) => `slide-${index + 17}`),
+    "slide-16", "slide-case-studies", "slide-24", "slide-rag-intro", "slide-30", "slide-rag-corpus", "slide-31",
+    "slide-rag-architecture", "slide-rag-chunking", "slide-rag-vectorization", "slide-rag-retrieval",
+    "slide-rag-context", "slide-rag-verification", "slide-rag-hands-on",
+    "slide-32", "slide-33", "slide-34",
+    "slide-25", "slide-extraction-why", "slide-extraction-pipeline", "slide-26",
+    "slide-extraction-demo", "slide-27", "slide-28", "slide-29",
+    "slide-agent-problem", "slide-agent-question", "slide-agent-raw-data", "slide-36", "slide-37", "slide-35", "slide-agent-data", "slide-agent-demo", "slide-38", "slide-39",
+    "slide-40", "slide-voice-consent", "slide-voice-source", "slide-voice-claims", "slide-41", "slide-voice-demo", "slide-42", "slide-43", "slide-44",
     ...Array.from({ length: 7 }, (_, index) => `slide-${index + 9}`),
   ];
   const slideContainer = document.querySelector("main");

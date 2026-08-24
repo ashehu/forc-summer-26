@@ -6,7 +6,7 @@
   <meta name="description" content="A student-facing introduction and practical AI lab sequence: from rules and learned patterns to language models, grounded systems, agents, voice, evidence, and trustworthy AI-assisted work.">
   <meta name="theme-color" content="#102a33">
   <title>AI: From Rules to Real-World Agents</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260824-hands-on-cases">
 </head>
 <body>
   <a class="skip-link" href="#slide-1">Skip to slides</a>
@@ -495,10 +495,38 @@
       </aside>
     </section>
 
-    <section class="slide lime case-slide" id="slide-17" data-title="The case question" data-time="27:00–30:00" aria-labelledby="title-17">
+    <section class="slide dark practice-bridge rag-intro-slide" id="slide-rag-intro" data-title="RAG background" data-time="RAG · 1 min" aria-labelledby="title-rag-intro">
+      <div class="slide-content practice-bridge-content">
+        <div>
+          <p class="eyebrow">RAG · background</p>
+          <h2 id="title-rag-intro">RAG gives the model an open book at answer time.</h2>
+        </div>
+        <div class="trust-contrast" aria-label="A model's trained weights plus retrieved passages">
+          <article><span>What the model already has</span><strong>Broad patterns compressed into trained weights.</strong></article>
+          <i>+</i>
+          <article class="trustworthy"><span>What retrieval adds now</span><strong>Relevant passages selected for this question.</strong></article>
+        </div>
+        <p class="bridge light-bridge"><b>RAG = retrieval-augmented generation.</b> It changes the context—not the model’s weights.</p>
+        <p class="rag-learning-contract"><b>By the end:</b> explain each stage · inspect one retrieval trace · diagnose one failure.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the RAG background slide">
+        <p class="notes-label">Presenter notes</p>
+        <dl>
+          <div><dt>Purpose</dt><dd>Define RAG before discussing its motivation or architecture, and distinguish it from training or fine-tuning.</dd></div>
+          <div><dt>Time</dt><dd>One minute. Treat this as the learning contract, not a history lecture.</dd></div>
+          <div><dt>Say</dt><dd>“The model brings broad patterns learned during training. The retrieval system brings a small set of passages selected for this question. Generation then happens with both.”</dd></div>
+          <div><dt>Background</dt><dd>The term retrieval-augmented generation was introduced in 2020 for systems that combine external retrieval with neural text generation. The source collection remains outside the model and can change without retraining it.</dd></div>
+          <div><dt>Clarify</dt><dd>RAG does not teach the model the documents permanently. It constructs a temporary evidence packet at answer time.</dd></div>
+          <div><dt>Transition</dt><dd>Meet the five-document problem we will use to make every part of that definition visible.</dd></div>
+          <div><dt>[Sources]</dt><dd><a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noreferrer">Lewis et al. · Retrieval-Augmented Generation</a></dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="retired-slide lime case-slide" id="slide-17" hidden data-title="The case question" data-time="27:00–30:00" aria-labelledby="title-17">
       <div class="slide-content case-layout">
         <div>
-          <p class="eyebrow">A concrete case</p>
+          <p class="eyebrow">RAG worked example · research synthesis</p>
           <h2 id="title-17">What does heat do to human sleep?</h2>
           <p class="definition">The question sounds clear. It is not yet researchable.</p>
         </div>
@@ -524,7 +552,7 @@
       </aside>
     </section>
 
-    <section class="slide coral quality-slide" id="slide-18" data-title="Define good first" data-time="30:00–34:00" aria-labelledby="title-18">
+    <section class="retired-slide coral quality-slide" id="slide-18" hidden data-title="Define good first" data-time="30:00–34:00" aria-labelledby="title-18">
       <div class="slide-content quality-layout">
         <div>
           <p class="eyebrow">Before the prompt</p>
@@ -550,7 +578,7 @@
       </aside>
     </section>
 
-    <section class="slide dark one-shot-slide" id="slide-19" data-title="The one-shot attempt" data-time="34:00–38:00" aria-labelledby="title-19">
+    <section class="retired-slide dark one-shot-slide" id="slide-19" hidden data-title="The one-shot attempt" data-time="34:00–38:00" aria-labelledby="title-19">
       <div class="slide-content one-shot-layout">
         <div>
           <p class="eyebrow">The tempting shortcut</p>
@@ -577,7 +605,7 @@
       </aside>
     </section>
 
-    <section class="slide paper audit-slide" id="slide-20" data-title="Audit the claims" data-time="38:00–44:00" aria-labelledby="title-20">
+    <section class="retired-slide paper audit-slide" id="slide-20" hidden data-title="Audit the claims" data-time="38:00–44:00" aria-labelledby="title-20">
       <div class="slide-content audit-layout">
         <div>
           <p class="eyebrow">Interactive claim audit</p>
@@ -603,7 +631,7 @@
       </aside>
     </section>
 
-    <section class="slide teal workflow-slide" id="slide-21" data-title="Build a supervised workflow" data-time="44:00–49:00" aria-labelledby="title-21">
+    <section class="retired-slide teal workflow-slide" id="slide-21" hidden data-title="Build a supervised workflow" data-time="44:00–49:00" aria-labelledby="title-21">
       <div class="slide-content workflow-layout">
         <div>
           <p class="eyebrow">From prompting to process</p>
@@ -634,7 +662,7 @@
       </aside>
     </section>
 
-    <section class="slide paper evidence-table-slide" id="slide-22" data-title="Compare the evidence" data-time="49:00–53:00" aria-labelledby="title-22">
+    <section class="retired-slide paper evidence-table-slide" id="slide-22" hidden data-title="Compare the evidence" data-time="49:00–53:00" aria-labelledby="title-22">
       <div class="slide-content evidence-table-layout">
         <div>
           <p class="eyebrow">Evidence is not interchangeable</p>
@@ -673,7 +701,7 @@
       </aside>
     </section>
 
-    <section class="slide dark practice-close" id="slide-23" data-title="What remains human" data-time="53:00–55:00" aria-labelledby="title-23">
+    <section class="retired-slide dark practice-close" id="slide-23" hidden data-title="What remains human" data-time="53:00–55:00" aria-labelledby="title-23">
       <div class="slide-content practice-close-layout">
         <p class="eyebrow">The practical contract</p>
         <h2 id="title-23">AI can draft the synthesis. You own the claim.</h2>
@@ -690,59 +718,253 @@
           <div><dt>Purpose</dt><dd>End the practical block with a clear division of labor and a memorable method.</dd></div>
           <div><dt>Say</dt><dd>“The goal is not maximal automation. It is a workflow where assistance is useful, evidence remains inspectable, and responsibility has a name.”</dd></div>
           <div><dt>Ask</dt><dd>Students write one workflow step they will make more visible or verifiable. Invite two brief responses.</dd></div>
-          <div><dt>Close</dt><dd>Repeat the five verbs: define, plan, source, verify, decide.</dd></div>
+          <div><dt>Transition</dt><dd>Repeat the five verbs—define, plan, source, verify, decide—then test the same retrieval boundaries on a tiny document collection.</dd></div>
         </dl>
       </aside>
     </section>
 
-    <section class="slide paper lab-roadmap-slide" id="slide-24" data-title="Four systems we will build" data-time="55:00–60:00" aria-labelledby="title-24">
+    <section class="slide paper rag-architecture-slide" id="slide-rag-architecture" data-title="The complete RAG pipeline" data-time="RAG · 2 min" aria-labelledby="title-rag-architecture">
+      <div class="slide-content rag-architecture-layout">
+        <div><p class="eyebrow">The complete system</p><h2 id="title-rag-architecture">Prepare the corpus once. Retrieve evidence for every question.</h2></div>
+        <div class="rag-phase-rows" aria-label="RAG preparation and question-time phases">
+          <div class="rag-phase-row"><span>Before questions</span><ol><li><b>Load</b><small>five files</small></li><li><b>Chunk</b><small>short passages</small></li><li><b>Vectorize</b><small>text → numbers</small></li><li><b>Store</b><small>vectors + metadata</small></li></ol></div>
+          <div class="rag-phase-row rag-query-row"><span>For each question</span><ol><li><b>Vectorize</b><small>the question</small></li><li><b>Retrieve</b><small>closest chunks</small></li><li><b>Assemble</b><small>evidence packet</small></li><li><b>Generate</b><small>answer or refusal</small></li><li><b>Verify</b><small>claims + sources</small></li></ol></div>
+        </div>
+        <p class="rag-process-rule"><b>Retrieval decides what the model gets to read.</b> Generation decides what it says about that evidence.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the complete RAG pipeline slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Give students the complete map before zooming into each component.</dd></div>
+        <div><dt>Say</dt><dd>“RAG has an offline preparation phase and an online question phase. The model appears late in the process. Most of the pipeline is information retrieval and evidence handling.”</dd></div>
+        <div><dt>Clarify</dt><dd>The small lab rebuilds the index each run for transparency. A production system would usually prepare and store the corpus separately.</dd></div>
+        <div><dt>Check</dt><dd>Ask students to point to the first stage where a generative model is required. The answer is generation; loading, chunking, vectorization, and retrieval can all happen without one.</dd></div>
+        <div><dt>Transition</dt><dd>Begin with the first design decision: what counts as one retrievable unit?</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noreferrer">Lewis et al. · Retrieval-Augmented Generation</a> · <a href="../labs/02_grounded_qa/lab.py" target="_blank">Course lab implementation</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide lime rag-process-slide" id="slide-rag-chunking" data-title="Chunk the documents" data-time="RAG · 2 min" aria-labelledby="title-rag-chunking">
+      <div class="slide-content rag-process-layout">
+        <div><p class="eyebrow">Step 1 · Chunking</p><h2 id="title-rag-chunking">Search passages, not entire documents.</h2></div>
+        <div class="chunking-demo" aria-label="An evaluation document split into overlapping chunks">
+          <article class="chunk-source"><span>evaluation.txt</span><p>…32 clinic participants and 30 wait-list students… 69% versus 43% submitted a preregistration or analysis plan… confidence changed little… participation was voluntary…</p></article>
+          <i>→</i>
+          <div class="chunk-results"><article><span>evaluation.txt#1</span><p>participants · wait-list · 69% · 43%</p></article><article><span>evaluation.txt#2</span><p>largest difference · confidence · limitation</p></article></div>
+        </div>
+        <div class="chunking-rules"><p><b>55 words</b><span>Small enough to be specific.</span></p><p><b>12-word overlap</b><span>Repeats boundary context.</span></p><p><b>Filename + chunk ID</b><span>Preserves provenance.</span></p></div>
+        <p class="rag-process-note">Too large: retrieval brings irrelevant material. Too small: the evidence loses context.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the chunking slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Explain why RAG usually retrieves passages rather than whole documents.</dd></div>
+        <div><dt>Say</dt><dd>“Chunking defines the unit search can return. We want each chunk to express one useful idea while retaining enough surrounding language to interpret it.”</dd></div>
+        <div><dt>Clarify</dt><dd>The lab uses 55-word chunks with 12-word overlap. Its documents are intentionally tiny; real documents often require structural chunking by headings, paragraphs, or sections.</dd></div>
+        <div><dt>Ask</dt><dd>What could go wrong if the percentage and the group names land in different chunks?</dd></div>
+        <div><dt>Transition</dt><dd>Once chunks exist, turn them into a representation a search algorithm can compare.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/02_grounded_qa/lab.py" target="_blank">Course lab · chunk_text and load_chunks</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide paper rag-process-slide" id="slide-rag-vectorization" data-title="Turn text into vectors" data-time="RAG · 2 min" aria-labelledby="title-rag-vectorization">
+      <div class="slide-content rag-process-layout">
+        <div><p class="eyebrow">Step 2 · Vectorization</p><h2 id="title-rag-vectorization">Turn every chunk—and the question—into comparable numbers.</h2></div>
+        <div class="vectorization-demo">
+          <div class="vector-text"><span>Question</span><strong>Which school attended least, and what barrier did students report?</strong></div>
+          <i>→</i>
+          <div class="feature-axis" aria-label="Illustrative weighted TF-IDF features"><span>attendance <b>high</b></span><span>school <b>high</b></span><span>barrier <b>high</b></span><span>clinic <b>low</b></span></div>
+        </div>
+        <div class="vector-methods">
+          <article><span>This lab</span><strong>TF–IDF vectors</strong><p>Words receive more weight when they are frequent in one chunk but uncommon across the corpus. Simple, lexical, inspectable.</p></article>
+          <article><span>Many larger systems</span><strong>Embedding vectors</strong><p>A learned model places semantically related passages near one another—even when they use different words.</p></article>
+        </div>
+        <p class="rag-process-note"><b>Same principle:</b> represent the question and chunks in the same vector space so closeness can be measured.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the vectorization slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Connect the earlier linear-algebra lesson to retrieval.</dd></div>
+        <div><dt>Say</dt><dd>“A vector is a list of numbers. In TF-IDF, dimensions correspond to terms. In learned embeddings, dimensions are distributed features. Either way, we compare the question vector with chunk vectors.”</dd></div>
+        <div><dt>Clarify</dt><dd>TF-IDF depends strongly on shared vocabulary. Embeddings can capture paraphrase and semantic similarity, but they do not eliminate retrieval errors.</dd></div>
+        <div><dt>Ask</dt><dd>If the question says “timetable clash” but the file says “scheduling conflict,” which method is more likely to connect the paraphrase? Why might it still retrieve the wrong passage?</dd></div>
+        <div><dt>Transition</dt><dd>Use those vectors to rank which chunks are most similar to the question.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/02_grounded_qa/lab.py" target="_blank">Course lab · tfidf_vectors</a> · <a href="https://arxiv.org/abs/1908.10084" target="_blank" rel="noreferrer">Reimers &amp; Gurevych · Sentence-BERT</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide teal rag-process-slide" id="slide-rag-retrieval" data-title="Rank the evidence" data-time="RAG · 2 min" aria-labelledby="title-rag-retrieval">
+      <div class="slide-content rag-process-layout">
+        <div><p class="eyebrow">Step 3 · Similarity search</p><h2 id="title-rag-retrieval">Retrieval ranks likely evidence. It does not answer the question.</h2></div>
+        <p class="retrieval-query"><span>Question vector</span>Which school had the lowest median attendance, and what scheduling barrier did its students report?</p>
+        <div class="retrieval-ranking" aria-label="Top chunks ranked by cosine similarity">
+          <div><span>1</span><strong>attendance.txt#1</strong><i><b style="--score: 96%"></b></i><em>0.480</em><p>Contains attendance by school.</p></div>
+          <div><span>2</span><strong>implementation.txt#1</strong><i><b style="--score: 33%"></b></i><em>0.167</em><p>Contains the studio-review conflict.</p></div>
+          <div><span>3</span><strong>overview.txt#2</strong><i><b style="--score: 25%"></b></i><em>0.126</em><p>Related background, but not needed.</p></div>
+        </div>
+        <p class="rag-process-note"><b>Important:</b> top_k always returns something. Similarity is not sufficiency; the evidence packet may still fail to answer the question.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the retrieval slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Show students an actual retrieval trace from their lab.</dd></div>
+        <div><dt>Say</dt><dd>“Retrieval is a ranking problem. The second chunk has a lower score, but it is essential because the question requires evidence from two documents.”</dd></div>
+        <div><dt>Clarify</dt><dd>The score is not a probability that the chunk is true or sufficient. Cosine similarity compares vector direction rather than length, and top_k simply forwards the highest-ranked chunks—even when every score is weak.</dd></div>
+        <div><dt>Ask</dt><dd>What breaks if top_k is reduced to one?</dd></div>
+        <div><dt>Transition</dt><dd>Package the selected chunks with the question and explicit rules for the model.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/02_grounded_qa/lab.py" target="_blank">Course lab · cosine and retrieve</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide dark rag-context-slide" id="slide-rag-context" data-title="Assemble context and generate" data-time="RAG · 2 min" aria-labelledby="title-rag-context">
+      <div class="slide-content rag-context-layout">
+        <div><p class="eyebrow">Steps 4–5 · Context + generation</p><h2 id="title-rag-context">The model sees the evidence packet—not the whole corpus.</h2></div>
+        <div class="context-to-answer">
+          <article class="context-packet"><span>Temporary prompt</span><pre><b>RULE</b><br>Answer only from supplied sources.<br>Say “not found” when evidence is absent.<br><br><b>QUESTION</b><br>Which school attended least, and why?<br><br><b>SOURCES</b><br>[attendance.txt] …design: 3 sessions…<br>[implementation.txt] …studio-review conflict…</pre></article>
+          <i>→</i>
+          <article class="grounded-answer"><span>Generated answer</span><p>Design students had the lowest median attendance: three sessions <b>[attendance.txt]</b>. They reported a timetable conflict with required studio reviews <b>[implementation.txt]</b>.</p><small>The answer is generated, but its factual content is bounded by the packet.</small></article>
+        </div>
+        <p class="context-warning"><b>If retrieval omits implementation.txt, the model cannot ground the scheduling explanation—no matter how capable it is.</b></p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the context and generation slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Make context assembly concrete and show exactly where the model enters the pipeline.</dd></div>
+        <div><dt>Say</dt><dd>“RAG does not let the model browse the five files freely. The application constructs a prompt containing the question, rules, and selected chunks. That packet is the model’s evidence boundary.”</dd></div>
+        <div><dt>Clarify</dt><dd>The generated answer can still misquote, overstate, or ignore the packet. Retrieval makes grounding possible; it does not guarantee grounded generation.</dd></div>
+        <div><dt>Check</dt><dd>Remove implementation.txt from the packet on screen. Ask what the model should now do with the second half of the question.</dd></div>
+        <div><dt>Transition</dt><dd>Trace every claim back through its citation, retrieved chunk, and original file.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/02_grounded_qa/lab.py" target="_blank">Course lab · answer_with_api</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide paper rag-verification-slide" id="slide-rag-verification" data-title="Verify the evidence chain" data-time="RAG · 2 min" aria-labelledby="title-rag-verification">
+      <div class="slide-content rag-verification-layout">
+        <div><p class="eyebrow">Step 6 · Verification</p><h2 id="title-rag-verification">A citation is useful only if the evidence chain survives inspection.</h2></div>
+        <div class="verification-chain" aria-label="Claim traced through citation and retrieved evidence to the original file"><span>Claim</span><i>→</i><span>Citation</span><i>→</i><span>Retrieved chunk</span><i>→</i><span>Original file</span></div>
+        <div class="rag-verification-checks">
+          <article><span>01</span><strong>Resolve</strong><p>Was the cited filename actually retrieved?</p></article>
+          <article><span>02</span><strong>Match</strong><p>Does the quoted text occur in the retrieved chunk?</p></article>
+          <article><span>03</span><strong>Support</strong><p>Does the passage support the claim—not merely mention the topic?</p></article>
+          <article><span>04</span><strong>Refuse</strong><p>If no passage answers, did the system preserve “not found”?</p></article>
+        </div>
+        <p class="rag-process-rule"><b>The lab automates the first two checks.</b> A human still judges whether the evidence truly supports the meaning of the answer.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the RAG verification slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Separate mechanical validation from semantic judgment.</dd></div>
+        <div><dt>Say</dt><dd>“A filename can resolve and a quotation can be verbatim while the sentence still overstates what the source means. Verification has both code-checkable and judgment-dependent layers.”</dd></div>
+        <div><dt>Do</dt><dd>Open one source file and trace the sample answer back to the exact sentence.</dd></div>
+        <div><dt>Transition</dt><dd>Students now run every stage and inspect the intermediate artifacts themselves.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/02_grounded_qa/lab.py" target="_blank">Course lab · validate</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide dark rag-hands-on-slide" id="slide-rag-hands-on" data-title="Instructor demo · one complete trace" data-time="RAG · 5 min" aria-labelledby="title-rag-hands-on">
+      <div class="slide-content rag-hands-on-layout">
+        <div><p class="eyebrow">Instructor demo · 5 minutes</p><h2 id="title-rag-hands-on">Trace one question through every boundary.</h2></div>
+        <div class="rag-lab-grid">
+          <article><span>1 · Prepare</span><code>python 02_grounded_qa/lab.py --show-chunks --question "Which school had the lowest median attendance, and what scheduling barrier did its students report?"</code><p>Five files become eight chunks. Each chunk keeps its filename.</p></article>
+          <article><span>2 · Retrieve</span><strong>attendance.txt#1 · 0.480<br>implementation.txt#1 · 0.167</strong><p>The answer requires both passages—even though the second score is lower.</p></article>
+          <article><span>3 · Generate + verify</span><strong>Design · three sessions<br>studio-review conflict</strong><p>Check two filenames, then reopen the files and match the evidence.</p></article>
+          <article class="rag-break-it"><span>4 · Break retrieval</span><code>python 02_grounded_qa/lab.py --top-k 1 --question "Which school had the lowest median attendance, and what scheduling barrier did its students report?"</code><p>Now the packet loses the barrier. The model cannot repair missing evidence.</p></article>
+        </div>
+        <p class="rag-lab-output"><b>Watch for:</b> files → chunks → scores → evidence packet → answer → source check.</p>
+        <a class="lab-slide-link light-link" href="../labs/02_grounded_qa/README.md" target="_blank">Open the end-to-end RAG lab ↗</a>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the end-to-end RAG lab slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Model the investigative behavior students should reproduce: inspect each boundary before judging the final prose.</dd></div>
+        <div><dt>Time</dt><dd>Five minutes: two minutes for the successful trace, one minute to verify the files, and two minutes for the deliberate top_k failure.</dd></div>
+        <div><dt>Do</dt><dd>Run the long first command once. Narrate only the two required retrieved chunks. Open both source files. Ask students to predict what top_k 1 will remove, then run the second command.</dd></div>
+        <div><dt>Say</dt><dd>“The lower-ranked implementation passage is still necessary. Ranking answers ‘what is similar?’ The evidence check asks ‘is this sufficient?’”</dd></div>
+        <div><dt>Check</dt><dd>Ask: did the model fail, or did the model receive an incomplete evidence packet? Do not move on until students name retrieval as the failed layer.</dd></div>
+        <div><dt>Transition</dt><dd>Students now reproduce the trace across single-source, multi-source, and absent-answer tests.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/02_grounded_qa/README.md" target="_blank">Course lab instructions</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide paper lab-roadmap-slide" id="slide-24" data-title="The case-study roadmap" data-time="Case-study brief" aria-labelledby="title-24">
       <div class="slide-content lab-roadmap-layout">
         <div>
-          <p class="eyebrow">From one case to four small systems</p>
-          <h2 id="title-24">Useful AI is a workflow you can inspect.</h2>
-          <p class="lead dark-lead">Each lab adds one capability—and one new place to be wrong.</p>
+          <p class="eyebrow">The practical arc</p>
+          <h2 id="title-24">We will build four inspectable workflows.</h2>
+          <p class="lead dark-lead">Each adds one capability—and one new place to be wrong.</p>
         </div>
         <ol class="four-lab-roadmap">
-          <li><span>01</span><div><strong>Text → structured data</strong><p>Can we compare messy records?</p></div><time>30 min</time></li>
-          <li><span>02</span><div><strong>Documents → grounded answer</strong><p>Can we keep claims attached to sources?</p></div><time>40 min</time></li>
-          <li><span>03</span><div><strong>Question → analysis tools</strong><p>Can an agent choose a safe next step?</p></div><time>45 min</time></li>
-          <li><span>04</span><div><strong>Voice → research memo</strong><p>Can we preserve what was actually said?</p></div><time>35 min</time></li>
+          <li><span>01</span><div><strong>RAG · retrieval-augmented generation</strong><p>Retrieve evidence first; keep claims attached to sources.</p></div><time>45–50 min</time></li>
+          <li><span>02</span><div><strong>Extraction · text → structured data</strong><p>Can we compare messy records?</p></div><time>35 min</time></li>
+          <li><span>03</span><div><strong>Question → analysis tools</strong><p>Can an agent choose a safe next step?</p></div><time>50 min</time></li>
+          <li><span>04</span><div><strong>Voice → auditable memo</strong><p>Can we preserve what was actually said?</p></div><time>40 min</time></li>
         </ol>
         <a class="lab-slide-link" href="../labs/index.html" target="_blank">Open the student lab kit ↗</a>
       </div>
       <aside class="speaker-notes" aria-label="Presenter notes for slide 25">
         <p class="notes-label">Presenter notes</p>
         <dl>
-          <div><dt>Purpose</dt><dd>Reset the class from demonstration mode into a coherent sequence of student-built systems.</dd></div>
-          <div><dt>Say</dt><dd>“These are not four random apps. We will keep adding one thing: a schema, a source set, tools, and then voice. At every stage, we also add a new verification obligation.”</dd></div>
-          <div><dt>Do</dt><dd>Ask students to open the lab kit now. Pair no-code students with API students when possible; both paths use the same data and checks.</dd></div>
-          <div><dt>Transition</dt><dd>Start with the least agentic—but often most valuable—use case: turning text into comparable data.</dd></div>
+          <div><dt>Purpose</dt><dd>Preview the applied arc and establish that every case includes both a capability and a verification obligation.</dd></div>
+          <div><dt>Say</dt><dd>“These are not four unrelated demos. Each is a workflow we can inspect. We will start with RAG, then add structured outputs, bounded analysis tools, and voice.”</dd></div>
+          <div><dt>Why RAG first</dt><dd>It makes the evidence boundary visible: what entered the model’s context, what stayed out, and which claims can be checked.</dd></div>
+          <div><dt>Transition</dt><dd>Before retrieving anything, define the research question precisely enough to know which documents and claims count.</dd></div>
         </dl>
       </aside>
     </section>
 
-    <section class="slide coral case-opener-slide" id="slide-25" data-title="Case 1 · Text to data" data-time="60:00–65:00" aria-labelledby="title-25">
-      <div class="slide-content case-opener-layout">
-        <div><p class="eyebrow">Case 01 · Structured extraction</p><h2 id="title-25">A table is useful only when every row means the same thing.</h2></div>
+    <section class="slide coral extraction-problem-slide" id="slide-25" data-title="Define the extraction problem" data-time="Extraction · 2 min" aria-labelledby="title-25">
+      <div class="slide-content extraction-problem-layout">
+        <div><p class="eyebrow">Case 02 · Structured extraction</p><h2 id="title-25">Can four differently written study notes become one trustworthy table?</h2></div>
+        <p class="extraction-case-context"><strong>The case:</strong> A research team receives four fictional study notes. The facts are comparable, but headings, number formats, and descriptions differ from record to record.</p>
+        <div class="extraction-problem-definition"><span>Problem statement</span><p>Extract one row per note with population, method, sample size, finding, limitation, and one exact supporting sentence. Never invent a value when the source is silent.</p></div>
         <div class="messy-to-schema" aria-label="Unstructured notes becoming structured records">
           <div class="messy-notes"><span>“twelve technicians…”</span><span>“total N: 62”</span><span>“number not reported”</span><span>“matched cohort…”</span></div>
           <i>→</i>
-          <div class="schema-sheet"><b>Study record</b><code>population</code><code>method</code><code>sample_size</code><code>finding</code><code>limitation</code><code>evidence_quote</code></div>
+          <div class="schema-sheet"><b>One comparable row</b><code>population</code><code>method</code><code>sample_size</code><code>finding</code><code>limitation</code><code>evidence_quote</code></div>
         </div>
-        <p class="case-question"><b>Question:</b> Can the system preserve missingness and uncertainty—not merely produce valid JSON?</p>
+        <p class="extraction-learning-contract"><b>By the end:</b> define the contract · inspect one extraction · diagnose one failure.</p>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 26">
-        <p class="notes-label">Presenter notes</p>
-        <dl>
-          <div><dt>Purpose</dt><dd>Frame extraction as a research-design problem, not a formatting trick.</dd></div>
-          <div><dt>Say</dt><dd>“Many practical AI projects do not need an all-knowing assistant. They need reliable conversion: notes to a table, forms to a database, or papers to an evidence matrix.”</dd></div>
-          <div><dt>Ask</dt><dd>Which field is hardest here: sample size, method, finding, limitation, or supporting quote? Why?</dd></div>
-          <div><dt>Transition</dt><dd>Before prompting, define exactly what one acceptable record looks like.</dd></div>
-        </dl>
-      </aside>
+      <aside class="speaker-notes" aria-label="Presenter notes for the extraction problem slide">
+        <p class="notes-label">Presenter notes</p><dl>
+          <div><dt>Purpose</dt><dd>Define the input, required output, and success condition before naming a model or technique.</dd></div>
+          <div><dt>Time</dt><dd>Two minutes. Keep the focus on the conversion problem and its evidence requirement.</dd></div>
+          <div><dt>Say</dt><dd>“Many practical AI systems are converters: notes to tables, forms to databases, or papers to evidence matrices. The hard part is making every row mean the same thing without manufacturing missing facts.”</dd></div>
+          <div><dt>Ask</dt><dd>Which requirement is easiest to check with code? Which still requires judgment?</dd></div>
+          <div><dt>Transition</dt><dd>Look at the four ways this tiny corpus expresses one seemingly simple field: sample size.</dd></div>
+          <div><dt>[Sources]</dt><dd><a href="../labs/01_structured_extraction/README.md" target="_blank">Course lab · Structured extraction</a></dd></div>
+        </dl></aside>
     </section>
 
-    <section class="slide lime schema-slide" id="slide-26" data-title="Define the output before the prompt" data-time="65:00–72:00" aria-labelledby="title-26">
+    <section class="slide paper extraction-why-slide" id="slide-extraction-why" data-title="Why semantic extraction" data-time="Extraction · 2 min" aria-labelledby="title-extraction-why">
+      <div class="slide-content extraction-why-layout">
+        <div><p class="eyebrow">Why use an LLM?</p><h2 id="title-extraction-why">The same fact can arrive in four different forms.</h2></div>
+        <div class="language-mapping" aria-label="Four source phrases mapped to one sample-size field">
+          <div><span>A17</span><q>n = 84</q><i>→</i><strong>84</strong></div>
+          <div><span>B04</span><q>twelve laboratory technicians</q><i>→</i><strong>12</strong></div>
+          <div><span>C22</span><q>Thirty-two… another thirty… total N: 62</q><i>→</i><strong>62</strong></div>
+          <div class="missing-mapping"><span>D09</span><q>does not report the number</q><i>→</i><strong>null</strong></div>
+        </div>
+        <p class="extraction-why-takeaway"><b>Rules match surface patterns. Models can map meaning.</b> That flexibility improves coverage—and creates a new risk of plausible inference.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for why semantic extraction"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Make the value proposition and the central risk of model-based extraction visible in the same example.</dd></div>
+        <div><dt>Time</dt><dd>Two minutes.</dd></div>
+        <div><dt>Say</dt><dd>“A regular expression can be excellent when the format is stable. A language model becomes useful when the same concept is expressed through labels, prose, number words, or arithmetic across sentences.”</dd></div>
+        <div><dt>Clarify</dt><dd>Semantic flexibility is not permission to infer. D09 must become null because the absence is explicit and meaningful.</dd></div>
+        <div><dt>Check</dt><dd>Ask which mapping requires interpretation rather than transcription. C22 requires combining two groups; D09 requires preserving absence.</dd></div>
+        <div><dt>Transition</dt><dd>Place extraction inside a larger pipeline so flexibility is surrounded by checks.</dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide dark extraction-pipeline-slide" id="slide-extraction-pipeline" data-title="The complete extraction pipeline" data-time="Extraction · 2 min" aria-labelledby="title-extraction-pipeline">
+      <div class="slide-content extraction-pipeline-layout">
+        <div><p class="eyebrow">The complete system</p><h2 id="title-extraction-pipeline">Extraction is one stage. Trust comes from the checks around it.</h2></div>
+        <ol class="extraction-pipeline" aria-label="Structured extraction and validation pipeline">
+          <li><span>01</span><strong>Read</strong><p>One source record.</p></li>
+          <li><span>02</span><strong>Extract</strong><p>Map text to fields.</p></li>
+          <li><span>03</span><strong>Validate shape</strong><p>Types, required fields, nulls.</p></li>
+          <li><span>04</span><strong>Score content</strong><p>Compare with known answers.</p></li>
+          <li><span>05</span><strong>Verify quote</strong><p>Search the original text.</p></li>
+          <li><span>06</span><strong>Review meaning</strong><p>Scope and uncertainty.</p></li>
+        </ol>
+        <p class="extraction-pipeline-rule"><b>The model performs step 2.</b> The application and the researcher own the rest of the evidence chain.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the extraction pipeline"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Give students the complete map before introducing the schema and implementation.</dd></div>
+        <div><dt>Time</dt><dd>Two minutes.</dd></div>
+        <div><dt>Say</dt><dd>“Structured Outputs can constrain the shape of step two. They do not score the content, prove a quotation exists, or decide whether the interpretation is faithful.”</dd></div>
+        <div><dt>Check</dt><dd>Ask which checks can run without a gold set. Shape and quote checks can; exact field scoring usually cannot.</dd></div>
+        <div><dt>Transition</dt><dd>Design an output contract that has an honest representation for missing information.</dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide lime schema-slide" id="slide-26" data-title="Define the output before the prompt" data-time="Extraction · 3 min" aria-labelledby="title-26">
       <div class="slide-content schema-layout">
         <div><p class="eyebrow">The interface is part of the reasoning</p><h2 id="title-26">Write the schema before you write the prompt.</h2></div>
         <div class="schema-field-grid">
@@ -759,39 +981,67 @@
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Show that a schema encodes epistemic choices: required fields, allowed absence, and traceability.</dd></div>
+          <div><dt>Time</dt><dd>Three minutes, including one student check.</dd></div>
           <div><dt>Say</dt><dd>“A system that inserts a plausible sample size is worse than one that returns null. Missingness carries information.”</dd></div>
-          <div><dt>Do</dt><dd>Give pairs two minutes to propose one additional field. Ask what new ambiguity that field creates.</dd></div>
-          <div><dt>Transition</dt><dd>Run the simplest possible baseline before reaching for a model.</dd></div>
+          <div><dt>Check</dt><dd>Ask which field makes ignorance representable. Then ask what would happen to D09 if sample_size were required to be an integer.</dd></div>
+          <div><dt>Transition</dt><dd>Trace D09 through the baseline, the desired record, and one deliberately broken schema.</dd></div>
           <div><dt>[Sources]</dt><dd><a href="https://developers.openai.com/api/docs/guides/structured-outputs" target="_blank" rel="noreferrer">OpenAI · Structured model outputs</a></dd></div>
         </dl>
       </aside>
     </section>
 
-    <section class="slide dark terminal-slide" id="slide-27" data-title="Run, inspect, score" data-time="72:00–84:00" aria-labelledby="title-27">
-      <div class="slide-content terminal-layout">
-        <div><p class="eyebrow">Student activity · 12 minutes</p><h2 id="title-27">Run it. Find the brittle rule. Score the output.</h2></div>
-        <div class="terminal-card"><div><i></i><i></i><i></i><span>labs</span></div><code>python 01_structured_extraction/lab.py</code><pre>Mode: offline regex baseline
-A17: 5/5 fields · quote ✓
-B04: 0/5 fields · quote ✗
-C22: 0/5 fields · quote ✗
-D09: 1/5 fields · quote ✗
-
-Exact field accuracy: 6/20 (30%)</pre></div>
-        <ol class="activity-steps"><li><span>1</span>Open one failed source record.</li><li><span>2</span>Locate the rule that missed it.</li><li><span>3</span>Decide whether the gold answer is explicitly supported.</li><li><span>4</span>If using an API, rerun with <code>--api</code>.</li></ol>
-        <a class="lab-slide-link light-link" href="../labs/01_structured_extraction/README.md" target="_blank">Open Lab 01 instructions ↗</a>
+    <section class="slide dark extraction-demo-slide" id="slide-extraction-demo" data-title="Instructor demo · one extraction trace" data-time="Extraction · 5 min" aria-labelledby="title-extraction-demo">
+      <div class="slide-content extraction-demo-layout">
+        <div><p class="eyebrow">Instructor demo · 5 minutes</p><h2 id="title-extraction-demo">Trace D09: absence must survive the conversion.</h2></div>
+        <div class="extraction-demo-grid">
+          <article><span>1 · Read the source</span><blockquote>“The summary does not report the number of participating students…”</blockquote><p>The absence is explicit—not merely overlooked.</p></article>
+          <article><span>2 · Run the baseline</span><code>python 01_structured_extraction/lab.py --record D09 --show-details</code><strong>shape ✓ · 1/5 fields · quote ✗</strong><p>Valid structure can contain mostly missing content.</p></article>
+          <article><span>3 · Desired record</span><pre><code>"sample_size": null,<br>"main_finding": "Booking logs suggested<br>shorter median wait times…"</code></pre><p>Null preserves what the source does—and does not—say.</p></article>
+          <article class="extraction-break-it"><span>4 · Break the schema</span><code>sample_size: integer</code><strong>No honest value for D09</strong><p>A bad interface can pressure the system to invent.</p></article>
+        </div>
+        <p class="extraction-demo-output"><b>Watch for:</b> source → extracted fields → shape check → field score → quote check → meaning.</p>
+        <a class="lab-slide-link light-link" href="../labs/01_structured_extraction/README.md" target="_blank">Open the structured extraction lab ↗</a>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 28">
-        <p class="notes-label">Presenter notes</p>
-        <dl>
-          <div><dt>Purpose</dt><dd>Make students establish a baseline and an evaluation target before calling the model.</dd></div>
-          <div><dt>Do</dt><dd>At minute six, ask for one failure caused by wording and one failure that would require inference. No-code groups run the same comparison manually against gold.json.</dd></div>
-          <div><dt>Say</dt><dd>“Thirty percent is not embarrassing. It is a measured starting point. Now any improvement has a denominator.”</dd></div>
-          <div><dt>Transition</dt><dd>Compare kinds of failure, not just total accuracy.</dd></div>
-        </dl>
-      </aside>
+      <aside class="speaker-notes" aria-label="Presenter notes for the structured extraction demo"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Model the complete inspection behavior students should reproduce before they run all four records.</dd></div>
+        <div><dt>Time</dt><dd>Five minutes: two for the source and baseline, one for the desired record, and two for the broken-schema discussion.</dd></div>
+        <div><dt>Do</dt><dd>Run the offline command. Point out that shape passes and null matches while four substantive fields fail. Show the expected record from gold.json. Then forbid null and ask for an honest value.</dd></div>
+        <div><dt>Say</dt><dd>“The baseline gets null correct by accident: its rule did not understand ‘not reported’; it simply failed to find n equals. A correct value and a correct reason are not always the same achievement.”</dd></div>
+        <div><dt>Check</dt><dd>Ask whether this is a rule failure, a schema failure, or an evidence failure. The initial baseline failure is the rule; forbidding null creates a schema failure.</dd></div>
+        <div><dt>Transition</dt><dd>Students now test stable labels, changed wording, and missing values as three separate conditions.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/01_structured_extraction/data/records/study_d.txt" target="_blank">Course record D09</a> · <a href="../labs/01_structured_extraction/data/gold.json" target="_blank">Course gold set</a></dd></div>
+      </dl></aside>
     </section>
 
-    <section class="slide paper verification-slide" id="slide-28" data-title="Schema-valid is not source-valid" data-time="84:00–90:00" aria-labelledby="title-28">
+    <section class="slide dark extraction-activity-slide" id="slide-27" data-title="Student lab · three extraction tests" data-time="Extraction · 15 min" aria-labelledby="title-27">
+      <div class="slide-content extraction-activity-layout">
+        <div><p class="eyebrow">Student lab · 15 minutes</p><h2 id="title-27">Extract one row yourself. Then test the system.</h2></div>
+        <div class="extraction-test-grid">
+          <article><span>1 · Manual first · A17</span><strong>Complete all six fields before opening the answer.</strong><p>Underline the exact sentence supporting your finding.</p></article>
+          <article><span>2 · Changed wording · B04 or C22</span><strong>“twelve technicians”<br>“total N: 62”</strong><p>Predict where a surface rule will fail.</p></article>
+          <article class="missing-test"><span>3 · Missing value · D09</span><strong>“does not report the number”</strong><p>Preserve absence rather than guessing.</p></article>
+        </div>
+        <div class="extraction-participation-paths">
+          <article><span>Code path</span><code>python 01_structured_extraction/lab.py --record A17 --show-details</code><p>Compare the baseline with your manual row. Add <code>--api</code> only after that audit.</p></article>
+          <article><span>No-code path</span><strong>Manual extraction</strong><p>Extract one row at a time, compare with gold.json, and search the source for the quote.</p></article>
+        </div>
+        <p class="extraction-pair-roles"><b>In pairs:</b> Human Extractor completes A17 first. System Operator runs the baseline or model. Auditor compares both with the gold set and diagnoses one disagreement.</p>
+        <a class="lab-slide-link light-link" href="../labs/01_structured_extraction/README.md" target="_blank">Open the structured extraction lab ↗</a>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the structured extraction student lab"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Evaluate rules or model output across stable labels, changed wording, and explicitly missing information.</dd></div>
+          <div><dt>Time</dt><dd>Fifteen minutes: two for roles, three for the manual A17 row, six for system tests, and four to score and diagnose one disagreement.</dd></div>
+          <div><dt>Do</dt><dd>Do not let students open gold.json until the manual row is complete. Then they record shape validity before field accuracy and quote source wording, extracted value, expected value, and failure stage for one disagreement.</dd></div>
+        <div><dt>Code path</dt><dd>Run the offline baseline first. Use --record and --show-details to isolate a case. The API path is optional and should be compared against the same gold and quote checks.</dd></div>
+        <div><dt>No-code path</dt><dd>Students manually populate the schema or give one record to a model. They compare every field with gold.json and search the original source for the evidence quote.</dd></div>
+        <div><dt>Success</dt><dd>Each pair completes three rows on the trace sheet and can name whether the rule, schema, extraction, evidence, or interpretation failed.</dd></div>
+        <div><dt>Say</dt><dd>“Thirty percent is not embarrassing. It is a measured starting point. Now any improvement has a denominator—and every failure has a layer.”</dd></div>
+        <div><dt>Transition</dt><dd>Separate four kinds of validity before deciding whether an extraction is safe to use.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/01_structured_extraction/data/gold.json" target="_blank">Course gold set</a> · <a href="../labs/01_structured_extraction/TRACE_TEMPLATE.md" target="_blank">Extraction trace sheet</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide paper verification-slide" id="slide-28" data-title="Schema-valid is not source-valid" data-time="Extraction · 4 min" aria-labelledby="title-28">
       <div class="slide-content verification-layout">
         <div><p class="eyebrow">Debrief</p><h2 id="title-28">Valid JSON can still contain an invalid claim.</h2></div>
         <div class="validity-stack">
@@ -806,80 +1056,133 @@ Exact field accuracy: 6/20 (30%)</pre></div>
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Separate structural reliability from factual and interpretive reliability.</dd></div>
+          <div><dt>Time</dt><dd>Four minutes: place one student failure into the stack, then close the case.</dd></div>
+          <div><dt>Do</dt><dd>Ask one pair to report a failure without naming the final answer. The class identifies the first layer that failed.</dd></div>
           <div><dt>Ask</dt><dd>Did the API version improve field accuracy? Did it ever produce a cleanly typed unsupported value?</dd></div>
           <div><dt>Say</dt><dd>“We should automate the checks that can be automated and name the judgment that cannot.”</dd></div>
-          <div><dt>Transition</dt><dd>After a ten-minute break, expand from one record at a time to answering across a collection of documents.</dd></div>
+          <div><dt>Success</dt><dd>Students can explain why shape validity is necessary, evidence validity is independently testable, and meaning still requires review.</dd></div>
+          <div><dt>Transition</dt><dd>After a ten-minute break, move from generating answers to choosing and running bounded analysis tools.</dd></div>
         </dl>
       </aside>
     </section>
 
     <section class="slide dark lab-break-slide" id="slide-29" data-title="Break · What was inferred?" data-time="90:00–100:00" aria-labelledby="title-29">
       <div class="slide-content lab-break-layout"><p class="eyebrow">10-minute break</p><h2 id="title-29">What did the system infer<br>that the source never said?</h2><p>Keep one example. We will reuse the question.</p><div class="break-mark" aria-hidden="true">?</div></div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 30"><p class="notes-label">Presenter notes</p><dl><div><dt>Purpose</dt><dd>Give students a real break while preserving one diagnostic question.</dd></div><div><dt>Do</dt><dd>Restart on time. Invite exactly two examples, then continue.</dd></div><div><dt>Transition</dt><dd>The next system tries to reduce unsupported inference by retrieving local evidence before answering.</dd></div></dl></aside>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 30"><p class="notes-label">Presenter notes</p><dl><div><dt>Purpose</dt><dd>Give students a real break while preserving one diagnostic question.</dd></div><div><dt>Do</dt><dd>Restart on time. Invite exactly two examples, then continue.</dd></div><div><dt>Transition</dt><dd>The next case gives the model bounded analysis tools and makes its intermediate actions visible.</dd></div></dl></aside>
     </section>
 
-    <section class="slide teal case-opener-slide" id="slide-30" data-title="Case 2 · Documents to answers" data-time="100:00–105:00" aria-labelledby="title-30">
-      <div class="slide-content case-opener-layout">
-        <div><p class="eyebrow">Case 02 · Grounded Q&amp;A</p><h2 id="title-30">A language model can answer a question without knowing the answer.</h2></div>
-        <div class="qa-contrast">
-          <article><span>Question</span><strong>Did the clinic increase doctoral completion?</strong></article><i>→</i><article class="danger-answer"><span>Plausible completion</span><strong>“Yes—participants completed at a higher rate…”</strong></article>
+    <section class="slide teal case-opener-slide rag-problem-slide" id="slide-30" data-title="Define the RAG problem" data-time="RAG · 2 min" aria-labelledby="title-30">
+      <div class="slide-content rag-problem-layout">
+        <div>
+          <p class="eyebrow">Case 01 · Grounded question answering</p>
+          <h2 id="title-30">Can we answer program questions using only five local documents?</h2>
         </div>
-        <p class="case-question"><b>The corpus says:</b> the evaluation lasted one term and did not measure degree completion.</p>
+        <p class="rag-case-context"><strong>The case:</strong> Fictional Northbridge University ran an eight-week Peer Methods Clinic for graduate students. You receive five files: an overview, attendance summary, implementation interviews, evaluation note, and budget memo.</p>
+        <div class="rag-problem-definition">
+          <span>Problem statement</span>
+          <p>Build a system that answers questions using only these five files, cites the supporting filename, and says <strong>“not found”</strong> when the files do not contain the answer.</p>
+        </div>
+        <div class="rag-problem-example" aria-label="Example of the RAG problem">
+          <div><span>Test question</span><strong>Did the clinic increase doctoral completion rates?</strong></div>
+          <i>→</i>
+          <div><span>Expected answer</span><strong>Not found—the eight-week evaluation did not measure degree completion.</strong></div>
+        </div>
       </div>
       <aside class="speaker-notes" aria-label="Presenter notes for slide 31">
         <p class="notes-label">Presenter notes</p><dl>
-          <div><dt>Purpose</dt><dd>Create a sharp need for retrieval and a legitimate “not found” outcome.</dd></div>
-          <div><dt>Say</dt><dd>“The model's prior knowledge is a feature in many settings. In document-grounded work, that same prior can fill a gap we needed it to preserve.”</dd></div>
+          <div><dt>Purpose</dt><dd>Introduce the fictional Northbridge case and define the exact task before presenting RAG as the method.</dd></div>
+          <div><dt>Say</dt><dd>“This question comes from our lab corpus. Northbridge University is fictional. Its five documents describe an eight-week graduate-support pilot, including participation, attendance, implementation, evaluation, and budget.”</dd></div>
+          <div><dt>Clarify</dt><dd>The input is an administrator’s question plus the five files. A successful output is either a supported answer with a real filename or an explicit ‘not found.’ Doctoral completion is the absent-answer test: it sounds relevant, but the corpus never measured it.</dd></div>
           <div><dt>Ask</dt><dd>What wording would make “not found” a successful answer rather than a failure?</dd></div>
-          <div><dt>Transition</dt><dd>Expose the complete retrieval-augmented generation pipeline.</dd></div>
+          <div><dt>Transition</dt><dd>Before building anything, ask why a capable language model cannot solve this evidence-bound task from the question alone.</dd></div>
+          <div><dt>[Sources]</dt><dd><a href="../labs/02_grounded_qa/README.md" target="_blank">Course lab · Grounded question answering</a> · <a href="../labs/02_grounded_qa/data/questions.json" target="_blank">Course test questions</a></dd></div>
         </dl></aside>
     </section>
 
-    <section class="slide paper rag-slide" id="slide-31" data-title="Search before generation" data-time="105:00–115:00" aria-labelledby="title-31">
-      <div class="slide-content rag-layout">
-        <div><p class="eyebrow">A transparent RAG pipeline</p><h2 id="title-31">Search first. Generate second. Verify last.</h2></div>
-        <ol class="rag-pipeline">
-          <li><span>01</span><strong>Question</strong><p>What exactly is being asked?</p></li><li><span>02</span><strong>Retrieve</strong><p>Which local files look relevant?</p></li><li><span>03</span><strong>Context</strong><p>What evidence reaches the model?</p></li><li><span>04</span><strong>Answer</strong><p>What can be said from that packet?</p></li><li><span>05</span><strong>Verify</strong><p>Do filenames and quotes resolve?</p></li>
-        </ol>
-        <div class="rag-boundary"><b>Retrieval error</b><span>The right evidence never enters context.</span><i>≠</i><b>Generation error</b><span>The evidence enters, but the answer misuses it.</span></div>
+    <section class="slide dark rag-corpus-slide" id="slide-rag-corpus" data-title="Meet the five-file corpus" data-time="RAG · 3 min" aria-labelledby="title-rag-corpus">
+      <div class="slide-content rag-corpus-layout">
+        <div><p class="eyebrow">Meet the raw material</p><h2 id="title-rag-corpus">Before searching, know what is—and is not—in the files.</h2></div>
+        <div class="corpus-preview">
+          <ol class="corpus-manifest" aria-label="The five files in the RAG corpus">
+            <li><strong>overview.txt</strong><span>purpose · format · scope</span></li>
+            <li><strong>attendance.txt</strong><span>attendance by school</span></li>
+            <li><strong>implementation.txt</strong><span>student barriers · facilitator observations</span></li>
+            <li><strong>evaluation.txt</strong><span>participants vs wait-list · limitations</span></li>
+            <li><strong>budget.txt</strong><span>pilot and recurring costs</span></li>
+          </ol>
+          <div class="corpus-excerpts">
+            <blockquote><span>attendance.txt</span>“Median attendance was … three for design students.”</blockquote>
+            <blockquote><span>implementation.txt</span>“Design students frequently described a timetable conflict …”</blockquote>
+            <p><b>Notice:</b> no file reports doctoral completion. Absence is part of the dataset.</p>
+          </div>
+        </div>
+        <p class="corpus-first-task"><b>Before running code:</b> Which file or files would you open for each test question? Write a prediction.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the RAG corpus preview"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Let students meet the actual evidence collection before the pipeline abstracts it into chunks and vectors.</dd></div>
+        <div><dt>Time</dt><dd>Three minutes: one to scan the manifest, one to compare the two excerpts, and one to predict which files answer the three test questions.</dd></div>
+        <div><dt>Do</dt><dd>Ask pairs to point to a likely file for the single-source question, two files for the attendance-and-barrier question, and the evidence they would need—but do not have—for doctoral completion.</dd></div>
+        <div><dt>Say</dt><dd>“Retrieval cannot find evidence that is absent. It can only rank the material we actually supplied.”</dd></div>
+        <div><dt>Transition</dt><dd>Now explain why this evidence-access problem cannot be solved by polishing the writing prompt.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/02_grounded_qa/data/corpus/overview.txt" target="_blank">Course corpus · overview</a> · <a href="../labs/02_grounded_qa/data/corpus/attendance.txt" target="_blank">attendance</a> · <a href="../labs/02_grounded_qa/data/corpus/implementation.txt" target="_blank">implementation</a> · <a href="../labs/02_grounded_qa/data/corpus/evaluation.txt" target="_blank">evaluation</a> · <a href="../labs/02_grounded_qa/data/corpus/budget.txt" target="_blank">budget</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide paper rag-slide" id="slide-31" data-title="Why this case needs RAG" data-time="RAG · 2 min" aria-labelledby="title-31">
+      <div class="slide-content rag-need-layout">
+        <div><p class="eyebrow">Why RAG?</p><h2 id="title-31">This is an evidence-access problem—not a writing problem.</h2></div>
+        <div class="rag-paths" aria-label="Prompt-only answering compared with retrieval-augmented generation">
+          <div class="rag-path rag-path-risk"><span>Prompt only</span><p><b>Question</b><i>→</i><b>Model weights</b><i>→</i><strong>Plausible answer</strong></p><small>The five local files may never influence the answer.</small></div>
+          <div class="rag-path rag-path-grounded"><span>With RAG</span><p><b>Question</b><i>→</i><b>Search the files</b><i>→</i><b>Evidence packet</b><i>→</i><strong>Answer or “not found”</strong></p><small>The answer can be traced to the material selected at question time.</small></div>
+        </div>
+        <p class="rag-need-takeaway"><b>We need RAG when the answer must come from current, private, or assigned sources—not merely from what the model learned during training.</b></p>
       </div>
       <aside class="speaker-notes" aria-label="Presenter notes for slide 32">
         <p class="notes-label">Presenter notes</p><dl>
-          <div><dt>Purpose</dt><dd>Give students a mental model that lets them diagnose RAG systems layer by layer.</dd></div>
-          <div><dt>Say</dt><dd>“RAG does not upload truth into the model. It constructs a temporary evidence packet. We must inspect both the packet and the answer.”</dd></div>
-          <div><dt>Do</dt><dd>Point out that this lab uses simple local TF–IDF on purpose. The retrieval mechanism remains visible and modifiable.</dd></div>
-          <div><dt>Transition</dt><dd>Test the pipeline with one single-source question, one multi-source question, and one absent answer.</dd></div>
+          <div><dt>Purpose</dt><dd>Make the case for RAG before introducing its machinery.</dd></div>
+          <div><dt>Say</dt><dd>“A stronger writing prompt does not solve evidence access. If the five files never enter the model’s context, fluency cannot make the answer grounded in them.”</dd></div>
+          <div><dt>Clarify</dt><dd>RAG is useful here because the source collection is local, changeable, and authoritative for the task. The system must also preserve an absent answer rather than filling the gap.</dd></div>
+          <div><dt>Transition</dt><dd>Separate what happens once when the corpus is prepared from what happens each time a question is asked.</dd></div>
+          <div><dt>[Sources]</dt><dd><a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noreferrer">Lewis et al. · Retrieval-Augmented Generation</a></dd></div>
         </dl></aside>
     </section>
 
-    <section class="slide lime test-set-slide" id="slide-32" data-title="Three questions, three tests" data-time="115:00–132:00" aria-labelledby="title-32">
+    <section class="slide lime test-set-slide" id="slide-32" data-title="Student lab · three evidence tests" data-time="RAG · 18 min" aria-labelledby="title-32">
       <div class="slide-content test-set-layout">
-        <div><p class="eyebrow">Student activity · 17 minutes</p><h2 id="title-32">A tiny test set beats one impressive demo.</h2></div>
+        <div><p class="eyebrow">Student lab · 18 minutes</p><h2 id="title-32">Choose the evidence first. Then test retrieval.</h2></div>
         <div class="question-test-grid">
-          <article><span>Single source</span><strong>Which outcome showed the largest observed difference?</strong><p>Expected: evaluation.txt</p></article>
-          <article><span>Multiple sources</span><strong>Who attended least—and what barrier did they report?</strong><p>Expected: attendance.txt + implementation.txt</p></article>
-          <article class="absent-test"><span>Absent answer</span><strong>Did doctoral completion increase?</strong><p>Expected: not found</p></article>
+          <article><span>Required · single source</span><strong>Which outcome showed the largest observed difference?</strong><p>Predict a file → retrieve → verify.</p></article>
+          <article><span>Required · multiple sources</span><strong>Who attended least—and what barrier did they report?</strong><p>Build the packet manually before running search.</p></article>
+          <article class="absent-test"><span>Challenge · absent answer</span><strong>Did doctoral completion increase?</strong><p>What would count as a successful refusal?</p></article>
         </div>
-        <div class="activity-command"><code>python 02_grounded_qa/lab.py</code><code>python 02_grounded_qa/lab.py --api --question "…"</code></div>
-        <p class="pair-roles"><b>In pairs:</b> one person inspects retrieval; the other audits citations and quotes. Switch after question two.</p>
-        <a class="lab-slide-link" href="../labs/02_grounded_qa/README.md" target="_blank">Open Lab 02 instructions ↗</a>
+        <div class="rag-participation-paths">
+          <article><span>Code path</span><code>python 02_grounded_qa/lab.py --show-chunks</code><p>Use the printed top-three chunks as the evidence packet. Add <code>--api</code> only after checking it.</p></article>
+          <article><span>No-code path</span><strong>Manual retrieval</strong><p>Open the five files. Choose at most three passages, label each filename, then paste only those passages into a model—or answer directly.</p></article>
+        </div>
+        <p class="pair-roles"><b>In pairs:</b> Human Retriever predicts and selects passages first. System Operator runs retrieval. Both compare packets; the Auditor verifies filenames and one exact quote.</p>
+        <a class="lab-slide-link" href="../labs/02_grounded_qa/README.md" target="_blank">Open the grounded Q&amp;A lab ↗</a>
       </div>
       <aside class="speaker-notes" aria-label="Presenter notes for slide 33">
         <p class="notes-label">Presenter notes</p><dl>
-          <div><dt>Purpose</dt><dd>Move evaluation from a memorable anecdote to three targeted behavioral tests.</dd></div>
-          <div><dt>Do</dt><dd>At minute eight, ask each pair to label any failure as retrieval or generation. At minute fourteen, ask them to invent one adversarial fourth question.</dd></div>
+          <div><dt>Purpose</dt><dd>Evaluate the complete RAG pipeline while making students perform retrieval judgment before seeing the system ranking.</dd></div>
+          <div><dt>Time</dt><dd>Eighteen minutes: two for roles, four for manual evidence selection, seven for the two required retrieval tests, three for the absent-answer challenge, and two for diagnosis.</dd></div>
+          <div><dt>Do</dt><dd>For the multi-source question, students must write their evidence packet before running the script. They then compare human and system packets and label any difference as chunking, retrieval, generation, or verification.</dd></div>
+          <div><dt>Code path</dt><dd>Run the offline trace first. Students with a configured API key may add --api after they have inspected the evidence packet.</dd></div>
+          <div><dt>No-code path</dt><dd>Students act as the retriever: search the five short files, choose no more than three passages, preserve filenames, and give only that packet to a model. This keeps retrieval visible instead of hiding it behind file upload.</dd></div>
+          <div><dt>Success</dt><dd>Each pair leaves with at least two complete trace rows, one human-versus-system packet comparison, a verified quotation, and an explicit not-found judgment or failure diagnosis.</dd></div>
           <div><dt>Say</dt><dd>“The absent-answer test may be the most important. It measures whether the system can preserve ignorance.”</dd></div>
           <div><dt>Transition</dt><dd>Collect failures in a two-by-two that distinguishes evidence access from evidence use.</dd></div>
+          <div><dt>[Sources]</dt><dd><a href="../labs/02_grounded_qa/data/questions.json" target="_blank">Course lab · test questions</a></dd></div>
         </dl></aside>
     </section>
 
-    <section class="slide paper rag-debrief-slide" id="slide-33" data-title="Diagnose the layer" data-time="132:00–140:00" aria-labelledby="title-33">
+    <section class="slide paper rag-debrief-slide" id="slide-33" data-title="Diagnose the layer" data-time="RAG · 3 min" aria-labelledby="title-33">
       <div class="slide-content rag-debrief-layout">
         <div><p class="eyebrow">Debrief</p><h2 id="title-33">Do not tune the answer when search is broken.</h2></div>
         <div class="diagnostic-matrix" role="table" aria-label="Retrieval and answer diagnostic matrix">
           <div class="corner"></div><div class="matrix-head">Answer uses evidence</div><div class="matrix-head">Answer misuses evidence</div>
-          <div class="matrix-side">Right files retrieved</div><article class="matrix-good"><strong>Grounded success</strong><p>Verify claims and wording.</p></article><article><strong>Generation failure</strong><p>Tighten instructions or output checks.</p></article>
-          <div class="matrix-side">Right files missed</div><article><strong>Lucky or incomplete</strong><p>Do not trust the result.</p></article><article class="matrix-danger"><strong>Pipeline failure</strong><p>Fix chunking, search, or corpus first.</p></article>
+          <div class="matrix-side">Required evidence retrieved</div><article class="matrix-good"><strong>Grounded success</strong><p>Verify claims and wording.</p></article><article><strong>Generation failure</strong><p>Tighten instructions or output checks.</p></article>
+          <div class="matrix-side">Required evidence missed</div><article><strong>Lucky or incomplete</strong><p>Do not trust the result.</p></article><article class="matrix-danger"><strong>Pipeline failure</strong><p>Fix chunks, vectors, or top_k first.</p></article>
         </div>
         <p class="takeaway-line">Citation format is not citation correctness. Open the file.</p>
       </div>
@@ -888,31 +1191,118 @@ Exact field accuracy: 6/20 (30%)</pre></div>
           <div><dt>Purpose</dt><dd>Give students a practical diagnostic before they change prompts or models.</dd></div>
           <div><dt>Ask</dt><dd>Where did your adversarial fourth question land? What single change would test your diagnosis?</dd></div>
           <div><dt>Say</dt><dd>“A citation can be beautifully formatted and still fail to support the sentence beside it.”</dd></div>
-          <div><dt>Transition</dt><dd>Take ten minutes, then connect the model to real analysis functions.</dd></div>
+          <div><dt>Transition</dt><dd>Summarize what RAG changes—and what it cannot guarantee—before moving to structured extraction.</dd></div>
         </dl></aside>
     </section>
 
-    <section class="slide coral lab-break-slide" id="slide-34" data-title="Break · From answers to actions" data-time="140:00–150:00" aria-labelledby="title-34">
-      <div class="slide-content lab-break-layout"><p class="eyebrow">10-minute break</p><h2 id="title-34">What changes when the model can do something?</h2><p>Return ready to name one action that should require approval.</p><div class="break-mark" aria-hidden="true">→</div></div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 35"><p class="notes-label">Presenter notes</p><dl><div><dt>Purpose</dt><dd>Prepare the conceptual shift from content generation to tool-mediated action.</dd></div><div><dt>Do</dt><dd>On return, take three answers: one low-risk tool, one consequential tool, and one action students would prohibit.</dd></div><div><dt>Transition</dt><dd>Introduce the bounded data analyst as an agent whose available actions are explicit.</dd></div></dl></aside>
+    <section class="slide coral lab-break-slide" id="slide-34" data-title="What RAG changes" data-time="RAG · 1 min" aria-labelledby="title-34">
+      <div class="slide-content lab-break-layout"><p class="eyebrow">RAG · the takeaway</p><h2 id="title-34">Grounded does not mean correct. It means inspectable.</h2><p>Retrieval gives us evidence to examine. It does not remove retrieval errors, unsupported inference, or the need to verify.</p><div class="break-mark" aria-hidden="true">→</div></div>
+      <aside class="speaker-notes" aria-label="Presenter notes for slide 35"><p class="notes-label">Presenter notes</p><dl><div><dt>Purpose</dt><dd>State the motivation and limitation of RAG in one memorable sentence.</dd></div><div><dt>Say</dt><dd>“RAG changes the information available at answer time. It does not change the model’s weights, guarantee that the right passage was retrieved, or prove that the answer used the passage correctly.”</dd></div><div><dt>Ask</dt><dd>Which failure would you rather debug first: the wrong document entered context, or the right document entered but the answer misread it?</dd></div><div><dt>Transition</dt><dd>Change the task from answering across documents to extracting one consistent, comparable record at a time.</dd></div></dl></aside>
     </section>
 
-    <section class="slide dark data-case-slide" id="slide-35" data-title="Case 3 · A data analyst agent" data-time="150:00–156:00" aria-labelledby="title-35">
+    <section class="slide coral agent-problem-slide" id="slide-agent-problem" data-title="Case 3 · Define the analysis problem" data-time="Data agent · 4 min" aria-labelledby="title-agent-problem">
+      <div class="slide-content agent-problem-layout">
+        <div class="problem-heading"><p class="eyebrow">Case 03 · Tool-using data analyst</p><h2 id="title-agent-problem">What can these 48 records actually tell us about AI use?</h2></div>
+        <div class="problem-statement">
+          <span>Problem statement</span>
+          <p>A fictional program wants to know whether evidence from its voluntary AI planning assistant justifies changing the program.</p>
+          <strong>Determine the observed relationship between assistant use and score gain, test whether group composition changes it, and state what the data cannot establish.</strong>
+        </div>
+        <div class="problem-contract" aria-label="Inputs, output, and boundary for the analysis">
+          <article><span>Input</span><strong>48 observational records</strong><p>Baseline, follow-up, track, AI use, department, attendance.</p></article>
+          <article><span>Useful output</span><strong>Evidence + limits</strong><p>Comparisons, group sizes, uncertainty, and a responsible next step.</p></article>
+          <article class="boundary-card"><span>Not the output</span><strong>“AI caused the change”</strong><p>Students chose whether to use the assistant; there was no random assignment.</p></article>
+        </div>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the data-agent problem slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Define the decision, input, acceptable output, and causal boundary before showing any calculation or agent mechanism.</dd></div>
+        <div><dt>Say</dt><dd>“Imagine a program director considering whether to expand an AI planning assistant. We have 48 student records from a voluntary program. The task is not to produce the most impressive coefficient. It is to say exactly what pattern appears, what comparison changes it, and what remains unknown.”</dd></div>
+        <div><dt>Clarify</dt><dd>The case and data are fictional. AI use is self-selected. Starting track may affect both group composition and potential score gain. The decision context raises the standard for interpretation.</dd></div>
+        <div><dt>Ask</dt><dd>What would a program director need to know before treating a difference between users and non-users as an effect of AI?</dd></div>
+        <div><dt>Transition</dt><dd>Separate the descriptive question in the file from the counterfactual causal question people often think they are asking.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/03_data_agent/README.md" target="_blank">Course lab · Tool-using data analyst</a> · <a href="../labs/03_data_agent/data/program_outcomes.csv" target="_blank">Fictional course dataset</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide paper agent-question-slide" id="slide-agent-question" data-title="Descriptive is not causal" data-time="Data agent · 4 min" aria-labelledby="title-agent-question">
+      <div class="slide-content agent-question-layout">
+        <div><p class="eyebrow">First distinction</p><h2 id="title-agent-question">“Did AI improve outcomes?” contains two different questions.</h2></div>
+        <div class="question-pair">
+          <article><span>Descriptive</span><strong>What happened among users and non-users in these records?</strong><p>Calculate observed gains, group sizes, missingness, and differences within comparable groups.</p><em>The dataset can address this.</em></article>
+          <article class="causal-question"><span>Causal</span><strong>What would have happened to the same students if their AI use had been different?</strong><p>This compares an observed outcome with an unobserved counterfactual.</p><em>The dataset alone cannot identify this.</em></article>
+        </div>
+        <p class="responsible-target"><b>Responsible target:</b> describe the association, test plausible alternative explanations, and name the evidence needed next.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the descriptive versus causal slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Give students plain language for the difference between an observed comparison and a causal estimand.</dd></div>
+        <div><dt>Say</dt><dd>“We observe each student under one condition: they used the assistant or they did not. The causal question asks about the missing alternative outcome for that same person. A comparison between different people only stands in for that counterfactual under assumptions we have not earned here.”</dd></div>
+        <div><dt>Ask</dt><dd>What might influence both choosing the assistant and later score gain—starting preparation, motivation, time, instructor, or something else?</dd></div>
+        <div><dt>Why it matters</dt><dd>An agent can calculate faster, but speed does not solve identification. The system should surface the distinction rather than hide it under fluent causal language.</dd></div>
+        <div><dt>Transition</dt><dd>Now inspect the group composition that makes the first comparison especially dangerous.</dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide teal agent-data-slide" id="slide-agent-data" data-title="The dataset hides a composition problem" data-time="Data agent · 3 min" aria-labelledby="title-agent-data">
+      <div class="slide-content agent-data-layout">
+        <div><p class="eyebrow">Inspect before comparing</p><h2 id="title-agent-data">Overall groups are equal. Within track, they are not.</h2></div>
+        <div class="dataset-facts"><span><b>48</b> records</span><span><b>24</b> AI users</span><span><b>24</b> non-users</span><span><b>2</b> missing attendance values</span></div>
+        <div class="composition-table" role="table" aria-label="Student counts by starting track and AI use">
+          <div class="composition-corner">Student count</div><div class="composition-head">Non-users</div><div class="composition-head">AI users</div>
+          <div class="composition-side">Foundation</div><strong>20</strong><strong class="small-cell">4</strong>
+          <div class="composition-side">Advanced</div><strong class="small-cell">4</strong><strong>20</strong>
+        </div>
+        <p class="composition-takeaway"><b>Starting track is doing two jobs:</b> it is related to expected gain and to who appears in each AI-use group. An overall mean mixes very different students.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the data composition slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Make the imbalance visible before revealing outcomes, so students predict how composition can distort the aggregate.</dd></div>
+        <div><dt>Say</dt><dd>“The totals look beautifully balanced: 24 and 24. But 20 of the 24 AI users are in Advanced, while 20 of the 24 non-users are in Foundation. If Advanced students have less room to gain, the overall comparison will partly compare tracks rather than AI use.”</dd></div>
+        <div><dt>Ask</dt><dd>If Foundation students typically gain more, which group would you expect to have the larger overall mean even if AI users do better within both tracks?</dd></div>
+        <div><dt>Clarify</dt><dd>The two missing attendance values matter for analyses using attendance, but they do not explain the aggregate reversal. Missingness is still a required audit step.</dd></div>
+        <div><dt>Transition</dt><dd>Reveal the tempting overall result, then ask what it actually answers.</dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide paper agent-raw-data-slide" id="slide-agent-raw-data" data-title="Meet the analysis dataset" data-time="Data agent · 3 min" aria-labelledby="title-agent-raw-data">
+      <div class="slide-content agent-raw-data-layout">
+        <div><p class="eyebrow">Meet the raw data</p><h2 id="title-agent-raw-data">Start with rows—not conclusions.</h2></div>
+        <div class="raw-data-table" role="table" aria-label="Six example records from the program outcomes dataset">
+          <div class="raw-head">ID</div><div class="raw-head">Track</div><div class="raw-head">Department</div><div class="raw-head">AI?</div><div class="raw-head">Baseline</div><div class="raw-head">Follow-up</div><div class="raw-head">Attendance</div>
+          <span>P001</span><span>Foundation</span><span>Design</span><span>No</span><span>40</span><span>52</span><span>7</span>
+          <span>P021</span><span>Foundation</span><span>Engineering</span><span>Yes</span><span>42</span><span>58</span><span>8</span>
+          <span>P024</span><span>Foundation</span><span>Engineering</span><span>Yes</span><span>53</span><span>70</span><span>7</span>
+          <span>P025</span><span>Advanced</span><span>Design</span><span>No</span><span>70</span><span>72</span><span>5</span>
+          <span>P029</span><span>Advanced</span><span>Public Health</span><span>Yes</span><span>68</span><span>74</span><span>7</span>
+          <span>P048</span><span>Advanced</span><span>Engineering</span><span>Yes</span><span>82</span><span>90</span><span>8</span>
+        </div>
+        <div class="raw-data-task"><strong>Create the outcome:</strong><code>gain = follow-up − baseline</code><span>Then ask what must be inspected before comparing users and non-users.</span></div>
+        <p class="raw-data-note">These six rows are a preview. The hands-on file contains 48 records and two missing attendance values.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the data-agent raw data slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Ground the analysis in individual records and column meanings before presenting aggregates or the hidden group structure.</dd></div>
+        <div><dt>Time</dt><dd>Three minutes: one to read the columns, one to calculate gain for two rows, and one to name possible comparison problems.</dd></div>
+        <div><dt>Do</dt><dd>Ask students to calculate P001 and P025 by inspection. Do not reveal the overall mean, cross-tabulation, or within-track result yet.</dd></div>
+        <div><dt>Ask</dt><dd>What could make AI users and non-users different before the assistant was ever used?</dd></div>
+        <div><dt>Transition</dt><dd>Give the model bounded tools, then let students decide which checks should run before any explanation.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/03_data_agent/data/program_outcomes.csv" target="_blank">Fictional course dataset · program_outcomes.csv</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide dark data-case-slide" id="slide-35" data-title="The first calculation answers too little" data-time="Data agent · 3 min" aria-labelledby="title-35">
       <div class="slide-content data-case-layout">
-        <div><p class="eyebrow">Case 03 · Tool-using data analyst</p><h2 id="title-35">Did AI users improve less?</h2><p class="lead">The first comparison looks decisive.</p></div>
+        <div><p class="eyebrow">The tempting aggregate</p><h2 id="title-35">The first calculation answers too little.</h2><p class="lead">It describes the two mixed groups. It does not isolate an AI effect.</p></div>
         <div class="aggregate-stat"><span>Mean score gain</span><div><article><b>AI users</b><strong>+8.17</strong></article><article><b>Non-users</b><strong>+10.50</strong></article></div><p>Surface difference <em>−2.33 points</em></p></div>
-        <p class="case-question light-question"><b>Your task:</b> make the agent investigate before it explains.</p>
+        <p class="case-question light-question"><b>The unresolved question:</b> Is −2.33 an AI effect, a composition effect, or both? Aggregate means cannot decide.</p>
       </div>
       <aside class="speaker-notes" aria-label="Presenter notes for slide 36">
         <p class="notes-label">Presenter notes</p><dl>
-          <div><dt>Purpose</dt><dd>Give students a tempting but misleading answer before showing the data structure.</dd></div>
-          <div><dt>Ask</dt><dd>What would you inspect before interpreting the −2.33 point difference?</dd></div>
-          <div><dt>Say</dt><dd>“The agent does not begin with a blank Python environment. It begins with a bounded set of functions we chose.”</dd></div>
-          <div><dt>Transition</dt><dd>Show the tool-calling loop and its permission boundary.</dd></div>
+          <div><dt>Purpose</dt><dd>Let students feel how quickly a correct number can become an unjustified conclusion.</dd></div>
+          <div><dt>Say</dt><dd>“The arithmetic is correct: users gained 8.17 and non-users 10.50. But the comparison combines the track imbalance we just saw. A correct calculation can still answer the wrong question.”</dd></div>
+          <div><dt>Ask</dt><dd>What exact comparison would help separate track composition from the user/non-user association?</dd></div>
+          <div><dt>Transition</dt><dd>Before running that comparison, define how a model can choose from a bounded set of analysis tools.</dd></div>
         </dl></aside>
     </section>
 
-    <section class="slide teal agent-loop-slide" id="slide-36" data-title="An agent is a loop plus permissions" data-time="156:00–166:00" aria-labelledby="title-36">
+    <section class="slide teal agent-loop-slide" id="slide-36" data-title="An agent is a loop plus permissions" data-time="Data agent · 3 min" aria-labelledby="title-36">
       <div class="slide-content agent-loop-layout">
         <div><p class="eyebrow">What makes this agentic?</p><h2 id="title-36">The model chooses. Code executes. Results return.</h2></div>
         <div class="agent-cycle" aria-label="Tool-using agent loop">
@@ -925,31 +1315,55 @@ Exact field accuracy: 6/20 (30%)</pre></div>
           <div><dt>Purpose</dt><dd>Define an agent concretely as a model–tool–feedback loop with permissions.</dd></div>
           <div><dt>Say</dt><dd>“The model proposes a typed function call. Our application—not the model—decides whether that function exists and executes it.”</dd></div>
           <div><dt>Why it matters</dt><dd>Students see that agency is designed: available actions, arguments, loop limits, logs, and approval gates are system choices.</dd></div>
-          <div><dt>Transition</dt><dd>Run the fixed trace first, then let the model choose and compare its behavior.</dd></div>
+          <div><dt>Transition</dt><dd>Run two deliberately narrow stages and watch the analytical conclusion reverse.</dd></div>
           <div><dt>[Sources]</dt><dd><a href="https://developers.openai.com/api/docs/guides/function-calling" target="_blank" rel="noreferrer">OpenAI · Function calling</a></dd></div>
         </dl></aside>
     </section>
 
-    <section class="slide paper trace-slide" id="slide-37" data-title="Audit the trace, not the prose" data-time="166:00–186:00" aria-labelledby="title-37">
-      <div class="slide-content trace-layout">
-        <div><p class="eyebrow">Student activity · 20 minutes</p><h2 id="title-37">The answer is the last thing to inspect.</h2></div>
-        <div class="trace-command"><code>python 03_data_agent/lab.py</code><code>python 03_data_agent/lab.py --api</code></div>
-        <div class="trace-grid">
-          <article><span>01</span><strong>Dataset</strong><p>Did it inspect rows, groups, and design?</p></article><article><span>02</span><strong>Missingness</strong><p>Did it notice two absent attendance values?</p></article><article><span>03</span><strong>Aggregate</strong><p>Did it reproduce −2.33?</p></article><article class="key-trace"><span>04</span><strong>Stratify</strong><p>Did it compare within starting track?</p></article><article><span>05</span><strong>Adjust</strong><p>Did it use the predefined model cautiously?</p></article><article><span>06</span><strong>Conclude</strong><p>Did it avoid causal language?</p></article>
+    <section class="slide dark agent-demo-slide" id="slide-agent-demo" data-title="Instructor demo · reveal the reversal" data-time="Data agent · 4 min" aria-labelledby="title-agent-demo">
+      <div class="slide-content agent-demo-layout">
+        <div><p class="eyebrow">Instructor demo · two tool calls</p><h2 id="title-agent-demo">Run the next comparison before writing the story.</h2></div>
+        <div class="demo-reversal">
+          <article><span>1 · Aggregate</span><code>python 03_data_agent/lab.py --stage aggregate</code><div><b>AI users</b> +8.17 <i>vs</i> <b>non-users</b> +10.50</div><p>Tempting story: AI users improved less.</p></article>
+          <i aria-hidden="true">→</i>
+          <article class="demo-stratified"><span>2 · Within track</span><code>python 03_data_agent/lab.py --stage stratified</code><div><b>Advanced</b> +3.5 · <b>Foundation</b> +4.5</div><p>In both tracks, users improved more.</p></article>
         </div>
-        <p class="pair-roles"><b>Failure injection:</b> remove “check for a misleading aggregate” from the question. Does the agent still stratify?</p>
+        <div class="demo-diagnosis"><strong>What changed?</strong><span>Not the records.</span><span>Not the outcome.</span><span><b>The comparison.</b></span></div>
+        <p class="takeaway-line light-takeaway">A trace lets us inspect the route to a claim—not merely the language around it.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the data-agent instructor demo"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Resolve the students' investigation by comparing the aggregate and stratified analyses they just ran.</dd></div>
+        <div><dt>Do</dt><dd>Collect one aggregate interpretation from the room, then run or display the stratified command. Keep both outputs visible.</dd></div>
+        <div><dt>Ask</dt><dd>“What changed—the data, the outcome, or the comparison?” Follow with: “Which output is more relevant to the original decision, and is it causal?”</dd></div>
+        <div><dt>Say</dt><dd>“The second result diagnoses the misleading aggregate. It still describes selected groups; it does not prove that using AI caused the higher within-track gains.”</dd></div>
+        <div><dt>Transition</dt><dd>Students now audit the full sequence: description, missingness, aggregate, stratification, adjustment, and claim boundary.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/03_data_agent/README.md" target="_blank">Lab 03 · demo commands</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide paper trace-slide" id="slide-37" data-title="Audit the trace, not the prose" data-time="Data agent · 20 min" aria-labelledby="title-37">
+      <div class="slide-content trace-layout">
+        <div><p class="eyebrow">Student lab · 20 minutes</p><h2 id="title-37">Investigate before seeing the reversal.</h2></div>
+        <div class="trace-command"><code>python 03_data_agent/lab.py --stage describe</code><code>then: --stage missing · aggregate · stratified</code></div>
+        <div class="trace-grid">
+          <article><span>01</span><strong>Rows</strong><p>What is one observation? What does each field mean?</p></article><article><span>02</span><strong>Outcome</strong><p>Create gain = follow-up − baseline.</p></article><article><span>03</span><strong>Missingness</strong><p>Which field is incomplete—and for whom?</p></article><article class="key-trace"><span>04</span><strong>First comparison</strong><p>Compare users and non-users. Record means and n.</p></article><article><span>05</span><strong>Next comparison</strong><p>Choose a variable that could change the result.</p></article><article><span>06</span><strong>Claim</strong><p>Write one supported sentence and one rejected causal claim.</p></article>
+        </div>
+        <div class="activity-paths"><article><span>Code path</span><p>Run one stage at a time. Predict the next tool before executing it. Use the API agent only after your manual trace is complete.</p></article><article><span>No-code path</span><p>Create <code>gain</code>, inspect missingness, then build pivots for AI use and one comparison variable you choose.</p></article></div>
+        <p class="pair-roles"><b>In pairs:</b> Analyst chooses the next check; Auditor records why it is needed before seeing the output. Stop after the within-group comparison—do not advance slides.</p>
         <a class="lab-slide-link" href="../labs/03_data_agent/README.md" target="_blank">Open Lab 03 instructions ↗</a>
       </div>
       <aside class="speaker-notes" aria-label="Presenter notes for slide 38">
         <p class="notes-label">Presenter notes</p><dl>
-          <div><dt>Purpose</dt><dd>Teach students to evaluate action selection and intermediate evidence, not only final fluency.</dd></div>
-          <div><dt>Do</dt><dd>No-code students reproduce the aggregate and stratified means in a spreadsheet tool. API students annotate each printed function call: necessary, unnecessary, or missing.</dd></div>
-          <div><dt>At minute 12</dt><dd>Ask groups to run the failure-injection question. Record how often the agent finds the reversal without the hint.</dd></div>
-          <div><dt>Transition</dt><dd>Reveal the group composition that created the reversal.</dd></div>
+          <div><dt>Purpose</dt><dd>Teach students to evaluate the analytical route, claim boundary, and permissions—not only final fluency.</dd></div>
+          <div><dt>Time</dt><dd>Two minutes for roles; four for rows, outcome, and missingness; five for the aggregate and first interpretation; five to choose and run the next comparison; four for claim limits and trace completion.</dd></div>
+          <div><dt>Do</dt><dd>Do not reveal the aggregate, composition table, or reversal before students run them. Every pair writes why a tool or pivot is needed before seeing its output.</dd></div>
+          <div><dt>Success</dt><dd>Students leave with their own analytical path, the aggregate and within-group comparisons, one supported descriptive claim, one rejected causal claim, and a proposed next design.</dd></div>
+          <div><dt>Transition</dt><dd>Collect the aggregate result, reveal the group composition, and then compare both analyses side by side.</dd></div>
+          <div><dt>[Sources]</dt><dd><a href="../labs/03_data_agent/TRACE_TEMPLATE.md" target="_blank">Lab 03 · analysis trace worksheet</a></dd></div>
         </dl></aside>
     </section>
 
-    <section class="slide lime simpson-slide" id="slide-38" data-title="The aggregate reverses" data-time="186:00–195:00" aria-labelledby="title-38">
+    <section class="slide lime simpson-slide" id="slide-38" data-title="The aggregate reverses" data-time="Data agent · 4 min" aria-labelledby="title-38">
       <div class="slide-content simpson-layout">
         <div><p class="eyebrow">Debrief · Simpson's paradox</p><h2 id="title-38">The aggregate says worse. Each track says better.</h2></div>
         <img src="../labs/03_data_agent/data/gain_by_track.svg" alt="Bar chart showing AI users have higher mean score gains within both Advanced and Foundation tracks" width="700" height="430" loading="lazy">
@@ -965,27 +1379,95 @@ Exact field accuracy: 6/20 (30%)</pre></div>
         </dl></aside>
     </section>
 
-    <section class="slide dark lab-break-slide" id="slide-39" data-title="Break · Permission is design" data-time="195:00–205:00" aria-labelledby="title-39">
+    <section class="slide dark lab-break-slide" id="slide-39" data-title="Break · Permission is design" data-time="Break · 10 min" aria-labelledby="title-39">
       <div class="slide-content lab-break-layout"><p class="eyebrow">10-minute break</p><h2 id="title-39">A capable agent is not automatically an authorized agent.</h2><p>Name one tool it may call, one it must preview, and one it must never receive.</p><div class="break-mark" aria-hidden="true">⛉</div></div>
       <aside class="speaker-notes" aria-label="Presenter notes for slide 40"><p class="notes-label">Presenter notes</p><dl><div><dt>Purpose</dt><dd>Separate technical capability from institutional or ethical authority.</dd></div><div><dt>Do</dt><dd>On return, collect examples under three headings: automatic, approval required, prohibited.</dd></div><div><dt>Transition</dt><dd>Voice creates a powerful interface while adding consent, transcription, and identity risks.</dd></div></dl></aside>
     </section>
 
-    <section class="slide coral voice-case-slide" id="slide-40" data-title="Case 4 · Voice to research memo" data-time="205:00–210:00" aria-labelledby="title-40">
+    <section class="slide coral voice-case-slide" id="slide-40" data-title="Case 4 · Define the voice problem" data-time="Voice memo · 3 min" aria-labelledby="title-40">
       <div class="slide-content voice-case-layout">
-        <div><p class="eyebrow">Case 04 · Voice research copilot</p><h2 id="title-40">Voice makes AI feel natural.<br>Research still needs a record.</h2></div>
+        <div><p class="eyebrow">Case 04 · Voice research copilot</p><h2 id="title-40">Can one interview become a memo without changing what the participant meant?</h2></div>
         <div class="waveform" aria-label="Decorative audio waveform"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        <p class="case-question"><b>Question:</b> Can a spoken interview become a useful memo without losing the transcript, uncertainty, or participant's words?</p>
+        <div class="voice-problem-statement"><span>Problem statement</span><p>Turn a short fictional interview into a useful research memo while preserving a trace from every important claim back to the participant's words—and keep interpretation separate from action.</p></div>
+        <div class="voice-output-contract"><span><b>Preserve</b> transcript + exact quotes</span><span><b>Label</b> synthesis + uncertainty</span><span><b>Approve</b> consequential actions</span></div>
       </div>
       <aside class="speaker-notes" aria-label="Presenter notes for slide 41">
         <p class="notes-label">Presenter notes</p><dl>
-          <div><dt>Purpose</dt><dd>Introduce voice as a practical pipeline rather than a magical conversational surface.</dd></div>
-          <div><dt>Say</dt><dd>“Voice changes latency, accessibility, and social presence. It also creates another model output—the transcript—that can quietly alter everything downstream.”</dd></div>
-          <div><dt>Ask</dt><dd>Where would one wrong word matter most in your field?</dd></div>
-          <div><dt>Transition</dt><dd>Expose both the technical pipeline and the consent boundary.</dd></div>
+          <div><dt>Purpose</dt><dd>Define the research problem and acceptable output before discussing transcription or voice interfaces.</dd></div>
+          <div><dt>Say</dt><dd>“A useful memo is not the shortest version of an interview. It is a layered research artifact: the participant's words remain available, synthesis is visibly interpretive, and recommendations do not masquerade as quotations.”</dd></div>
+          <div><dt>Clarify</dt><dd>The supplied interview is fictional. The task is to preserve meaning and auditability, not to infer emotion, personality, or intent beyond the evidence.</dd></div>
+          <div><dt>Ask</dt><dd>Where would one changed word—especially a name, number, or negation—alter a decision in your field?</dd></div>
+          <div><dt>Transition</dt><dd>Identify the three kinds of statement that a typical memo often blends together.</dd></div>
+          <div><dt>[Sources]</dt><dd><a href="../labs/04_voice_copilot/README.md" target="_blank">Course lab · Voice research copilot</a> · <a href="../labs/04_voice_copilot/data/mock_interview.txt" target="_blank">Fictional course interview</a></dd></div>
         </dl></aside>
     </section>
 
-    <section class="slide paper voice-pipeline-slide" id="slide-41" data-title="Voice is a chain of models and judgments" data-time="210:00–220:00" aria-labelledby="title-41">
+    <section class="slide teal voice-source-slide" id="slide-voice-source" data-title="Listen to the source" data-time="Voice memo · 3 min" aria-labelledby="title-voice-source">
+      <div class="slide-content voice-source-layout">
+        <div><p class="eyebrow">Meet the source · 48 seconds</p><h2 id="title-voice-source">The rough transcript contains three consequential errors.</h2></div>
+        <div class="audio-source-panel">
+          <div class="audio-label"><span>Fictional synthetic interview</span><strong>Peer-methods clinic participant</strong><p>One terminology error · one number error · one missing negation</p></div>
+          <audio controls preload="metadata" src="../labs/04_voice_copilot/data/mock_interview.m4a">Your browser does not support audio playback.</audio>
+        </div>
+        <div class="source-audit-task">
+          <span>1</span><p>Open the <a href="../labs/04_voice_copilot/data/mock_interview_auto_transcript.txt" target="_blank">rough transcript ↗</a>.</p>
+          <span>2</span><p>Listen once without stopping. Mark suspicious words.</p>
+          <span>3</span><p>Listen again and correct all three discrepancies.</p>
+        </div>
+        <p class="source-audit-rule"><b>Do not open the clean transcript yet.</b> The point is to compare an artifact with its source.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the voice source audit"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Make the voice case genuinely source-based by giving every student audio and an imperfect automated transcript to inspect.</dd></div>
+        <div><dt>Time</dt><dd>Three minutes for the first class listen and individual marking. Students complete correction during the hands-on segment.</dd></div>
+        <div><dt>Do</dt><dd>Play the full 48-second recording once. Students follow the rough transcript but do not call out answers yet. Tell them the three error types, not the corrected words.</dd></div>
+        <div><dt>Clarify</dt><dd>The interview and voices are synthetic and were created for this course. They do not represent a real participant.</dd></div>
+        <div><dt>Transition</dt><dd>Before drafting a memo, distinguish what was said from what the researcher infers and what the program might do.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/04_voice_copilot/data/mock_interview.m4a" target="_blank">Course-authored synthetic interview audio</a> · <a href="../labs/04_voice_copilot/data/mock_interview_auto_transcript.txt" target="_blank">Deliberately imperfect course transcript</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide paper voice-claims-slide" id="slide-voice-claims" data-title="A memo contains three kinds of claim" data-time="Voice memo · 2 min" aria-labelledby="title-voice-claims">
+      <div class="slide-content voice-claims-layout">
+        <div><p class="eyebrow">Define the output</p><h2 id="title-voice-claims">A memo moves from words to interpretation to action.</h2></div>
+        <div class="claim-distance" aria-label="Increasing distance from source evidence">
+          <article><span>1 · Participant evidence</span><strong>“Tuesday evenings conflicted with our studio review, so I missed three sessions.”</strong><p>An exact statement that can be searched in the transcript and checked against audio.</p></article>
+          <i>→</i>
+          <article><span>2 · Researcher synthesis</span><strong>Scheduling limited access.</strong><p>An interpretation supported by one or more passages—not a quotation.</p></article>
+          <i>→</i>
+          <article class="action-claim"><span>3 · Program action</span><strong>Test an earlier or remote session.</strong><p>A proposed decision that adds judgment and needs an owner.</p></article>
+        </div>
+        <p class="claim-distance-label"><b>Evidence distance increases →</b> Label the type, preserve the link, and raise the review threshold.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the memo claim types slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Define the memo's internal evidence model so students can audit claims rather than treating all prose as equivalent.</dd></div>
+        <div><dt>Say</dt><dd>“The quote is participant evidence. ‘Scheduling limited access’ is our synthesis. ‘Test a remote session’ is an action. Each may be reasonable, but they have different authors, evidence requirements, and authority.”</dd></div>
+        <div><dt>Ask</dt><dd>Which arrow requires the most judgment in your discipline? Who should own that judgment?</dd></div>
+        <div><dt>Why it matters</dt><dd>A model can compress these layers into one confident paragraph. Explicit labels make evidence distance and responsibility visible.</dd></div>
+        <div><dt>Transition</dt><dd>Before the interview enters any model, define whether and how it is authorized to enter the pipeline.</dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide dark voice-consent-slide" id="slide-voice-consent" data-title="Authorization is part of the input" data-time="Voice memo · 3 min" aria-labelledby="title-voice-consent">
+      <div class="slide-content voice-consent-layout">
+        <div><p class="eyebrow">Before the model</p><h2 id="title-voice-consent">Authorization is part of the input—not a checkbox after upload.</h2></div>
+        <div class="authorization-grid">
+          <article><span>Purpose</span><strong>Why process it?</strong><p>Define the research use before collecting or uploading.</p></article>
+          <article><span>Permission</span><strong>What was agreed?</strong><p>Recording, automated processing, and later use are distinct decisions.</p></article>
+          <article><span>Minimum data</span><strong>What can stay out?</strong><p>Remove identifiers and audio that the task does not require.</p></article>
+          <article><span>Access + lifecycle</span><strong>Who, where, how long?</strong><p>Make storage, correction, sharing, and deletion visible.</p></article>
+        </div>
+        <p class="authorization-boundary"><b>Class default:</b> use the supplied fictional transcript. A real recording enters only when its purpose and processing are authorized.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the authorization slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Place consent, data minimization, access, and retention inside system design before the technical pipeline.</dd></div>
+        <div><dt>Say</dt><dd>“An audio file is not just another input type. It can contain identity, bystanders, background information, and context a transcript may erase. The correct default for class is the fictional transcript.”</dd></div>
+        <div><dt>Clarify</dt><dd>This slide gives a design checklist, not legal advice. Real research must follow participant promises, institutional requirements, and the current controls of the chosen service.</dd></div>
+        <div><dt>Ask</dt><dd>If your analysis needs only three answers, what parts of a full recording do you not need to retain?</dd></div>
+        <div><dt>Transition</dt><dd>Now trace the technical and human stages where meaning can change.</dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide paper voice-pipeline-slide" id="slide-41" data-title="Voice is a chain of models and judgments" data-time="Voice memo · 2 min" aria-labelledby="title-41">
       <div class="slide-content voice-pipeline-layout">
         <div><p class="eyebrow">Recorded voice workflow</p><h2 id="title-41">Every arrow can change the meaning.</h2></div>
         <ol class="voice-pipeline"><li><span>1</span><strong>Consent</strong><p>Purpose, storage, access.</p></li><li><span>2</span><strong>Audio</strong><p>Accents, noise, speakers.</p></li><li><span>3</span><strong>Transcript</strong><p>Names, numbers, negation.</p></li><li><span>4</span><strong>Memo</strong><p>Themes, actions, tensions.</p></li><li><span>5</span><strong>Review</strong><p>Correct before use.</p></li></ol>
@@ -996,28 +1478,55 @@ Exact field accuracy: 6/20 (30%)</pre></div>
           <div><dt>Purpose</dt><dd>Distinguish recorded transcription from realtime systems and integrate privacy into the architecture.</dd></div>
           <div><dt>Say</dt><dd>“The demo transcript is fictional. If you use a real recording, consent and institutional policy come before API convenience.”</dd></div>
           <div><dt>Ask</dt><dd>Which errors can a quote check catch? Which require listening to the audio again?</dd></div>
-          <div><dt>Transition</dt><dd>Run the memo pipeline and audit its quotations.</dd></div>
+          <div><dt>Transition</dt><dd>Demonstrate two different failures: one the quote check catches and one it cannot.</dd></div>
           <div><dt>[Sources]</dt><dd><a href="https://developers.openai.com/cookbook/examples/migrating_from_whisper_to_gpt_transcribe" target="_blank" rel="noreferrer">OpenAI · Recorded and realtime transcription paths</a></dd></div>
         </dl></aside>
     </section>
 
-    <section class="slide teal voice-activity-slide" id="slide-42" data-title="Build the auditable memo" data-time="220:00–234:00" aria-labelledby="title-42">
+    <section class="slide teal voice-demo-slide" id="slide-voice-demo" data-title="Instructor demo · two voice failures" data-time="Voice memo · 5 min" aria-labelledby="title-voice-demo">
+      <div class="slide-content voice-demo-layout">
+        <div><p class="eyebrow">Instructor demo · one clean trace, two failures</p><h2 id="title-voice-demo">A quote check compares text to text—not text to reality.</h2></div>
+        <div class="voice-failure-grid">
+          <article><span>Clean</span><code>--show-trace</code><p><b>Transcript:</b> “would not make”<br><b>Memo:</b> no mandate</p><strong>Quote check passes</strong></article>
+          <article class="caught-failure"><span>Memo error</span><code>--inject-memo-error</code><p><b>Transcript:</b> “would not make”<br><b>Memo:</b> “would make”</p><strong>Quote check fails</strong></article>
+          <article class="hidden-failure"><span>Transcript error</span><code>--inject-transcript-error</code><p><b>Transcript:</b> “would make”<br><b>Memo:</b> “would make”</p><strong>Quote check passes—wrongly</strong></article>
+        </div>
+        <div class="verification-layers"><span>memo ↔ transcript <b>automated check</b></span><i>≠</i><span>transcript ↔ audio <b>source review</b></span></div>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the voice failure demo"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Show the precise boundary of quote verification through one clean condition and two controlled failures.</dd></div>
+        <div><dt>Do</dt><dd>Run the clean command, then the memo-error command. Ask why the check fails. Finally run the transcript-error command and pause when the check passes.</dd></div>
+        <div><dt>Say</dt><dd>“The checker is not broken. It answered the question it was programmed to answer: does this quote occur in this transcript? It never heard the recording. Two downstream artifacts can agree with each other and still share an upstream error.”</dd></div>
+        <div><dt>Ask</dt><dd>What is the authoritative source for the final condition? At what level of consequence would you require listening again?</dd></div>
+        <div><dt>Transition</dt><dd>Students reproduce all three conditions and mark which evidence layer each check can validate.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/04_voice_copilot/README.md" target="_blank">Lab 04 · failure demo commands</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide teal voice-activity-slide" id="slide-42" data-title="Build the auditable memo" data-time="Voice memo · 18 min" aria-labelledby="title-42">
       <div class="slide-content voice-activity-layout">
-        <div><p class="eyebrow">Student activity · 14 minutes</p><h2 id="title-42">Generate themes. Then go back to the words.</h2></div>
-        <div class="voice-command-grid"><article><span>Offline transcript</span><code>python 04_voice_copilot/lab.py</code></article><article><span>API analysis</span><code>python 04_voice_copilot/lab.py --api</code></article><article><span>Consented audio</span><code>python 04_voice_copilot/lab.py --api --audio /path/file.m4a</code></article></div>
-        <ol class="memo-checks"><li><span>01</span>Correct one transcript detail.</li><li><span>02</span>Separate observation from synthesis.</li><li><span>03</span>Search every quoted line.</li><li><span>04</span>Delete one overconfident inference.</li></ol>
+        <div><p class="eyebrow">Student lab · 18 minutes</p><h2 id="title-42">Correct the record. Then build the memo.</h2></div>
+        <div class="voice-lab-phases">
+          <article><span>1 · Source audit · 5 min</span><strong>Audio ↔ rough transcript</strong><p>Find and correct the terminology, number, and negation errors. Record the exact audio evidence.</p></article>
+          <article><span>2 · Memo · 7 min</span><strong>Corrected transcript → claims</strong><p>Draft a two-sentence memo. Label one quote, one synthesis, and one proposed action.</p></article>
+          <article class="voice-lab-challenge"><span>3 · Failure test · 6 min</span><strong>Claims ↔ transcript ↔ audio</strong><p>Verify every quote, run one injected error, and place the human approval gate.</p></article>
+        </div>
+        <div class="activity-paths voice-paths"><article><span>Code path</span><code>python 04_voice_copilot/lab.py --show-trace</code><p>Run the clean trace, then choose one failure flag from the lab guide.</p></article><article><span>No-code path</span><p>Use the corrected transcript to draft the memo, search exact quotes, then compare one claim against the original audio.</p></article></div>
+        <p class="pair-roles"><b>In pairs:</b> Source Auditor owns the transcript corrections. Memo Auditor owns synthesis and action labels. Both must approve the final action boundary.</p>
         <a class="lab-slide-link" href="../labs/04_voice_copilot/README.md" target="_blank">Open Lab 04 instructions ↗</a>
       </div>
       <aside class="speaker-notes" aria-label="Presenter notes for slide 43">
         <p class="notes-label">Presenter notes</p><dl>
-          <div><dt>Purpose</dt><dd>Make auditability—not summary fluency—the output of the voice exercise.</dd></div>
-          <div><dt>Do</dt><dd>Use the fictional transcript by default. Only invite personal recordings if participants have meaningful consent and no sensitive content.</dd></div>
-          <div><dt>At minute 8</dt><dd>Ask students to compare one model-generated theme with the exact lines behind it. Is it a faithful synthesis or an inference?</dd></div>
-          <div><dt>Transition</dt><dd>Debrief how small errors compound across a pipeline.</dd></div>
+          <div><dt>Purpose</dt><dd>Make evidence boundaries and failure diagnosis—not summary fluency—the output of the voice exercise.</dd></div>
+          <div><dt>Time</dt><dd>Five minutes to correct the rough transcript, seven to draft and label the memo, and six to verify quotations, run one failure test, and place the approval gate.</dd></div>
+          <div><dt>Do</dt><dd>Students must use the audio, not the clean transcript, to correct the three planted errors. Every pair then produces its own short memo before running the scripted failure test.</dd></div>
+          <div><dt>Success</dt><dd>Each pair leaves with three audio-grounded corrections, a student-authored memo, labeled quote/synthesis/action statements, a verified quotation, and one human approval gate.</dd></div>
+          <div><dt>Transition</dt><dd>Debrief how a one-word upstream error becomes a confident downstream recommendation.</dd></div>
+          <div><dt>[Sources]</dt><dd><a href="../labs/04_voice_copilot/TRACE_TEMPLATE.md" target="_blank">Lab 04 · evidence and action trace</a></dd></div>
         </dl></aside>
     </section>
 
-    <section class="slide paper compound-error-slide" id="slide-43" data-title="Errors compound downstream" data-time="234:00–240:00" aria-labelledby="title-43">
+    <section class="slide paper compound-error-slide" id="slide-43" data-title="Errors compound downstream" data-time="Voice memo · 3 min" aria-labelledby="title-43">
       <div class="slide-content compound-error-layout">
         <div><p class="eyebrow">Debrief</p><h2 id="title-43">One transcription error can become a confident recommendation.</h2></div>
         <div class="error-chain">
@@ -1061,6 +1570,6 @@ Exact field accuracy: 6/20 (30%)</pre></div>
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="app.js?v=20260823-cases"></script>
+  <script src="app.js?v=20260824-hands-on-cases"></script>
 </body>
 </html>

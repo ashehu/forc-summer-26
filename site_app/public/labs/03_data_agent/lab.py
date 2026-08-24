@@ -148,6 +148,15 @@ TOOL_FUNCTIONS: dict[str, Callable[[dict[str, Any]], dict[str, Any]]] = {
     "make_plot": make_plot,
 }
 
+STAGE_TASKS: dict[str, tuple[str, dict[str, Any]]] = {
+    "describe": ("describe_dataset", {}),
+    "missing": ("inspect_missing_data", {}),
+    "aggregate": ("compare_outcomes", {"outcome": "gain", "stratify_by": "none"}),
+    "stratified": ("compare_outcomes", {"outcome": "gain", "stratify_by": "track"}),
+    "adjusted": ("fit_adjusted_model", {}),
+    "plot": ("make_plot", {}),
+}
+
 NO_ARGS = {"type": "object", "properties": {}, "required": [], "additionalProperties": False}
 TOOLS = [
     {"type": "function", "name": "describe_dataset", "description": "Inspect row count, columns, group sizes, and study-design warning.", "parameters": NO_ARGS, "strict": True},
@@ -223,14 +232,27 @@ def run_offline_demo() -> None:
     print("AI users improve less in the aggregate, yet more within each starting track. Group composition creates the misleading surface result.")
 
 
+def run_stage(stage: str) -> None:
+    tool_name, arguments = STAGE_TASKS[stage]
+    print(f"STAGE · {stage}\n{tool_name}({json.dumps(arguments)})")
+    print(json.dumps(TOOL_FUNCTIONS[tool_name](arguments), indent=2))
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--api", action="store_true", help="Let a model choose among the allowlisted tools.")
+    parser.add_argument("--stage", choices=sorted(STAGE_TASKS), help="Run one deterministic analysis stage.")
     parser.add_argument("--question", default="Did use of the AI planning assistant improve student outcomes? Check for a misleading aggregate.")
     args = parser.parse_args()
-    run_agent(args.question) if args.api else run_offline_demo()
+    if args.api and args.stage:
+        parser.error("Choose --api or --stage, not both.")
+    if args.stage:
+        run_stage(args.stage)
+    elif args.api:
+        run_agent(args.question)
+    else:
+        run_offline_demo()
 
 
 if __name__ == "__main__":
     main()
-

@@ -5,7 +5,7 @@ export default function Home() {
         <p className="home-eyebrow">Graduate training · AI from foundations to practice</p>
         <h1>AI: From Rules to<br /><em>Real-World Agents</em></h1>
         <p className="home-lead">
-          A student-facing course with a 44-slide presentation and four practical,
+          A student-facing course with an interactive presentation and four practical,
           reproducible labs.
         </p>
         <div className="home-actions">

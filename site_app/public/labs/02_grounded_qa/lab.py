@@ -21,7 +21,9 @@ from common import normalized, openai_client, text_model, write_json  # noqa: E4
 CORPUS_DIR = LAB_DIR / "data" / "corpus"
 QUESTIONS_PATH = LAB_DIR / "data" / "questions.json"
 OUTPUT_PATH = LAB_DIR / "output" / "answer.json"
-TOP_K = 2
+TOP_K = 3
+CHUNK_WORDS = 55
+CHUNK_OVERLAP = 12
 TOKEN_PATTERN = re.compile(r"[a-z0-9]+")
 
 
@@ -52,15 +54,54 @@ def cosine(first: dict[str, float], second: dict[str, float]) -> float:
     return dot / (first_norm * second_norm) if first_norm and second_norm else 0.0
 
 
-def retrieve(question: str, top_k: int = TOP_K) -> list[dict[str, Any]]:
-    documents = {path.name: path.read_text(encoding="utf-8") for path in sorted(CORPUS_DIR.glob("*.txt"))}
-    document_vectors, query_vector = tfidf_vectors(documents, question)
+def chunk_text(text: str, chunk_words: int = CHUNK_WORDS, overlap: int = CHUNK_OVERLAP) -> list[str]:
+    words = text.split()
+    if chunk_words < 1:
+        raise ValueError("chunk_words must be positive")
+    if overlap < 0 or overlap >= chunk_words:
+        raise ValueError("overlap must be at least 0 and smaller than chunk_words")
+    chunks: list[str] = []
+    start = 0
+    while start < len(words):
+        end = min(start + chunk_words, len(words))
+        chunks.append(" ".join(words[start:end]))
+        if end == len(words):
+            break
+        start = end - overlap
+    return chunks
+
+
+def load_chunks(chunk_words: int = CHUNK_WORDS, overlap: int = CHUNK_OVERLAP) -> list[dict[str, Any]]:
+    chunks: list[dict[str, Any]] = []
+    for path in sorted(CORPUS_DIR.glob("*.txt")):
+        for index, text in enumerate(chunk_text(path.read_text(encoding="utf-8"), chunk_words, overlap), start=1):
+            chunks.append(
+                {
+                    "chunk_id": f"{path.name}#{index}",
+                    "filename": path.name,
+                    "chunk_index": index,
+                    "text": text,
+                }
+            )
+    return chunks
+
+
+def retrieve(
+    question: str,
+    top_k: int = TOP_K,
+    chunk_words: int = CHUNK_WORDS,
+    overlap: int = CHUNK_OVERLAP,
+) -> list[dict[str, Any]]:
+    chunks = load_chunks(chunk_words, overlap)
+    text_by_id = {chunk["chunk_id"]: chunk["text"] for chunk in chunks}
+    chunk_by_id = {chunk["chunk_id"]: chunk for chunk in chunks}
+    document_vectors, query_vector = tfidf_vectors(text_by_id, question)
     ranked = sorted(
-        ((name, cosine(vector, query_vector)) for name, vector in document_vectors.items()),
+        ((chunk_id, cosine(vector, query_vector)) for chunk_id, vector in document_vectors.items()),
         key=lambda item: item[1],
         reverse=True,
     )[:top_k]
-    return [{"filename": name, "score": round(score, 3), "text": documents[name]} for name, score in ranked]
+    return [{**chunk_by_id[chunk_id], "score": round(score, 3)} for chunk_id, score in ranked]
 
 
 def grounded_answer_model():
@@ -79,7 +120,9 @@ def grounded_answer_model():
 
 
 def answer_with_api(question: str, evidence: list[dict[str, Any]]) -> dict[str, Any]:
-    context = "\n\n".join(f"SOURCE [{item['filename']}]\n{item['text']}" for item in evidence)
+    context = "\n\n".join(
+        f"SOURCE [{item['filename']}] CHUNK [{item['chunk_id']}]\n{item['text']}" for item in evidence
+    )
     response = openai_client().responses.parse(
         model=text_model(),
         input=[
@@ -100,12 +143,22 @@ def answer_with_api(question: str, evidence: list[dict[str, Any]]) -> dict[str, 
 
 def validate(answer: dict[str, Any], evidence: list[dict[str, Any]]) -> list[str]:
     problems: list[str] = []
-    by_name = {item["filename"]: item["text"] for item in evidence}
-    for citation in answer["citations"]:
+    citations = answer.get("citations", [])
+    quotes = answer.get("evidence_quotes", [])
+    if not normalized(answer.get("answer")):
+        problems.append("Answer text is empty.")
+    if not answer.get("not_found", False) and not citations:
+        problems.append("A supported answer must include at least one citation.")
+    if not answer.get("not_found", False) and not quotes:
+        problems.append("A supported answer must include at least one evidence quote.")
+    by_name: dict[str, list[str]] = {}
+    for item in evidence:
+        by_name.setdefault(item["filename"], []).append(item["text"])
+    for citation in citations:
         if citation not in by_name:
             problems.append(f"Citation was not retrieved: {citation}")
-    combined = "\n".join(by_name.values())
-    for quote in answer["evidence_quotes"]:
+    combined = "\n".join(item["text"] for item in evidence)
+    for quote in quotes:
         if normalized(quote) not in normalized(combined):
             problems.append(f"Quote not found verbatim: {quote}")
     return problems
@@ -115,21 +168,47 @@ def show_evidence(question: str, evidence: list[dict[str, Any]]) -> None:
     print(f"\nQUESTION\n{question}\n\nRETRIEVED EVIDENCE")
     for item in evidence:
         preview = " ".join(item["text"].split())[:240]
-        print(f"  [{item['filename']}] score={item['score']:.3f}\n    {preview}…")
+        print(f"  [{item['chunk_id']}] score={item['score']:.3f}\n    {preview}…")
+
+
+def show_chunks(chunks: list[dict[str, Any]]) -> None:
+    print("\nCHUNKS")
+    for item in chunks:
+        preview = " ".join(item["text"].split())[:150]
+        print(f"  [{item['chunk_id']}] {len(item['text'].split())} words\n    {preview}…")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--api", action="store_true", help="Generate a grounded answer with the OpenAI API.")
     parser.add_argument("--question", help="Ask one question instead of the three course questions.")
+    parser.add_argument("--top-k", type=int, default=TOP_K, help="Number of chunks to retrieve.")
+    parser.add_argument("--chunk-words", type=int, default=CHUNK_WORDS, help="Maximum words per chunk.")
+    parser.add_argument("--overlap", type=int, default=CHUNK_OVERLAP, help="Words repeated across adjacent chunks.")
+    parser.add_argument("--show-chunks", action="store_true", help="Print the chunks created before retrieval.")
     args = parser.parse_args()
+
+    chunks = load_chunks(args.chunk_words, args.overlap)
+    document_count = len({chunk["filename"] for chunk in chunks})
+    print(
+        f"PIPELINE\nDocuments: {document_count} · Chunks: {len(chunks)} · "
+        f"Vectorizer: TF-IDF · Similarity: cosine · top_k: {args.top_k}"
+    )
+    if args.show_chunks:
+        show_chunks(chunks)
 
     questions = [args.question] if args.question else json.loads(QUESTIONS_PATH.read_text(encoding="utf-8"))
     for question in questions:
-        evidence = retrieve(question)
+        evidence = retrieve(question, args.top_k, args.chunk_words, args.overlap)
         show_evidence(question, evidence)
         if not args.api:
-            print("\nOFFLINE TASK\nOpen the files above. Decide whether they answer the question before generating prose.")
+            print(
+                "\nOFFLINE TASK\n"
+                "  1. Decide whether this evidence packet answers the question.\n"
+                "  2. Write a short answer—or say 'not found.'\n"
+                "  3. Cite the supporting filename(s).\n"
+                "  4. Copy one exact quote and verify it in the original file."
+            )
             continue
 
         answer = answer_with_api(question, evidence)
@@ -143,4 +222,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

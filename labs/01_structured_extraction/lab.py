@@ -82,7 +82,26 @@ def extract_with_api(path: Path) -> dict[str, Any]:
     return response.output_parsed.model_dump()
 
 
-def evaluate(outputs: list[dict[str, Any]], gold: list[dict[str, Any]]) -> None:
+def shape_problems(output: dict[str, Any]) -> list[str]:
+    required = {
+        "document_id",
+        "population",
+        "method",
+        "sample_size",
+        "main_finding",
+        "limitation",
+        "evidence_quote",
+    }
+    problems = [f"missing field: {field}" for field in sorted(required - output.keys())]
+    for field in required - {"sample_size"}:
+        if field in output and not isinstance(output[field], str):
+            problems.append(f"{field} must be a string")
+    if output.get("sample_size") is not None and not isinstance(output.get("sample_size"), int):
+        problems.append("sample_size must be an integer or null")
+    return problems
+
+
+def evaluate(outputs: list[dict[str, Any]], gold: list[dict[str, Any]], show_details: bool = False) -> None:
     gold_by_id = {row["document_id"]: row for row in gold}
     fields = ["population", "method", "sample_size", "main_finding", "limitation"]
     correct = 0
@@ -98,11 +117,24 @@ def evaluate(outputs: list[dict[str, Any]], gold: list[dict[str, Any]]) -> None:
         row_correct = sum(normalized(output[field]) == normalized(expected[field]) for field in fields)
         correct += row_correct
         total += len(fields)
+        shape_ok = not shape_problems(output)
         source_path = RECORDS_DIR / f"study_{output['document_id'][0].lower()}.txt"
         source = source_path.read_text(encoding="utf-8")
         quote_ok = normalized(output["evidence_quote"]) in normalized(source)
         quote_checks += int(quote_ok)
-        print(f"  {output['document_id']}: {row_correct}/{len(fields)} fields · evidence quote {'✓' if quote_ok else '✗'}")
+        print(
+            f"  {output['document_id']}: shape {'✓' if shape_ok else '✗'} · "
+            f"{row_correct}/{len(fields)} fields · evidence quote {'✓' if quote_ok else '✗'}"
+        )
+        if show_details:
+            for field in fields:
+                match = normalized(output[field]) == normalized(expected[field])
+                print(f"    {'✓' if match else '✗'} {field}")
+                if not match:
+                    print(f"      extracted: {output[field]!r}")
+                    print(f"      expected:  {expected[field]!r}")
+            if not quote_ok:
+                print(f"    ✗ evidence_quote: {output['evidence_quote']!r}")
 
     print(f"\nExact field accuracy: {correct}/{total} ({correct / total:.0%})")
     print(f"Verbatim evidence quotes: {quote_checks}/{len(outputs)}")
@@ -112,16 +144,23 @@ def evaluate(outputs: list[dict[str, Any]], gold: list[dict[str, Any]]) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--api", action="store_true", help="Use the OpenAI API instead of regex rules.")
+    parser.add_argument("--record", choices=["A17", "B04", "C22", "D09"], help="Run one course record.")
+    parser.add_argument("--show-details", action="store_true", help="Print the source and field-by-field comparison.")
     args = parser.parse_args()
 
     records = sorted(RECORDS_DIR.glob("*.txt"))
+    if args.record:
+        records = [path for path in records if args.record in path.read_text(encoding="utf-8")]
     extractor = extract_with_api if args.api else extract_with_rules
     mode = f"API · {text_model()}" if args.api else "offline regex baseline"
     print(f"Mode: {mode}\nRecords: {len(records)}")
+    if args.show_details:
+        for path in records:
+            print(f"\nSOURCE · {path.name}\n{path.read_text(encoding='utf-8').strip()}")
     outputs = [extractor(path) for path in records]
     write_json(OUTPUT_PATH, outputs)
     gold = json.loads(GOLD_PATH.read_text(encoding="utf-8"))
-    evaluate(outputs, gold)
+    evaluate(outputs, gold, args.show_details)
 
 
 if __name__ == "__main__":

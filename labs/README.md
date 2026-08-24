@@ -2,10 +2,10 @@
 
 Four small systems, four different lessons:
 
-1. **Structured extraction** — turn messy text into a schema, then score it against a gold set.
-2. **Grounded Q&A** — retrieve evidence before generating an answer, and test what happens when the answer is absent.
-3. **A tool-using data analyst** — let a model choose among safe, inspectable analysis functions.
-4. **A voice research copilot** — transcribe a recording, create a memo, and verify every quoted line.
+1. **Structured extraction** — manually structure one record, then compare rules or a model with a gold set.
+2. **Grounded Q&A** — select evidence yourself, then compare it with retrieval and test an absent answer.
+3. **A tool-using data analyst** — inspect raw rows and choose among safe, visible analysis steps.
+4. **A voice research copilot** — correct a rough transcript against audio, create a memo, and verify consequential claims.
 
 All source material and data are fictional and course-authored. Nothing in these folders is a claim about a real person, institution, or study.
 
@@ -41,10 +41,10 @@ Never commit a real key. The included `.env.example` contains names only.
 
 | Lab | Time | Core question | Verification target |
 |---|---:|---|---|
-| 01 · Structured extraction | 30 min | Can a model reliably fill a research schema? | Field accuracy + exact evidence quote |
-| 02 · Grounded Q&A | 40 min | Can it answer only from a local evidence set? | Citation exists + quote appears in source |
-| 03 · Data agent | 45 min | Can a model choose the right analysis tool? | Tool trace + aggregate/stratified comparison |
-| 04 · Voice copilot | 35 min | Can speech become an auditable research memo? | Transcript review + quote verification |
+| 01 · Structured extraction | 35 min | Can a model reliably fill a research schema? | Manual/system/gold comparison + exact quote |
+| 02 · Grounded Q&A | 45–50 min | Can it answer only from a local evidence set? | Human/system packet comparison + source check |
+| 03 · Data agent | 50 min | Can a model choose the right analysis tool? | Student-built trace + aggregate/stratified comparison |
+| 04 · Voice copilot | 40 min | Can speech become an auditable research memo? | Audio correction + quote and approval checks |
 
 Open `index.html` for the student-facing lab hub, or read the README inside each numbered folder.
 
@@ -55,4 +55,3 @@ Do not ask only, “Does the answer sound good?” Check three layers:
 - **Interface:** Is the output in the required shape?
 - **Evidence:** Can every consequential claim be traced to an input, source, or tool result?
 - **Decision:** Is the conclusion appropriately calibrated, and does a human still own it?
-
