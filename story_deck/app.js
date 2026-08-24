@@ -1,6 +1,17 @@
 (() => {
   "use strict";
 
+  const presentationOrder = [
+    "slide-1", "slide-2", "slide-3", "slide-3-training", "slide-4", "slide-5", "slide-6", "slide-7", "slide-8",
+    ...Array.from({ length: 29 }, (_, index) => `slide-${index + 16}`),
+    ...Array.from({ length: 7 }, (_, index) => `slide-${index + 9}`),
+  ];
+  const slideContainer = document.querySelector("main");
+  presentationOrder.forEach((slideId) => {
+    const slide = document.getElementById(slideId);
+    if (slide) slideContainer.append(slide);
+  });
+
   const slides = [...document.querySelectorAll(".slide")];
   const currentSlide = document.querySelector("#currentSlide");
   const totalSlides = document.querySelector("#totalSlides");
