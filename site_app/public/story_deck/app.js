@@ -3,7 +3,8 @@
 
   const presentationOrder = [
     "slide-1", "slide-2", "slide-3", "slide-3-training", "slide-4", "slide-5", "slide-6", "slide-7", "slide-8",
-    ...Array.from({ length: 29 }, (_, index) => `slide-${index + 16}`),
+    "slide-16", "slide-case-studies",
+    ...Array.from({ length: 28 }, (_, index) => `slide-${index + 17}`),
     ...Array.from({ length: 7 }, (_, index) => `slide-${index + 9}`),
   ];
   const slideContainer = document.querySelector("main");
