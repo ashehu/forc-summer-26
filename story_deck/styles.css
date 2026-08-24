@@ -429,6 +429,22 @@ p {
   white-space: nowrap;
 }
 
+.instructor-context .course-link {
+  display: block;
+  margin-top: 3px;
+  color: var(--teal);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-decoration-color: rgba(139, 207, 196, 0.45);
+  text-transform: uppercase;
+}
+
+.instructor-context .course-link:hover,
+.instructor-context .course-link:focus-visible {
+  text-decoration-color: currentColor;
+}
+
 .history-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
