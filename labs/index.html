@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Four practical AI labs for graduate students: structured extraction, grounded Q&amp;A, agentic data analysis, and a voice research copilot.">
+  <meta name="description" content="A practical RAG starter and four applied AI labs for graduate students.">
   <meta name="theme-color" content="#102a33">
   <title>Practical AI Lab Kit</title>
   <link rel="stylesheet" href="styles.css">
@@ -14,7 +14,7 @@
     <a class="wordmark" href="#top"><span></span>Practical AI Lab Kit</a>
     <nav aria-label="Lab navigation">
       <a href="#setup">Setup</a>
-      <a href="#labs">Four labs</a>
+      <a href="#labs">Starter + four labs</a>
       <a href="#evaluation">Evaluate</a>
       <a class="deck-link" href="../story_deck/index.html#slide-24">Open slides ↗</a>
     </nav>
@@ -30,8 +30,8 @@
         <div class="hero-actions"><a class="primary" href="#setup">Start setup</a><a href="README.md">Read the plain-text guide</a></div>
       </div>
       <ol class="sequence" aria-label="Lab sequence">
-        <li><span>01</span><div><b>Text → data</b><small>Is the schema correct?</small></div></li>
-        <li><span>02</span><div><b>Files → answer</b><small>Does the source support it?</small></div></li>
+        <li><span>01</span><div><b>Public records → evidence</b><small>What does the archive actually support?</small></div></li>
+        <li><span>02</span><div><b>Text → data</b><small>Is the schema correct?</small></div></li>
         <li><span>03</span><div><b>Agentic analysis → tools</b><small>Did the agent inspect the right thing?</small></div></li>
         <li><span>04</span><div><b>Voice → memo</b><small>Did the transcript preserve meaning?</small></div></li>
       </ol>
@@ -46,7 +46,7 @@
           <a href="#labs">See the four tasks ↓</a>
         </article>
         <article class="featured">
-          <p class="path-number">Path B</p><h3>Python + optional API</h3>
+          <p class="path-number">Path B</p><h3>Python + API for RAG</h3>
           <pre><code>cd labs
 python3 -m venv .venv
 source .venv/bin/activate
@@ -55,15 +55,46 @@ python -m pip install -r requirements.txt</code></pre>
         </article>
       </div>
       <div class="key-note">
-        <b>Using the API?</b><code>export OPENAI_API_KEY="your-key-here"</code><p>Put keys in your terminal or secret manager—never in HTML, notebooks, screenshots, or Git.</p>
+        <b>Using the RAG starter?</b><code>python check_setup.py --require-key</code><p><a href="00_rag_starter/API_KEY_SETUP.md">Follow the local API-key guide ↗</a> Never paste a key into Codex, chat, screenshots, or Git.</p>
       </div>
     </section>
 
     <section class="labs" id="labs">
       <div class="section-head"><p class="eyebrow">The case-study sequence</p><h2>One capability, one failure mode, one verification habit.</h2></div>
 
+      <article class="lab-card" id="lab-starter">
+        <div class="lab-number">00</div>
+        <div class="lab-copy">
+          <div class="lab-meta"><span>30 minutes</span><span>first RAG build</span></div>
+          <h3>Build retrieval over a relatable 20-page corpus.</h3>
+          <p>Use ten fictional graduate-program documents to inspect pages, create overlapping chunks, generate embeddings, rank passages, and launch an evidence-first interface.</p>
+          <div class="lesson"><b>Build target:</b> source → chunk → embedding → local index → top-k retrieval → interface.<br><b>Boundary:</b> stop before answer generation; first make the evidence packet visible.</div>
+        </div>
+        <div class="lab-run">
+          <p>Download</p><a href="00_rag_starter/rag_starter_student_kit.zip" download>Student kit ↓</a>
+          <p>Preflight</p><code>python check_setup.py</code>
+          <a href="00_rag_starter/API_KEY_SETUP.md">API-key setup ↗</a>
+          <a href="00_rag_starter/README.md">Open starter instructions ↗</a>
+        </div>
+      </article>
+
       <article class="lab-card" id="lab-1">
         <div class="lab-number">01</div>
+        <div class="lab-copy">
+          <div class="lab-meta"><span>≈60 minutes</span><span>real-world RAG + evidence audit</span></div>
+          <h3>Investigate public opioid-industry records without losing the evidence.</h3>
+          <p>Work with five source-linked teaching excerpts derived from public litigation records. Build an evidence packet manually, compare it with retrieval, and test what the documents cannot establish.</p>
+          <div class="lesson"><b>Failure to find:</b> a fluent impact claim built from reports and proposals rather than outcome evidence.<br><b>Check to keep:</b> source role + provenance + exact quote + explicit limitation.</div>
+        </div>
+        <div class="lab-run">
+          <p>Inspect the corpus</p><code>python 01_opioid_evidence/lab.py -c</code>
+          <p>Break retrieval</p><code>python 01_opioid_evidence/lab.py -k 1</code>
+          <a href="01_opioid_evidence/README.md">Open Case 01 instructions ↗</a>
+        </div>
+      </article>
+
+      <article class="lab-card" id="lab-2">
+        <div class="lab-number">02</div>
         <div class="lab-copy">
           <div class="lab-meta"><span>35 minutes</span><span>information extraction</span></div>
           <h3>Make messy research records comparable.</h3>
@@ -71,24 +102,9 @@ python -m pip install -r requirements.txt</code></pre>
           <div class="lesson"><b>Failure to find:</b> a plausible value that is not actually stated.<br><b>Check to keep:</b> field accuracy + exact evidence quote.</div>
         </div>
         <div class="lab-run">
-          <p>Offline</p><code>python 01_structured_extraction/lab.py</code>
-          <p>API</p><code>python 01_structured_extraction/lab.py --api</code>
-          <a href="01_structured_extraction/README.md">Open lab instructions ↗</a>
-        </div>
-      </article>
-
-      <article class="lab-card" id="lab-2">
-        <div class="lab-number">02</div>
-        <div class="lab-copy">
-          <div class="lab-meta"><span>45–50 minutes</span><span>grounded Q&amp;A</span></div>
-          <h3>Answer from local documents—or say the answer is absent.</h3>
-          <p>Select an evidence packet by hand, then compare it with a transparent RAG pipeline using filenames, chunks, retrieval scores, and quotes.</p>
-          <div class="lesson"><b>Failure to find:</b> fluent completion when the corpus is silent.<br><b>Check to keep:</b> citation exists + quote appears in source.</div>
-        </div>
-        <div class="lab-run">
-          <p>Offline</p><code>python 02_grounded_qa/lab.py</code>
-          <p>API</p><code>python 02_grounded_qa/lab.py --api --question "Which school attended least?"</code>
-          <a href="02_grounded_qa/README.md">Open lab instructions ↗</a>
+          <p>Offline</p><code>python 02_structured_extraction/lab.py</code>
+          <p>API</p><code>python 02_structured_extraction/lab.py --api</code>
+          <a href="02_structured_extraction/README.md">Open Case 02 instructions ↗</a>
         </div>
       </article>
 
@@ -136,6 +152,7 @@ python -m pip install -r requirements.txt</code></pre>
     <section class="resources">
       <div><p class="eyebrow">Current official references</p><h2>API patterns used in the starter code</h2></div>
       <div class="resource-links">
+        <a href="https://developers.openai.com/api/reference/resources/embeddings/methods/create" target="_blank" rel="noreferrer"><b>Embeddings</b><span>Create vectors for retrieval ↗</span></a>
         <a href="https://developers.openai.com/api/docs/guides/structured-outputs" target="_blank" rel="noreferrer"><b>Structured Outputs</b><span>Pydantic schemas with the Responses API ↗</span></a>
         <a href="https://developers.openai.com/api/docs/guides/function-calling" target="_blank" rel="noreferrer"><b>Function calling</b><span>The model–tool–result loop ↗</span></a>
         <a href="https://developers.openai.com/cookbook/examples/migrating_from_whisper_to_gpt_transcribe" target="_blank" rel="noreferrer"><b>Transcription</b><span>Recorded and realtime voice paths ↗</span></a>

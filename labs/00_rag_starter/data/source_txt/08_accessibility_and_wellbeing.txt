@@ -1,0 +1,17 @@
+TITLE: Accessibility, Participation, and Wellbeing
+DOCUMENT_ID: RGRS-08
+DOCUMENT_TYPE: participation guide
+
+=== PAGE 1 ===
+Course materials are provided in accessible HTML or tagged PDF when possible. Slides use high-contrast colors and include text alternatives for meaningful images. Students may request materials in another format through the program coordinator.
+
+Participation can take several forms: speaking during discussion, contributing through the shared notes, presenting a small artifact, testing another team's interface, or submitting a written reflection. Camera use is optional in online studios. Students should not record a session or another participant without explicit permission.
+
+Students who use screen readers or keyboard navigation should tell the interface workshop instructor which tools they use so example applications can be tested appropriately.
+
+=== PAGE 2 ===
+The program includes two short breaks during the three-hour Wednesday lab. Students may step out when needed and may work in the adjacent quiet room. Food is not allowed near loaner equipment, but covered drinks are permitted.
+
+Students can request deadline flexibility for disability, illness, caregiving, religious observance, or significant access barriers. Requests should be made to the program coordinator; students are not required to disclose medical details to classmates or project mentors.
+
+Project teams should plan work so that a single member is not the only person able to run the system. Shared setup notes, paired debugging, and small reproducible scripts reduce both technical risk and uneven workload.

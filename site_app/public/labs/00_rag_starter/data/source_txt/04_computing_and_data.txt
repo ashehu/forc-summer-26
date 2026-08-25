@@ -1,0 +1,17 @@
+TITLE: Computing, Accounts, and Data Storage
+DOCUMENT_ID: RGRS-04
+DOCUMENT_TYPE: technical guide
+
+=== PAGE 1 ===
+Students need Python 3.11 or later, a current browser, and approximately two gigabytes of free disk space. The starter RAG exercise runs on an ordinary laptop. A graphics processor is not required when embeddings are obtained through an API.
+
+The supported setup uses a project-specific virtual environment. Students create the environment, install the supplied requirements file, and keep generated indexes inside the project folder. API keys must be stored in an environment variable or an untracked .env file. Keys must never be pasted into notebooks, screenshots, shared chat messages, or source-control repositories.
+
+Loaner laptops can be reserved through the course portal by noon on the day before a build lab. The computing assistant holds setup office hours immediately before Wednesday lab in Innovation Library 406.
+
+=== PAGE 2 ===
+Course datasets are divided into public, teaching, and restricted categories. Public data may be redistributed when its license permits. Teaching data is fictional or transformed for classroom use and may be shared only with the class unless a file says otherwise. Restricted data includes identifiable research records, confidential administrative records, unpublished interviews, and credentials.
+
+The starter RAG corpus is teaching data. Students may index it locally and may send its text to the approved course API project. It contains no real participant records. Students should use the page-preserving text files for the first implementation and use the combined PDF to inspect the human-facing source.
+
+Generated chunks and embeddings should be written to the output folder. The output folder is excluded from source control because it can be regenerated. Students should preserve document ID, filename, page number, and document type in every chunk so the interface can lead back to the source.

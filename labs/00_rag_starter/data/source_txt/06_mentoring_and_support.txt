@@ -1,0 +1,17 @@
+TITLE: Mentoring, Office Hours, and Learning Support
+DOCUMENT_ID: RGRS-06
+DOCUMENT_TYPE: student support guide
+
+=== PAGE 1 ===
+Each project team is assigned a primary mentor by the end of Week 1. Mentors help narrow the research question, identify a suitable source collection, and choose a feasible technical path. Mentors do not write the project or approve the use of restricted data.
+
+General office hours are held Monday from 1:00 to 3:00 p.m. in Hall B, room 214, and Thursday from 10:00 a.m. to noon online. Technical debugging hours are held Wednesday from noon to 1:00 p.m. in Innovation Library 406. Students may attend without an appointment, but teams requesting a data review should upload a short source description in advance.
+
+Students new to Python are encouraged to attend the Foundations clinic and bring one error or confusing command to office hours. Beginners are not expected to build the project alone from a blank file.
+
+=== PAGE 2 ===
+Peer learning groups meet during Friday studios. The groups are deliberately mixed by discipline and technical experience. A useful peer critique identifies what the system takes in, what it returns, what evidence is visible, and what claim would be unsafe.
+
+The writing consultant offers twenty-minute appointments in Weeks 4 through 6 for system cards, project descriptions, and demonstrations. The consultant does not verify technical performance but can help distinguish evidence, interpretation, and recommendation.
+
+Students who fall behind should contact the primary mentor before expanding their project. The recommended recovery plan is to reduce the source collection, keep retrieval visible, and postpone answer generation or agentic features. A smaller working system is preferred to an unfinished system with more components.

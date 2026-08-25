@@ -1,0 +1,23 @@
+TITLE: Demonstration Day and Frequently Asked Questions
+DOCUMENT_ID: RGRS-10
+DOCUMENT_TYPE: event guide and FAQ
+
+=== PAGE 1 ===
+Demonstration Day takes place Friday of Week 6 from 1:00 to 4:00 p.m. in the Innovation Library event space. Each team receives five minutes to demonstrate and three minutes for questions. A rehearsal is held during Wednesday lab.
+
+The recommended presentation sequence is: define the problem, show the source collection, trace one input through the system, demonstrate one useful result, show one failure or limitation, and name the human decision that remains. Live systems should have a recorded or static backup.
+
+Final materials are due at noon on Thursday of Week 6. Teams submit the repository link, one-page system card, three representative screenshots, and the demonstration title. The system card must list data sources, model or method, known limitations, and the person responsible for final review.
+
+=== PAGE 2 ===
+Frequently asked questions:
+
+Can a student participate without programming experience? Yes. Attend Python Foundations, use the supplied starter project, and bring setup problems to technical office hours.
+
+Does the program provide housing? The studio documents do not describe housing or housing support. Students should consult the university's general student-services information.
+
+Can a team use its own research data? Possibly, but only after confirming authorization and data classification. The fictional starter corpus should be used for the first build.
+
+Can a team use an AI coding assistant? Yes. The team must review the generated code, protect credentials and restricted data, and be able to explain the implementation.
+
+What if the interface is not finished? Demonstrate the working pipeline in the terminal, show retrieved evidence, and explain the next implementation step.

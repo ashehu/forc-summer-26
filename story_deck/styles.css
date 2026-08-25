@@ -6291,6 +6291,2345 @@ dialog::backdrop {
   }
 }
 
+/* Case 01 · Evidence discovery across opioid-industry records */
+.opioid-open-slide {
+  background: #081d24;
+}
+
+.opioid-open-image {
+  position: absolute;
+  z-index: 0;
+  inset: 0 0 0 auto;
+  width: 48%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 54% center;
+  filter: grayscale(1) contrast(1.08);
+  opacity: 0.73;
+}
+
+.opioid-open-shade {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(90deg, #081d24 0 47%, rgba(8, 29, 36, 0.93) 58%, rgba(8, 29, 36, 0.18) 100%);
+}
+
+.opioid-open-layout {
+  display: grid;
+  gap: 16px;
+  padding: 27px 0;
+}
+
+.opioid-open-layout h2 {
+  max-width: 790px;
+  font-size: clamp(3.15rem, 4.7vw, 5rem);
+}
+
+.opioid-origin-waves {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 790px;
+}
+
+.opioid-origin-waves article {
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.36);
+}
+
+.opioid-origin-waves time,
+.opioid-origin-waves strong,
+.opioid-origin-waves span {
+  display: block;
+}
+
+.opioid-origin-waves time {
+  margin-bottom: 5px;
+  color: var(--coral);
+  font: 1.15rem var(--serif);
+}
+
+.opioid-origin-waves strong {
+  font: 0.96rem var(--serif);
+}
+
+.opioid-origin-waves span {
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.67rem;
+  line-height: 1.35;
+}
+
+.opioid-origin-archive {
+  max-width: 790px;
+  padding: 12px 16px;
+  border-left: 4px solid var(--coral);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.opioid-origin-archive strong {
+  font: 1.02rem var(--serif);
+}
+
+.opioid-origin-archive p {
+  max-width: 755px;
+  margin: 5px 0 0;
+  color: rgba(255, 255, 255, 0.69);
+  font-size: 0.72rem;
+  line-height: 1.38;
+}
+
+.opioid-origin-flow {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  max-width: 790px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.66rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.opioid-origin-flow i {
+  color: var(--coral);
+  font-style: normal;
+}
+
+.opioid-open-question {
+  max-width: 690px;
+  margin: 24px 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font: 1.18rem/1.42 var(--serif);
+}
+
+.opioid-open-scale {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  margin-top: 29px;
+}
+
+.opioid-open-scale strong {
+  color: var(--coral);
+  font: 2.1rem var(--serif);
+}
+
+.opioid-open-scale span,
+.opioid-open-scale i {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.74rem;
+  font-style: normal;
+}
+
+.opioid-open-layout .source {
+  display: inline-block;
+  margin-top: 28px;
+}
+
+.opioid-problem-layout,
+.opioid-scale-layout,
+.opioid-material-layout,
+.opioid-direct-path-layout,
+.opioid-vector-layout,
+.opioid-results-layout,
+.opioid-code-layout,
+.opioid-start-layout,
+.opioid-challenges-layout,
+.opioid-ocr-layout,
+.opioid-provenance-layout,
+.opioid-architecture-layout,
+.opioid-retrieval-layout,
+.opioid-agentic-layout,
+.opioid-evaluation-layout,
+.opioid-demo-layout,
+.opioid-lab-layout {
+  display: grid;
+  gap: 20px;
+  padding: 34px 0;
+}
+
+.opioid-problem-layout h2,
+.opioid-scale-layout h2,
+.opioid-material-layout h2,
+.opioid-direct-path-layout h2,
+.opioid-vector-layout h2,
+.opioid-results-layout h2,
+.opioid-code-layout h2,
+.opioid-start-layout h2,
+.opioid-challenges-layout h2,
+.opioid-ocr-layout h2,
+.opioid-provenance-layout h2,
+.opioid-architecture-layout h2,
+.opioid-retrieval-layout h2,
+.opioid-agentic-layout h2,
+.opioid-evaluation-layout h2,
+.opioid-demo-layout h2,
+.opioid-lab-layout h2 {
+  max-width: 1120px;
+  font-size: clamp(2.75rem, 4.25vw, 4.5rem);
+}
+
+.opioid-problem-statement {
+  margin: 0;
+  padding: 21px 25px;
+  border-left: 5px solid var(--ink);
+  background: rgba(255, 255, 255, 0.28);
+  font: 1.2rem/1.42 var(--serif);
+}
+
+.opioid-contract {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.opioid-contract article {
+  min-height: 126px;
+  padding: 16px 18px;
+  border-top: 1px solid rgba(16, 42, 51, 0.42);
+}
+
+.opioid-contract span,
+.opioid-implementation-split span,
+.opioid-retrieval-methods span,
+.opioid-agent-boundary > span,
+.opioid-lab-paths span,
+.opioid-close-split span,
+.opioid-demo-commands article > span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.67rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.opioid-contract strong {
+  font: 1.23rem var(--serif);
+}
+
+.opioid-contract p {
+  margin: 8px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+}
+
+.opioid-contract .opioid-contract-boundary {
+  color: white;
+  border-radius: 7px;
+  background: var(--ink);
+}
+
+.opioid-contract .opioid-contract-boundary p {
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.opioid-research-tasks article {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.opioid-question-examples {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 20px;
+  align-items: center;
+  padding: 13px 17px;
+  color: white;
+  border-radius: 7px;
+  background: var(--ink);
+}
+
+.opioid-question-examples > span {
+  color: var(--teal);
+  font-size: 0.69rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.opioid-question-examples ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.opioid-question-examples li {
+  position: relative;
+  padding-left: 13px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.72rem;
+  line-height: 1.3;
+}
+
+.opioid-question-examples li::before {
+  position: absolute;
+  left: 0;
+  color: var(--coral);
+  content: "?";
+  font-weight: 900;
+}
+
+.opioid-problem-rule,
+.opioid-scale-note,
+.opioid-material-rule,
+.opioid-challenges-bottom,
+.opioid-ocr-rule,
+.opioid-provenance-rule,
+.opioid-human-gates,
+.opioid-agent-owner,
+.opioid-demo-diagnosis,
+.opioid-lab-roles {
+  margin: 0;
+  font-size: 0.84rem;
+}
+
+.opioid-scale-numbers {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1fr;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.opioid-scale-numbers article {
+  min-height: 120px;
+  padding: 16px 20px;
+  border-right: 1px solid var(--line);
+}
+
+.opioid-scale-numbers article:last-child {
+  border-right: 0;
+}
+
+.opioid-scale-numbers .opioid-scale-full {
+  color: white;
+  background: var(--ink);
+}
+
+.opioid-scale-numbers .opioid-scale-full span {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.opioid-scale-numbers strong {
+  display: block;
+  color: var(--coral);
+  font: 2.55rem/1 var(--serif);
+}
+
+.opioid-scale-numbers span {
+  display: block;
+  margin-top: 10px;
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+}
+
+.opioid-scale-bridge {
+  display: grid;
+  grid-template-columns: 155px 1fr auto;
+  gap: 7px 14px;
+  align-items: center;
+  padding: 15px 18px;
+  color: white;
+  border-radius: 8px;
+  background: var(--ink);
+}
+
+.opioid-scale-bridge span {
+  color: var(--teal);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.opioid-scale-bridge b {
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+.opioid-scale-bridge i {
+  grid-row: 1 / 3;
+  grid-column: 3;
+  color: var(--coral);
+  font: 2rem var(--serif);
+}
+
+.opioid-document-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.18fr;
+  gap: 18px;
+  height: 370px;
+}
+
+.opioid-document-strip figure {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: white;
+}
+
+.opioid-document-strip img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.opioid-document-strip figure:nth-child(3) img {
+  object-position: center;
+}
+
+.opioid-document-strip figcaption {
+  position: absolute;
+  inset: auto 0 0;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3px 12px;
+  padding: 12px 14px;
+  color: white;
+  background: linear-gradient(transparent, rgba(8, 29, 36, 0.97) 26%);
+}
+
+.opioid-document-strip figcaption b {
+  font: 1.05rem var(--serif);
+}
+
+.opioid-document-strip figcaption span {
+  grid-column: 1;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.68rem;
+}
+
+.opioid-document-strip figcaption a {
+  grid-row: 1 / 3;
+  grid-column: 2;
+  align-self: end;
+  color: var(--teal);
+  font-size: 0.68rem;
+}
+
+.opioid-direct-path-layout {
+  display: grid;
+  gap: 16px;
+  padding: 27px 0;
+}
+
+.opioid-path-lanes {
+  display: grid;
+  gap: 15px;
+}
+
+.opioid-path-lanes section {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.opioid-path-lanes h3 {
+  margin: 0;
+  padding: 14px 14px 0 0;
+  border-top: 4px solid var(--coral);
+  font: 1.1rem/1.22 var(--serif);
+}
+
+.opioid-path-lanes ol {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
+}
+
+.opioid-path-lanes li {
+  position: relative;
+  min-height: 116px;
+  padding: 13px 14px;
+  border-top: 4px solid var(--ink);
+  background: rgba(16, 42, 51, 0.06);
+}
+
+.opioid-path-lanes li::after {
+  position: absolute;
+  z-index: 2;
+  top: 44%;
+  right: -9px;
+  color: var(--coral);
+  content: "→";
+  font: 1.25rem var(--serif);
+}
+
+.opioid-path-lanes li:last-child::after {
+  content: "";
+}
+
+.opioid-path-lanes li span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--coral);
+  font-size: 0.66rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.opioid-path-lanes li strong {
+  display: block;
+  font: 1.08rem var(--serif);
+}
+
+.opioid-path-lanes li p {
+  margin: 7px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.7rem;
+  line-height: 1.35;
+}
+
+.opioid-path-trace {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 13px 16px;
+  color: white;
+  border-radius: 7px;
+  background: var(--ink);
+}
+
+.opioid-path-trace span {
+  color: var(--teal);
+  font-size: 0.67rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.opioid-path-trace code {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.73rem;
+  white-space: normal;
+}
+
+.opioid-vector-layout {
+  display: grid;
+  gap: 14px;
+  padding: 23px 0;
+}
+
+.opioid-vector-layout h2 {
+  max-width: 1150px;
+}
+
+.opioid-vector-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(270px, 0.72fr);
+  gap: 18px;
+  min-height: 385px;
+}
+
+.opioid-vector-map {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(16, 42, 51, 0.2);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.opioid-vector-map svg {
+  display: block;
+  width: 100%;
+  height: 335px;
+}
+
+.opioid-vector-map figcaption {
+  margin: 0;
+  padding: 10px 16px;
+  color: white;
+  background: var(--ink);
+  font-size: 0.73rem;
+}
+
+.vector-grid line {
+  stroke: rgba(16, 42, 51, 0.09);
+  stroke-width: 1;
+}
+
+.vector-link {
+  stroke-linecap: round;
+}
+
+.vector-link.high { stroke: var(--coral); stroke-width: 5; }
+.vector-link.medium { stroke: #207f78; stroke-width: 3.5; }
+.vector-link.low { stroke: #bf8c31; stroke-width: 2.5; }
+.vector-link.distant { stroke: rgba(16, 42, 51, 0.34); stroke-width: 1.5; stroke-dasharray: 7 7; }
+
+.vector-query polygon {
+  fill: var(--coral);
+  stroke: var(--ink);
+  stroke-width: 3;
+}
+
+.vector-query text,
+.vector-point text,
+.projection-label {
+  fill: var(--ink);
+  font: 14px var(--sans);
+}
+
+.vector-query text {
+  font-weight: 900;
+}
+
+.vector-point circle {
+  stroke: white;
+  stroke-width: 4;
+}
+
+.vector-point-sales circle { fill: var(--coral); }
+.vector-point-policy circle { fill: #207f78; }
+.vector-point-federal circle { fill: #bf8c31; }
+.vector-point-disposal circle { fill: rgba(16, 42, 51, 0.45); }
+
+.vector-point .vector-score {
+  fill: var(--coral);
+  font-weight: 900;
+}
+
+.vector-point .vector-sub {
+  fill: rgba(16, 42, 51, 0.62);
+  font-size: 12px;
+}
+
+.projection-label {
+  fill: rgba(16, 42, 51, 0.55);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.opioid-vector-explainer {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  gap: 11px;
+}
+
+.opioid-vector-explainer > div {
+  padding: 13px 15px;
+  border-top: 4px solid var(--ink);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.opioid-vector-explainer span {
+  display: block;
+  margin-bottom: 7px;
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.opioid-vector-question blockquote {
+  margin: 0;
+  font: 1rem/1.3 var(--serif);
+}
+
+.opioid-cosine strong {
+  display: block;
+  color: var(--coral);
+  font: 1rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.opioid-cosine p {
+  margin: 7px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+.opioid-vector-packet ol {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.opioid-vector-packet li {
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(16, 42, 51, 0.16);
+  font-size: 0.72rem;
+}
+
+.opioid-vector-packet b {
+  display: inline-block;
+  width: 43px;
+  color: var(--coral);
+}
+
+.opioid-vector-caveat {
+  margin: 0;
+  font-size: 0.78rem;
+}
+
+.opioid-results-layout {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 14px;
+  padding: 25px 0;
+}
+
+.opioid-results-layout h2 {
+  max-width: 1000px;
+}
+
+.opioid-results-query {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 18px;
+  align-items: center;
+  margin: 0;
+  padding: 11px 16px;
+  color: white;
+  border-radius: 6px;
+  background: var(--ink);
+  font: 0.9rem/1.3 var(--serif);
+}
+
+.opioid-results-query span {
+  color: var(--teal);
+  font: 0.64rem var(--sans);
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.opioid-results-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.opioid-results-list li {
+  display: grid;
+  grid-template-columns: 95px 235px 1fr;
+  gap: 20px;
+  align-items: center;
+  min-height: 87px;
+  border-top: 1px solid rgba(16, 42, 51, 0.22);
+}
+
+.opioid-result-rank {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.opioid-result-rank span {
+  color: var(--coral);
+  font: 0.74rem var(--sans);
+  font-weight: 900;
+}
+
+.opioid-result-rank strong {
+  font: 1.05rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.opioid-result-source b,
+.opioid-result-source span {
+  display: block;
+}
+
+.opioid-result-source b {
+  font: 1rem/1.15 var(--serif);
+}
+
+.opioid-result-source span {
+  margin-top: 5px;
+  color: var(--ink-soft);
+  font-size: 0.66rem;
+}
+
+.opioid-results-list blockquote {
+  margin: 0;
+  color: var(--ink-soft);
+  font: 0.88rem/1.35 var(--serif);
+}
+
+.opioid-results-verdict {
+  display: grid;
+  grid-template-columns: 165px 190px 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 12px 16px;
+  border-left: 5px solid var(--teal);
+  background: rgba(26, 153, 145, 0.12);
+}
+
+.opioid-results-verdict span {
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.opioid-results-verdict strong {
+  color: var(--teal-dark);
+  font: 1.12rem var(--serif);
+}
+
+.opioid-results-verdict p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+}
+
+.rag-types-slide .opioid-results-layout {
+  gap: 10px;
+  padding: 22px 0;
+}
+
+.rag-types-slide .opioid-results-list li {
+  grid-template-columns: 105px 255px 1fr;
+  min-height: 66px;
+}
+
+.rag-types-slide .opioid-result-rank strong {
+  color: var(--coral);
+  font: 0.72rem var(--sans);
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.rag-types-slide .opioid-results-list blockquote {
+  font: 0.75rem/1.35 var(--sans);
+}
+
+.rag-types-slide .opioid-results-list blockquote b {
+  color: var(--ink);
+}
+
+.rag-types-slide .opioid-results-list blockquote em {
+  color: var(--ink-soft);
+  font-style: normal;
+}
+
+.opioid-code-layout {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 16px;
+  padding: 25px 0;
+}
+
+.opioid-code-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.8fr);
+  gap: 30px;
+  min-height: 385px;
+}
+
+.opioid-code-stage pre {
+  margin: 0;
+  padding: 25px 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.22);
+  font: 0.85rem/1.62 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: pre-wrap;
+}
+
+.opioid-code-stage pre b {
+  color: var(--teal);
+}
+
+.opioid-code-notes {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.opioid-code-notes li {
+  display: grid;
+  grid-template-columns: 43px 1fr;
+  gap: 13px;
+  align-items: start;
+  padding: 12px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.opioid-code-notes li > span {
+  color: var(--coral);
+  font: 0.74rem var(--sans);
+  font-weight: 900;
+}
+
+.opioid-code-notes strong {
+  font: 1rem var(--serif);
+}
+
+.opioid-code-notes p {
+  margin: 5px 0 0;
+  color: rgba(255, 255, 255, 0.67);
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+.opioid-code-rule {
+  margin: 0;
+  padding: 12px 16px;
+  color: var(--ink);
+  border-radius: 6px;
+  background: var(--teal);
+  font-size: 0.77rem;
+}
+
+.opioid-start-layout {
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  gap: 15px;
+  padding: 25px 0;
+}
+
+.opioid-start-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(330px, 0.7fr);
+  gap: 28px;
+}
+
+.opioid-start-commands {
+  display: grid;
+  gap: 9px;
+}
+
+.opioid-start-commands article {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 13px 16px;
+  color: white;
+  border-radius: 7px;
+  background: var(--ink);
+}
+
+.opioid-start-commands span {
+  color: var(--teal);
+  font-size: 0.66rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.opioid-start-commands code {
+  font: 0.7rem/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: normal;
+}
+
+.opioid-start-tasks {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.opioid-start-tasks li {
+  padding: 13px 0;
+  border-top: 1px solid rgba(16, 42, 51, 0.28);
+}
+
+.opioid-start-tasks span {
+  font: 1.05rem var(--serif);
+}
+
+.opioid-start-tasks p {
+  margin: 6px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+
+.opioid-start-output {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 16px;
+  border-top: 4px solid var(--ink);
+  background: rgba(255, 255, 255, 0.32);
+}
+
+.opioid-start-output span {
+  font-size: 0.66rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.opioid-start-output strong {
+  font: 0.86rem var(--serif);
+}
+
+.opioid-start-output i {
+  color: var(--ink-soft);
+  font-style: normal;
+}
+
+.opioid-start-layout > .lab-slide-link {
+  justify-self: start;
+}
+
+.rag-starter-data-layout,
+.rag-starter-build-layout {
+  display: grid;
+  gap: 15px;
+  padding: 24px 0;
+}
+
+.rag-starter-data-layout h2,
+.rag-starter-build-layout h2 {
+  max-width: 1160px;
+  font-size: clamp(2.5rem, 3.9vw, 4.1rem);
+}
+
+.rag-starter-data-stage {
+  display: grid;
+  grid-template-columns: minmax(330px, 0.72fr) minmax(0, 1.28fr);
+  gap: 30px;
+  min-height: 370px;
+}
+
+.rag-starter-manifest {
+  padding-right: 25px;
+  border-right: 1px solid rgba(16, 42, 51, 0.2);
+}
+
+.rag-starter-stats {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 13px;
+  align-items: baseline;
+  margin-bottom: 18px;
+}
+
+.rag-starter-stats strong {
+  color: var(--coral);
+  font: 1.75rem var(--serif);
+}
+
+.rag-starter-stats span {
+  color: var(--ink-soft);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.rag-starter-manifest ol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 20px;
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
+}
+
+.rag-starter-manifest li {
+  padding-top: 7px;
+  border-top: 1px solid rgba(16, 42, 51, 0.17);
+  font-size: 0.7rem;
+}
+
+.rag-starter-sample {
+  display: grid;
+  gap: 10px;
+}
+
+.rag-starter-sample > p {
+  margin: 0;
+  padding: 15px 18px;
+  color: white;
+  border-radius: 7px;
+  background: var(--ink);
+  font: 1rem/1.3 var(--serif);
+}
+
+.rag-starter-sample > p span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--teal);
+  font: 0.63rem var(--sans);
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.rag-starter-sample blockquote {
+  margin: 0;
+  padding: 12px 15px;
+  border-left: 4px solid var(--coral);
+  background: rgba(255, 255, 255, 0.38);
+  font: 0.78rem/1.35 var(--serif);
+}
+
+.rag-starter-sample blockquote b {
+  display: block;
+  margin-bottom: 4px;
+  font: 0.63rem var(--sans);
+  font-weight: 900;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.rag-starter-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.rag-starter-links a {
+  color: var(--ink);
+  font-size: 0.72rem;
+  font-weight: 900;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+.rag-starter-build-layout {
+  grid-template-rows: auto auto auto 1fr;
+}
+
+.rag-starter-pipeline {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rag-starter-pipeline li {
+  min-height: 160px;
+  padding: 16px 15px;
+  border-top: 5px solid var(--ink);
+  border-right: 1px solid rgba(16, 42, 51, 0.2);
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.rag-starter-pipeline li:last-child {
+  border-right: 0;
+}
+
+.rag-starter-pipeline span {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--coral);
+  font-size: 0.66rem;
+  font-weight: 900;
+}
+
+.rag-starter-pipeline strong {
+  font: 1rem var(--serif);
+}
+
+.rag-starter-pipeline p {
+  margin: 8px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.68rem;
+  line-height: 1.4;
+}
+
+.rag-starter-pipeline code {
+  font-size: 0.61rem;
+  overflow-wrap: anywhere;
+}
+
+.rag-starter-commands {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr 0.75fr;
+  gap: 8px;
+}
+
+.rag-starter-commands code {
+  padding: 12px 14px;
+  color: white;
+  border-radius: 6px;
+  background: var(--ink);
+  font: 0.66rem/1.35 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: normal;
+}
+
+.rag-starter-build-bottom {
+  display: grid;
+  grid-template-columns: 1.4fr auto;
+  gap: 10px 22px;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid rgba(16, 42, 51, 0.28);
+}
+
+.rag-starter-build-bottom p,
+.rag-starter-build-bottom strong {
+  margin: 0;
+}
+
+.rag-starter-build-bottom p {
+  font-size: 0.74rem;
+}
+
+.rag-starter-build-bottom p span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.63rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.rag-starter-build-bottom a {
+  color: var(--ink);
+  font-size: 0.71rem;
+  font-weight: 900;
+}
+
+.rag-starter-build-bottom strong {
+  grid-column: 1 / -1;
+  padding: 10px 14px;
+  color: white;
+  border-radius: 5px;
+  background: var(--ink);
+  font-size: 0.73rem;
+}
+
+.rag-api-layout {
+  display: grid;
+  gap: 16px;
+  padding: 26px 0;
+}
+
+.rag-api-layout h2 {
+  max-width: 1100px;
+  font-size: clamp(2.55rem, 4vw, 4.15rem);
+}
+
+.rag-api-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rag-api-steps li {
+  min-height: 162px;
+  padding: 17px 19px;
+  color: var(--ink);
+  border-top: 5px solid var(--coral);
+  border-radius: 6px;
+  background: var(--paper);
+}
+
+.rag-api-steps span {
+  display: block;
+  margin-bottom: 11px;
+  color: var(--coral);
+  font-size: 0.67rem;
+  font-weight: 900;
+}
+
+.rag-api-steps strong {
+  display: block;
+  font: 1.03rem var(--serif);
+}
+
+.rag-api-steps p {
+  margin: 8px 0 10px;
+  color: var(--ink-soft);
+  font-size: 0.69rem;
+  line-height: 1.4;
+}
+
+.rag-api-steps code {
+  font-size: 0.64rem;
+  overflow-wrap: anywhere;
+}
+
+.rag-api-steps a {
+  color: var(--ink);
+  font-size: 0.67rem;
+  font-weight: 900;
+  text-underline-offset: 4px;
+}
+
+.rag-api-prompt {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  overflow: hidden;
+  color: var(--ink);
+  border-radius: 7px;
+  background: var(--teal);
+}
+
+.rag-api-prompt > div {
+  display: grid;
+  align-content: center;
+  gap: 12px;
+  padding: 17px;
+  border-right: 1px solid rgba(16, 42, 51, 0.2);
+}
+
+.rag-api-prompt > div span {
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.rag-api-prompt button {
+  width: max-content;
+  padding: 8px 12px;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  background: var(--ink);
+  font-size: 0.68rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.rag-api-prompt p {
+  align-self: center;
+  margin: 0;
+  padding: 17px 20px;
+  font: 0.88rem/1.48 var(--serif);
+}
+
+.rag-api-prompt code,
+.rag-api-rule code {
+  padding: 2px 4px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.42);
+  font: 0.78em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.rag-api-rule {
+  margin: 0;
+  padding-top: 11px;
+  color: rgba(255, 255, 255, 0.76);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.7rem;
+}
+
+.rag-api-rule b {
+  color: var(--coral);
+}
+
+.rag-prompt-layout {
+  display: grid;
+  gap: 14px;
+  padding: 24px 0;
+}
+
+.rag-prompt-layout h2 {
+  max-width: 1120px;
+  font-size: clamp(2.35rem, 3.55vw, 3.75rem);
+}
+
+.rag-prompt-stage {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  min-height: 390px;
+  overflow: hidden;
+  border: 1px solid rgba(16, 42, 51, 0.24);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.34);
+  box-shadow: 0 18px 42px rgba(16, 42, 51, 0.08);
+}
+
+.rag-prompt-tabs {
+  display: grid;
+  grid-template-rows: repeat(7, 1fr);
+  padding: 8px;
+  background: var(--ink);
+}
+
+.rag-prompt-tabs button {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 11px;
+  color: rgba(255, 255, 255, 0.66);
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  font-size: 0.72rem;
+  font-weight: 850;
+  text-align: left;
+  cursor: pointer;
+}
+
+.rag-prompt-tabs button:last-child {
+  border-bottom: 0;
+}
+
+.rag-prompt-tabs button span {
+  color: var(--coral);
+  font: 0.86rem var(--serif);
+}
+
+.rag-prompt-tabs button.is-active {
+  color: var(--ink);
+  border-radius: 5px;
+  background: var(--teal);
+}
+
+.rag-prompt-card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 18px;
+  padding: 22px 26px;
+}
+
+.rag-prompt-card-head,
+.rag-prompt-controls,
+.rag-prompt-footer {
+  display: flex;
+  align-items: center;
+}
+
+.rag-prompt-card-head {
+  justify-content: space-between;
+  padding-bottom: 13px;
+  border-bottom: 1px solid rgba(16, 42, 51, 0.18);
+}
+
+.rag-prompt-card-head span {
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.rag-prompt-card-head button,
+.rag-prompt-controls button {
+  padding: 9px 13px;
+  border: 1px solid var(--ink);
+  border-radius: 5px;
+  color: var(--ink);
+  background: transparent;
+  font-size: 0.7rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.rag-prompt-card-head button {
+  color: white;
+  background: var(--ink);
+}
+
+.rag-prompt-panels {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rag-prompt-panels li[hidden] {
+  display: none;
+}
+
+.rag-prompt-panels p {
+  max-width: 860px;
+  margin: 0;
+  font: 1.22rem/1.52 var(--serif);
+}
+
+.rag-prompt-panels code {
+  padding: 2px 5px;
+  color: white;
+  border-radius: 4px;
+  background: var(--ink);
+  font: 0.72em/1.3 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  overflow-wrap: anywhere;
+}
+
+.rag-prompt-controls {
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.rag-prompt-controls button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.rag-prompt-footer {
+  gap: 16px;
+  font-size: 0.7rem;
+}
+
+.rag-prompt-footer strong {
+  color: var(--coral);
+}
+
+.rag-prompt-footer span {
+  color: var(--ink-soft);
+}
+
+.rag-prompt-footer a {
+  margin-left: auto;
+  font-weight: 900;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .rag-api-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .rag-api-prompt {
+    grid-template-columns: 1fr;
+  }
+
+  .rag-api-prompt > div {
+    grid-template-columns: 1fr auto;
+    border-right: 0;
+    border-bottom: 1px solid rgba(16, 42, 51, 0.2);
+  }
+
+  .rag-prompt-layout {
+    padding: 36px 0;
+  }
+
+  .rag-prompt-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .rag-prompt-tabs {
+    grid-template-columns: repeat(7, minmax(80px, 1fr));
+    grid-template-rows: auto;
+    overflow-x: auto;
+  }
+
+  .rag-prompt-tabs button {
+    grid-template-columns: 1fr;
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 0;
+  }
+
+  .rag-prompt-card {
+    min-height: 410px;
+  }
+
+  .rag-prompt-footer {
+    flex-wrap: wrap;
+  }
+}
+
+.opioid-challenge-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 34px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
+}
+
+.opioid-challenge-list li {
+  display: grid;
+  grid-template-columns: 43px 145px 1fr;
+  gap: 10px;
+  align-items: baseline;
+  min-height: 70px;
+  padding: 13px 0;
+  border-top: 1px solid rgba(16, 42, 51, 0.24);
+}
+
+.opioid-challenge-list li:last-child {
+  grid-column: 1 / -1;
+  width: calc(50% - 17px);
+}
+
+.opioid-challenge-list span {
+  color: var(--coral);
+  font: 0.92rem var(--serif);
+}
+
+.opioid-challenge-list strong {
+  font: 1.05rem var(--serif);
+}
+
+.opioid-challenge-list p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.73rem;
+}
+
+.opioid-challenges-bottom {
+  padding: 13px 17px;
+  color: white;
+  border-radius: 7px;
+  background: var(--ink);
+}
+
+.opioid-ocr-comparison {
+  display: grid;
+  grid-template-columns: 0.72fr auto 1.28fr;
+  gap: 22px;
+  align-items: center;
+  min-height: 310px;
+}
+
+.opioid-ocr-comparison figure {
+  height: 300px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: white;
+}
+
+.opioid-ocr-comparison img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: top;
+}
+
+.opioid-ocr-comparison figcaption {
+  padding: 8px 11px;
+  color: var(--ink-soft);
+  font-size: 0.66rem;
+}
+
+.opioid-ocr-comparison > i {
+  color: var(--coral);
+  font: 2.3rem var(--serif);
+}
+
+.opioid-ocr-comparison blockquote {
+  margin: 0;
+  padding: 24px 28px;
+  border-left: 4px solid var(--coral);
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.opioid-ocr-comparison blockquote span {
+  font-size: 0.67rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.opioid-ocr-comparison blockquote p {
+  margin: 18px 0 0;
+  font: 1.15rem/1.35 var(--serif);
+}
+
+.opioid-ocr-comparison mark {
+  color: inherit;
+  background: rgba(237, 106, 70, 0.27);
+}
+
+.opioid-ocr-comparison footer {
+  margin-top: 20px;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+}
+
+.opioid-ocr-risks {
+  display: flex;
+  gap: 9px;
+}
+
+.opioid-ocr-risks span {
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.7rem;
+}
+
+.opioid-provenance-layout {
+  grid-template-columns: 1.15fr 0.85fr;
+}
+
+.opioid-provenance-layout > div:first-child,
+.opioid-provenance-rule {
+  grid-column: 1 / -1;
+}
+
+.opioid-chunk-example {
+  overflow: hidden;
+  color: white;
+  border-radius: 9px;
+  background: var(--ink);
+}
+
+.opioid-chunk-meta {
+  display: grid;
+  grid-template-columns: auto 1fr auto 1fr;
+  gap: 4px 10px;
+  padding: 13px 16px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.opioid-chunk-meta span {
+  color: var(--teal);
+  font-size: 0.63rem;
+  text-transform: uppercase;
+}
+
+.opioid-chunk-meta b {
+  overflow: hidden;
+  font-size: 0.68rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.opioid-chunk-example blockquote {
+  margin: 0;
+  padding: 28px;
+  font: 1.35rem/1.35 var(--serif);
+}
+
+.opioid-claim-ladder {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+  align-items: center;
+}
+
+.opioid-claim-ladder article {
+  min-height: 155px;
+  padding: 22px;
+  border: 1px solid rgba(16, 42, 51, 0.24);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.opioid-claim-ladder span {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.opioid-claim-ladder strong {
+  font: 1.12rem/1.35 var(--serif);
+}
+
+.opioid-claim-ladder i {
+  color: var(--coral);
+  font: 2rem var(--serif);
+}
+
+.opioid-pipeline {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.opioid-pipeline li {
+  min-height: 128px;
+  padding: 14px;
+  color: var(--ink);
+  border-radius: 7px;
+  background: var(--paper);
+}
+
+.opioid-pipeline span {
+  color: var(--coral);
+  font: 0.85rem var(--serif);
+}
+
+.opioid-pipeline strong {
+  display: block;
+  margin-top: 16px;
+  font: 1.1rem var(--serif);
+}
+
+.opioid-pipeline p {
+  margin: 9px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.68rem;
+}
+
+.opioid-implementation-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.opioid-implementation-split article {
+  padding: 14px 17px;
+  border-top: 1px solid rgba(255, 255, 255, 0.23);
+}
+
+.opioid-implementation-split span {
+  color: var(--teal);
+}
+
+.opioid-implementation-split p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.73rem;
+}
+
+.opioid-query {
+  margin: 0;
+  padding: 14px 18px;
+  color: white;
+  border-radius: 7px;
+  background: var(--ink);
+  font: 1.05rem/1.35 var(--serif);
+}
+
+.opioid-retrieval-methods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.opioid-retrieval-methods article {
+  min-height: 156px;
+  padding: 19px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.opioid-retrieval-methods strong {
+  display: block;
+  font: 1.18rem var(--serif);
+}
+
+.opioid-retrieval-methods p {
+  margin: 14px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+}
+
+.opioid-retrieval-methods .opioid-retrieval-hybrid {
+  color: white;
+  background: var(--ink);
+}
+
+.opioid-retrieval-methods .opioid-retrieval-hybrid p {
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.opioid-packet-test {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 13px 16px;
+  border-top: 1px solid var(--line);
+}
+
+.opioid-packet-test b {
+  margin-right: auto;
+  font-size: 0.72rem;
+}
+
+.opioid-packet-test span {
+  padding: 6px 10px;
+  border-radius: 5px;
+  background: rgba(117, 201, 189, 0.35);
+  font-size: 0.68rem;
+}
+
+.opioid-packet-test i {
+  color: var(--coral);
+  font-style: normal;
+}
+
+.opioid-packet-test strong {
+  margin-left: 12px;
+  color: var(--coral);
+  font-size: 0.72rem;
+}
+
+.opioid-agent-loop {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 18px;
+}
+
+.opioid-agent-loop ol {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.opioid-agent-loop li {
+  min-height: 180px;
+  padding: 15px;
+  border-top: 3px solid var(--ink);
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.opioid-agent-loop li span {
+  color: rgba(16, 42, 51, 0.55);
+  font-size: 0.68rem;
+}
+
+.opioid-agent-loop li b {
+  display: block;
+  margin-top: 38px;
+  font: 1.1rem var(--serif);
+}
+
+.opioid-agent-loop li small {
+  display: block;
+  margin-top: 10px;
+  color: var(--ink-soft);
+  font-size: 0.68rem;
+}
+
+.opioid-agent-boundary {
+  padding: 18px 20px;
+  color: white;
+  border-radius: 8px;
+  background: var(--ink);
+}
+
+.opioid-agent-boundary > span {
+  color: var(--teal);
+}
+
+.opioid-agent-boundary strong {
+  display: block;
+  margin-top: 13px;
+  color: var(--coral);
+  font: 1rem var(--serif);
+}
+
+.opioid-agent-boundary p {
+  margin: 5px 0 0;
+  color: rgba(255, 255, 255, 0.67);
+  font-size: 0.7rem;
+}
+
+.opioid-agent-owner {
+  padding: 12px 16px;
+  border-top: 1px solid rgba(16, 42, 51, 0.27);
+}
+
+.opioid-evaluation-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 11px;
+}
+
+.opioid-evaluation-grid article {
+  min-height: 175px;
+  padding: 18px;
+  border-top: 3px solid var(--ink);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.opioid-evaluation-grid span {
+  color: var(--coral);
+  font: 0.85rem var(--serif);
+}
+
+.opioid-evaluation-grid strong {
+  display: block;
+  margin-top: 18px;
+  font: 1.1rem var(--serif);
+}
+
+.opioid-evaluation-grid p {
+  margin: 11px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.71rem;
+}
+
+.opioid-test-questions {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 15px;
+  padding: 13px 16px;
+  color: white;
+  border-radius: 7px;
+  background: var(--ink);
+}
+
+.opioid-test-questions span {
+  color: var(--teal);
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.opioid-test-questions b {
+  font-size: 0.74rem;
+  font-weight: 500;
+}
+
+.opioid-demo-commands {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 14px;
+}
+
+.opioid-demo-commands article {
+  min-height: 225px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.opioid-demo-commands code,
+.opioid-lab-paths code {
+  display: block;
+  overflow: hidden;
+  margin-top: 12px;
+  padding: 10px 12px;
+  color: var(--teal);
+  border-radius: 5px;
+  background: #071d23;
+  font-size: 0.69rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.opioid-demo-commands article > div {
+  display: grid;
+  gap: 5px;
+  margin-top: 18px;
+}
+
+.opioid-demo-commands article > div b {
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.opioid-demo-commands article > p {
+  margin: 15px 0 0;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.72rem;
+}
+
+.opioid-demo-commands .opioid-demo-broken {
+  border-color: var(--coral);
+}
+
+.opioid-demo-commands .opioid-demo-broken article > span,
+.opioid-demo-broken > span {
+  color: var(--coral);
+}
+
+.opioid-lab-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.opioid-lab-steps li {
+  min-height: 155px;
+  padding: 17px 19px;
+  border-top: 3px solid var(--coral);
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.opioid-lab-steps span {
+  display: block;
+  color: var(--coral);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.opioid-lab-steps strong {
+  display: block;
+  margin-top: 15px;
+  font: 1.1rem var(--serif);
+}
+
+.opioid-lab-steps p {
+  margin: 9px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+}
+
+.opioid-lab-paths {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.opioid-lab-paths article {
+  min-height: 105px;
+  padding: 13px 16px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+}
+
+.opioid-lab-paths code {
+  margin: 0;
+}
+
+.opioid-lab-paths strong {
+  font: 1.05rem var(--serif);
+}
+
+.opioid-lab-paths p {
+  margin: 7px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.7rem;
+}
+
+.opioid-close-layout {
+  position: relative;
+  padding: 48px 0;
+}
+
+.opioid-close-layout h2 {
+  max-width: 1080px;
+  font-size: clamp(3.3rem, 5.4vw, 5.7rem);
+}
+
+.opioid-close-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  max-width: 900px;
+  margin-top: 35px;
+}
+
+.opioid-close-split article {
+  padding: 16px 0;
+  border-top: 1px solid rgba(16, 42, 51, 0.42);
+}
+
+.opioid-close-split p {
+  margin: 0;
+  font: 1.05rem/1.4 var(--serif);
+}
+
+.opioid-close-final {
+  max-width: 870px;
+  margin: 24px 0 0;
+  font-size: 0.86rem;
+}
+
+.opioid-close-layout .break-mark {
+  right: 8px;
+  bottom: -16px;
+}
+
+@media (max-height: 820px) {
+  .opioid-open-layout {
+    gap: 12px;
+    padding: 20px 0;
+  }
+
+  .opioid-open-layout h2 {
+    font-size: clamp(2.8rem, 4vw, 4.2rem);
+  }
+
+  .opioid-origin-waves article {
+    padding-top: 7px;
+  }
+
+  .opioid-origin-archive {
+    padding: 9px 13px;
+  }
+
+  .opioid-problem-layout,
+  .opioid-scale-layout,
+  .opioid-material-layout,
+  .opioid-direct-path-layout,
+  .opioid-vector-layout,
+  .opioid-results-layout,
+  .opioid-code-layout,
+  .opioid-start-layout,
+  .opioid-challenges-layout,
+  .opioid-ocr-layout,
+  .opioid-provenance-layout,
+  .opioid-architecture-layout,
+  .opioid-retrieval-layout,
+  .opioid-agentic-layout,
+  .opioid-evaluation-layout,
+  .opioid-demo-layout,
+  .opioid-lab-layout {
+    gap: 13px;
+    padding: 24px 0;
+  }
+
+  .opioid-problem-layout h2,
+  .opioid-scale-layout h2,
+  .opioid-material-layout h2,
+  .opioid-direct-path-layout h2,
+  .opioid-vector-layout h2,
+  .opioid-results-layout h2,
+  .opioid-code-layout h2,
+  .opioid-start-layout h2,
+  .opioid-challenges-layout h2,
+  .opioid-ocr-layout h2,
+  .opioid-provenance-layout h2,
+  .opioid-architecture-layout h2,
+  .opioid-retrieval-layout h2,
+  .opioid-agentic-layout h2,
+  .opioid-evaluation-layout h2,
+  .opioid-demo-layout h2,
+  .opioid-lab-layout h2 {
+    font-size: clamp(2.45rem, 3.7vw, 3.8rem);
+  }
+
+  .opioid-document-strip {
+    height: 360px;
+  }
+
+  .opioid-path-lanes li {
+    min-height: 101px;
+    padding: 10px 12px;
+  }
+
+  .opioid-vector-stage {
+    min-height: 340px;
+  }
+
+  .opioid-vector-map svg {
+    height: 295px;
+  }
+
+  .opioid-contract article,
+  .opioid-pipeline li {
+    min-height: 105px;
+  }
+
+  .opioid-challenge-list li {
+    min-height: 58px;
+    padding: 9px 0;
+  }
+
+  .opioid-ocr-comparison {
+    min-height: 260px;
+  }
+
+  .opioid-ocr-comparison figure {
+    height: 245px;
+  }
+
+  .opioid-ocr-comparison img {
+    height: 208px;
+  }
+
+  .opioid-agent-loop li,
+  .opioid-evaluation-grid article {
+    min-height: 145px;
+  }
+
+  .opioid-agent-loop li b {
+    margin-top: 23px;
+  }
+
+  .opioid-demo-commands article {
+    min-height: 190px;
+  }
+
+  .opioid-lab-steps li {
+    min-height: 135px;
+  }
+}
+
+@media (max-width: 900px) {
+  .opioid-open-image {
+    width: 100%;
+    opacity: 0.28;
+  }
+
+  .opioid-open-shade {
+    background: rgba(8, 29, 36, 0.82);
+  }
+
+  .opioid-contract,
+  .opioid-origin-waves,
+  .opioid-scale-numbers,
+  .opioid-document-strip,
+  .opioid-challenge-list,
+  .opioid-provenance-layout,
+  .opioid-pipeline,
+  .opioid-retrieval-methods,
+  .opioid-agent-loop,
+  .opioid-agent-loop ol,
+  .opioid-evaluation-grid,
+  .opioid-demo-commands,
+  .opioid-lab-steps,
+  .opioid-lab-paths,
+  .opioid-close-split {
+    grid-template-columns: 1fr;
+  }
+
+  .opioid-path-lanes section,
+  .opioid-path-trace {
+    grid-template-columns: 1fr;
+  }
+
+  .opioid-vector-stage {
+    grid-template-columns: 1fr;
+  }
+
+  .opioid-path-lanes ol {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .opioid-question-examples,
+  .opioid-question-examples ul {
+    grid-template-columns: 1fr;
+  }
+
+  .opioid-origin-flow {
+    flex-wrap: wrap;
+  }
+
+  .opioid-document-strip {
+    height: auto;
+  }
+
+  .opioid-document-strip figure {
+    min-height: 250px;
+  }
+
+  .opioid-challenge-list li:last-child {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .opioid-pipeline {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

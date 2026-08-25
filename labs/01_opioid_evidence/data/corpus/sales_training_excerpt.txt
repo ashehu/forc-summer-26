@@ -1,0 +1,13 @@
+DOCUMENT_ID: mrkl0234
+TITLE: EXALGO Sales Aid Implementation Guide
+GENRE: internal sales-training guide
+DATE: undated in teaching excerpt
+SOURCE_PAGE: pages 1-2
+SOURCE_URL: https://www.industrydocuments.ucsf.edu/docs/mrkl0234
+
+TEACHING EXCERPT
+The cover labels the document "FOR SALES TRAINING PURPOSES ONLY" and "DO NOT DISSEMINATE." It introduces a sales aid for once-daily extended-release hydromorphone.
+
+The guide tells sales representatives to use a countdown-clock image to make the message memorable. It frames patients with chronic pain as "clock-watchers" who organize ordinary activities around the next dose. The instructions explain how the visual device can begin a sales conversation and reinforce the product's once-daily dosing story.
+
+This document is evidence of a sales-message implementation strategy. It is not evidence that the message was clinically appropriate, that prescribers accepted it, or that patients experienced the described benefit.

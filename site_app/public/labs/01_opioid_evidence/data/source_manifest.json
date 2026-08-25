@@ -1,0 +1,36 @@
+[
+  {
+    "document_id": "OIDA-CONTEXT",
+    "teaching_file": "archive_context.txt",
+    "genre": "archive description",
+    "source_url": "https://industrydocuments.ucsf.edu/opioids/docs/"
+  },
+  {
+    "document_id": "ffgf0232",
+    "teaching_file": "walgreens_response_excerpt.txt",
+    "genre": "public-facing corporate response statement",
+    "source_pages": "2-3",
+    "source_url": "https://www.industrydocuments.ucsf.edu/docs/ffgf0232"
+  },
+  {
+    "document_id": "fndj0247",
+    "teaching_file": "mallinckrodt_policy_excerpt.txt",
+    "genre": "manufacturer policy paper",
+    "source_pages": "1-3",
+    "source_url": "https://www.industrydocuments.ucsf.edu/docs/fndj0247"
+  },
+  {
+    "document_id": "mrkl0234",
+    "teaching_file": "sales_training_excerpt.txt",
+    "genre": "internal sales-training guide",
+    "source_pages": "1-2",
+    "source_url": "https://www.industrydocuments.ucsf.edu/docs/mrkl0234"
+  },
+  {
+    "document_id": "gycy0236",
+    "teaching_file": "federal_recommendations_excerpt.txt",
+    "genre": "federal commission recommendations",
+    "source_pages": "1-3",
+    "source_url": "https://www.industrydocuments.ucsf.edu/docs/gycy0236"
+  }
+]

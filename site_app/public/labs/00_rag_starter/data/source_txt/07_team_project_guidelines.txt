@@ -1,0 +1,17 @@
+TITLE: Team Project Guidelines
+DOCUMENT_ID: RGRS-07
+DOCUMENT_TYPE: project requirements
+
+=== PAGE 1 ===
+Teams contain one to three students. By the end of Week 1, every team submits a project brief naming the user, problem, source collection, proposed output, and one consequential error. The brief must also state whether the project uses public, teaching, or restricted data.
+
+The Week 2 checkpoint is a retrieval or transformation trace. Document projects submit sample chunks and at least three query results. Data projects submit a schema and two extracted records. Interaction projects submit a transcript or action trace. A polished interface is not required at this checkpoint.
+
+The Week 4 checkpoint is a working interface that exposes sources or tool actions. Teams should not hide the intermediate evidence behind a single answer box. Each team receives one structured peer review during Friday studio.
+
+=== PAGE 2 ===
+Project repositories must include a README with setup instructions, a data manifest, a requirements file, and a short statement explaining which outputs can be regenerated. Secrets and restricted data must not be committed.
+
+Students may divide roles, but everyone should understand the complete path from input to output. During the final demonstration, the instructor may ask any team member to explain chunking, model selection, retrieval, or a failure case.
+
+The scope-change deadline is the end of Week 3. After that point, teams may simplify a project without approval but should not add a new sensitive dataset or consequential use. The primary mentor can approve changes to the research question when the existing collection cannot answer it.

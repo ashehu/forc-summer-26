@@ -1,0 +1,48 @@
+[
+  {
+    "id": "Q1",
+    "question": "I have no Python experience. What should I attend first, and where can I get help?",
+    "expected_documents": [
+      "03_methods_workshops.txt",
+      "06_mentoring_and_support.txt",
+      "02_weekly_schedule.txt"
+    ],
+    "evaluation_note": "Cross-document question: the packet should include the beginner clinic, support hours, and useful schedule context."
+  },
+  {
+    "id": "Q2",
+    "question": "Where is the Wednesday build lab, what time does it meet, and what should I bring?",
+    "expected_documents": ["02_weekly_schedule.txt"],
+    "evaluation_note": "Single-document question: the schedule contains the location, time, laptop, and charger."
+  },
+  {
+    "id": "Q3",
+    "question": "May I upload identifiable interview transcripts to a public AI tool?",
+    "expected_documents": ["05_responsible_ai_policy.txt"],
+    "evaluation_note": "Policy question: the responsible-AI document should rank highly and prohibit the upload."
+  },
+  {
+    "id": "Q4",
+    "question": "What must a team submit for the Week 2 checkpoint?",
+    "expected_documents": ["07_team_project_guidelines.txt"],
+    "evaluation_note": "Checkpoint question: retrieve the passage describing required traces for each project type."
+  },
+  {
+    "id": "Q5",
+    "question": "What approvals and documents are needed for a local fieldwork reimbursement?",
+    "expected_documents": ["09_fieldwork_and_reimbursements.txt"],
+    "evaluation_note": "Procedural question: retrieve approval, receipt, proof-of-payment, and submission-timing passages."
+  },
+  {
+    "id": "Q6",
+    "question": "When are final materials due, and what must the system card contain?",
+    "expected_documents": ["10_demo_day_and_faq.txt"],
+    "evaluation_note": "Deliverable question: retrieve the deadline and required system-card fields."
+  },
+  {
+    "id": "Q7",
+    "question": "Does the studio provide graduate housing?",
+    "expected_documents": ["10_demo_day_and_faq.txt"],
+    "evaluation_note": "Corpus-boundary test: retrieve the passage saying the studio documents do not answer the housing question; do not infer that housing is or is not provided."
+  }
+]

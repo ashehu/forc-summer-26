@@ -1,0 +1,19 @@
+TITLE: Methods Workshops
+DOCUMENT_ID: RGRS-03
+DOCUMENT_TYPE: workshop catalog
+
+=== PAGE 1 ===
+The Python Foundations clinic is intended for students with little or no programming experience. It covers folders, virtual environments, variables, lists, functions, reading text files, and running a script from the terminal. Examples use research tasks rather than computer-science exercises. The clinic runs during Week 1 Wednesday lab, with an optional repeat session on Thursday morning.
+
+The Document Search workshop introduces chunking, embeddings, cosine similarity, and retrieval. Students build an index over a small set of program documents and create a page that displays the highest-ranked passages. The workshop intentionally postpones answer generation so participants can inspect what retrieval supplied.
+
+The Data-to-Table workshop shows how to define a schema and extract comparable fields from differently written records. It is appropriate for literature reviews, policy documents, archival descriptions, and administrative records.
+
+=== PAGE 2 ===
+The Interface Prototyping workshop uses Streamlit to turn a Python script into a small browser-based application. Students add a question box, a top-k control, source labels, similarity scores, and expandable passage text. No prior web-development experience is expected.
+
+The Agentic Workflows workshop introduces systems that choose among named tools. Exercises use read-only tools and visible action traces. Students must specify what the agent may do, what requires approval, and what the agent may never access.
+
+The Research Communication workshop helps students explain a prototype to a mixed audience. The recommended demonstration sequence is problem, sample data, system path, one useful result, one failure, and the human decision that remains. Students should avoid presenting a polished answer without showing its evidence.
+
+Workshop materials are posted as notebooks and plain Python scripts. Students may use Codex or another coding assistant, but they remain responsible for running the code, reading errors, and explaining each major transformation.

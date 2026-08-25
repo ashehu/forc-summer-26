@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A student-facing introduction and practical AI lab sequence: from rules and learned patterns to language models, grounded systems, agents, voice, evidence, and trustworthy AI-assisted work.">
+  <meta name="description" content="An introduction to AI, language models, retrieval-augmented generation, and the future of agentic systems.">
   <meta name="theme-color" content="#102a33">
-  <title>AI: From Rules to Real-World Agents</title>
+  <title>Applied AI: From Language Models to RAG</title>
   <link rel="stylesheet" href="styles.css?v=20260824-hands-on-cases">
 </head>
 <body>
   <a class="skip-link" href="#slide-1">Skip to slides</a>
 
   <header class="chrome" aria-label="Presentation controls">
-    <a class="brand" href="#slide-1"><span aria-hidden="true"></span>AI · A simpler story</a>
+    <a class="brand" href="#slide-1"><span aria-hidden="true"></span>Applied AI · FORC ’26</a>
     <div class="position" aria-live="polite">
       <b id="currentSlide">01</b><i>/</i><b id="totalSlides">45</b>
-      <span id="currentTitle">The story in one sentence</span>
+      <span id="currentTitle">Applied AI: From Language Models to RAG</span>
     </div>
     <div class="controls">
       <button id="toggleNotes" type="button" aria-pressed="false">Notes</button>
@@ -29,14 +29,14 @@
   <nav class="dots" id="slideDots" aria-label="Slide navigation"></nav>
 
   <main class="deck">
-    <section class="slide hero dark" id="slide-1" data-title="The story in one sentence" data-time="00:00–01:00" aria-labelledby="title-1">
+    <section class="slide hero dark" id="slide-1" data-title="Applied AI: From Language Models to RAG" data-time="00:00–01:00" aria-labelledby="title-1">
       <img class="full-image" src="../assets/images/automation-machine-hall.jpg" alt="" width="1672" height="941" fetchpriority="high">
       <div class="image-shade" aria-hidden="true"></div>
       <div class="slide-content hero-content">
-        <p class="eyebrow">The whole story</p>
-        <h1 id="title-1">Machines followed rules.<br>AI learned patterns.<br><em>Agents can now act.</em></h1>
-        <p class="lead">One idea changes throughout the deck: what happens when predictions are connected to tools and feedback?</p>
-        <div class="story-thread" aria-label="Story progression"><span>rules</span><i>→</i><span>patterns</span><i>→</i><span>predictions</span><i>→</i><span>actions</span></div>
+        <p class="eyebrow">Foundations · evidence · implementation</p>
+        <h1 id="title-1">Applied AI:<br>From Language Models<br><em>to RAG.</em></h1>
+        <p class="lead">Understand the foundations. Build a retrieval system. See where agentic AI goes next.</p>
+        <div class="story-thread" aria-label="Story progression"><span>learn</span><i>→</i><span>generate</span><i>→</i><span>retrieve</span><i>→</i><span>act</span></div>
         <div class="instructor-context">
           <div>
             <strong>Andi Shehu, PhD</strong>
@@ -49,8 +49,8 @@
       <aside class="speaker-notes" aria-label="Presenter notes for slide 1">
         <p class="notes-label">Presenter notes</p>
         <dl>
-          <div><dt>Purpose</dt><dd>Give students the entire narrative before introducing details.</dd></div>
-          <div><dt>Say</dt><dd>“There are many definitions and technologies in AI. Today I want to tell one simple story: rules became learned predictions, and predictions are now being connected to actions.”</dd></div>
+          <div><dt>Purpose</dt><dd>State the practical destination before introducing the foundations.</dd></div>
+          <div><dt>Say</dt><dd>“We will begin with the basic ideas behind modern AI, then build a retrieval system that grounds model use in inspectable evidence, and close with what changes when models gain tools and feedback.”</dd></div>
           <div><dt>Ask</dt><dd>What is one decision or action you would—and would not—delegate to a machine?</dd></div>
           <div><dt>Transition</dt><dd>To understand what changed, begin with what machines were already doing long before AI.</dd></div>
           <div><dt>Sources</dt><dd><a href="https://nyu-rts.github.io/andi-shehu-portfolio/">Andi Shehu — NYU portfolio</a>; <a href="https://sites.google.com/nyu.edu/forc-camp/home?authuser=0">NYU FORC ’26 course site</a>; <a href="https://wasserman.nyu.edu/events/2026/08/25/foundations-of-research-computing-summer-camp/">NYU FORC Summer Camp 2026</a>.</dd></div>
@@ -74,7 +74,7 @@
         <dl>
           <div><dt>Purpose</dt><dd>Place AI inside the longer history of automation without giving a long history lecture.</dd></div>
           <div><dt>Say</dt><dd>“The waterwheel automated power. Steam made motion portable. The loom is especially important: instructions began controlling a machine.”</dd></div>
-          <div><dt>Why it matters</dt><dd>Students see that AI is not the first automation wave. The new part is how instructions are produced.</dd></div>
+          <div><dt>Why it matters</dt><dd>AI is not the first automation wave. The new part is how instructions are produced.</dd></div>
           <div><dt>Transition</dt><dd>Traditional machines and software follow procedures. Machine learning changes where the procedure comes from.</dd></div>
         </dl>
       </aside>
@@ -96,7 +96,7 @@
       <aside class="speaker-notes" aria-label="Presenter notes for slide 3">
         <p class="notes-label">Presenter notes</p>
         <dl>
-          <div><dt>Purpose</dt><dd>Establish the one distinction students need before hearing technical terms.</dd></div>
+          <div><dt>Purpose</dt><dd>Establish the central distinction before introducing technical terms.</dd></div>
           <div><dt>Say</dt><dd>“Both systems control heat. On the left, a person chooses one threshold. On the right, a model learns how much heating is needed from temperature, weather, occupancy, and the building’s recent behavior.”</dd></div>
           <div><dt>Example</dt><dd>When it is 17°C indoors, −5°C outside, and the room will be occupied soon, the model predicts how much heating can reach comfort without wasting energy. It learns from historical inputs and measured outcomes.</dd></div>
           <div><dt>Important nuance</dt><dd>Learned does not automatically mean better. If weather, occupancy, or the building changes, the learned relationship may fail.</dd></div>
@@ -167,7 +167,7 @@
       <aside class="speaker-notes" aria-label="Presenter notes for slide 5">
         <p class="notes-label">Presenter notes</p>
         <dl>
-          <div><dt>Purpose</dt><dd>Replace a philosophical definition with a functional one students can reuse.</dd></div>
+          <div><dt>Purpose</dt><dd>Replace a philosophical definition with a functional one everyone can reuse.</dd></div>
           <div><dt>Say</dt><dd>“Ask four questions: what enters, what is inferred, what comes out, and what can that output affect?”</dd></div>
           <div><dt>Why it matters</dt><dd>The same definition covers classifiers, generative AI, recommendations, and agents without pretending they are identical.</dd></div>
           <div><dt>Transition</dt><dd>Modern generative AI became possible through a small number of important milestones.</dd></div>
@@ -196,7 +196,7 @@
         <dl>
           <div><dt>Purpose</dt><dd>Give historical orientation without creating a disconnected chronology.</dd></div>
           <div><dt>Say</dt><dd>“The ambition is old. Deep learning supplied representations, the Transformer supplied a scalable language architecture, ChatGPT supplied an interface, and agents supply action.”</dd></div>
-          <div><dt>Do not dwell on</dt><dd>Names, benchmark scores, or every AI winter. Offer those only if students ask.</dd></div>
+          <div><dt>Do not dwell on</dt><dd>Names, benchmark scores, or every AI winter. Offer those only if questions arise.</dd></div>
           <div><dt>Transition</dt><dd>Before language models, show the smallest possible learned scoring operation.</dd></div>
         </dl>
       </aside>
@@ -226,7 +226,7 @@
         <dl>
           <div><dt>Purpose</dt><dd>Connect the heating example to a dot product, then reuse the operation in a simple language example.</dd></div>
           <div><dt>Say</dt><dd>“A vector is simply a list of numbers. A dot product multiplies corresponding numbers and adds them. The result is a score.”</dd></div>
-          <div><dt>Do</dt><dd>Click each candidate. Ask students why “floor” is close and “policy” is not. Emphasize that the weights determine what matters.</dd></div>
+          <div><dt>Do</dt><dd>Click each candidate. Ask the room why “floor” is close and “policy” is not. Emphasize that the weights determine what matters.</dd></div>
           <div><dt>Transition</dt><dd>An LLM performs far richer versions of scoring, selects a token, and repeats.</dd></div>
         </dl>
       </aside>
@@ -283,35 +283,26 @@
         <dl>
           <div><dt>Purpose</dt><dd>Explain why 2022 felt sudden even though it was built on years of research.</dd></div>
           <div><dt>Say</dt><dd>“Pretraining created broad capability. Post-training made interaction more useful. Chat removed the manual. Together they changed public perception.”</dd></div>
-          <div><dt>Why it matters</dt><dd>Students learn that product design and interfaces can be as historically consequential as an architecture.</dd></div>
+          <div><dt>Why it matters</dt><dd>Product design and interfaces can be as historically consequential as an architecture.</dd></div>
           <div><dt>Transition</dt><dd>Stop describing the technology here. The next question is practical: what turns a plausible answer into useful, trustworthy work?</dd></div>
         </dl>
       </aside>
     </section>
 
-    <section class="slide agent-slide" id="slide-9" data-title="What an agent adds" data-time="Closing horizon" aria-labelledby="title-9">
-      <img class="full-image" src="../assets/images/agentic-ai-now-v2.jpg" alt="A researcher reviewing work across a laptop and external monitor" width="1672" height="941" loading="lazy">
-      <div class="image-shade" aria-hidden="true"></div>
-      <div class="slide-content agent-content">
-        <div>
-          <p class="eyebrow">After the cases · what comes next</p>
-          <h2 id="title-9">An agent is a model inside a tool-using feedback loop.</h2>
-        </div>
-        <div class="research-task">
-          <p class="task"><span>Example goal</span>“Map the evidence on how heat affects sleep.”</p>
-          <ol><li>Plan questions</li><li>Search sources</li><li>Read and compare</li><li>Draft with citations</li><li>Ask for judgment</li></ol>
-          <div class="ownership"><p><b>Agent:</b> execution and iteration</p><p><b>Researcher:</b> question, standards, final judgment</p></div>
-        </div>
-        <p class="bridge light-bridge"><b>Same model, new consequence:</b> its output changes the environment it sees next.</p>
-        <a class="source light-source" href="https://www.anthropic.com/research/trustworthy-agents" target="_blank" rel="noreferrer">Agent anatomy and human control · 2026 ↗</a>
+    <section class="slide coral case-studies-divider" id="slide-9" data-title="Beyond RAG" data-time="Closing horizon" aria-labelledby="title-9">
+      <div class="slide-content lab-break-layout">
+        <p class="eyebrow">Part three · the next horizon</p>
+        <h2 id="title-9">Beyond RAG</h2>
+        <p>Models retrieve evidence.<br>Agents choose tools, act, and respond to feedback.</p>
+        <div class="break-mark" aria-hidden="true">→</div>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for slide 10">
+      <aside class="speaker-notes" aria-label="Presenter notes for the Beyond RAG section break">
         <p class="notes-label">Presenter notes</p>
         <dl>
-          <div><dt>Purpose</dt><dd>Use the workflows students just examined as the bridge into current agentic systems and the future horizon.</dd></div>
-          <div><dt>Say</dt><dd>“The cases already contained pieces of agency: planning, tools, results, and review. An agent makes that loop explicit and can decide which bounded step to take next.”</dd></div>
-          <div><dt>Emphasize</dt><dd>The researcher still owns the question, inclusion criteria, evidentiary standard, interpretation, and final claim.</dd></div>
-          <div><dt>Transition</dt><dd>So far the environment is digital. Now pause, then move the same loop into the physical world.</dd></div>
+          <div><dt>Purpose</dt><dd>Create a clean visual and conceptual break between the completed RAG case and the future-facing section.</dd></div>
+          <div><dt>Say</dt><dd>“RAG changes what evidence enters the model’s context. The next shift connects models to tools and feedback, allowing their outputs to affect what happens next.”</dd></div>
+          <div><dt>Pause</dt><dd>Give the room a moment to reset before moving from document workflows into physical systems.</dd></div>
+          <div><dt>Transition</dt><dd>Start with a real humanoid deployment and distinguish a demonstration from repeated operational work.</dd></div>
         </dl>
       </aside>
     </section>
@@ -358,8 +349,8 @@
       <aside class="speaker-notes" aria-label="Presenter notes for slide 12">
         <p class="notes-label">Presenter notes</p>
         <dl>
-          <div><dt>Purpose</dt><dd>Show real footage while teaching students how to evaluate robotics claims.</dd></div>
-          <div><dt>Do</dt><dd>Play 30–45 seconds. Ask students what the robot senses, decides, and physically changes.</dd></div>
+          <div><dt>Purpose</dt><dd>Show real footage while establishing how to evaluate robotics claims.</dd></div>
+          <div><dt>Do</dt><dd>Play 30–45 seconds. Ask the room what the robot senses, decides, and physically changes.</dd></div>
           <div><dt>Say</dt><dd>“This is a bounded material-handling workflow in regular operations. That is more meaningful than a one-off demo—but it is not general human intelligence.”</dd></div>
           <div><dt>Keep honest</dt><dd>The footage and deployment claims come from the manufacturer. Ask about intervention rates, throughput, downtime, safety, and comparison with simpler machines.</dd></div>
           <div><dt>Transition</dt><dd>Use this real but narrow system as the baseline, then explore where similar loops could plausibly spread.</dd></div>
@@ -401,7 +392,7 @@
       <aside class="speaker-notes" aria-label="Presenter notes for slide 14">
         <p class="notes-label">Presenter notes</p>
         <dl>
-          <div><dt>Purpose</dt><dd>Repeat the loop in a second domain so students see the general pattern.</dd></div>
+          <div><dt>Purpose</dt><dd>Repeat the loop in a second domain so the general pattern becomes visible.</dd></div>
           <div><dt>Say</dt><dd>“A plan is not the site. An agentic system could continuously compare design, weather, equipment, and progress, then coordinate bounded actions.”</dd></div>
           <div><dt>Emphasize</dt><dd>People set priorities, resolve exceptions, define safe operating limits, and remain responsible for consequential decisions.</dd></div>
           <div><dt>Transition</dt><dd>Science uses the same feedback structure, but action takes the form of experiments.</dd></div>
@@ -447,7 +438,7 @@
       <aside class="speaker-notes" aria-label="Presenter notes for slide 16">
         <p class="notes-label">Presenter notes</p>
         <dl>
-          <div><dt>Purpose</dt><dd>Return to one coherent story and give students four sentences they can retain.</dd></div>
+          <div><dt>Purpose</dt><dd>Return to one coherent story and leave four sentences worth retaining.</dd></div>
           <div><dt>Say</dt><dd>Read the four cards slowly. Then: “Capability is only part of the system. Goals, permissions, feedback, institutions, and distribution determine what it becomes.”</dd></div>
           <div><dt>Ask</dt><dd>Which domain would benefit most from a tighter sense–decide–act–learn loop? What evidence would convince you it is helping?</dd></div>
           <div><dt>Close</dt><dd>“The future is not something AI delivers to us. It is a set of systems people choose to connect, constrain, evaluate, and govern.”</dd></div>
@@ -471,31 +462,31 @@
         <dl>
           <div><dt>Purpose</dt><dd>End the short conceptual opening and signal an immediate move into applied, inspectable work.</dd></div>
           <div><dt>Say</dt><dd>“We now know enough about how the model works. Let’s use it—and examine the workflow that turns model output into something we can responsibly use.”</dd></div>
-          <div><dt>Ask</dt><dd>Give students 30 seconds to think, then take two examples of tasks where confident errors would matter.</dd></div>
+          <div><dt>Ask</dt><dd>Give the room 30 seconds to think, then take two examples of tasks where confident errors would matter.</dd></div>
           <div><dt>Transition</dt><dd>Introduce one research question that initially appears simple but contains several hidden choices.</dd></div>
         </dl>
       </aside>
     </section>
 
-    <section class="slide coral case-studies-divider" id="slide-case-studies" data-title="Case studies" data-time="27:00" aria-labelledby="title-case-studies">
+    <section class="slide coral case-studies-divider" id="slide-case-studies" data-title="Case study" data-time="27:00" aria-labelledby="title-case-studies">
       <div class="slide-content lab-break-layout">
         <p class="eyebrow">Part two</p>
-        <h2 id="title-case-studies">Case studies</h2>
+        <h2 id="title-case-studies">Case study</h2>
         <p>Build it. Test it. Inspect what fails.</p>
         <div class="break-mark" aria-hidden="true">→</div>
       </div>
-      <aside class="speaker-notes" aria-label="Presenter notes for the case studies section break">
+      <aside class="speaker-notes" aria-label="Presenter notes for the case-study section break">
         <p class="notes-label">Presenter notes</p>
         <dl>
           <div><dt>Purpose</dt><dd>Create an unmistakable break between the conceptual opening and the applied portion of the course.</dd></div>
-          <div><dt>Do</dt><dd>Pause. Ask students to shift from listening to analyzing and to be ready to work in pairs.</dd></div>
-          <div><dt>Say</dt><dd>“From here on, every idea appears inside a real task. We will build or inspect a workflow, test it, and look closely at what fails.”</dd></div>
-          <div><dt>Transition</dt><dd>Begin with a research-synthesis case: what does heat do to human sleep?</dd></div>
+          <div><dt>Do</dt><dd>Pause. Ask everyone to shift from listening to analyzing and to be ready to work in pairs.</dd></div>
+          <div><dt>Say</dt><dd>“From here on, every idea appears inside one real task. We will inspect the workflow, build a smaller version, and look closely at what can fail.”</dd></div>
+          <div><dt>Transition</dt><dd>Begin with the opioid litigation archive and the challenge of finding traceable evidence at scale.</dd></div>
         </dl>
       </aside>
     </section>
 
-    <section class="slide dark practice-bridge rag-intro-slide" id="slide-rag-intro" data-title="RAG background" data-time="RAG · 1 min" aria-labelledby="title-rag-intro">
+    <section class="retired-slide dark practice-bridge rag-intro-slide" id="slide-rag-intro" hidden data-title="RAG background" data-time="RAG · 1 min" aria-labelledby="title-rag-intro">
       <div class="slide-content practice-bridge-content">
         <div>
           <p class="eyebrow">RAG · background</p>
@@ -723,7 +714,7 @@
       </aside>
     </section>
 
-    <section class="slide paper rag-architecture-slide" id="slide-rag-architecture" data-title="The complete RAG pipeline" data-time="RAG · 2 min" aria-labelledby="title-rag-architecture">
+    <section class="retired-slide paper rag-architecture-slide" id="slide-rag-architecture" hidden data-title="The complete RAG pipeline" data-time="RAG · 2 min" aria-labelledby="title-rag-architecture">
       <div class="slide-content rag-architecture-layout">
         <div><p class="eyebrow">The complete system</p><h2 id="title-rag-architecture">Prepare the corpus once. Retrieve evidence for every question.</h2></div>
         <div class="rag-phase-rows" aria-label="RAG preparation and question-time phases">
@@ -738,11 +729,11 @@
         <div><dt>Clarify</dt><dd>The small lab rebuilds the index each run for transparency. A production system would usually prepare and store the corpus separately.</dd></div>
         <div><dt>Check</dt><dd>Ask students to point to the first stage where a generative model is required. The answer is generation; loading, chunking, vectorization, and retrieval can all happen without one.</dd></div>
         <div><dt>Transition</dt><dd>Begin with the first design decision: what counts as one retrievable unit?</dd></div>
-        <div><dt>[Sources]</dt><dd><a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noreferrer">Lewis et al. · Retrieval-Augmented Generation</a> · <a href="../labs/02_grounded_qa/lab.py" target="_blank">Course lab implementation</a></dd></div>
+        <div><dt>[Sources]</dt><dd><a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noreferrer">Lewis et al. · Retrieval-Augmented Generation</a> · <a href="../labs/01_opioid_evidence/lab.py" target="_blank">Course lab implementation</a></dd></div>
       </dl></aside>
     </section>
 
-    <section class="slide lime rag-process-slide" id="slide-rag-chunking" data-title="Chunk the documents" data-time="RAG · 2 min" aria-labelledby="title-rag-chunking">
+    <section class="retired-slide lime rag-process-slide" id="slide-rag-chunking" hidden data-title="Chunk the documents" data-time="RAG · 2 min" aria-labelledby="title-rag-chunking">
       <div class="slide-content rag-process-layout">
         <div><p class="eyebrow">Step 1 · Chunking</p><h2 id="title-rag-chunking">Search passages, not entire documents.</h2></div>
         <div class="chunking-demo" aria-label="An evaluation document split into overlapping chunks">
@@ -759,11 +750,11 @@
         <div><dt>Clarify</dt><dd>The lab uses 55-word chunks with 12-word overlap. Its documents are intentionally tiny; real documents often require structural chunking by headings, paragraphs, or sections.</dd></div>
         <div><dt>Ask</dt><dd>What could go wrong if the percentage and the group names land in different chunks?</dd></div>
         <div><dt>Transition</dt><dd>Once chunks exist, turn them into a representation a search algorithm can compare.</dd></div>
-        <div><dt>[Sources]</dt><dd><a href="../labs/02_grounded_qa/lab.py" target="_blank">Course lab · chunk_text and load_chunks</a></dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/01_opioid_evidence/lab.py" target="_blank">Course lab · chunk_text and load_chunks</a></dd></div>
       </dl></aside>
     </section>
 
-    <section class="slide paper rag-process-slide" id="slide-rag-vectorization" data-title="Turn text into vectors" data-time="RAG · 2 min" aria-labelledby="title-rag-vectorization">
+    <section class="retired-slide paper rag-process-slide" id="slide-rag-vectorization" hidden data-title="Turn text into vectors" data-time="RAG · 2 min" aria-labelledby="title-rag-vectorization">
       <div class="slide-content rag-process-layout">
         <div><p class="eyebrow">Step 2 · Vectorization</p><h2 id="title-rag-vectorization">Turn every chunk—and the question—into comparable numbers.</h2></div>
         <div class="vectorization-demo">
@@ -783,11 +774,11 @@
         <div><dt>Clarify</dt><dd>TF-IDF depends strongly on shared vocabulary. Embeddings can capture paraphrase and semantic similarity, but they do not eliminate retrieval errors.</dd></div>
         <div><dt>Ask</dt><dd>If the question says “timetable clash” but the file says “scheduling conflict,” which method is more likely to connect the paraphrase? Why might it still retrieve the wrong passage?</dd></div>
         <div><dt>Transition</dt><dd>Use those vectors to rank which chunks are most similar to the question.</dd></div>
-        <div><dt>[Sources]</dt><dd><a href="../labs/02_grounded_qa/lab.py" target="_blank">Course lab · tfidf_vectors</a> · <a href="https://arxiv.org/abs/1908.10084" target="_blank" rel="noreferrer">Reimers &amp; Gurevych · Sentence-BERT</a></dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/01_opioid_evidence/lab.py" target="_blank">Course lab · tfidf_vectors</a> · <a href="https://arxiv.org/abs/1908.10084" target="_blank" rel="noreferrer">Reimers &amp; Gurevych · Sentence-BERT</a></dd></div>
       </dl></aside>
     </section>
 
-    <section class="slide teal rag-process-slide" id="slide-rag-retrieval" data-title="Rank the evidence" data-time="RAG · 2 min" aria-labelledby="title-rag-retrieval">
+    <section class="retired-slide teal rag-process-slide" id="slide-rag-retrieval" hidden data-title="Rank the evidence" data-time="RAG · 2 min" aria-labelledby="title-rag-retrieval">
       <div class="slide-content rag-process-layout">
         <div><p class="eyebrow">Step 3 · Similarity search</p><h2 id="title-rag-retrieval">Retrieval ranks likely evidence. It does not answer the question.</h2></div>
         <p class="retrieval-query"><span>Question vector</span>Which school had the lowest median attendance, and what scheduling barrier did its students report?</p>
@@ -804,11 +795,11 @@
         <div><dt>Clarify</dt><dd>The score is not a probability that the chunk is true or sufficient. Cosine similarity compares vector direction rather than length, and top_k simply forwards the highest-ranked chunks—even when every score is weak.</dd></div>
         <div><dt>Ask</dt><dd>What breaks if top_k is reduced to one?</dd></div>
         <div><dt>Transition</dt><dd>Package the selected chunks with the question and explicit rules for the model.</dd></div>
-        <div><dt>[Sources]</dt><dd><a href="../labs/02_grounded_qa/lab.py" target="_blank">Course lab · cosine and retrieve</a></dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/01_opioid_evidence/lab.py" target="_blank">Course lab · cosine and retrieve</a></dd></div>
       </dl></aside>
     </section>
 
-    <section class="slide dark rag-context-slide" id="slide-rag-context" data-title="Assemble context and generate" data-time="RAG · 2 min" aria-labelledby="title-rag-context">
+    <section class="retired-slide dark rag-context-slide" id="slide-rag-context" hidden data-title="Assemble context and generate" data-time="RAG · 2 min" aria-labelledby="title-rag-context">
       <div class="slide-content rag-context-layout">
         <div><p class="eyebrow">Steps 4–5 · Context + generation</p><h2 id="title-rag-context">The model sees the evidence packet—not the whole corpus.</h2></div>
         <div class="context-to-answer">
@@ -824,11 +815,11 @@
         <div><dt>Clarify</dt><dd>The generated answer can still misquote, overstate, or ignore the packet. Retrieval makes grounding possible; it does not guarantee grounded generation.</dd></div>
         <div><dt>Check</dt><dd>Remove implementation.txt from the packet on screen. Ask what the model should now do with the second half of the question.</dd></div>
         <div><dt>Transition</dt><dd>Trace every claim back through its citation, retrieved chunk, and original file.</dd></div>
-        <div><dt>[Sources]</dt><dd><a href="../labs/02_grounded_qa/lab.py" target="_blank">Course lab · answer_with_api</a></dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/01_opioid_evidence/lab.py" target="_blank">Course lab · answer_with_api</a></dd></div>
       </dl></aside>
     </section>
 
-    <section class="slide paper rag-verification-slide" id="slide-rag-verification" data-title="Verify the evidence chain" data-time="RAG · 2 min" aria-labelledby="title-rag-verification">
+    <section class="retired-slide paper rag-verification-slide" id="slide-rag-verification" hidden data-title="Verify the evidence chain" data-time="RAG · 2 min" aria-labelledby="title-rag-verification">
       <div class="slide-content rag-verification-layout">
         <div><p class="eyebrow">Step 6 · Verification</p><h2 id="title-rag-verification">A citation is useful only if the evidence chain survives inspection.</h2></div>
         <div class="verification-chain" aria-label="Claim traced through citation and retrieved evidence to the original file"><span>Claim</span><i>→</i><span>Citation</span><i>→</i><span>Retrieved chunk</span><i>→</i><span>Original file</span></div>
@@ -845,21 +836,21 @@
         <div><dt>Say</dt><dd>“A filename can resolve and a quotation can be verbatim while the sentence still overstates what the source means. Verification has both code-checkable and judgment-dependent layers.”</dd></div>
         <div><dt>Do</dt><dd>Open one source file and trace the sample answer back to the exact sentence.</dd></div>
         <div><dt>Transition</dt><dd>Students now run every stage and inspect the intermediate artifacts themselves.</dd></div>
-        <div><dt>[Sources]</dt><dd><a href="../labs/02_grounded_qa/lab.py" target="_blank">Course lab · validate</a></dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/01_opioid_evidence/lab.py" target="_blank">Course lab · validate</a></dd></div>
       </dl></aside>
     </section>
 
-    <section class="slide dark rag-hands-on-slide" id="slide-rag-hands-on" data-title="Instructor demo · one complete trace" data-time="RAG · 5 min" aria-labelledby="title-rag-hands-on">
+    <section class="retired-slide dark rag-hands-on-slide" id="slide-rag-hands-on" hidden data-title="Instructor demo · one complete trace" data-time="RAG · 5 min" aria-labelledby="title-rag-hands-on">
       <div class="slide-content rag-hands-on-layout">
         <div><p class="eyebrow">Instructor demo · 5 minutes</p><h2 id="title-rag-hands-on">Trace one question through every boundary.</h2></div>
         <div class="rag-lab-grid">
-          <article><span>1 · Prepare</span><code>python 02_grounded_qa/lab.py --show-chunks --question "Which school had the lowest median attendance, and what scheduling barrier did its students report?"</code><p>Five files become eight chunks. Each chunk keeps its filename.</p></article>
+          <article><span>1 · Prepare</span><code>python 01_opioid_evidence/lab.py --show-chunks --question "Which school had the lowest median attendance, and what scheduling barrier did its students report?"</code><p>Five files become eight chunks. Each chunk keeps its filename.</p></article>
           <article><span>2 · Retrieve</span><strong>attendance.txt#1 · 0.480<br>implementation.txt#1 · 0.167</strong><p>The answer requires both passages—even though the second score is lower.</p></article>
           <article><span>3 · Generate + verify</span><strong>Design · three sessions<br>studio-review conflict</strong><p>Check two filenames, then reopen the files and match the evidence.</p></article>
-          <article class="rag-break-it"><span>4 · Break retrieval</span><code>python 02_grounded_qa/lab.py --top-k 1 --question "Which school had the lowest median attendance, and what scheduling barrier did its students report?"</code><p>Now the packet loses the barrier. The model cannot repair missing evidence.</p></article>
+          <article class="rag-break-it"><span>4 · Break retrieval</span><code>python 01_opioid_evidence/lab.py --top-k 1 --question "Which school had the lowest median attendance, and what scheduling barrier did its students report?"</code><p>Now the packet loses the barrier. The model cannot repair missing evidence.</p></article>
         </div>
         <p class="rag-lab-output"><b>Watch for:</b> files → chunks → scores → evidence packet → answer → source check.</p>
-        <a class="lab-slide-link light-link" href="../labs/02_grounded_qa/README.md" target="_blank">Open the end-to-end RAG lab ↗</a>
+        <a class="lab-slide-link light-link" href="../labs/01_opioid_evidence/README.md" target="_blank">Open the end-to-end RAG lab ↗</a>
       </div>
       <aside class="speaker-notes" aria-label="Presenter notes for the end-to-end RAG lab slide"><p class="notes-label">Presenter notes</p><dl>
         <div><dt>Purpose</dt><dd>Model the investigative behavior students should reproduce: inspect each boundary before judging the final prose.</dd></div>
@@ -868,37 +859,37 @@
         <div><dt>Say</dt><dd>“The lower-ranked implementation passage is still necessary. Ranking answers ‘what is similar?’ The evidence check asks ‘is this sufficient?’”</dd></div>
         <div><dt>Check</dt><dd>Ask: did the model fail, or did the model receive an incomplete evidence packet? Do not move on until students name retrieval as the failed layer.</dd></div>
         <div><dt>Transition</dt><dd>Students now reproduce the trace across single-source, multi-source, and absent-answer tests.</dd></div>
-        <div><dt>[Sources]</dt><dd><a href="../labs/02_grounded_qa/README.md" target="_blank">Course lab instructions</a></dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/01_opioid_evidence/README.md" target="_blank">Course lab instructions</a></dd></div>
       </dl></aside>
     </section>
 
-    <section class="slide paper lab-roadmap-slide" id="slide-24" data-title="The case-study roadmap" data-time="Case-study brief" aria-labelledby="title-24">
+    <section class="slide paper lab-roadmap-slide" id="slide-24" data-title="The RAG case-study roadmap" data-time="Case-study brief" aria-labelledby="title-24">
       <div class="slide-content lab-roadmap-layout">
         <div>
-          <p class="eyebrow">The practical arc</p>
-          <h2 id="title-24">We will build four inspectable workflows.</h2>
-          <p class="lead dark-lead">Each adds one capability—and one new place to be wrong.</p>
+          <p class="eyebrow">One case study · RAG</p>
+          <h2 id="title-24">Build an evidence-grounded system from documents.</h2>
+          <p class="lead dark-lead">The opioid archive motivates the problem. A 20-page corpus makes the mechanics buildable.</p>
         </div>
         <ol class="four-lab-roadmap">
-          <li><span>01</span><div><strong>RAG · retrieval-augmented generation</strong><p>Retrieve evidence first; keep claims attached to sources.</p></div><time>45–50 min</time></li>
-          <li><span>02</span><div><strong>Extraction · text → structured data</strong><p>Can we compare messy records?</p></div><time>35 min</time></li>
-          <li><span>03</span><div><strong>Agentic data analysis · question → tools</strong><p>Can an agent choose a safe next step?</p></div><time>50 min</time></li>
-          <li><span>04</span><div><strong>Voice → auditable memo</strong><p>Can we preserve what was actually said?</p></div><time>40 min</time></li>
+          <li><span>01</span><div><strong>Research problem</strong><p>Find relevant evidence and patterns inside a vast public archive.</p></div><time>Why</time></li>
+          <li><span>02</span><div><strong>Evidence design</strong><p>Preserve document identity, page, genre, and original record.</p></div><time>What</time></li>
+          <li><span>03</span><div><strong>Retrieval mechanics</strong><p>Chunk, embed, compare vectors, and inspect ranked passages.</p></div><time>How</time></li>
+          <li><span>04</span><div><strong>Working POC</strong><p>Build and test the same workflow on a manageable corpus.</p></div><time>Build</time></li>
         </ol>
-        <a class="lab-slide-link" href="../labs/index.html" target="_blank">Open the student lab kit ↗</a>
+        <a class="lab-slide-link" href="../labs/00_rag_starter/README.md" target="_blank">Open the RAG starter kit ↗</a>
       </div>
       <aside class="speaker-notes" aria-label="Presenter notes for slide 25">
         <p class="notes-label">Presenter notes</p>
         <dl>
-          <div><dt>Purpose</dt><dd>Preview the applied arc and establish that every case includes both a capability and a verification obligation.</dd></div>
-          <div><dt>Say</dt><dd>“These are not four unrelated demos. Each is a workflow we can inspect. We will start with RAG, then add structured outputs, bounded analysis tools, and voice.”</dd></div>
-          <div><dt>Why RAG first</dt><dd>It makes the evidence boundary visible: what entered the model’s context, what stayed out, and which claims can be checked.</dd></div>
+          <div><dt>Purpose</dt><dd>Preview the complete arc of the single applied case and its hands-on build.</dd></div>
+          <div><dt>Say</dt><dd>“We will stay with one workflow long enough to understand the problem, inspect the sources, see the mechanics, and build a working proof of concept.”</dd></div>
+          <div><dt>Why RAG</dt><dd>It makes the evidence boundary visible: what entered the model’s context, what stayed out, and which claims can be checked.</dd></div>
           <div><dt>Transition</dt><dd>Before retrieving anything, define the research question precisely enough to know which documents and claims count.</dd></div>
         </dl>
       </aside>
     </section>
 
-    <section class="slide coral extraction-problem-slide" id="slide-25" data-title="Define the extraction problem" data-time="Extraction · 2 min" aria-labelledby="title-25">
+    <section class="retired-slide coral extraction-problem-slide" id="slide-25" hidden data-title="Define the extraction problem" data-time="Extraction · 2 min" aria-labelledby="title-25">
       <div class="slide-content extraction-problem-layout">
         <div><p class="eyebrow">Case 02 · Structured extraction</p><h2 id="title-25">Can four differently written study notes become one trustworthy table?</h2></div>
         <p class="extraction-case-context"><strong>The case:</strong> A research team receives four fictional study notes. The facts are comparable, but headings, number formats, and descriptions differ from record to record.</p>
@@ -917,11 +908,11 @@
           <div><dt>Say</dt><dd>“Many practical AI systems are converters: notes to tables, forms to databases, or papers to evidence matrices. The hard part is making every row mean the same thing without manufacturing missing facts.”</dd></div>
           <div><dt>Ask</dt><dd>Which requirement is easiest to check with code? Which still requires judgment?</dd></div>
           <div><dt>Transition</dt><dd>Look at the four ways this tiny corpus expresses one seemingly simple field: sample size.</dd></div>
-          <div><dt>[Sources]</dt><dd><a href="../labs/01_structured_extraction/README.md" target="_blank">Course lab · Structured extraction</a></dd></div>
+          <div><dt>[Sources]</dt><dd><a href="../labs/02_structured_extraction/README.md" target="_blank">Course lab · Structured extraction</a></dd></div>
         </dl></aside>
     </section>
 
-    <section class="slide paper extraction-why-slide" id="slide-extraction-why" data-title="Why semantic extraction" data-time="Extraction · 2 min" aria-labelledby="title-extraction-why">
+    <section class="retired-slide paper extraction-why-slide" id="slide-extraction-why" hidden data-title="Why semantic extraction" data-time="Extraction · 2 min" aria-labelledby="title-extraction-why">
       <div class="slide-content extraction-why-layout">
         <div><p class="eyebrow">Why use an LLM?</p><h2 id="title-extraction-why">The same fact can arrive in four different forms.</h2></div>
         <div class="language-mapping" aria-label="Four source phrases mapped to one sample-size field">
@@ -942,7 +933,7 @@
       </dl></aside>
     </section>
 
-    <section class="slide dark extraction-pipeline-slide" id="slide-extraction-pipeline" data-title="The complete extraction pipeline" data-time="Extraction · 2 min" aria-labelledby="title-extraction-pipeline">
+    <section class="retired-slide dark extraction-pipeline-slide" id="slide-extraction-pipeline" hidden data-title="The complete extraction pipeline" data-time="Extraction · 2 min" aria-labelledby="title-extraction-pipeline">
       <div class="slide-content extraction-pipeline-layout">
         <div><p class="eyebrow">The complete system</p><h2 id="title-extraction-pipeline">Extraction is one stage. Trust comes from the checks around it.</h2></div>
         <ol class="extraction-pipeline" aria-label="Structured extraction and validation pipeline">
@@ -964,7 +955,7 @@
       </dl></aside>
     </section>
 
-    <section class="slide lime schema-slide" id="slide-26" data-title="Define the output before the prompt" data-time="Extraction · 3 min" aria-labelledby="title-26">
+    <section class="retired-slide lime schema-slide" id="slide-26" hidden data-title="Define the output before the prompt" data-time="Extraction · 3 min" aria-labelledby="title-26">
       <div class="slide-content schema-layout">
         <div><p class="eyebrow">The interface is part of the reasoning</p><h2 id="title-26">Write the schema before you write the prompt.</h2></div>
         <div class="schema-field-grid">
@@ -990,17 +981,17 @@
       </aside>
     </section>
 
-    <section class="slide dark extraction-demo-slide" id="slide-extraction-demo" data-title="Instructor demo · one extraction trace" data-time="Extraction · 5 min" aria-labelledby="title-extraction-demo">
+    <section class="retired-slide dark extraction-demo-slide" id="slide-extraction-demo" hidden data-title="Instructor demo · one extraction trace" data-time="Extraction · 5 min" aria-labelledby="title-extraction-demo">
       <div class="slide-content extraction-demo-layout">
         <div><p class="eyebrow">Instructor demo · 5 minutes</p><h2 id="title-extraction-demo">Trace D09: absence must survive the conversion.</h2></div>
         <div class="extraction-demo-grid">
           <article><span>1 · Read the source</span><blockquote>“The summary does not report the number of participating students…”</blockquote><p>The absence is explicit—not merely overlooked.</p></article>
-          <article><span>2 · Run the baseline</span><code>python 01_structured_extraction/lab.py --record D09 --show-details</code><strong>shape ✓ · 1/5 fields · quote ✗</strong><p>Valid structure can contain mostly missing content.</p></article>
+          <article><span>2 · Run the baseline</span><code>python 02_structured_extraction/lab.py --record D09 --show-details</code><strong>shape ✓ · 1/5 fields · quote ✗</strong><p>Valid structure can contain mostly missing content.</p></article>
           <article><span>3 · Desired record</span><pre><code>"sample_size": null,<br>"main_finding": "Booking logs suggested<br>shorter median wait times…"</code></pre><p>Null preserves what the source does—and does not—say.</p></article>
           <article class="extraction-break-it"><span>4 · Break the schema</span><code>sample_size: integer</code><strong>No honest value for D09</strong><p>A bad interface can pressure the system to invent.</p></article>
         </div>
         <p class="extraction-demo-output"><b>Watch for:</b> source → extracted fields → shape check → field score → quote check → meaning.</p>
-        <a class="lab-slide-link light-link" href="../labs/01_structured_extraction/README.md" target="_blank">Open the structured extraction lab ↗</a>
+        <a class="lab-slide-link light-link" href="../labs/02_structured_extraction/README.md" target="_blank">Open the structured extraction lab ↗</a>
       </div>
       <aside class="speaker-notes" aria-label="Presenter notes for the structured extraction demo"><p class="notes-label">Presenter notes</p><dl>
         <div><dt>Purpose</dt><dd>Model the complete inspection behavior students should reproduce before they run all four records.</dd></div>
@@ -1009,11 +1000,11 @@
         <div><dt>Say</dt><dd>“The baseline gets null correct by accident: its rule did not understand ‘not reported’; it simply failed to find n equals. A correct value and a correct reason are not always the same achievement.”</dd></div>
         <div><dt>Check</dt><dd>Ask whether this is a rule failure, a schema failure, or an evidence failure. The initial baseline failure is the rule; forbidding null creates a schema failure.</dd></div>
         <div><dt>Transition</dt><dd>Students now test stable labels, changed wording, and missing values as three separate conditions.</dd></div>
-        <div><dt>[Sources]</dt><dd><a href="../labs/01_structured_extraction/data/records/study_d.txt" target="_blank">Course record D09</a> · <a href="../labs/01_structured_extraction/data/gold.json" target="_blank">Course gold set</a></dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/02_structured_extraction/data/records/study_d.txt" target="_blank">Course record D09</a> · <a href="../labs/02_structured_extraction/data/gold.json" target="_blank">Course gold set</a></dd></div>
       </dl></aside>
     </section>
 
-    <section class="slide dark extraction-activity-slide" id="slide-27" data-title="Student lab · three extraction tests" data-time="Extraction · 15 min" aria-labelledby="title-27">
+    <section class="retired-slide dark extraction-activity-slide" id="slide-27" hidden data-title="Student lab · three extraction tests" data-time="Extraction · 15 min" aria-labelledby="title-27">
       <div class="slide-content extraction-activity-layout">
         <div><p class="eyebrow">Student lab · 15 minutes</p><h2 id="title-27">Extract one row yourself. Then test the system.</h2></div>
         <div class="extraction-test-grid">
@@ -1022,11 +1013,11 @@
           <article class="missing-test"><span>3 · Missing value · D09</span><strong>“does not report the number”</strong><p>Preserve absence rather than guessing.</p></article>
         </div>
         <div class="extraction-participation-paths">
-          <article><span>Code path</span><code>python 01_structured_extraction/lab.py --record A17 --show-details</code><p>Compare the baseline with your manual row. Add <code>--api</code> only after that audit.</p></article>
+          <article><span>Code path</span><code>python 02_structured_extraction/lab.py --record A17 --show-details</code><p>Compare the baseline with your manual row. Add <code>--api</code> only after that audit.</p></article>
           <article><span>No-code path</span><strong>Manual extraction</strong><p>Extract one row at a time, compare with gold.json, and search the source for the quote.</p></article>
         </div>
         <p class="extraction-pair-roles"><b>In pairs:</b> Human Extractor completes A17 first. System Operator runs the baseline or model. Auditor compares both with the gold set and diagnoses one disagreement.</p>
-        <a class="lab-slide-link light-link" href="../labs/01_structured_extraction/README.md" target="_blank">Open the structured extraction lab ↗</a>
+        <a class="lab-slide-link light-link" href="../labs/02_structured_extraction/README.md" target="_blank">Open the structured extraction lab ↗</a>
       </div>
       <aside class="speaker-notes" aria-label="Presenter notes for the structured extraction student lab"><p class="notes-label">Presenter notes</p><dl>
         <div><dt>Purpose</dt><dd>Evaluate rules or model output across stable labels, changed wording, and explicitly missing information.</dd></div>
@@ -1037,11 +1028,11 @@
         <div><dt>Success</dt><dd>Each pair completes three rows on the trace sheet and can name whether the rule, schema, extraction, evidence, or interpretation failed.</dd></div>
         <div><dt>Say</dt><dd>“Thirty percent is not embarrassing. It is a measured starting point. Now any improvement has a denominator—and every failure has a layer.”</dd></div>
         <div><dt>Transition</dt><dd>Separate four kinds of validity before deciding whether an extraction is safe to use.</dd></div>
-        <div><dt>[Sources]</dt><dd><a href="../labs/01_structured_extraction/data/gold.json" target="_blank">Course gold set</a> · <a href="../labs/01_structured_extraction/TRACE_TEMPLATE.md" target="_blank">Extraction trace sheet</a></dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/02_structured_extraction/data/gold.json" target="_blank">Course gold set</a> · <a href="../labs/02_structured_extraction/TRACE_TEMPLATE.md" target="_blank">Extraction trace sheet</a></dd></div>
       </dl></aside>
     </section>
 
-    <section class="slide paper verification-slide" id="slide-28" data-title="Schema-valid is not source-valid" data-time="Extraction · 4 min" aria-labelledby="title-28">
+    <section class="retired-slide paper verification-slide" id="slide-28" hidden data-title="Schema-valid is not source-valid" data-time="Extraction · 4 min" aria-labelledby="title-28">
       <div class="slide-content verification-layout">
         <div><p class="eyebrow">Debrief</p><h2 id="title-28">Valid JSON can still contain an invalid claim.</h2></div>
         <div class="validity-stack">
@@ -1066,12 +1057,561 @@
       </aside>
     </section>
 
-    <section class="slide dark lab-break-slide" id="slide-29" data-title="Break · What was inferred?" data-time="90:00–100:00" aria-labelledby="title-29">
+    <section class="retired-slide dark lab-break-slide" id="slide-29" hidden data-title="Break · What was inferred?" data-time="90:00–100:00" aria-labelledby="title-29">
       <div class="slide-content lab-break-layout"><p class="eyebrow">10-minute break</p><h2 id="title-29">What did the system infer<br>that the source never said?</h2><p>Keep one example. We will reuse the question.</p><div class="break-mark" aria-hidden="true">?</div></div>
       <aside class="speaker-notes" aria-label="Presenter notes for slide 30"><p class="notes-label">Presenter notes</p><dl><div><dt>Purpose</dt><dd>Give students a real break while preserving one diagnostic question.</dd></div><div><dt>Do</dt><dd>Restart on time. Invite exactly two examples, then continue.</dd></div><div><dt>Transition</dt><dd>The next case gives the model bounded analysis tools and makes its intermediate actions visible.</dd></div></dl></aside>
     </section>
 
-    <section class="slide teal case-opener-slide rag-problem-slide" id="slide-30" data-title="Define the RAG problem" data-time="RAG · 2 min" aria-labelledby="title-30">
+    <section class="slide dark opioid-open-slide" id="slide-opioid-open" data-title="How the archive came to exist" data-time="Case 01 · 4 min" aria-labelledby="title-opioid-open">
+      <img class="opioid-open-image" src="../assets/images/opioid-case/sales-training-page.png" alt="First page of a publicly archived opioid sales-training guide" width="935" height="660" loading="lazy">
+      <div class="opioid-open-shade" aria-hidden="true"></div>
+      <div class="slide-content opioid-open-layout">
+        <p class="eyebrow">Case 01 · How this archive came to exist</p>
+        <h2 id="title-opioid-open">The opioid crisis led to litigation—and a vast public record.</h2>
+        <div class="opioid-origin-waves" aria-label="Three waves of the opioid overdose crisis">
+          <article><time>1990s</time><strong>Prescription opioids</strong><span>Overdose deaths rose alongside increased prescribing.</span></article>
+          <article><time>2010</time><strong>Heroin</strong><span>A second wave of overdose deaths accelerated.</span></article>
+          <article><time>2013</time><strong>Synthetic opioids</strong><span>Illegally made fentanyl drove a third wave.</span></article>
+        </div>
+        <div class="opioid-origin-archive"><strong>Then litigation opened a new evidence source.</strong><p>Governments sued opioid manufacturers, distributors, and pharmacies. Discovery, judgments, and settlements made emails, presentations, sales records, audits, and other previously internal documents public.</p></div>
+        <div class="opioid-origin-flow"><span>public-health crisis</span><i>→</i><span>litigation + discovery</span><i>→</i><span>public records</span><i>→</i><span>searchable archive</span></div>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the opioid evidence case opener"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Give enough historical and legal context to understand why this unusual research corpus exists before introducing retrieval.</dd></div>
+        <div><dt>Say</dt><dd>“The crisis changed over time: prescription opioids, then heroin, then synthetic opioids—especially illegally made fentanyl. Governments also pursued litigation against companies across the opioid supply chain.”</dd></div>
+        <div><dt>Explain</dt><dd>Legal discovery and the resolution of cases made large collections of corporate material public. UCSF and Johns Hopkins created a centralized, searchable archive to preserve those records and make them available for research and public understanding.</dd></div>
+        <div><dt>Clarify</dt><dd>Litigation records document what organizations wrote, presented, reported, or proposed. They do not automatically establish that every statement was accurate, implemented, representative, or causal.</dd></div>
+        <div><dt>Ask</dt><dd>If thousands of internal and public-facing records suddenly became searchable, what new research questions could you ask?</dd></div>
+        <div><dt>Transition</dt><dd>The opportunity is enormous. The immediate problem is finding useful evidence and connections inside the collection.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="https://www.cdc.gov/overdose-prevention/about/understanding-the-opioid-overdose-epidemic.html" target="_blank" rel="noreferrer">CDC · Understanding the Opioid Overdose Epidemic</a> · <a href="https://publichealth.jhu.edu/2021/ucsf-and-johns-hopkins-university-launch-digital-trove-of-opioid-industry-documents" target="_blank" rel="noreferrer">Johns Hopkins · Archive launch and provenance</a> · <a href="https://industrydocuments.ucsf.edu/opioids/docs/" target="_blank" rel="noreferrer">UCSF–JHU archive</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide coral opioid-problem-slide" id="slide-opioid-problem" data-title="Find evidence and patterns" data-time="Case 01 · 4 min" aria-labelledby="title-opioid-problem">
+      <div class="slide-content opioid-problem-layout">
+        <div><p class="eyebrow">The research problem</p><h2 id="title-opioid-problem">Find evidence. Surface patterns and trends. Trace every insight.</h2></div>
+        <blockquote class="opioid-problem-statement">Given thousands of OCR-derived records released through opioid litigation, help a researcher answer a question by finding relevant passages, comparing themes and shifts across documents, and linking every insight to its original source.</blockquote>
+        <div class="opioid-contract opioid-research-tasks" aria-label="Three parts of the research task">
+          <article><span>Find</span><strong>Relevant evidence</strong><p>Locate names, products, actions, claims, dates, and exact passages.</p></article>
+          <article><span>Connect</span><strong>Patterns and contrasts</strong><p>Compare recurring themes, changes over time, and differences among source types.</p></article>
+          <article><span>Trace</span><strong>Every insight to its source</strong><p>Keep the document ID, page, genre, quotation, and original URL attached.</p></article>
+        </div>
+        <div class="opioid-question-examples">
+          <span>Questions researchers and public officials may investigate</span>
+          <ul>
+            <li>Did marketing claims minimize addiction risk?</li>
+            <li>How did internal and public messages differ?</li>
+            <li>What warning signs of oversupply were documented?</li>
+            <li>Which practices merit legal or regulatory review?</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the opioid evidence problem"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Define the practical research task positively: accelerate discovery, cross-document comparison, and insight generation while preserving an audit trail.</dd></div>
+        <div><dt>Say</dt><dd>“A researcher may want one passage, but often the real value is cross-document: a recurring message, a change over time, a difference between internal and public-facing language, or a relationship worth investigating.”</dd></div>
+        <div><dt>Example questions</dt><dd>Did marketing claims minimize addiction risk? How did internal training differ from public statements? What warning signs of oversupply appear in the record? Which practices should receive closer legal or regulatory review?</dd></div>
+        <div><dt>Clarify</dt><dd>“Pattern” does not mean the system has proved causality, intent, or illegality. The archive can surface evidence relevant to an investigation; determining a violation requires the governing law, a complete factual record, and authorized legal judgment.</dd></div>
+        <div><dt>Ask</dt><dd>Which of the three tasks—find, connect, or trace—is hardest to do manually in your own field?</dd></div>
+        <div><dt>Transition</dt><dd>Show why the real corpus makes this contract difficult to satisfy.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="https://industrydocuments.ucsf.edu/opioids/docs/" target="_blank" rel="noreferrer">UCSF–JHU Opioid Industry Documents Archive</a> · <a href="https://publichealth.jhu.edu/2021/ucsf-and-johns-hopkins-university-launch-digital-trove-of-opioid-industry-documents" target="_blank" rel="noreferrer">Johns Hopkins · Litigation, marketing, risk, and oversupply context</a> · <a href="../labs/01_opioid_evidence/README.md" target="_blank">Case 01 lab</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide paper opioid-scale-slide" id="slide-opioid-scale" data-title="A sample inside a much larger archive" data-time="Case 01 · 3 min" aria-labelledby="title-opioid-scale">
+      <div class="slide-content opioid-scale-layout">
+        <div><p class="eyebrow">Full archive ≠ working sample</p><h2 id="title-opioid-scale">Our 490 documents are one working sample inside an archive of millions.</h2></div>
+        <div class="opioid-scale-numbers">
+          <article class="opioid-scale-full"><strong>millions</strong><span>of records in the full public archive</span></article>
+          <article><strong>490</strong><span>documents selected for this working sample</span></article>
+          <article><strong>15,613</strong><span>pages within the 490-document sample</span></article>
+          <article><strong>1–393</strong><span>pages per sampled document</span></article>
+        </div>
+        <div class="opioid-scale-bridge"><span>Production workbench</span><b>public PDFs → OCR → BM25 / embeddings / hybrid → grounded review</b><i>↓</i><span>Teaching replica</span><b>5 teaching excerpts → 15 chunks → transparent TF-IDF retrieval</b></div>
+        <p class="opioid-scale-note"><b>Important:</b> the 490 documents are a bounded development corpus—not the complete archive and not a statistically representative sample. The five-file teaching corpus is smaller again.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the opioid corpus scale slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Prevent the project’s bounded working sample from being confused with the full public archive.</dd></div>
+        <div><dt>Say</dt><dd>“The 490 documents are not the dataset in its entirety. They are the subset processed in this development corpus. The archive beyond it is orders of magnitude larger.”</dd></div>
+        <div><dt>Clarify</dt><dd>The 490-document and 15,613-page counts come from the non-interview OCR working corpus. It is a bounded development collection, not a random or statistically representative sample. The full UCSF–JHU archive contains millions of records.</dd></div>
+        <div><dt>Teaching point</dt><dd>“We shrink the corpus, not the intellectual problem.” The smaller version still includes provenance, multi-document retrieval, genre, answerability, and verification.</dd></div>
+        <div><dt>Transition</dt><dd>Look at three documents that share a topic but play very different evidentiary roles.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="https://industrydocuments.ucsf.edu/opioids/docs/" target="_blank" rel="noreferrer">Archive overview</a> · <a href="../labs/01_opioid_evidence/data/source_manifest.json" target="_blank">Course corpus manifest</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide dark opioid-material-slide" id="slide-opioid-material" data-title="One topic, different source roles" data-time="Case 01 · 4 min" aria-labelledby="title-opioid-material">
+      <div class="slide-content opioid-material-layout">
+        <div><p class="eyebrow">Meet the public records</p><h2 id="title-opioid-material">Same topic. Three very different kinds of evidence.</h2></div>
+        <div class="opioid-document-strip">
+          <figure><img src="../assets/images/opioid-case/walgreens-response-page.png" alt="Page from a Walgreens public response statement" width="1275" height="1728" loading="lazy"><figcaption><b>Corporate response</b><span>reported actions</span><a href="https://www.industrydocuments.ucsf.edu/docs/ffgf0232" target="_blank" rel="noreferrer">ffgf0232 ↗</a></figcaption></figure>
+          <figure><img src="../assets/images/opioid-case/manufacturer-policy-page.png" alt="Page from a manufacturer opioid policy paper" width="935" height="1320" loading="lazy"><figcaption><b>Policy paper</b><span>proposals and positions</span><a href="https://www.industrydocuments.ucsf.edu/docs/fndj0247" target="_blank" rel="noreferrer">fndj0247 ↗</a></figcaption></figure>
+          <figure><img src="../assets/images/opioid-case/sales-training-page.png" alt="Page from an internal opioid sales-training guide" width="935" height="660" loading="lazy"><figcaption><b>Sales-training guide</b><span>internal message strategy</span><a href="https://www.industrydocuments.ucsf.edu/docs/mrkl0234" target="_blank" rel="noreferrer">mrkl0234 ↗</a></figcaption></figure>
+        </div>
+        <p class="opioid-material-rule"><b>Retrieval answers “what looks relevant?”</b> Research judgment asks “relevant for which claim?”</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the opioid source genres slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Make source genre visible before the documents become text chunks.</dd></div>
+        <div><dt>Do</dt><dd>Give the room thirty seconds to label what each source can support: a reported action, a policy position, or a sales-message strategy.</dd></div>
+        <div><dt>Say</dt><dd>“Topical similarity does not make these sources interchangeable. Genre changes the strongest defensible verb.”</dd></div>
+        <div><dt>Transition</dt><dd>Name the five failure surfaces that appear before a final answer.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="https://www.industrydocuments.ucsf.edu/docs/ffgf0232" target="_blank" rel="noreferrer">Walgreens exhibit</a> · <a href="https://www.industrydocuments.ucsf.edu/docs/fndj0247" target="_blank" rel="noreferrer">Mallinckrodt policy paper</a> · <a href="https://www.industrydocuments.ucsf.edu/docs/mrkl0234" target="_blank" rel="noreferrer">EXALGO sales-training guide</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide paper opioid-direct-path-slide" id="slide-opioid-direct-path" data-title="The implementation path" data-time="Case 01 · 5 min" aria-labelledby="title-opioid-direct-path">
+      <div class="slide-content opioid-direct-path-layout">
+        <div><p class="eyebrow">The implementation path</p><h2 id="title-opioid-direct-path">Turn the archive into a searchable evidence system.</h2></div>
+        <div class="opioid-path-lanes">
+          <section aria-labelledby="opioid-build-once"><h3 id="opioid-build-once">Build the collection once</h3><ol>
+            <li><span>01</span><strong>Collect</strong><p>PDFs, scans, document IDs, dates, and source URLs.</p></li>
+            <li><span>02</span><strong>OCR</strong><p>Convert each page image into searchable text.</p></li>
+            <li><span>03</span><strong>Chunk</strong><p>Split text with overlap; keep page, genre, and provenance.</p></li>
+            <li><span>04</span><strong>Embed + index</strong><p>Create a meaning vector for each chunk and a lexical index.</p></li>
+          </ol></section>
+          <section aria-labelledby="opioid-query-many"><h3 id="opioid-query-many">Run this path for every question</h3><ol start="5">
+            <li><span>05</span><strong>Ask</strong><p>Translate the research goal into a focused query.</p></li>
+            <li><span>06</span><strong>Retrieve</strong><p>Use hybrid search and filters to select the top chunks.</p></li>
+            <li><span>07</span><strong>Synthesize</strong><p>Give the evidence packet—not the whole archive—to the model.</p></li>
+            <li><span>08</span><strong>Verify</strong><p>Follow every important claim back to the original page.</p></li>
+          </ol></section>
+        </div>
+        <div class="opioid-path-trace"><span>One document through the system</span><code>mrkl0234.pdf → page OCR → chunk 7b → embedding + keywords → retrieved passage → cited finding</code></div>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the direct implementation path"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Show the complete implementation path before unpacking individual failure points.</dd></div>
+        <div><dt>Walk through</dt><dd>Start with a PDF. OCR produces page-level text. Chunking creates smaller passages and repeats a little context across boundaries. Every chunk inherits document ID, page, genre, date, and original URL.</dd></div>
+        <div><dt>Explain embeddings</dt><dd>An embedding converts each chunk into a vector: a list of numbers positioned so passages with related meaning tend to be closer together. A lexical index preserves exact word and phrase matching. Hybrid retrieval uses both signals.</dd></div>
+        <div><dt>Emphasize</dt><dd>The model does not search millions of documents directly. Retrieval first builds a small evidence packet. The model then synthesizes only that packet, and the researcher verifies the result against original pages.</dd></div>
+        <div><dt>Teaching version</dt><dd>The small teaching build uses transparent TF-IDF and cosine similarity instead of a production embedding service. The pipeline logic is the same and every score remains inspectable.</dd></div>
+        <div><dt>Ask</dt><dd>Where could a relevant fact disappear before the model ever receives it?</dd></div>
+        <div><dt>Transition</dt><dd>Now inspect the failure surfaces at each boundary in this path.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/01_opioid_evidence/lab.py" target="_blank">Course implementation</a> · <a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noreferrer">Lewis et al. · Retrieval-Augmented Generation</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide teal opioid-vector-slide" id="slide-opioid-vector-space" data-title="How embedding similarity works" data-time="Case 01 · 5 min" aria-labelledby="title-opioid-vector-space">
+      <div class="slide-content opioid-vector-layout">
+        <div><p class="eyebrow">Embeddings, visually</p><h2 id="title-opioid-vector-space">The question and every chunk become vectors in the same meaning-space.</h2></div>
+        <div class="opioid-vector-stage">
+          <figure class="opioid-vector-map">
+            <svg viewBox="0 0 760 370" role="img" aria-labelledby="vector-map-title vector-map-desc">
+              <title id="vector-map-title">A two-dimensional teaching projection of a question vector and four document-chunk vectors</title>
+              <desc id="vector-map-desc">The question is closest to an internal sales-guide chunk, followed by a policy-paper chunk and federal recommendations. A disposal-kiosk chunk is far away and is not selected.</desc>
+              <g class="vector-grid" aria-hidden="true">
+                <line x1="45" y1="80" x2="725" y2="80"></line><line x1="45" y1="160" x2="725" y2="160"></line><line x1="45" y1="240" x2="725" y2="240"></line><line x1="45" y1="320" x2="725" y2="320"></line>
+                <line x1="120" y1="35" x2="120" y2="340"></line><line x1="280" y1="35" x2="280" y2="340"></line><line x1="440" y1="35" x2="440" y2="340"></line><line x1="600" y1="35" x2="600" y2="340"></line>
+              </g>
+              <g class="vector-links" aria-hidden="true">
+                <line class="vector-link high" x1="185" y1="236" x2="360" y2="137"></line>
+                <line class="vector-link medium" x1="185" y1="236" x2="455" y2="250"></line>
+                <line class="vector-link low" x1="185" y1="236" x2="558" y2="122"></line>
+                <line class="vector-link distant" x1="185" y1="236" x2="655" y2="315"></line>
+              </g>
+              <g class="vector-query">
+                <polygon points="185,218 203,236 185,254 167,236"></polygon>
+                <text x="92" y="278">question vector</text>
+              </g>
+              <g class="vector-point vector-point-sales">
+                <circle cx="360" cy="137" r="13"></circle><text class="vector-score" x="379" y="118">0.91</text><text x="379" y="140">internal sales guide</text><text class="vector-sub" x="379" y="159">benefit + message strategy</text>
+              </g>
+              <g class="vector-point vector-point-policy">
+                <circle cx="455" cy="250" r="11"></circle><text class="vector-score" x="474" y="232">0.74</text><text x="474" y="253">manufacturer policy</text><text class="vector-sub" x="474" y="272">risk + education</text>
+              </g>
+              <g class="vector-point vector-point-federal">
+                <circle cx="558" cy="122" r="10"></circle><text class="vector-score" x="577" y="104">0.56</text><text x="577" y="125">federal recommendations</text><text class="vector-sub" x="577" y="144">monitoring + oversight</text>
+              </g>
+              <g class="vector-point vector-point-disposal">
+                <circle cx="655" cy="315" r="9"></circle><text class="vector-score" x="674" y="298">0.18</text><text x="674" y="318">disposal kiosks</text><text class="vector-sub" x="674" y="337">not selected</text>
+              </g>
+              <text class="projection-label" x="48" y="55">2D teaching projection · illustrative similarity scores</text>
+            </svg>
+            <figcaption>Closer vectors suggest more similar meaning. The highest-ranked chunks become the evidence packet.</figcaption>
+          </figure>
+          <aside class="opioid-vector-explainer">
+            <div class="opioid-vector-question"><span>Research question</span><blockquote>How did internal sales materials frame opioid benefits and use?</blockquote></div>
+            <div class="opioid-cosine"><span>Similarity</span><strong>cosine(q, chunk)</strong><p>Same direction → closer to 1<br>Different direction → closer to 0</p></div>
+            <div class="opioid-vector-packet"><span>Top 3 packet</span><ol><li><b>0.91</b> Sales guide</li><li><b>0.74</b> Policy paper</li><li><b>0.56</b> Federal recommendations</li></ol></div>
+          </aside>
+        </div>
+        <p class="opioid-vector-caveat"><b>Similarity is not truth.</b> Retrieval finds semantically related passages; researchers still judge source role, credibility, completeness, and what the evidence supports.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the embedding similarity visualization"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Make embeddings and similarity concrete before discussing retrieval failures.</dd></div>
+        <div><dt>Say</dt><dd>“The same embedding model converts both the research question and every document chunk into vectors. Retrieval compares the question vector with the stored chunk vectors.”</dd></div>
+        <div><dt>Explain cosine</dt><dd>Cosine similarity compares vector direction. Similar directions receive higher scores. In real systems the vectors can have hundreds or thousands of dimensions; this two-dimensional map is only a teaching projection.</dd></div>
+        <div><dt>Walk through</dt><dd>The internal sales-guide chunk is nearest to the question about sales framing, so it ranks first. Policy and federal documents share related concepts but play different source roles. A passage about disposal kiosks is much less related and stays out of the top-three packet.</dd></div>
+        <div><dt>Clarify</dt><dd>The positions and scores shown are illustrative, not output from the teaching TF-IDF script. The practical build later exposes actual retrieval scores. Semantic similarity does not establish factual accuracy, credibility, intent, or legal significance.</dd></div>
+        <div><dt>Ask</dt><dd>What could make the closest passage a poor source for the claim you want to make?</dd></div>
+        <div><dt>Transition</dt><dd>The map was illustrative. Now run the retriever and inspect what it returns.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="https://arxiv.org/abs/1908.10084" target="_blank" rel="noreferrer">Reimers &amp; Gurevych · Sentence-BERT</a> · <a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noreferrer">Lewis et al. · Retrieval-Augmented Generation</a> · <a href="../labs/01_opioid_evidence/README.md" target="_blank">Course lab context</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide paper opioid-results-slide rag-types-slide" id="slide-opioid-retrieval-results" data-title="Four common RAG patterns" data-time="Case 01 · 5 min" aria-labelledby="title-opioid-retrieval-results">
+      <div class="slide-content opioid-results-layout">
+        <div><p class="eyebrow">Retrieval design · four common patterns</p><h2 id="title-opioid-retrieval-results">RAG is not one fixed recipe.</h2></div>
+        <p class="opioid-results-query"><span>Same goal</span>Assemble the best evidence packet for the question—then generate from that packet.</p>
+        <ol class="opioid-results-list" aria-label="Four common retrieval-augmented generation patterns">
+          <li>
+            <div class="opioid-result-rank"><span>01</span><strong>exact</strong></div>
+            <div class="opioid-result-source"><b>Lexical RAG</b><span>BM25 · keywords</span></div>
+            <blockquote><b>Best for:</b> names, product codes, quotations, document IDs. <em>Example: “EXALGO 12 mg” or “ffgf0232.”</em></blockquote>
+          </li>
+          <li>
+            <div class="opioid-result-rank"><span>02</span><strong>meaning</strong></div>
+            <div class="opioid-result-source"><b>Vector RAG</b><span>embeddings · semantic similarity</span></div>
+            <blockquote><b>Best for:</b> paraphrases and related concepts. <em>Example: “How was dependence risk framed?”</em></blockquote>
+          </li>
+          <li>
+            <div class="opioid-result-rank"><span>03</span><strong>both</strong></div>
+            <div class="opioid-result-source"><b>Hybrid RAG</b><span>lexical + vector + filters</span></div>
+            <blockquote><b>Best for:</b> mixed research archives. <em>Example: semantic topic + exact drug name + date/genre filter.</em></blockquote>
+          </li>
+          <li>
+            <div class="opioid-result-rank"><span>04</span><strong>iterate</strong></div>
+            <div class="opioid-result-source"><b>Multi-step / agentic RAG</b><span>plan · search · repeat</span></div>
+            <blockquote><b>Best for:</b> questions requiring several evidence roles. <em>Example: retrieve public claims and internal messaging separately, then compare.</em></blockquote>
+          </li>
+        </ol>
+        <div class="opioid-results-verdict"><span>Practical default</span><strong>Start hybrid.</strong><p>Use exact matching for identifiers, semantic search for meaning, metadata for scope, and reranking when the corpus grows.</p></div>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for four common RAG patterns"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Show that RAG describes a family of architectures. The generator can be similar while the retrieval strategy changes substantially.</dd></div>
+        <div><dt>Lexical</dt><dd>Keyword-oriented methods such as BM25 are strong when exact terms matter: names, codes, quotations, and record identifiers.</dd></div>
+        <div><dt>Vector</dt><dd>Dense embeddings help when the question and the source express the same idea with different words.</dd></div>
+        <div><dt>Hybrid</dt><dd>Combine lexical and vector scores, then apply metadata filters or a reranker. For a heterogeneous archive, this is usually the most sensible starting architecture.</dd></div>
+        <div><dt>Agentic</dt><dd>A model may decompose a complex question, generate several searches, inspect results, and retrieve again. This can improve coverage but adds cost, latency, and new failure surfaces.</dd></div>
+        <div><dt>Ask</dt><dd>Which approach would you choose for a known document ID? Which would you choose for a vaguely worded theme?</dd></div>
+        <div><dt>Transition</dt><dd>The practical build begins with vector retrieval because it makes embeddings and similarity visible. Hybrid retrieval is the natural next extension.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noreferrer">Lewis et al. · Retrieval-Augmented Generation</a> · <a href="https://arxiv.org/abs/2312.10997" target="_blank" rel="noreferrer">Gao et al. · RAG survey</a> · <a href="https://arxiv.org/abs/2501.09136" target="_blank" rel="noreferrer">Singh et al. · Agentic RAG survey</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide paper rag-starter-data-slide" id="slide-rag-starter-data" data-title="Meet the 20-page starter corpus" data-time="Practical RAG · 5 min" aria-labelledby="title-rag-starter-data">
+      <div class="slide-content rag-starter-data-layout">
+        <div><p class="eyebrow">A simpler first build · fictional teaching data</p><h2 id="title-rag-starter-data">Start with 20 pages you can understand.</h2></div>
+        <div class="rag-starter-data-stage">
+          <section class="rag-starter-manifest" aria-label="Starter corpus manifest">
+            <div class="rag-starter-stats"><strong>10</strong><span>documents</span><strong>20</strong><span>pages</span><strong>7</strong><span>starter questions</span></div>
+            <ol>
+              <li>Program overview</li><li>Weekly schedule</li><li>Methods workshops</li><li>Computing + data</li><li>Responsible AI</li>
+              <li>Mentoring + support</li><li>Team projects</li><li>Accessibility</li><li>Fieldwork + expenses</li><li>Demo day + FAQ</li>
+            </ol>
+          </section>
+          <section class="rag-starter-sample" aria-label="Sample cross-document question and excerpts">
+            <p><span>Starter question</span>I have no Python experience. What should I attend first, and where can I get help?</p>
+            <blockquote><b>Methods Workshops · p.1</b>“The Python Foundations clinic is intended for students with little or no programming experience.”</blockquote>
+            <blockquote><b>Mentoring + Support · p.1</b>“Technical debugging hours are held Wednesday from noon to 1:00 p.m.”</blockquote>
+            <blockquote><b>Weekly Schedule · p.1</b>“Wednesday build labs meet … in the Innovation Library, room 406.”</blockquote>
+          </section>
+        </div>
+        <div class="rag-starter-links"><a href="../labs/00_rag_starter/rag_starter_student_kit.zip" download>Download the complete starter kit ↓</a><a href="../labs/00_rag_starter/data/rag_starter_corpus.pdf" target="_blank">Open the 20-page PDF ↗</a><a href="../labs/00_rag_starter/README.md" target="_blank">Open instructions ↗</a></div>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for introducing the starter RAG corpus"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Give everyone a small source collection that requires no specialized background knowledge before introducing implementation choices.</dd></div>
+        <div><dt>Say</dt><dd>“This is a fictional graduate-program corpus: ten documents, two pages each. You receive the combined PDF, page-preserving text, starter questions, and code. There are no real personal records.”</dd></div>
+        <div><dt>Do</dt><dd>Open the PDF. Predict which documents should answer the starter question before searching. Point out that a good answer requires more than one document.</dd></div>
+        <div><dt>Why text too</dt><dd>The first build uses clean page-preserving text so we can learn RAG rather than OCR. The combined PDF remains the human-facing source and can support a later PDF-extraction extension.</dd></div>
+        <div><dt>Transition</dt><dd>Now take this exact corpus through the smallest complete implementation.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/00_rag_starter/data/source_manifest.json" target="_blank">Course-authored corpus manifest</a> · <a href="../labs/00_rag_starter/data/questions.json" target="_blank">Starter questions</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide teal rag-starter-build-slide" id="slide-rag-starter-build" data-title="Build an inspectable RAG interface" data-time="Practical RAG · 30 min" aria-labelledby="title-rag-starter-build">
+      <div class="slide-content rag-starter-build-layout">
+        <div><p class="eyebrow">Hands-on implementation · retrieval first</p><h2 id="title-rag-starter-build">Build the smallest useful RAG system—one visible step at a time.</h2></div>
+        <ol class="rag-starter-pipeline" aria-label="Six steps in the starter RAG implementation">
+          <li><span>01</span><strong>Inspect</strong><p>Read the PDF and predict the source.</p></li>
+          <li><span>02</span><strong>Chunk</strong><p>120 words · 25-word overlap · keep page metadata.</p></li>
+          <li><span>03</span><strong>Embed</strong><p><code>text-embedding-3-small</code></p></li>
+          <li><span>04</span><strong>Store</strong><p>Chunks + vectors in one local JSON index.</p></li>
+          <li><span>05</span><strong>Retrieve</strong><p>Embed the question · cosine · top-k.</p></li>
+          <li><span>06</span><strong>Interface</strong><p>Show source, page, score, and passage.</p></li>
+        </ol>
+        <div class="rag-starter-commands">
+          <code>python chunk.py --size 120 --overlap 25</code>
+          <code>python build_index.py --model text-embedding-3-small</code>
+          <code>streamlit run app.py</code>
+        </div>
+        <div class="rag-starter-build-bottom"><p><span>Using Codex?</span>Open the starter folder and follow five bounded milestones: inspect → chunk → embed → retrieve → interface.</p><a href="../labs/00_rag_starter/CODEX_GUIDE.md" target="_blank">Open the Codex build guide ↗</a><strong>Stop before answer generation. First make retrieval understandable.</strong></div>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for building the starter RAG interface"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Provide a complete but intentionally small implementation path that ends in a working evidence interface.</dd></div>
+        <div><dt>Model choice</dt><dd>Use text-embedding-3-small for the first build: it is a current OpenAI embedding model, works through a simple embeddings API request, and avoids local model setup. The model name is configurable and is stored with the index. The query and document chunks must use the same embedding model.</dd></div>
+        <div><dt>Why JSON</dt><dd>Thirty-four chunks do not require a vector database. A JSON index keeps the metadata and vectors visible. Infrastructure can be added when the corpus makes it necessary.</dd></div>
+        <div><dt>Using Codex</dt><dd>Ask Codex to complete one milestone at a time, run it, and explain the transformation. Do not ask for “a complete RAG app” in one prompt; the learning lives in the intermediate artifacts.</dd></div>
+        <div><dt>Time</dt><dd>Five minutes to inspect, five to chunk, five to embed, five to trace retrieval, and ten to launch and modify the interface.</dd></div>
+        <div><dt>Hold</dt><dd>Do not add generation or evaluation yet. The first success criterion is being able to explain why each displayed passage was returned and trace it to a page.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="https://developers.openai.com/api/reference/resources/embeddings/methods/create" target="_blank" rel="noreferrer">OpenAI Embeddings API</a> · <a href="https://developers.openai.com/api/docs/models/text-embedding-3-small" target="_blank" rel="noreferrer">text-embedding-3-small model page</a> · <a href="../labs/00_rag_starter/README.md" target="_blank">Course implementation guide</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide dark rag-api-slide" id="slide-rag-api-key" data-title="Set up API access safely" data-time="Practical RAG · before Prompt 4" aria-labelledby="title-rag-api-key">
+      <div class="slide-content rag-api-layout">
+        <div><p class="eyebrow">One manual boundary · everything else can be copy-pasted</p><h2 id="title-rag-api-key">Your API key stays local—and Codex never needs to see it.</h2></div>
+        <ol class="rag-api-steps" aria-label="Three steps for configuring API access">
+          <li><span>01</span><strong>Create or obtain access</strong><p>Use an API project key or the course’s managed route.</p><a href="https://platform.openai.com/api-keys" target="_blank" rel="noreferrer">Open API keys ↗</a></li>
+          <li><span>02</span><strong>Store it locally</strong><p>Copy <code>.env.example</code> to <code>.env</code>. You paste the secret into that file yourself.</p></li>
+          <li><span>03</span><strong>Verify without printing</strong><p><code>python check_setup.py --require-key</code></p><a href="../labs/00_rag_starter/API_KEY_SETUP.md" target="_blank">Open the setup guide ↗</a></li>
+        </ol>
+        <section class="rag-api-prompt" aria-label="Copyable API setup prompt">
+          <div><span>Copy this into Codex</span><button type="button" data-copy-prompt data-copy-target="#apiKeyPrompt" aria-label="Copy the API setup prompt">Copy prompt</button></div>
+          <p id="apiKeyPrompt">Check whether this starter project can access the OpenAI API without showing or asking for the key. Use the project’s <code>.venv</code> Python to run <code>check_setup.py --require-key</code>. If the key is missing, open <code>API_KEY_SETUP.md</code>, copy <code>.env.example</code> to <code>.env</code> with a blank value, and stop so I can add the key myself. After I confirm, rerun the preflight. Never print or open the completed <code>.env</code> file.</p>
+        </section>
+        <p class="rag-api-rule"><b>Never:</b> paste the key into Codex or chat · commit <code>.env</code> · include the key in code, screenshots, or shared files.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for API-key setup"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Remove the most common setup blocker while making the security boundary explicit.</dd></div>
+        <div><dt>Say</dt><dd>“Codex can prepare and verify the setup, but you handle the secret. The preflight reports only whether a key is available; it never prints the value.”</dd></div>
+        <div><dt>Demonstrate</dt><dd>Show .env.example, copy it to .env, and point to the blank value. Do not enter a real key on the projector. Run the preflight using an already-configured presentation machine.</dd></div>
+        <div><dt>Alternative</dt><dd>If the course uses a managed API route, replace the personal-key step with the institution’s approved instructions and keep the same no-sharing rule.</dd></div>
+        <div><dt>Transition</dt><dd>With the secret boundary clear, run the seven prompts in order.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="https://developers.openai.com/api/docs/quickstart" target="_blank" rel="noreferrer">OpenAI API quickstart</a> · <a href="https://developers.openai.com/api/docs/models/text-embedding-3-small" target="_blank" rel="noreferrer">text-embedding-3-small model page</a> · <a href="../labs/00_rag_starter/API_KEY_SETUP.md" target="_blank">Course API-key guide</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide paper rag-prompt-slide" id="slide-rag-starter-prompts" data-title="Run the first POC with seven prompts" data-time="Practical RAG · prompt sequence" aria-labelledby="title-rag-starter-prompts">
+      <div class="slide-content rag-prompt-layout">
+        <div><p class="eyebrow">Your build instructions · paste into Codex one at a time</p><h2 id="title-rag-starter-prompts">Seven prompts take the first POC from files to a working search interface.</h2></div>
+        <div class="rag-prompt-stage">
+          <div class="rag-prompt-tabs" role="tablist" aria-label="RAG proof-of-concept prompt sequence">
+            <button class="is-active" type="button" role="tab" aria-selected="true" aria-controls="rag-prompt-1" data-rag-prompt-tab><span>01</span>Set up</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="rag-prompt-2" data-rag-prompt-tab><span>02</span>Inspect</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="rag-prompt-3" data-rag-prompt-tab><span>03</span>Chunk</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="rag-prompt-4" data-rag-prompt-tab><span>04</span>Embed</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="rag-prompt-5" data-rag-prompt-tab><span>05</span>Retrieve</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="rag-prompt-6" data-rag-prompt-tab><span>06</span>Interface</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="rag-prompt-7" data-rag-prompt-tab><span>07</span>Check</button>
+          </div>
+          <section class="rag-prompt-card" aria-live="polite">
+            <div class="rag-prompt-card-head"><span id="ragPromptPosition">Prompt 1 of 7</span><button id="ragPromptCopy" type="button">Copy prompt</button></div>
+            <ol class="rag-prompt-panels">
+              <li id="rag-prompt-1" role="tabpanel" data-rag-prompt-panel><p>Treat the folder containing <code>README.md</code>, <code>chunk.py</code>, and <code>data/</code> as the project root, regardless of its name. Detect my operating system. Create <code>.venv</code>, install the exact requirements, and run <code>check_setup.py</code> with that environment’s Python. Use the same Python for every later command. Keep sources in <code>data/</code>, generated data in <code>output/</code>, and code in the project root. Show the preflight results and stop.</p></li>
+              <li id="rag-prompt-2" role="tabpanel" data-rag-prompt-panel hidden><p>Read <code>data/source_manifest.json</code>, <code>data/questions.json</code>, and all ten source text files. Explain how pages and metadata are represented. For the first three questions, predict which documents should contain the evidence. Do not write or change code. Show the predictions and stop.</p></li>
+              <li id="rag-prompt-3" role="tabpanel" data-rag-prompt-panel hidden><p>Review <code>chunk.py</code>, then run it with 120-word chunks and a 25-word overlap. Confirm that <code>output/chunks.json</code> contains exactly 34 chunks. Show three neighboring chunks, identify their overlap, and verify title, filename, page, document type, document ID, and chunk ID. Diagnose any mismatch. Stop before embeddings.</p></li>
+              <li id="rag-prompt-4" role="tabpanel" data-rag-prompt-panel hidden><p>Use the project’s <code>.venv</code> Python to run <code>check_setup.py --require-key</code> without printing or requesting the key. If it is missing, follow <code>API_KEY_SETUP.md</code>, create a blank <code>.env</code>, and stop so I can add the key myself. After the preflight passes, run <code>build_index.py</code> with <code>text-embedding-3-small</code>. Confirm 34 vectors, source metadata, model name, and vector dimensions. Then stop.</p></li>
+              <li id="rag-prompt-5" role="tabpanel" data-rag-prompt-panel hidden><p>Review the provided <code>retrieve.py</code>; do not create another retrieval script. Run the first starter question and the Wednesday build-lab question with five results each. Show score, title, filename, page, document type, and passage. Explain the question embedding, cosine similarity, and top-k ranking. Stop before the interface.</p></li>
+              <li id="rag-prompt-6" role="tabpanel" data-rag-prompt-panel hidden><p>Review and preserve the existing <code>app.py</code>. Launch it with Streamlit and give me the local URL. Retrieve the first starter question with top-k set to five. Verify title, filename, page, document type, similarity score, and full passage for every result. Keep it retrieval-only: no generated answer and no vector database.</p></li>
+              <li id="rag-prompt-7" role="tabpanel" data-rag-prompt-panel hidden><p>Run <code>python retrieve.py --all --top-k 5</code> and compare each packet with <code>data/evaluation_questions.json</code>. Produce a seven-row table with question ID, expected document, top-five documents, and pass or investigate. For Q7, retrieve the corpus-boundary passage without inferring whether housing is provided. Confirm page traceability and finish with the exact commands to run the POC again.</p></li>
+            </ol>
+            <div class="rag-prompt-controls"><button id="ragPromptPrevious" type="button" disabled>← Previous</button><button id="ragPromptNext" type="button">Next prompt →</button></div>
+          </section>
+        </div>
+        <div class="rag-prompt-footer"><strong>One prompt → one visible result → one quick check.</strong><span>Do not ask for the whole app at once.</span><a href="../labs/00_rag_starter/CODEX_GUIDE.md" target="_blank">Open the complete prompt sheet ↗</a></div>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the RAG POC prompt sequence"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Provide an exact, copyable sequence for building the POC with Codex while keeping every intermediate transformation visible.</dd></div>
+        <div><dt>Demonstrate</dt><dd>Copy Prompt 1, paste it into Codex with the starter folder open, and wait for the result. Point out that each prompt contains a stopping condition for inspection before continuing.</dd></div>
+        <div><dt>Emphasize</dt><dd>The source data remains in data/source_txt. Derived chunks and the embedding index belong in output. The API key belongs in the environment, never in source code or chat.</dd></div>
+        <div><dt>Why seven</dt><dd>The sequence separates setup, understanding, chunking, embedding, retrieval, interface, and testing. If something fails, the responsible transformation is easier to locate.</dd></div>
+        <div><dt>Completion</dt><dd>The first POC is complete when the interface returns traceable passages and the absent-answer test exposes the corpus boundary. Answer generation comes later.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/00_rag_starter/CODEX_GUIDE.md" target="_blank">Course-authored prompt sequence</a> · <a href="../labs/00_rag_starter/README.md" target="_blank">Starter lab instructions</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="retired-slide lime opioid-challenges-slide" id="slide-opioid-challenges" hidden data-title="Five failure surfaces" data-time="Case 01 · 4 min" aria-labelledby="title-opioid-challenges">
+      <div class="slide-content opioid-challenges-layout">
+        <div><p class="eyebrow">Why the problem is hard</p><h2 id="title-opioid-challenges">The answer can fail long before the model writes a sentence.</h2></div>
+        <ol class="opioid-challenge-list">
+          <li><span>01</span><strong>OCR fidelity</strong><p>A damaged number, heading, or negation becomes missing evidence.</p></li>
+          <li><span>02</span><strong>Document genre</strong><p>A proposal, report, sales guide, and evaluation support different claims.</p></li>
+          <li><span>03</span><strong>Provenance</strong><p>A passage without document ID, page, and original URL is difficult to audit.</p></li>
+          <li><span>04</span><strong>Packet sufficiency</strong><p>The highest-ranked passage may not supply every source needed for comparison.</p></li>
+          <li><span>05</span><strong>Claim calibration</strong><p>Reported activity is not demonstrated implementation, effect, or causality.</p></li>
+        </ol>
+        <p class="opioid-challenges-bottom"><b>Debug the chain:</b> PDF → OCR → chunks → retrieval → context → answer → original page.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the opioid case challenges"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Give students a diagnostic map that will organize the remaining implementation slides and the hands-on exercise.</dd></div>
+        <div><dt>Ask</dt><dd>Which failure can make a perfectly obedient model produce an unsupported answer? Accept several answers, then trace them to a pipeline boundary.</dd></div>
+        <div><dt>Transition</dt><dd>Begin at the first transformation: a page becomes searchable text.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/01_opioid_evidence/README.md" target="_blank">Case lab · five implementation challenges</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="retired-slide paper opioid-ocr-slide" id="slide-opioid-ocr" hidden data-title="OCR is part of the evidence system" data-time="Case 01 · 3 min" aria-labelledby="title-opioid-ocr">
+      <div class="slide-content opioid-ocr-layout">
+        <div><p class="eyebrow">Challenge 01 · OCR fidelity</p><h2 id="title-opioid-ocr">If transcription damages the fact, retrieval never sees it.</h2></div>
+        <div class="opioid-ocr-comparison">
+          <figure><img src="../assets/images/opioid-case/walgreens-response-page.png" alt="Original public document page used for OCR" width="1275" height="1728" loading="lazy"><figcaption>Original page · ffgf0232 · page 2</figcaption></figure>
+          <i>→</i>
+          <blockquote><span>OCR output</span><p>“Walgreens was stocking Narcan in more than <mark>8,000 pharmacies</mark>…”</p><p>“…installed <mark>600 medication-disposal kiosks</mark>…”</p><footer>Text is searchable—but the original remains the source of truth.</footer></blockquote>
+        </div>
+        <div class="opioid-ocr-risks"><span>names</span><span>numbers</span><span>tables</span><span>negation</span><span>page boundaries</span></div>
+        <p class="opioid-ocr-rule"><b>OCR policy:</b> transcribe what is visible; flag uncertainty; do not silently infer missing text.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the OCR challenge slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Show that OCR is not clerical preprocessing; it determines what evidence can be found.</dd></div>
+        <div><dt>Say</dt><dd>“A retrieval system cannot recover a number the OCR changed. The original page is not decoration—it is the final verification surface.”</dd></div>
+        <div><dt>Ask</dt><dd>Which error would be most dangerous for your discipline: a name, number, table cell, or negation?</dd></div>
+        <div><dt>Transition</dt><dd>Preserve the information needed to return from any chunk to this page.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="https://www.industrydocuments.ucsf.edu/docs/ffgf0232" target="_blank" rel="noreferrer">Original archive record · ffgf0232</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="retired-slide teal opioid-provenance-slide" id="slide-opioid-provenance" hidden data-title="Every chunk needs provenance" data-time="Case 01 · 3 min" aria-labelledby="title-opioid-provenance">
+      <div class="slide-content opioid-provenance-layout">
+        <div><p class="eyebrow">Challenges 02–03 · Genre + provenance</p><h2 id="title-opioid-provenance">A chunk is useful only if it can lead back to the record.</h2></div>
+        <div class="opioid-chunk-example">
+          <div class="opioid-chunk-meta"><span>document_id</span><b>ffgf0232</b><span>genre</span><b>corporate response</b><span>source pages</span><b>2–3</b><span>original URL</span><b>/docs/ffgf0232</b></div>
+          <blockquote>“The statement also reports that Walgreens had installed 600 medication-disposal kiosks…”</blockquote>
+        </div>
+        <div class="opioid-claim-ladder">
+          <article><span>Supported</span><strong>The document reports that Walgreens installed kiosks.</strong></article>
+          <i>≠</i>
+          <article><span>Not established here</span><strong>The kiosks reduced overdose deaths.</strong></article>
+        </div>
+        <p class="opioid-provenance-rule">Metadata is not administrative overhead. It controls what claim the passage can responsibly support.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the provenance slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Connect chunk metadata to interpretation, not merely citation formatting.</dd></div>
+        <div><dt>Say</dt><dd>“The wording ‘reports that’ is not hedging for style. It encodes the source role.”</dd></div>
+        <div><dt>Ask</dt><dd>What additional evidence would be required to move from a reported action to an impact claim?</dd></div>
+        <div><dt>Transition</dt><dd>Now place OCR and provenance inside the full implementation.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/01_opioid_evidence/data/corpus/walgreens_response_excerpt.txt" target="_blank">Course teaching excerpt</a> · <a href="https://www.industrydocuments.ucsf.edu/docs/ffgf0232" target="_blank" rel="noreferrer">Original record</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="retired-slide dark opioid-architecture-slide" id="slide-opioid-architecture" hidden data-title="End-to-end implementation" data-time="Case 01 · 4 min" aria-labelledby="title-opioid-architecture">
+      <div class="slide-content opioid-architecture-layout">
+        <div><p class="eyebrow">The implementation</p><h2 id="title-opioid-architecture">Separate ingestion, retrieval, synthesis, and audit.</h2></div>
+        <ol class="opioid-pipeline" aria-label="End-to-end evidence discovery pipeline">
+          <li><span>01</span><strong>Ingest</strong><p>Public PDFs + source IDs</p></li>
+          <li><span>02</span><strong>OCR</strong><p>Text + pages + uncertainty</p></li>
+          <li><span>03</span><strong>Index</strong><p>Chunks + metadata</p></li>
+          <li><span>04</span><strong>Retrieve</strong><p>BM25 · embeddings · hybrid</p></li>
+          <li><span>05</span><strong>Synthesize</strong><p>Bounded answer or refusal</p></li>
+          <li><span>06</span><strong>Audit</strong><p>Open the original page</p></li>
+        </ol>
+        <div class="opioid-implementation-split">
+          <article><span>Production workbench</span><p>Python web app · preprocessing job · persistent index/cache · selectable retrieval · grounded review.</p></article>
+          <article><span>Classroom replica</span><p>Five excerpts · 15 chunks · TF-IDF/cosine · optional API · exact filename and quote checks.</p></article>
+        </div>
+        <p class="opioid-human-gates"><b>Human gates:</b> approve the question → approve the evidence packet → approve the claim.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the implementation architecture"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Expose the full system and keep the original workbench distinct from the small reproducible lab.</dd></div>
+        <div><dt>Say</dt><dd>“The model appears late. Most reliability work happens in corpus preparation, retrieval, metadata, and verification.”</dd></div>
+        <div><dt>Clarify</dt><dd>The production project supports BM25, embedding, and hybrid retrieval. The classroom replica uses transparent lexical vectors so students can inspect every boundary without credentials.</dd></div>
+        <div><dt>Transition</dt><dd>Zoom into the stage that decides what the model is allowed to read.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/01_opioid_evidence/README.md" target="_blank">Classroom implementation</a> · <a href="https://arxiv.org/abs/2005.11401" target="_blank" rel="noreferrer">Lewis et al. · Retrieval-Augmented Generation</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="retired-slide paper opioid-retrieval-slide" id="slide-opioid-retrieval" hidden data-title="Retrieval determines the evidence packet" data-time="Case 01 · 4 min" aria-labelledby="title-opioid-retrieval">
+      <div class="slide-content opioid-retrieval-layout">
+        <div><p class="eyebrow">Challenge 04 · Packet sufficiency</p><h2 id="title-opioid-retrieval">Relevant is not the same as sufficient.</h2></div>
+        <p class="opioid-query">Compare prevention and oversight in two public-facing documents with product messaging in the internal sales guide.</p>
+        <div class="opioid-retrieval-methods">
+          <article><span>BM25 / lexical</span><strong>Matches exact terms well</strong><p>Useful for names, products, document IDs, and quoted phrases.</p></article>
+          <article><span>Embeddings / semantic</span><strong>Matches related concepts</strong><p>Useful when the query and passage use different wording.</p></article>
+          <article class="opioid-retrieval-hybrid"><span>Hybrid</span><strong>Combines both signals</strong><p>Still requires filters, top_k choices, and a sufficiency check.</p></article>
+        </div>
+        <div class="opioid-packet-test"><b>Needed packet</b><span>corporate response</span><i>+</i><span>policy paper</span><i>+</i><span>sales guide</span><strong>top_k = 1 cannot satisfy the question.</strong></div>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the retrieval slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Separate similarity ranking from the research judgment that a packet contains every source required by the question.</dd></div>
+        <div><dt>Say</dt><dd>“The highest-ranked passage can be genuinely relevant and still leave the comparison impossible.”</dd></div>
+        <div><dt>Ask</dt><dd>Which words in the question signal that three source roles—not merely three chunks—are required?</dd></div>
+        <div><dt>Transition</dt><dd>Add a bounded decision loop that can search, inspect, and compare without granting unrestricted action.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/01_opioid_evidence/lab.py" target="_blank">Course retrieval implementation</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="retired-slide teal opioid-agentic-slide" id="slide-opioid-agentic" hidden data-title="Where evidence discovery becomes agentic" data-time="Case 01 · 3 min" aria-labelledby="title-opioid-agentic">
+      <div class="slide-content opioid-agentic-layout">
+        <div><p class="eyebrow">The agentic layer</p><h2 id="title-opioid-agentic">RAG retrieves. An agent chooses the next bounded research step.</h2></div>
+        <div class="opioid-agent-loop">
+          <ol><li><span>1</span><b>Plan</b><small>What evidence roles are required?</small></li><li><span>2</span><b>Search</b><small>Call an allowed retrieval tool.</small></li><li><span>3</span><b>Inspect</b><small>Open pages and read metadata.</small></li><li><span>4</span><b>Compare</b><small>Check coverage and contradictions.</small></li><li><span>5</span><b>Draft</b><small>Produce a bounded evidence memo.</small></li></ol>
+          <div class="opioid-agent-boundary"><span>Permissions</span><strong>May</strong><p>search · open · compare · draft</p><strong>May not</strong><p>add interview data · hide sources · infer intent · issue medical guidance · publish a final claim</p></div>
+        </div>
+        <p class="opioid-agent-owner"><b>Researcher:</b> question, inclusion rules, source interpretation, final claim, and approval.</p>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the agentic evidence discovery slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Connect the fixed RAG pipeline to the current agentic moment without overstating the production system.</dd></div>
+        <div><dt>Say</dt><dd>“Agency is not magic. It is a model choosing among named tools inside permissions and feedback.”</dd></div>
+        <div><dt>Clarify</dt><dd>The classroom lab executes the stages manually. This slide shows the bounded loop a production research agent could add on top.</dd></div>
+        <div><dt>Transition</dt><dd>Define the tests that would justify trusting this loop for research assistance.</dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="retired-slide lime opioid-evaluation-slide" id="slide-opioid-evaluation" hidden data-title="Evaluate the evidence chain" data-time="Case 01 · 3 min" aria-labelledby="title-opioid-evaluation">
+      <div class="slide-content opioid-evaluation-layout">
+        <div><p class="eyebrow">Evaluation before deployment</p><h2 id="title-opioid-evaluation">Score the evidence chain—not the smoothness of the answer.</h2></div>
+        <div class="opioid-evaluation-grid">
+          <article><span>01</span><strong>Evidence coverage</strong><p>Did the packet include every document role required by the question?</p></article>
+          <article><span>02</span><strong>Answerability</strong><p>Did the system refuse when no outcome evaluation was present?</p></article>
+          <article><span>03</span><strong>Provenance</strong><p>Did filename, page, genre, and original URL resolve?</p></article>
+          <article><span>04</span><strong>Claim calibration</strong><p>Did the answer distinguish reported action, proposal, messaging, and evaluated effect?</p></article>
+        </div>
+        <div class="opioid-test-questions"><span>single source</span><b>What did Walgreens report?</b><span>multiple sources</span><b>How did public response differ from sales messaging?</b><span>absent outcome</span><b>Did the measures reduce deaths?</b></div>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the evidence evaluation slide"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Give students a practical evaluation framework independent of model brand or answer style.</dd></div>
+        <div><dt>Say</dt><dd>“A polished answer with the wrong source roles is a failure. A clear ‘not found’ can be a success.”</dd></div>
+        <div><dt>Ask</dt><dd>Which test would a generic language-model benchmark miss?</dd></div>
+        <div><dt>Transition</dt><dd>Run one comparison twice and watch the evidence packet change.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/01_opioid_evidence/data/questions.json" target="_blank">Course evaluation questions</a> · <a href="../labs/01_opioid_evidence/TRACE_TEMPLATE.md" target="_blank">Evidence discovery trace</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="retired-slide dark opioid-demo-slide" id="slide-opioid-demo" hidden data-title="Instructor demo · break retrieval" data-time="Case 01 · 5 min" aria-labelledby="title-opioid-demo">
+      <div class="slide-content opioid-demo-layout">
+        <div><p class="eyebrow">Instructor demo · one question, two packets</p><h2 id="title-opioid-demo">The best passage is not enough for a comparison.</h2></div>
+        <div class="opioid-demo-commands">
+          <article><span>top_k = 3</span><code>python 01_opioid_evidence/lab.py --question "Compare prevention and oversight…"</code><div><b>✓ Walgreens response</b><b>✓ Mallinckrodt policy</b><b>✓ Sales guide</b></div><p>Packet covers all three source roles.</p></article>
+          <article class="opioid-demo-broken"><span>top_k = 1</span><code>add --top-k 1</code><div><b>✓ one relevant passage</b><b>✕ two required genres</b></div><p>Retrieval fails before generation begins.</p></article>
+        </div>
+        <p class="opioid-demo-diagnosis"><b>Diagnosis:</b> the model did not receive enough evidence. Rewriting the answer prompt cannot restore missing sources.</p>
+        <a class="lab-slide-link light-link" href="../labs/01_opioid_evidence/README.md" target="_blank">Open the complete Case 01 lab ↗</a>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the opioid retrieval demo"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Demonstrate a visible retrieval failure before students run the system themselves.</dd></div>
+        <div><dt>Do</dt><dd>Ask students to predict the three source roles. Run top_k 3, then top_k 1. Do not generate prose until the class judges packet sufficiency.</dd></div>
+        <div><dt>Say</dt><dd>“Similarity answers which passage ranks first. It does not know that the research question requires a comparison across genres.”</dd></div>
+        <div><dt>Transition</dt><dd>Students now build the packet manually, compare it with retrieval, and test an absent outcome.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/01_opioid_evidence/README.md" target="_blank">Case lab · exact demo commands</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="retired-slide paper opioid-lab-slide" id="slide-opioid-lab" hidden data-title="Student lab · evidence discovery" data-time="Case 01 · 18 min" aria-labelledby="title-opioid-lab">
+      <div class="slide-content opioid-lab-layout">
+        <div><p class="eyebrow">Student lab · 18 minutes</p><h2 id="title-opioid-lab">Build the packet. Break retrieval. Refuse the unsupported claim.</h2></div>
+        <ol class="opioid-lab-steps">
+          <li><span>1 · Source roles · 5 min</span><strong>Read the five excerpts.</strong><p>Label report, proposal, internal message, or evaluation. Select three passages manually.</p></li>
+          <li><span>2 · Retrieval · 7 min</span><strong>Compare top_k 3 with top_k 1.</strong><p>Record what each packet can—and cannot—support.</p></li>
+          <li><span>3 · Answerability · 6 min</span><strong>Ask whether measures reduced overdose deaths.</strong><p>Write “not found,” verify one quote at the original URL, and name the missing evidence.</p></li>
+        </ol>
+        <div class="opioid-lab-paths"><article><span>Code path</span><code>python 01_opioid_evidence/lab.py --show-chunks</code><p>Inspect the offline packet first; add <code>--api</code> only after the evidence audit.</p></article><article><span>No-code path</span><strong>Human retrieval</strong><p>Search the five files, select at most three passages, preserve genre and URL, then answer directly or supply only that packet to a model.</p></article></div>
+        <p class="opioid-lab-roles"><b>In groups of three:</b> Retriever selects passages. Source Auditor checks genre and original record. Claim Auditor approves the final wording.</p>
+        <a class="lab-slide-link" href="../labs/01_opioid_evidence/README.md" target="_blank">Open Case 01 instructions and worksheet ↗</a>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the opioid evidence student lab"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Make students perform every research judgment the automated system might otherwise hide.</dd></div>
+        <div><dt>Time</dt><dd>Five minutes for source roles and a manual packet, seven for retrieval comparison, and six for the absent-outcome test and source verification.</dd></div>
+        <div><dt>Success</dt><dd>Each pair leaves with a three-source packet, a top_k failure diagnosis, a verified original quote, and a refusal calibrated to the missing outcome evidence.</dd></div>
+        <div><dt>Transition</dt><dd>Close by assigning acceleration to the system and interpretation to the researcher.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/01_opioid_evidence/README.md" target="_blank">Student instructions</a> · <a href="../labs/01_opioid_evidence/TRACE_TEMPLATE.md" target="_blank">Evidence discovery worksheet</a></dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="slide coral opioid-close-slide" id="slide-opioid-close" data-title="What the system can—and cannot—do" data-time="Case 01 · 2 min" aria-labelledby="title-opioid-close">
+      <div class="slide-content opioid-close-layout">
+        <p class="eyebrow">Case 01 · what to keep</p>
+        <h2 id="title-opioid-close">RAG accelerates discovery.<br>The researcher decides what the evidence supports.</h2>
+        <div class="opioid-close-split"><article><span>The system helps</span><p>chunk · embed · retrieve · rank · trace</p></article><article><span>The researcher owns</span><p>question · sufficiency · interpretation · uncertainty · final claim</p></article></div>
+        <p class="opioid-close-final"><b>A successful first POC</b> returns the right passage, preserves its source, and recognizes when the documents do not contain the answer.</p>
+        <div class="break-mark" aria-hidden="true">→</div>
+      </div>
+      <aside class="speaker-notes" aria-label="Presenter notes for the opioid evidence case close"><p class="notes-label">Presenter notes</p><dl>
+        <div><dt>Purpose</dt><dd>Close the case immediately after the practical build by separating system capability from research responsibility.</dd></div>
+        <div><dt>Say</dt><dd>“The POC succeeds when it retrieves traceable evidence and exposes the corpus boundary. Fluent prose is not the test.”</dd></div>
+        <div><dt>Ask</dt><dd>Which judgment in this workflow should remain explicitly human?</dd></div>
+        <div><dt>Transition</dt><dd>The next case changes the task: instead of finding passages across documents, convert differently written records into a consistent schema.</dd></div>
+      </dl></aside>
+    </section>
+
+    <section class="retired-slide teal case-opener-slide rag-problem-slide" id="slide-30" hidden data-title="Define the RAG problem" data-time="RAG · 2 min" aria-labelledby="title-30">
       <div class="slide-content rag-problem-layout">
         <div>
           <p class="eyebrow">Case 01 · Grounded question answering</p>
@@ -1095,11 +1635,11 @@
           <div><dt>Clarify</dt><dd>The input is an administrator’s question plus the five files. A successful output is either a supported answer with a real filename or an explicit ‘not found.’ Doctoral completion is the absent-answer test: it sounds relevant, but the corpus never measured it.</dd></div>
           <div><dt>Ask</dt><dd>What wording would make “not found” a successful answer rather than a failure?</dd></div>
           <div><dt>Transition</dt><dd>Before building anything, ask why a capable language model cannot solve this evidence-bound task from the question alone.</dd></div>
-          <div><dt>[Sources]</dt><dd><a href="../labs/02_grounded_qa/README.md" target="_blank">Course lab · Grounded question answering</a> · <a href="../labs/02_grounded_qa/data/questions.json" target="_blank">Course test questions</a></dd></div>
+          <div><dt>[Sources]</dt><dd><a href="../labs/01_opioid_evidence/README.md" target="_blank">Course lab · Grounded question answering</a> · <a href="../labs/01_opioid_evidence/data/questions.json" target="_blank">Course test questions</a></dd></div>
         </dl></aside>
     </section>
 
-    <section class="slide dark rag-corpus-slide" id="slide-rag-corpus" data-title="Meet the five-file corpus" data-time="RAG · 3 min" aria-labelledby="title-rag-corpus">
+    <section class="retired-slide dark rag-corpus-slide" id="slide-rag-corpus" hidden data-title="Meet the five-file corpus" data-time="RAG · 3 min" aria-labelledby="title-rag-corpus">
       <div class="slide-content rag-corpus-layout">
         <div><p class="eyebrow">Meet the raw material</p><h2 id="title-rag-corpus">Before searching, know what is—and is not—in the files.</h2></div>
         <div class="corpus-preview">
@@ -1124,11 +1664,11 @@
         <div><dt>Do</dt><dd>Ask pairs to point to a likely file for the single-source question, two files for the attendance-and-barrier question, and the evidence they would need—but do not have—for doctoral completion.</dd></div>
         <div><dt>Say</dt><dd>“Retrieval cannot find evidence that is absent. It can only rank the material we actually supplied.”</dd></div>
         <div><dt>Transition</dt><dd>Now explain why this evidence-access problem cannot be solved by polishing the writing prompt.</dd></div>
-        <div><dt>[Sources]</dt><dd><a href="../labs/02_grounded_qa/data/corpus/overview.txt" target="_blank">Course corpus · overview</a> · <a href="../labs/02_grounded_qa/data/corpus/attendance.txt" target="_blank">attendance</a> · <a href="../labs/02_grounded_qa/data/corpus/implementation.txt" target="_blank">implementation</a> · <a href="../labs/02_grounded_qa/data/corpus/evaluation.txt" target="_blank">evaluation</a> · <a href="../labs/02_grounded_qa/data/corpus/budget.txt" target="_blank">budget</a></dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/01_opioid_evidence/data/corpus/overview.txt" target="_blank">Course corpus · overview</a> · <a href="../labs/01_opioid_evidence/data/corpus/attendance.txt" target="_blank">attendance</a> · <a href="../labs/01_opioid_evidence/data/corpus/implementation.txt" target="_blank">implementation</a> · <a href="../labs/01_opioid_evidence/data/corpus/evaluation.txt" target="_blank">evaluation</a> · <a href="../labs/01_opioid_evidence/data/corpus/budget.txt" target="_blank">budget</a></dd></div>
       </dl></aside>
     </section>
 
-    <section class="slide paper rag-slide" id="slide-31" data-title="Why this case needs RAG" data-time="RAG · 2 min" aria-labelledby="title-31">
+    <section class="retired-slide paper rag-slide" id="slide-31" hidden data-title="Why this case needs RAG" data-time="RAG · 2 min" aria-labelledby="title-31">
       <div class="slide-content rag-need-layout">
         <div><p class="eyebrow">Why RAG?</p><h2 id="title-31">This is an evidence-access problem—not a writing problem.</h2></div>
         <div class="rag-paths" aria-label="Prompt-only answering compared with retrieval-augmented generation">
@@ -1147,7 +1687,7 @@
         </dl></aside>
     </section>
 
-    <section class="slide lime test-set-slide" id="slide-32" data-title="Student lab · three evidence tests" data-time="RAG · 18 min" aria-labelledby="title-32">
+    <section class="retired-slide lime test-set-slide" id="slide-32" hidden data-title="Student lab · three evidence tests" data-time="RAG · 18 min" aria-labelledby="title-32">
       <div class="slide-content test-set-layout">
         <div><p class="eyebrow">Student lab · 18 minutes</p><h2 id="title-32">Choose the evidence first. Then test retrieval.</h2></div>
         <div class="question-test-grid">
@@ -1156,11 +1696,11 @@
           <article class="absent-test"><span>Challenge · absent answer</span><strong>Did doctoral completion increase?</strong><p>What would count as a successful refusal?</p></article>
         </div>
         <div class="rag-participation-paths">
-          <article><span>Code path</span><code>python 02_grounded_qa/lab.py --show-chunks</code><p>Use the printed top-three chunks as the evidence packet. Add <code>--api</code> only after checking it.</p></article>
+          <article><span>Code path</span><code>python 01_opioid_evidence/lab.py --show-chunks</code><p>Use the printed top-three chunks as the evidence packet. Add <code>--api</code> only after checking it.</p></article>
           <article><span>No-code path</span><strong>Manual retrieval</strong><p>Open the five files. Choose at most three passages, label each filename, then paste only those passages into a model—or answer directly.</p></article>
         </div>
         <p class="pair-roles"><b>In pairs:</b> Human Retriever predicts and selects passages first. System Operator runs retrieval. Both compare packets; the Auditor verifies filenames and one exact quote.</p>
-        <a class="lab-slide-link" href="../labs/02_grounded_qa/README.md" target="_blank">Open the grounded Q&amp;A lab ↗</a>
+        <a class="lab-slide-link" href="../labs/01_opioid_evidence/README.md" target="_blank">Open the grounded Q&amp;A lab ↗</a>
       </div>
       <aside class="speaker-notes" aria-label="Presenter notes for slide 33">
         <p class="notes-label">Presenter notes</p><dl>
@@ -1172,11 +1712,11 @@
           <div><dt>Success</dt><dd>Each pair leaves with at least two complete trace rows, one human-versus-system packet comparison, a verified quotation, and an explicit not-found judgment or failure diagnosis.</dd></div>
           <div><dt>Say</dt><dd>“The absent-answer test may be the most important. It measures whether the system can preserve ignorance.”</dd></div>
           <div><dt>Transition</dt><dd>Collect failures in a two-by-two that distinguishes evidence access from evidence use.</dd></div>
-          <div><dt>[Sources]</dt><dd><a href="../labs/02_grounded_qa/data/questions.json" target="_blank">Course lab · test questions</a></dd></div>
+          <div><dt>[Sources]</dt><dd><a href="../labs/01_opioid_evidence/data/questions.json" target="_blank">Course lab · test questions</a></dd></div>
         </dl></aside>
     </section>
 
-    <section class="slide paper rag-debrief-slide" id="slide-33" data-title="Diagnose the layer" data-time="RAG · 3 min" aria-labelledby="title-33">
+    <section class="retired-slide paper rag-debrief-slide" id="slide-33" hidden data-title="Diagnose the layer" data-time="RAG · 3 min" aria-labelledby="title-33">
       <div class="slide-content rag-debrief-layout">
         <div><p class="eyebrow">Debrief</p><h2 id="title-33">Do not tune the answer when search is broken.</h2></div>
         <div class="diagnostic-matrix" role="table" aria-label="Retrieval and answer diagnostic matrix">
@@ -1195,12 +1735,12 @@
         </dl></aside>
     </section>
 
-    <section class="slide coral lab-break-slide" id="slide-34" data-title="What RAG changes" data-time="RAG · 1 min" aria-labelledby="title-34">
+    <section class="retired-slide coral lab-break-slide" id="slide-34" hidden data-title="What RAG changes" data-time="RAG · 1 min" aria-labelledby="title-34">
       <div class="slide-content lab-break-layout"><p class="eyebrow">RAG · the takeaway</p><h2 id="title-34">Grounded does not mean correct. It means inspectable.</h2><p>Retrieval gives us evidence to examine. It does not remove retrieval errors, unsupported inference, or the need to verify.</p><div class="break-mark" aria-hidden="true">→</div></div>
       <aside class="speaker-notes" aria-label="Presenter notes for slide 35"><p class="notes-label">Presenter notes</p><dl><div><dt>Purpose</dt><dd>State the motivation and limitation of RAG in one memorable sentence.</dd></div><div><dt>Say</dt><dd>“RAG changes the information available at answer time. It does not change the model’s weights, guarantee that the right passage was retrieved, or prove that the answer used the passage correctly.”</dd></div><div><dt>Ask</dt><dd>Which failure would you rather debug first: the wrong document entered context, or the right document entered but the answer misread it?</dd></div><div><dt>Transition</dt><dd>Change the task from answering across documents to extracting one consistent, comparable record at a time.</dd></div></dl></aside>
     </section>
 
-    <section class="slide coral agent-problem-slide" id="slide-agent-problem" data-title="Case 3 · Agentic data analysis" data-time="Data agent · 4 min" aria-labelledby="title-agent-problem">
+    <section class="retired-slide coral agent-problem-slide" id="slide-agent-problem" hidden data-title="Case 3 · Agentic data analysis" data-time="Data agent · 4 min" aria-labelledby="title-agent-problem">
       <div class="slide-content agent-problem-layout">
         <div class="problem-heading"><p class="eyebrow">Case 03 · Agentic data analysis</p><h2 id="title-agent-problem">Can an agentic analyst answer responsibly from these 48 records?</h2></div>
         <div class="problem-statement">
@@ -1224,7 +1764,7 @@
       </dl></aside>
     </section>
 
-    <section class="slide paper agent-question-slide" id="slide-agent-question" data-title="Descriptive is not causal" data-time="Data agent · 4 min" aria-labelledby="title-agent-question">
+    <section class="retired-slide paper agent-question-slide" id="slide-agent-question" hidden data-title="Descriptive is not causal" data-time="Data agent · 4 min" aria-labelledby="title-agent-question">
       <div class="slide-content agent-question-layout">
         <div><p class="eyebrow">First distinction</p><h2 id="title-agent-question">“Did AI improve outcomes?” contains two different questions.</h2></div>
         <div class="question-pair">
@@ -1242,7 +1782,7 @@
       </dl></aside>
     </section>
 
-    <section class="slide teal agent-data-slide" id="slide-agent-data" data-title="The dataset hides a composition problem" data-time="Data agent · 3 min" aria-labelledby="title-agent-data">
+    <section class="retired-slide teal agent-data-slide" id="slide-agent-data" hidden data-title="The dataset hides a composition problem" data-time="Data agent · 3 min" aria-labelledby="title-agent-data">
       <div class="slide-content agent-data-layout">
         <div><p class="eyebrow">Inspect before comparing</p><h2 id="title-agent-data">Overall groups are equal. Within track, they are not.</h2></div>
         <div class="dataset-facts"><span><b>48</b> records</span><span><b>24</b> AI users</span><span><b>24</b> non-users</span><span><b>2</b> missing attendance values</span></div>
@@ -1262,7 +1802,7 @@
       </dl></aside>
     </section>
 
-    <section class="slide paper agent-raw-data-slide" id="slide-agent-raw-data" data-title="Meet the analysis dataset" data-time="Data agent · 3 min" aria-labelledby="title-agent-raw-data">
+    <section class="retired-slide paper agent-raw-data-slide" id="slide-agent-raw-data" hidden data-title="Meet the analysis dataset" data-time="Data agent · 3 min" aria-labelledby="title-agent-raw-data">
       <div class="slide-content agent-raw-data-layout">
         <div><p class="eyebrow">Meet the raw data</p><h2 id="title-agent-raw-data">Start with rows—not conclusions.</h2></div>
         <div class="raw-data-table" role="table" aria-label="Six example records from the program outcomes dataset">
@@ -1287,7 +1827,7 @@
       </dl></aside>
     </section>
 
-    <section class="slide dark data-case-slide" id="slide-35" data-title="The first calculation answers too little" data-time="Data agent · 3 min" aria-labelledby="title-35">
+    <section class="retired-slide dark data-case-slide" id="slide-35" hidden data-title="The first calculation answers too little" data-time="Data agent · 3 min" aria-labelledby="title-35">
       <div class="slide-content data-case-layout">
         <div><p class="eyebrow">The tempting aggregate</p><h2 id="title-35">The first calculation answers too little.</h2><p class="lead">It describes the two mixed groups. It does not isolate an AI effect.</p></div>
         <div class="aggregate-stat"><span>Mean score gain</span><div><article><b>AI users</b><strong>+8.17</strong></article><article><b>Non-users</b><strong>+10.50</strong></article></div><p>Surface difference <em>−2.33 points</em></p></div>
@@ -1302,7 +1842,7 @@
         </dl></aside>
     </section>
 
-    <section class="slide teal agent-loop-slide" id="slide-36" data-title="An agent is a loop plus permissions" data-time="Data agent · 3 min" aria-labelledby="title-36">
+    <section class="retired-slide teal agent-loop-slide" id="slide-36" hidden data-title="An agent is a loop plus permissions" data-time="Data agent · 3 min" aria-labelledby="title-36">
       <div class="slide-content agent-loop-layout">
         <div><p class="eyebrow">What makes this agentic?</p><h2 id="title-36">The model chooses. Code executes. Results return.</h2></div>
         <div class="agent-cycle" aria-label="Tool-using agent loop">
@@ -1320,7 +1860,7 @@
         </dl></aside>
     </section>
 
-    <section class="slide dark agent-demo-slide" id="slide-agent-demo" data-title="Instructor demo · reveal the reversal" data-time="Data agent · 4 min" aria-labelledby="title-agent-demo">
+    <section class="retired-slide dark agent-demo-slide" id="slide-agent-demo" hidden data-title="Instructor demo · reveal the reversal" data-time="Data agent · 4 min" aria-labelledby="title-agent-demo">
       <div class="slide-content agent-demo-layout">
         <div><p class="eyebrow">Instructor demo · two tool calls</p><h2 id="title-agent-demo">Run the next comparison before writing the story.</h2></div>
         <div class="demo-reversal">
@@ -1341,7 +1881,7 @@
       </dl></aside>
     </section>
 
-    <section class="slide paper trace-slide" id="slide-37" data-title="Audit the trace, not the prose" data-time="Data agent · 20 min" aria-labelledby="title-37">
+    <section class="retired-slide paper trace-slide" id="slide-37" hidden data-title="Audit the trace, not the prose" data-time="Data agent · 20 min" aria-labelledby="title-37">
       <div class="slide-content trace-layout">
         <div><p class="eyebrow">Student lab · 20 minutes</p><h2 id="title-37">Investigate before seeing the reversal.</h2></div>
         <div class="trace-command"><code>python 03_data_agent/lab.py --stage describe</code><code>then: --stage missing · aggregate · stratified</code></div>
@@ -1363,7 +1903,7 @@
         </dl></aside>
     </section>
 
-    <section class="slide lime simpson-slide" id="slide-38" data-title="The aggregate reverses" data-time="Data agent · 4 min" aria-labelledby="title-38">
+    <section class="retired-slide lime simpson-slide" id="slide-38" hidden data-title="The aggregate reverses" data-time="Data agent · 4 min" aria-labelledby="title-38">
       <div class="slide-content simpson-layout">
         <div><p class="eyebrow">Debrief · Simpson's paradox</p><h2 id="title-38">The aggregate says worse. Each track says better.</h2></div>
         <img src="../labs/03_data_agent/data/gain_by_track.svg" alt="Bar chart showing AI users have higher mean score gains within both Advanced and Foundation tracks" width="700" height="430" loading="lazy">
@@ -1379,12 +1919,12 @@
         </dl></aside>
     </section>
 
-    <section class="slide dark lab-break-slide" id="slide-39" data-title="Break · Permission is design" data-time="Break · 10 min" aria-labelledby="title-39">
+    <section class="retired-slide dark lab-break-slide" id="slide-39" hidden data-title="Break · Permission is design" data-time="Break · 10 min" aria-labelledby="title-39">
       <div class="slide-content lab-break-layout"><p class="eyebrow">10-minute break</p><h2 id="title-39">A capable agent is not automatically an authorized agent.</h2><p>Name one tool it may call, one it must preview, and one it must never receive.</p><div class="break-mark" aria-hidden="true">⛉</div></div>
       <aside class="speaker-notes" aria-label="Presenter notes for slide 40"><p class="notes-label">Presenter notes</p><dl><div><dt>Purpose</dt><dd>Separate technical capability from institutional or ethical authority.</dd></div><div><dt>Do</dt><dd>On return, collect examples under three headings: automatic, approval required, prohibited.</dd></div><div><dt>Transition</dt><dd>Voice creates a powerful interface while adding consent, transcription, and identity risks.</dd></div></dl></aside>
     </section>
 
-    <section class="slide coral voice-case-slide" id="slide-40" data-title="Case 4 · Define the voice problem" data-time="Voice memo · 3 min" aria-labelledby="title-40">
+    <section class="retired-slide coral voice-case-slide" id="slide-40" hidden data-title="Case 4 · Define the voice problem" data-time="Voice memo · 3 min" aria-labelledby="title-40">
       <div class="slide-content voice-case-layout">
         <div><p class="eyebrow">Case 04 · Voice research copilot</p><h2 id="title-40">Can one interview become a memo without changing what the participant meant?</h2></div>
         <div class="waveform" aria-label="Decorative audio waveform"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
@@ -1402,7 +1942,7 @@
         </dl></aside>
     </section>
 
-    <section class="slide teal voice-source-slide" id="slide-voice-source" data-title="Listen to the source" data-time="Voice memo · 3 min" aria-labelledby="title-voice-source">
+    <section class="retired-slide teal voice-source-slide" id="slide-voice-source" hidden data-title="Listen to the source" data-time="Voice memo · 3 min" aria-labelledby="title-voice-source">
       <div class="slide-content voice-source-layout">
         <div><p class="eyebrow">Meet the source · 48 seconds</p><h2 id="title-voice-source">The rough transcript contains three consequential errors.</h2></div>
         <div class="audio-source-panel">
@@ -1426,7 +1966,7 @@
       </dl></aside>
     </section>
 
-    <section class="slide paper voice-claims-slide" id="slide-voice-claims" data-title="A memo contains three kinds of claim" data-time="Voice memo · 2 min" aria-labelledby="title-voice-claims">
+    <section class="retired-slide paper voice-claims-slide" id="slide-voice-claims" hidden data-title="A memo contains three kinds of claim" data-time="Voice memo · 2 min" aria-labelledby="title-voice-claims">
       <div class="slide-content voice-claims-layout">
         <div><p class="eyebrow">Define the output</p><h2 id="title-voice-claims">A memo moves from words to interpretation to action.</h2></div>
         <div class="claim-distance" aria-label="Increasing distance from source evidence">
@@ -1447,7 +1987,7 @@
       </dl></aside>
     </section>
 
-    <section class="slide dark voice-consent-slide" id="slide-voice-consent" data-title="Authorization is part of the input" data-time="Voice memo · 3 min" aria-labelledby="title-voice-consent">
+    <section class="retired-slide dark voice-consent-slide" id="slide-voice-consent" hidden data-title="Authorization is part of the input" data-time="Voice memo · 3 min" aria-labelledby="title-voice-consent">
       <div class="slide-content voice-consent-layout">
         <div><p class="eyebrow">Before the model</p><h2 id="title-voice-consent">Authorization is part of the input—not a checkbox after upload.</h2></div>
         <div class="authorization-grid">
@@ -1467,7 +2007,7 @@
       </dl></aside>
     </section>
 
-    <section class="slide paper voice-pipeline-slide" id="slide-41" data-title="Voice is a chain of models and judgments" data-time="Voice memo · 2 min" aria-labelledby="title-41">
+    <section class="retired-slide paper voice-pipeline-slide" id="slide-41" hidden data-title="Voice is a chain of models and judgments" data-time="Voice memo · 2 min" aria-labelledby="title-41">
       <div class="slide-content voice-pipeline-layout">
         <div><p class="eyebrow">Recorded voice workflow</p><h2 id="title-41">Every arrow can change the meaning.</h2></div>
         <ol class="voice-pipeline"><li><span>1</span><strong>Consent</strong><p>Purpose, storage, access.</p></li><li><span>2</span><strong>Audio</strong><p>Accents, noise, speakers.</p></li><li><span>3</span><strong>Transcript</strong><p>Names, numbers, negation.</p></li><li><span>4</span><strong>Memo</strong><p>Themes, actions, tensions.</p></li><li><span>5</span><strong>Review</strong><p>Correct before use.</p></li></ol>
@@ -1483,7 +2023,7 @@
         </dl></aside>
     </section>
 
-    <section class="slide teal voice-demo-slide" id="slide-voice-demo" data-title="Instructor demo · two voice failures" data-time="Voice memo · 5 min" aria-labelledby="title-voice-demo">
+    <section class="retired-slide teal voice-demo-slide" id="slide-voice-demo" hidden data-title="Instructor demo · two voice failures" data-time="Voice memo · 5 min" aria-labelledby="title-voice-demo">
       <div class="slide-content voice-demo-layout">
         <div><p class="eyebrow">Instructor demo · one clean trace, two failures</p><h2 id="title-voice-demo">A quote check compares text to text—not text to reality.</h2></div>
         <div class="voice-failure-grid">
@@ -1503,7 +2043,7 @@
       </dl></aside>
     </section>
 
-    <section class="slide teal voice-activity-slide" id="slide-42" data-title="Build the auditable memo" data-time="Voice memo · 18 min" aria-labelledby="title-42">
+    <section class="retired-slide teal voice-activity-slide" id="slide-42" hidden data-title="Build the auditable memo" data-time="Voice memo · 18 min" aria-labelledby="title-42">
       <div class="slide-content voice-activity-layout">
         <div><p class="eyebrow">Student lab · 18 minutes</p><h2 id="title-42">Correct the record. Then build the memo.</h2></div>
         <div class="voice-lab-phases">
@@ -1526,7 +2066,7 @@
         </dl></aside>
     </section>
 
-    <section class="slide paper compound-error-slide" id="slide-43" data-title="Errors compound downstream" data-time="Voice memo · 3 min" aria-labelledby="title-43">
+    <section class="retired-slide paper compound-error-slide" id="slide-43" hidden data-title="Errors compound downstream" data-time="Voice memo · 3 min" aria-labelledby="title-43">
       <div class="slide-content compound-error-layout">
         <div><p class="eyebrow">Debrief</p><h2 id="title-43">One transcription error can become a confident recommendation.</h2></div>
         <div class="error-chain">
@@ -1544,7 +2084,7 @@
         </dl></aside>
     </section>
 
-    <section class="slide dark lab-final-slide" id="slide-44" data-title="Choose a workflow, not a demo" data-time="240:00–245:00" aria-labelledby="title-44">
+    <section class="retired-slide dark lab-final-slide" id="slide-44" hidden data-title="Choose a workflow, not a demo" data-time="240:00–245:00" aria-labelledby="title-44">
       <div class="slide-content lab-final-layout">
         <p class="eyebrow">What you can take with you</p>
         <h2 id="title-44">Start small enough to evaluate.</h2>
@@ -1570,6 +2110,6 @@
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="app.js?v=20260824-hands-on-cases"></script>
+  <script src="app.js?v=20260824-rag-student-proof"></script>
 </body>
 </html>

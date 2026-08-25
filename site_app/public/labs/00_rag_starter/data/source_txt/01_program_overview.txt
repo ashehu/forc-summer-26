@@ -1,0 +1,17 @@
+TITLE: Riverton Graduate Research Studio - Program Overview
+DOCUMENT_ID: RGRS-01
+DOCUMENT_TYPE: program overview
+
+=== PAGE 1 ===
+The Riverton Graduate Research Studio is a fictional six-week summer program for graduate students from the humanities, social sciences, natural sciences, design, public policy, and computing. The studio is designed for students who want to turn a research question into a small, inspectable prototype. Participants do not need prior programming experience.
+
+The program has three recurring activities. Monday seminars introduce a research or technical idea. Wednesday build labs provide guided implementation time. Friday studios are used for peer feedback, troubleshooting, and project planning. Students may work alone or in teams of two or three.
+
+Every project must begin with a clearly named user, a bounded source collection, and a decision or research task. A prototype is considered complete when another student can identify its inputs, outputs, evidence, and known limitations. The program values small systems that can be inspected over ambitious systems that cannot be explained.
+
+=== PAGE 2 ===
+Students choose one of three project paths. The evidence path builds search or question-answering tools over documents. The data path turns messy records into structured information or analysis. The interaction path explores voice, multimodal interfaces, or tool-using agents.
+
+The first two weeks are shared across all paths. Week 1 covers problem definition, source inspection, and basic Python setup. Week 2 covers language models, embeddings, retrieval, and interface design. Specialized workshops begin in Week 3.
+
+The final deliverable is a five-minute demonstration accompanied by a one-page system card. The system card names the intended use, data sources, model or method, human review points, and at least two known failure modes. Projects are demonstrations for learning; they are not approved for clinical, legal, admissions, employment, or other consequential decisions.

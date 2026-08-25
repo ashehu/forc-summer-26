@@ -1,0 +1,17 @@
+TITLE: Responsible AI and Data Use Policy
+DOCUMENT_ID: RGRS-05
+DOCUMENT_TYPE: policy
+
+=== PAGE 1 ===
+Students may use approved AI services with public or fictional teaching data. Before sending any other material to an external service, students must confirm that the data owner, consent language, institutional policy, and service terms permit that use. Convenience is not authorization.
+
+Do not upload restricted data to a public AI tool. Restricted data includes identifiable interview transcripts, protected health information, student records, confidential peer review, unpublished partner data, passwords, and API keys. Removing a person's name may not be enough when combinations of details can identify them.
+
+Every project must state whether a model sees the complete source collection, retrieved passages, or only metadata. If a service stores inputs or uses them for another purpose, that behavior must be understood before use.
+
+=== PAGE 2 ===
+AI-assisted code is allowed. Students must review generated dependencies, run the code in the project environment, and be able to explain data movement. A coding assistant should receive a bounded build brief: input files, required output, permitted packages, model choice, storage location, and tests.
+
+For document retrieval projects, the interface must display source identity and passage text before an answer-generation feature is added. The first milestone is evidence discovery, not fluent prose. A system that cannot show what it retrieved is not ready to summarize the collection.
+
+Projects must include a human review point before publishing findings or taking an external action. The reviewer should be able to see the source, model output, uncertainty, and any transformation performed by the system. Evaluation requirements are introduced later in the program; the initial build should remain small enough that students can inspect every retrieved passage manually.

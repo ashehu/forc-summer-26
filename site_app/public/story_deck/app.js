@@ -3,14 +3,8 @@
 
   const presentationOrder = [
     "slide-1", "slide-2", "slide-3", "slide-3-training", "slide-4", "slide-5", "slide-6", "slide-7", "slide-8",
-    "slide-16", "slide-case-studies", "slide-24", "slide-rag-intro", "slide-30", "slide-rag-corpus", "slide-31",
-    "slide-rag-architecture", "slide-rag-chunking", "slide-rag-vectorization", "slide-rag-retrieval",
-    "slide-rag-context", "slide-rag-verification", "slide-rag-hands-on",
-    "slide-32", "slide-33", "slide-34",
-    "slide-25", "slide-extraction-why", "slide-extraction-pipeline", "slide-26",
-    "slide-extraction-demo", "slide-27", "slide-28", "slide-29",
-    "slide-agent-problem", "slide-agent-question", "slide-agent-raw-data", "slide-36", "slide-37", "slide-35", "slide-agent-data", "slide-agent-demo", "slide-38", "slide-39",
-    "slide-40", "slide-voice-consent", "slide-voice-source", "slide-voice-claims", "slide-41", "slide-voice-demo", "slide-42", "slide-43", "slide-44",
+    "slide-16", "slide-case-studies", "slide-24", "slide-opioid-open", "slide-opioid-problem", "slide-opioid-scale",
+    "slide-opioid-material", "slide-opioid-direct-path", "slide-opioid-vector-space", "slide-opioid-retrieval-results", "slide-rag-starter-data", "slide-rag-starter-build", "slide-rag-api-key", "slide-rag-starter-prompts", "slide-opioid-close",
     ...Array.from({ length: 7 }, (_, index) => `slide-${index + 9}`),
   ];
   const slideContainer = document.querySelector("main");
@@ -68,7 +62,7 @@
     progressBar.style.width = `${((boundedIndex + 1) / slides.length) * 100}%`;
     previousButton.disabled = boundedIndex === 0;
     nextButton.disabled = boundedIndex === slides.length - 1;
-    document.title = `${twoDigits(boundedIndex + 1)} · ${slide.dataset.title} — AI: From Rules to Real-World Agents`;
+    document.title = `${twoDigits(boundedIndex + 1)} · ${slide.dataset.title} — Applied AI: From Language Models to RAG`;
   }
 
   function goToSlide(index) {
@@ -212,7 +206,8 @@
 
   document.querySelectorAll("[data-copy-prompt]").forEach((button) => {
     button.addEventListener("click", async () => {
-      const prompt = document.querySelector("#researchPrompt").textContent.trim();
+      const target = button.dataset.copyTarget || "#researchPrompt";
+      const prompt = document.querySelector(target).textContent.trim();
       try {
         await navigator.clipboard.writeText(prompt);
       } catch {
@@ -227,10 +222,65 @@
         textarea.remove();
       }
       button.textContent = "Copied";
-      announce("Research prompt copied");
+      announce("Prompt copied");
       window.setTimeout(() => {
         button.textContent = "Copy";
       }, 1600);
     });
   });
+
+  const ragPromptTabs = [...document.querySelectorAll("[data-rag-prompt-tab]")];
+  const ragPromptPanels = [...document.querySelectorAll("[data-rag-prompt-panel]")];
+  const ragPromptPrevious = document.querySelector("#ragPromptPrevious");
+  const ragPromptNext = document.querySelector("#ragPromptNext");
+  const ragPromptCopy = document.querySelector("#ragPromptCopy");
+  const ragPromptPosition = document.querySelector("#ragPromptPosition");
+  let activeRagPrompt = 0;
+
+  function showRagPrompt(index) {
+    if (!ragPromptTabs.length || !ragPromptPanels.length) return;
+    activeRagPrompt = Math.max(0, Math.min(index, ragPromptPanels.length - 1));
+    ragPromptTabs.forEach((tab, tabIndex) => {
+      const isActive = tabIndex === activeRagPrompt;
+      tab.classList.toggle("is-active", isActive);
+      tab.setAttribute("aria-selected", String(isActive));
+      tab.setAttribute("tabindex", isActive ? "0" : "-1");
+    });
+    ragPromptPanels.forEach((panel, panelIndex) => {
+      panel.hidden = panelIndex !== activeRagPrompt;
+    });
+    ragPromptPrevious.disabled = activeRagPrompt === 0;
+    ragPromptNext.disabled = activeRagPrompt === ragPromptPanels.length - 1;
+    ragPromptPosition.textContent = `Prompt ${activeRagPrompt + 1} of ${ragPromptPanels.length}`;
+  }
+
+  ragPromptTabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => showRagPrompt(index));
+  });
+  ragPromptPrevious?.addEventListener("click", () => showRagPrompt(activeRagPrompt - 1));
+  ragPromptNext?.addEventListener("click", () => showRagPrompt(activeRagPrompt + 1));
+  ragPromptCopy?.addEventListener("click", async () => {
+    const prompt = ragPromptPanels[activeRagPrompt]?.textContent.trim();
+    if (!prompt) return;
+    try {
+      await navigator.clipboard.writeText(prompt);
+    } catch {
+      const textarea = document.createElement("textarea");
+      textarea.value = prompt;
+      textarea.setAttribute("readonly", "");
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.append(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      textarea.remove();
+    }
+    ragPromptCopy.textContent = "Copied";
+    announce(`Prompt ${activeRagPrompt + 1} copied`);
+    window.setTimeout(() => {
+      ragPromptCopy.textContent = "Copy prompt";
+    }, 1600);
+  });
+
+  showRagPrompt(0);
 })();

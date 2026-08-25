@@ -1,0 +1,11 @@
+DOCUMENT_ID: OIDA-CONTEXT
+TITLE: About the Opioid Industry Documents Archive
+GENRE: archive description
+DATE: 2021-present
+SOURCE_PAGE: archive overview
+SOURCE_URL: https://industrydocuments.ucsf.edu/opioids/docs/
+
+TEACHING EXCERPT
+The UCSF-Johns Hopkins Opioid Industry Documents Archive preserves public access to previously internal corporate records disclosed through opioid litigation and other public sources. The larger archive contains millions of records from manufacturers, distributors, pharmacies, consultants, and related organizations. Documents may include emails, marketing plans, sales-training materials, policy papers, compliance records, court exhibits, and reports.
+
+This course corpus is not a representative sample of the archive. It contains four short excerpts selected to expose retrieval, provenance, document-genre, and answerability problems. A retrieved corporate statement establishes what that document says. It does not by itself establish whether the statement was accurate, representative, implemented, or effective.

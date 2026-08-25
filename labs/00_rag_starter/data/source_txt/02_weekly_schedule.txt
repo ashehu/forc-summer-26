@@ -1,0 +1,19 @@
+TITLE: Weekly Schedule and Locations
+DOCUMENT_ID: RGRS-02
+DOCUMENT_TYPE: schedule
+
+=== PAGE 1 ===
+Monday seminars meet from 10:00 a.m. to noon in Hall B, room 201. The room opens at 9:30 a.m. for coffee and informal questions. Seminars are discussion-based and normally include a short demonstration. Students should bring a notebook; laptops are optional unless the session description says otherwise.
+
+Wednesday build labs meet from 1:00 to 4:00 p.m. in the Innovation Library, room 406. Students should bring a laptop and charger. Loaner laptops are available when reserved by noon on Tuesday. The first thirty minutes are used for a common setup or debugging task; the remaining time is project work with instructors circulating.
+
+Friday project studios meet online from 10:00 to 11:30 a.m. The meeting link is posted in the course portal. Studios begin with a ten-minute check-in, followed by small-group critiques. Students should arrive with one concrete artifact to show: a research question, sample data, retrieval result, interface, or failure trace.
+
+=== PAGE 2 ===
+Week 1 focuses on choosing a tractable problem and inspecting source material. Monday introduces the program. Wednesday is the environment setup clinic. Friday groups compare project ideas.
+
+Week 2 focuses on retrieval. Monday introduces vectors and similarity. Wednesday is the first RAG build lab. Friday groups inspect retrieved passages and discuss whether the evidence packet is sufficient.
+
+Week 3 covers structured extraction and data quality. Week 4 covers tool use, agents, and permissions. Week 5 is reserved for project integration and user testing. Week 6 includes rehearsal on Wednesday and the public demonstration on Friday afternoon.
+
+If the university closes for severe weather, in-person sessions move online. A change is announced through the portal and email by 8:00 a.m. Students should not rely on a calendar location when an emergency notice has been posted.
