@@ -874,9 +874,9 @@
           <li><span>01</span><div><strong>Research problem</strong><p>Find relevant evidence and patterns inside a vast public archive.</p></div><time>Why</time></li>
           <li><span>02</span><div><strong>Evidence design</strong><p>Preserve document identity, page, genre, and original record.</p></div><time>What</time></li>
           <li><span>03</span><div><strong>Retrieval mechanics</strong><p>Chunk, embed, compare vectors, and inspect ranked passages.</p></div><time>How</time></li>
-          <li><span>04</span><div><strong>Working POC</strong><p>Build and test the same workflow on a manageable corpus.</p></div><time>Build</time></li>
+          <li><span>04</span><div><strong>Working POC</strong><p>Start with one PDF; prompt a coding agent to build every layer.</p></div><time>Build</time></li>
         </ol>
-        <a class="lab-slide-link" href="../labs/00_rag_starter/README.md" target="_blank">Open the RAG starter kit ↗</a>
+        <a class="lab-slide-link" href="../labs/00_rag_starter/data/rag_starter_corpus.pdf" download>Download the only starter file ↓</a>
       </div>
       <aside class="speaker-notes" aria-label="Presenter notes for slide 25">
         <p class="notes-label">Presenter notes</p>
@@ -884,7 +884,9 @@
           <div><dt>Purpose</dt><dd>Preview the complete arc of the single applied case and its hands-on build.</dd></div>
           <div><dt>Say</dt><dd>“We will stay with one workflow long enough to understand the problem, inspect the sources, see the mechanics, and build a working proof of concept.”</dd></div>
           <div><dt>Why RAG</dt><dd>It makes the evidence boundary visible: what entered the model’s context, what stayed out, and which claims can be checked.</dd></div>
+          <div><dt>Hands-on boundary</dt><dd>The only supplied artifact is the 20-page PDF. A coding agent creates the environment, extraction, chunks, embedding index, retriever, and interface from the prompts in the deck.</dd></div>
           <div><dt>Transition</dt><dd>Before retrieving anything, define the research question precisely enough to know which documents and claims count.</dd></div>
+          <div><dt>[Sources]</dt><dd><a href="../labs/00_rag_starter/data/rag_starter_corpus.pdf" target="_blank">Course-authored fictional RAG corpus</a></dd></div>
         </dl>
       </aside>
     </section>
@@ -1287,12 +1289,12 @@
       </dl></aside>
     </section>
 
-    <section class="slide paper rag-starter-data-slide" id="slide-rag-starter-data" data-title="Meet the 20-page starter corpus" data-time="Practical RAG · 5 min" aria-labelledby="title-rag-starter-data">
+    <section class="slide paper rag-starter-data-slide" id="slide-rag-starter-data" data-title="Begin with one PDF" data-time="Practical RAG · 5 min" aria-labelledby="title-rag-starter-data">
       <div class="slide-content rag-starter-data-layout">
-        <div><p class="eyebrow">A simpler first build · fictional teaching data</p><h2 id="title-rag-starter-data">Start with 20 pages you can understand.</h2></div>
+        <div><p class="eyebrow">A standalone build · no starter code</p><h2 id="title-rag-starter-data">Your only starter file is one 20-page PDF.</h2></div>
         <div class="rag-starter-data-stage">
           <section class="rag-starter-manifest" aria-label="Starter corpus manifest">
-            <div class="rag-starter-stats"><strong>10</strong><span>documents</span><strong>20</strong><span>pages</span><strong>7</strong><span>starter questions</span></div>
+            <div class="rag-starter-stats"><strong>10</strong><span>documents</span><strong>20</strong><span>pages</span><strong>1</strong><span>input file</span></div>
             <ol>
               <li>Program overview</li><li>Weekly schedule</li><li>Methods workshops</li><li>Computing + data</li><li>Responsible AI</li>
               <li>Mentoring + support</li><li>Team projects</li><li>Accessibility</li><li>Fieldwork + expenses</li><li>Demo day + FAQ</li>
@@ -1305,48 +1307,48 @@
             <blockquote><b>Weekly Schedule · p.1</b>“Wednesday build labs meet … in the Innovation Library, room 406.”</blockquote>
           </section>
         </div>
-        <div class="rag-starter-links"><a href="../labs/00_rag_starter/rag_starter_student_kit.zip" download>Download the complete starter kit ↓</a><a href="../labs/00_rag_starter/data/rag_starter_corpus.pdf" target="_blank">Open the 20-page PDF ↗</a><a href="../labs/00_rag_starter/README.md" target="_blank">Open instructions ↗</a></div>
+        <div class="rag-starter-links"><a href="../labs/00_rag_starter/data/rag_starter_corpus.pdf" download>Download the only starter file ↓</a><span>Put the PDF in an otherwise empty folder. Open that folder in Codex or Claude Code.</span></div>
       </div>
       <aside class="speaker-notes" aria-label="Presenter notes for introducing the starter RAG corpus"><p class="notes-label">Presenter notes</p><dl>
-        <div><dt>Purpose</dt><dd>Give everyone a small source collection that requires no specialized background knowledge before introducing implementation choices.</dd></div>
-        <div><dt>Say</dt><dd>“This is a fictional graduate-program corpus: ten documents, two pages each. You receive the combined PDF, page-preserving text, starter questions, and code. There are no real personal records.”</dd></div>
-        <div><dt>Do</dt><dd>Open the PDF. Predict which documents should answer the starter question before searching. Point out that a good answer requires more than one document.</dd></div>
-        <div><dt>Why text too</dt><dd>The first build uses clean page-preserving text so we can learn RAG rather than OCR. The combined PDF remains the human-facing source and can support a later PDF-extraction extension.</dd></div>
-        <div><dt>Transition</dt><dd>Now take this exact corpus through the smallest complete implementation.</dd></div>
-        <div><dt>[Sources]</dt><dd><a href="../labs/00_rag_starter/data/source_manifest.json" target="_blank">Course-authored corpus manifest</a> · <a href="../labs/00_rag_starter/data/questions.json" target="_blank">Starter questions</a></dd></div>
+        <div><dt>Purpose</dt><dd>Give everyone the same small source while making the coding agent create every implementation artifact from scratch.</dd></div>
+        <div><dt>Say</dt><dd>“This fictional graduate-program PDF is the entire handout for the build. You do not receive scripts, extracted text, questions, configuration files, or a project scaffold.”</dd></div>
+        <div><dt>Do</dt><dd>Download the PDF into an empty folder, open the folder in Codex or Claude Code, and inspect the PDF before pasting Prompt 1.</dd></div>
+        <div><dt>Why one PDF</dt><dd>The exercise exposes the complete chain: environment setup, PDF extraction, chunking, embeddings, retrieval, and interface construction.</dd></div>
+        <div><dt>Transition</dt><dd>The next slide names the artifacts the prompts will create.</dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/00_rag_starter/data/rag_starter_corpus.pdf" target="_blank">Course-authored fictional RAG corpus</a></dd></div>
       </dl></aside>
     </section>
 
     <section class="slide teal rag-starter-build-slide" id="slide-rag-starter-build" data-title="Build an inspectable RAG interface" data-time="Practical RAG · 30 min" aria-labelledby="title-rag-starter-build">
       <div class="slide-content rag-starter-build-layout">
-        <div><p class="eyebrow">Hands-on implementation · retrieval first</p><h2 id="title-rag-starter-build">Build the smallest useful RAG system—one visible step at a time.</h2></div>
+        <div><p class="eyebrow">Hands-on implementation · PDF to interface</p><h2 id="title-rag-starter-build">Turn one PDF into a working RAG system—one visible step at a time.</h2></div>
         <ol class="rag-starter-pipeline" aria-label="Six steps in the starter RAG implementation">
-          <li><span>01</span><strong>Inspect</strong><p>Read the PDF and predict the source.</p></li>
-          <li><span>02</span><strong>Chunk</strong><p>120 words · 25-word overlap · keep page metadata.</p></li>
-          <li><span>03</span><strong>Embed</strong><p><code>text-embedding-3-small</code></p></li>
-          <li><span>04</span><strong>Store</strong><p>Chunks + vectors in one local JSON index.</p></li>
+          <li><span>01</span><strong>Set up</strong><p>Create the environment and project structure.</p></li>
+          <li><span>02</span><strong>Extract</strong><p>PDF → page-preserving JSON.</p></li>
+          <li><span>03</span><strong>Chunk</strong><p>120 words · 25-word overlap · keep page metadata.</p></li>
+          <li><span>04</span><strong>Embed</strong><p><code>text-embedding-3-small</code> → local JSON index.</p></li>
           <li><span>05</span><strong>Retrieve</strong><p>Embed the question · cosine · top-k.</p></li>
           <li><span>06</span><strong>Interface</strong><p>Show source, page, score, and passage.</p></li>
         </ol>
         <div class="rag-starter-commands">
-          <code>python chunk.py --size 120 --overlap 25</code>
-          <code>python build_index.py --model text-embedding-3-small</code>
+          <code>python src/chunk.py --size 120 --overlap 25</code>
+          <code>python src/build_index.py --model text-embedding-3-small</code>
           <code>streamlit run app.py</code>
         </div>
-        <div class="rag-starter-build-bottom"><p><span>Using Codex?</span>Open the starter folder and follow five bounded milestones: inspect → chunk → embed → retrieve → interface.</p><a href="../labs/00_rag_starter/CODEX_GUIDE.md" target="_blank">Open the Codex build guide ↗</a><strong>Stop before answer generation. First make retrieval understandable.</strong></div>
+        <div class="rag-starter-build-bottom"><p><span>Using a coding agent?</span>Open the empty project folder containing only the PDF. Paste the five prompts in order.</p><a href="../labs/00_rag_starter/data/rag_starter_corpus.pdf" target="_blank">Open the only input file ↗</a><strong>The agent writes every file. You inspect every transformation.</strong></div>
       </div>
       <aside class="speaker-notes" aria-label="Presenter notes for building the starter RAG interface"><p class="notes-label">Presenter notes</p><dl>
-        <div><dt>Purpose</dt><dd>Provide a complete but intentionally small implementation path that ends in a working evidence interface.</dd></div>
+        <div><dt>Purpose</dt><dd>Show the artifacts a coding agent will create from a single PDF, with no prepared project scaffold.</dd></div>
         <div><dt>Model choice</dt><dd>Use text-embedding-3-small for the first build: it is a current OpenAI embedding model, works through a simple embeddings API request, and avoids local model setup. The model name is configurable and is stored with the index. The query and document chunks must use the same embedding model.</dd></div>
         <div><dt>Why JSON</dt><dd>Thirty-four chunks do not require a vector database. A JSON index keeps the metadata and vectors visible. Infrastructure can be added when the corpus makes it necessary.</dd></div>
-        <div><dt>Using Codex</dt><dd>Ask Codex to complete one milestone at a time, run it, and explain the transformation. Do not ask for “a complete RAG app” in one prompt; the learning lives in the intermediate artifacts.</dd></div>
-        <div><dt>Time</dt><dd>Five minutes to inspect, five to chunk, five to embed, five to trace retrieval, and ten to launch and modify the interface.</dd></div>
+        <div><dt>Using a coding agent</dt><dd>Ask Codex or Claude Code to create and run one milestone at a time. Each prompt ends with a visible artifact, a check, and a stopping condition.</dd></div>
+        <div><dt>Time</dt><dd>Five minutes to set up and extract, five to chunk, five to embed, five to trace retrieval, and ten to launch and modify the interface.</dd></div>
         <div><dt>Hold</dt><dd>Do not add generation or evaluation yet. The first success criterion is being able to explain why each displayed passage was returned and trace it to a page.</dd></div>
-        <div><dt>[Sources]</dt><dd><a href="https://developers.openai.com/api/reference/resources/embeddings/methods/create" target="_blank" rel="noreferrer">OpenAI Embeddings API</a> · <a href="https://developers.openai.com/api/docs/models/text-embedding-3-small" target="_blank" rel="noreferrer">text-embedding-3-small model page</a> · <a href="../labs/00_rag_starter/README.md" target="_blank">Course implementation guide</a></dd></div>
+        <div><dt>[Sources]</dt><dd><a href="https://developers.openai.com/api/reference/resources/embeddings/methods/create" target="_blank" rel="noreferrer">OpenAI Embeddings API</a> · <a href="https://developers.openai.com/api/docs/models/text-embedding-3-small" target="_blank" rel="noreferrer">text-embedding-3-small model page</a> · <a href="https://developers.openai.com/api/docs/guides/latest-model#prompting-best-practices" target="_blank" rel="noreferrer">OpenAI prompting guidance</a></dd></div>
       </dl></aside>
     </section>
 
-    <section class="slide dark rag-api-slide" id="slide-rag-api-key" data-title="Set up API access safely" data-time="Practical RAG · before Prompt 4" aria-labelledby="title-rag-api-key">
+    <section class="retired-slide dark rag-api-slide" id="slide-rag-api-key" hidden data-title="Set up API access safely" data-time="Practical RAG · before Prompt 4" aria-labelledby="title-rag-api-key">
       <div class="slide-content rag-api-layout">
         <div><p class="eyebrow">One manual boundary · everything else can be copy-pasted</p><h2 id="title-rag-api-key">Your API key stays local—and Codex never needs to see it.</h2></div>
         <ol class="rag-api-steps" aria-label="Three steps for configuring API access">
@@ -1365,47 +1367,43 @@
         <div><dt>Say</dt><dd>“Codex can prepare and verify the setup, but you handle the secret. The preflight reports only whether a key is available; it never prints the value.”</dd></div>
         <div><dt>Demonstrate</dt><dd>Show .env.example, copy it to .env, and point to the blank value. Do not enter a real key on the projector. Run the preflight using an already-configured presentation machine.</dd></div>
         <div><dt>Alternative</dt><dd>If the course uses a managed API route, replace the personal-key step with the institution’s approved instructions and keep the same no-sharing rule.</dd></div>
-        <div><dt>Transition</dt><dd>With the secret boundary clear, run the seven prompts in order.</dd></div>
+        <div><dt>Transition</dt><dd>With the secret boundary clear, run the five prompts in order.</dd></div>
         <div><dt>[Sources]</dt><dd><a href="https://developers.openai.com/api/docs/quickstart" target="_blank" rel="noreferrer">OpenAI API quickstart</a> · <a href="https://developers.openai.com/api/docs/models/text-embedding-3-small" target="_blank" rel="noreferrer">text-embedding-3-small model page</a> · <a href="../labs/00_rag_starter/API_KEY_SETUP.md" target="_blank">Course API-key guide</a></dd></div>
       </dl></aside>
     </section>
 
-    <section class="slide paper rag-prompt-slide" id="slide-rag-starter-prompts" data-title="Run the first POC with seven prompts" data-time="Practical RAG · prompt sequence" aria-labelledby="title-rag-starter-prompts">
+    <section class="slide paper rag-prompt-slide" id="slide-rag-starter-prompts" data-title="Build RAG from one PDF" data-time="Practical RAG · prompt sequence" aria-labelledby="title-rag-starter-prompts">
       <div class="slide-content rag-prompt-layout">
-        <div><p class="eyebrow">Your build instructions · paste into Codex one at a time</p><h2 id="title-rag-starter-prompts">Seven prompts take the first POC from files to a working search interface.</h2></div>
+        <div><p class="eyebrow">Start from scratch · paste into Codex or Claude Code</p><h2 id="title-rag-starter-prompts">One PDF. Five prompts. A working RAG interface.</h2></div>
         <div class="rag-prompt-stage">
           <div class="rag-prompt-tabs" role="tablist" aria-label="RAG proof-of-concept prompt sequence">
-            <button class="is-active" type="button" role="tab" aria-selected="true" aria-controls="rag-prompt-1" data-rag-prompt-tab><span>01</span>Set up</button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="rag-prompt-2" data-rag-prompt-tab><span>02</span>Inspect</button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="rag-prompt-3" data-rag-prompt-tab><span>03</span>Chunk</button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="rag-prompt-4" data-rag-prompt-tab><span>04</span>Embed</button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="rag-prompt-5" data-rag-prompt-tab><span>05</span>Retrieve</button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="rag-prompt-6" data-rag-prompt-tab><span>06</span>Interface</button>
-            <button type="button" role="tab" aria-selected="false" aria-controls="rag-prompt-7" data-rag-prompt-tab><span>07</span>Check</button>
+            <button class="is-active" type="button" role="tab" aria-selected="true" aria-controls="rag-prompt-1" data-rag-prompt-tab><span>01</span>Start + extract</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="rag-prompt-2" data-rag-prompt-tab><span>02</span>Chunk</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="rag-prompt-3" data-rag-prompt-tab><span>03</span>Embed + retrieve</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="rag-prompt-4" data-rag-prompt-tab><span>04</span>Interface</button>
+            <button type="button" role="tab" aria-selected="false" aria-controls="rag-prompt-5" data-rag-prompt-tab><span>05</span>Verify</button>
           </div>
           <section class="rag-prompt-card" aria-live="polite">
-            <div class="rag-prompt-card-head"><span id="ragPromptPosition">Prompt 1 of 7</span><button id="ragPromptCopy" type="button">Copy prompt</button></div>
+            <div class="rag-prompt-card-head"><span id="ragPromptPosition">Prompt 1 of 5</span><button id="ragPromptCopy" type="button">Copy prompt</button></div>
             <ol class="rag-prompt-panels">
-              <li id="rag-prompt-1" role="tabpanel" data-rag-prompt-panel><p>Treat the folder containing <code>README.md</code>, <code>chunk.py</code>, and <code>data/</code> as the project root, regardless of its name. Detect my operating system. Create <code>.venv</code>, install the exact requirements, and run <code>check_setup.py</code> with that environment’s Python. Use the same Python for every later command. Keep sources in <code>data/</code>, generated data in <code>output/</code>, and code in the project root. Show the preflight results and stop.</p></li>
-              <li id="rag-prompt-2" role="tabpanel" data-rag-prompt-panel hidden><p>Read <code>data/source_manifest.json</code>, <code>data/questions.json</code>, and all ten source text files. Explain how pages and metadata are represented. For the first three questions, predict which documents should contain the evidence. Do not write or change code. Show the predictions and stop.</p></li>
-              <li id="rag-prompt-3" role="tabpanel" data-rag-prompt-panel hidden><p>Review <code>chunk.py</code>, then run it with 120-word chunks and a 25-word overlap. Confirm that <code>output/chunks.json</code> contains exactly 34 chunks. Show three neighboring chunks, identify their overlap, and verify title, filename, page, document type, document ID, and chunk ID. Diagnose any mismatch. Stop before embeddings.</p></li>
-              <li id="rag-prompt-4" role="tabpanel" data-rag-prompt-panel hidden><p>Use the project’s <code>.venv</code> Python to run <code>check_setup.py --require-key</code> without printing or requesting the key. If it is missing, follow <code>API_KEY_SETUP.md</code>, create a blank <code>.env</code>, and stop so I can add the key myself. After the preflight passes, run <code>build_index.py</code> with <code>text-embedding-3-small</code>. Confirm 34 vectors, source metadata, model name, and vector dimensions. Then stop.</p></li>
-              <li id="rag-prompt-5" role="tabpanel" data-rag-prompt-panel hidden><p>Review the provided <code>retrieve.py</code>; do not create another retrieval script. Run the first starter question and the Wednesday build-lab question with five results each. Show score, title, filename, page, document type, and passage. Explain the question embedding, cosine similarity, and top-k ranking. Stop before the interface.</p></li>
-              <li id="rag-prompt-6" role="tabpanel" data-rag-prompt-panel hidden><p>Review and preserve the existing <code>app.py</code>. Launch it with Streamlit and give me the local URL. Retrieve the first starter question with top-k set to five. Verify title, filename, page, document type, similarity score, and full passage for every result. Keep it retrieval-only: no generated answer and no vector database.</p></li>
-              <li id="rag-prompt-7" role="tabpanel" data-rag-prompt-panel hidden><p>Run <code>python retrieve.py --all --top-k 5</code> and compare each packet with <code>data/evaluation_questions.json</code>. Produce a seven-row table with question ID, expected document, top-five documents, and pass or investigate. For Q7, retrieve the corpus-boundary passage without inferring whether housing is provided. Confirm page traceability and finish with the exact commands to run the POC again.</p></li>
+              <li id="rag-prompt-1" role="tabpanel" data-rag-prompt-panel><p>Build a new project in this folder. The only input should be <code>rag_starter_corpus.pdf</code>; do not use starter code. Create <code>data/</code> and place the PDF there. Detect my operating system and Python version. If Python 3.10+ is unavailable, give me one OS-specific installation step and stop. Otherwise create <code>.venv</code>, <code>src/</code>, <code>output/</code>, <code>requirements.txt</code>, <code>.gitignore</code>, and <code>README.md</code>; install <code>pypdf</code>, <code>numpy</code>, <code>openai</code>, <code>python-dotenv</code>, and <code>streamlit</code>. Then create and run <code>src/extract_pdf.py</code> to write page-preserving text to <code>output/pages.json</code>. Report page count, empty pages, and short samples from pages 1 and 20. Show the file tree and stop.</p></li>
+              <li id="rag-prompt-2" role="tabpanel" data-rag-prompt-panel hidden><p>Create <code>src/chunk.py</code> from scratch. Read <code>output/pages.json</code> and split each page into 120-word chunks with a 25-word overlap; never cross a page boundary. Give every chunk a stable ID and preserve source, page, chunk index, and text. Write and inspect <code>output/chunks.json</code>. Success means all 20 pages are represented and every chunk has provenance. Show two neighboring chunks, identify their shared overlap, add the run command to <code>README.md</code>, and stop.</p></li>
+              <li id="rag-prompt-3" role="tabpanel" data-rag-prompt-panel hidden><p>Create the embedding and retrieval stages from scratch using <code>text-embedding-3-small</code>. Make a blank <code>.env.example</code>, ignore <code>.env</code>, and check for <code>OPENAI_API_KEY</code> without revealing it. If missing, tell me how to set it locally and stop. Otherwise create <code>src/build_index.py</code> and <code>src/retrieve.py</code>. Store model name, vectors, dimensions, and provenance in <code>output/index.json</code>; retrieve with cosine similarity and top-k ranking. Verify one vector per chunk. Then show five traceable results for the Python-experience question and the Wednesday build-lab question, explain the top result, and stop.</p></li>
+              <li id="rag-prompt-4" role="tabpanel" data-rag-prompt-panel hidden><p>Create <code>app.py</code> from scratch with Streamlit. Load the local JSON index, accept a question, add a top-k control, call the retrieval code, and display evidence cards with source, page, similarity score, chunk ID, and full passage. Keep it retrieval-only: no generated answer, vector database, or RAG framework. Run a syntax check, launch the app, give me the local URL, and test the Python-experience question with top-k set to five. Confirm every displayed result is traceable to the PDF, then stop.</p></li>
+              <li id="rag-prompt-5" role="tabpanel" data-rag-prompt-panel hidden><p>Verify the project end to end with three questions: “When and where is the Wednesday build lab?”; “I have no Python experience—what should I attend, and where can I get help?”; and “Does the program provide housing?” Produce a compact table showing each question’s top five pages and whether the evidence is sufficient. Treat the housing question as a corpus-boundary test: retrieve passages but do not invent an answer. Confirm page traceability, confirm the API key is absent from project files, and update <code>README.md</code> with the exact commands needed to rebuild and run the POC. Then stop.</p></li>
             </ol>
             <div class="rag-prompt-controls"><button id="ragPromptPrevious" type="button" disabled>← Previous</button><button id="ragPromptNext" type="button">Next prompt →</button></div>
           </section>
         </div>
-        <div class="rag-prompt-footer"><strong>One prompt → one visible result → one quick check.</strong><span>Do not ask for the whole app at once.</span><a href="../labs/00_rag_starter/CODEX_GUIDE.md" target="_blank">Open the complete prompt sheet ↗</a></div>
+        <div class="rag-prompt-footer"><strong>Only input: the PDF.</strong><span>Paste one prompt, inspect the result, then continue.</span><a href="../labs/00_rag_starter/data/rag_starter_corpus.pdf" download>Download the PDF ↓</a></div>
       </div>
       <aside class="speaker-notes" aria-label="Presenter notes for the RAG POC prompt sequence"><p class="notes-label">Presenter notes</p><dl>
-        <div><dt>Purpose</dt><dd>Provide an exact, copyable sequence for building the POC with Codex while keeping every intermediate transformation visible.</dd></div>
-        <div><dt>Demonstrate</dt><dd>Copy Prompt 1, paste it into Codex with the starter folder open, and wait for the result. Point out that each prompt contains a stopping condition for inspection before continuing.</dd></div>
-        <div><dt>Emphasize</dt><dd>The source data remains in data/source_txt. Derived chunks and the embedding index belong in output. The API key belongs in the environment, never in source code or chat.</dd></div>
-        <div><dt>Why seven</dt><dd>The sequence separates setup, understanding, chunking, embedding, retrieval, interface, and testing. If something fails, the responsible transformation is easier to locate.</dd></div>
+        <div><dt>Purpose</dt><dd>Provide a self-contained, copyable sequence that builds the entire POC from a single PDF.</dd></div>
+        <div><dt>Demonstrate</dt><dd>Open an empty folder containing only the PDF. Copy Prompt 1 into Codex or Claude Code and wait for the environment check and file tree before continuing.</dd></div>
+        <div><dt>Emphasize</dt><dd>No Python, JSON, question, manifest, or configuration file is supplied. The coding agent creates every implementation artifact; the PDF remains the only source input.</dd></div>
+        <div><dt>Why five</dt><dd>Setup and PDF extraction form one first success. Embeddings become meaningful when immediately connected to retrieval. Chunking, the interface, and verification remain separate learning checkpoints.</dd></div>
         <div><dt>Completion</dt><dd>The first POC is complete when the interface returns traceable passages and the absent-answer test exposes the corpus boundary. Answer generation comes later.</dd></div>
-        <div><dt>[Sources]</dt><dd><a href="../labs/00_rag_starter/CODEX_GUIDE.md" target="_blank">Course-authored prompt sequence</a> · <a href="../labs/00_rag_starter/README.md" target="_blank">Starter lab instructions</a></dd></div>
+        <div><dt>[Sources]</dt><dd><a href="../labs/00_rag_starter/data/rag_starter_corpus.pdf" target="_blank">Course-authored fictional RAG corpus</a> · <a href="https://developers.openai.com/api/docs/guides/latest-model#prompting-best-practices" target="_blank" rel="noreferrer">OpenAI prompting guidance</a> · <a href="https://developers.openai.com/api/reference/resources/embeddings/methods/create" target="_blank" rel="noreferrer">OpenAI Embeddings API</a></dd></div>
       </dl></aside>
     </section>
 
@@ -2110,6 +2108,6 @@
   </dialog>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="app.js?v=20260825-rag-public-render"></script>
+  <script src="app.js?v=20260826-rag-five-prompts"></script>
 </body>
 </html>

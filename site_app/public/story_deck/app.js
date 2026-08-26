@@ -4,7 +4,7 @@
   const presentationOrder = [
     "slide-1", "slide-2", "slide-3", "slide-3-training", "slide-4", "slide-5", "slide-6", "slide-7", "slide-8",
     "slide-16", "slide-case-studies", "slide-24", "slide-opioid-open", "slide-opioid-problem", "slide-opioid-scale",
-    "slide-opioid-material", "slide-opioid-direct-path", "slide-opioid-vector-space", "slide-opioid-retrieval-results", "slide-rag-starter-data", "slide-rag-starter-build", "slide-rag-api-key", "slide-rag-starter-prompts", "slide-opioid-close",
+    "slide-opioid-material", "slide-opioid-direct-path", "slide-opioid-vector-space", "slide-opioid-retrieval-results", "slide-rag-starter-data", "slide-rag-starter-build", "slide-rag-starter-prompts", "slide-opioid-close",
     ...Array.from({ length: 7 }, (_, index) => `slide-${index + 9}`),
   ];
   const slideContainer = document.querySelector("main");
